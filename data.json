@@ -857,7 +857,7 @@
     "stale": null
   },
   "gate_feeds_unavailable": {},
-  "generated_at": "2026-11-12T12:46:25.097252+05:30",
+  "generated_at": "2026-11-12T13:12:29.111345+05:30",
   "intraday": {
     "available": [],
     "configured": false,
@@ -1009,12 +1009,12 @@
   "news_layer": {
     "available": true,
     "classifier": "rule-based, src/nlp_news.py. No language model.",
-    "fetched_at": "2026-11-12T12:43:08.112294+05:30",
-    "match_rate_pct": 47.3,
+    "fetched_at": "2026-11-12T13:09:10.716156+05:30",
+    "match_rate_pct": 48.0,
     "materiality_floor": 0.4,
     "note": "Headlines are classified by a deterministic rule-based lexicon, never by a language model. News orders the shortlist only; it is not an input to any gate, and no price, level, stop or target comes from it.",
     "reason": null,
-    "symbols_classified": 79
+    "symbols_classified": 81
   },
   "rejected": {
     "intraday": [
@@ -37522,7 +37522,7 @@
             "headline": "TCS bags Rio Marathon tech deal; stocks in red",
             "hedged": false,
             "items_material": 1,
-            "items_seen": 2,
+            "items_seen": 1,
             "matched": [
               "bags rio marathon tech deal"
             ],
@@ -39155,7 +39155,7 @@
             "headline": "TCS bags Rio Marathon tech deal; stocks in red",
             "hedged": false,
             "items_material": 1,
-            "items_seen": 2,
+            "items_seen": 1,
             "matched": [
               "bags rio marathon tech deal"
             ],
@@ -40756,7 +40756,7 @@
             "headline": "TCS bags Rio Marathon tech deal; stocks in red",
             "hedged": false,
             "items_material": 1,
-            "items_seen": 2,
+            "items_seen": 1,
             "matched": [
               "bags rio marathon tech deal"
             ],
@@ -42356,7 +42356,7 @@
             "headline": "TCS bags Rio Marathon tech deal; stocks in red",
             "hedged": false,
             "items_material": 1,
-            "items_seen": 2,
+            "items_seen": 1,
             "matched": [
               "bags rio marathon tech deal"
             ],
@@ -103498,7 +103498,7 @@
         "headline": null,
         "hedged": null,
         "items_material": 0,
-        "items_seen": 4,
+        "items_seen": 3,
         "matched": null,
         "mention_only": null,
         "news_score": 0.0,
@@ -105635,7 +105635,7 @@
         "headline": null,
         "hedged": null,
         "items_material": 0,
-        "items_seen": 3,
+        "items_seen": 2,
         "matched": null,
         "mention_only": null,
         "news_score": 0.0,
@@ -143878,7 +143878,7 @@
         "headline": null,
         "hedged": null,
         "items_material": 0,
-        "items_seen": 1,
+        "items_seen": 2,
         "matched": null,
         "mention_only": null,
         "news_score": 0.0,
@@ -186915,7 +186915,7 @@
         "headline": "TCS bags Rio Marathon tech deal; stocks in red",
         "hedged": false,
         "items_material": 1,
-        "items_seen": 2,
+        "items_seen": 1,
         "matched": [
           "bags rio marathon tech deal"
         ],
@@ -189045,6 +189045,21 @@
         "score": 0.456821,
         "z_12m": -0.406154,
         "z_6m": -1.971927
+      },
+      "news_catalyst": {
+        "co_mentions": null,
+        "direction": "neutral",
+        "event": "none",
+        "headline": null,
+        "hedged": null,
+        "items_material": 0,
+        "items_seen": 1,
+        "matched": null,
+        "mention_only": null,
+        "news_score": 0.0,
+        "publisher": null,
+        "roundup": null,
+        "third_party_recommendation": null
       },
       "pct_change": -2.17,
       "price_discontinuities": [],
