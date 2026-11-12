@@ -1,18 +1,18 @@
 {
-  "fetched_at": "2026-11-12T10:03:10.581836+05:30",
-  "window_start": "2026-11-11T10:03:08.805381+05:30",
-  "newest_item": "2026-11-12T09:43:06+05:30",
+  "fetched_at": "2026-11-12T11:24:18.395839+05:30",
+  "window_start": "2026-11-11T11:24:16.994036+05:30",
+  "newest_item": "2026-11-12T11:05:33+05:30",
   "counts": {
     "fetched_raw": 232,
-    "in_window": 84,
+    "in_window": 104,
     "undated_dropped": 0,
-    "duplicates_collapsed": 30,
-    "published": 54,
-    "mapped": 23,
-    "unmapped": 31,
-    "symbols_with_news": 24
+    "duplicates_collapsed": 48,
+    "published": 56,
+    "mapped": 44,
+    "unmapped": 12,
+    "symbols_with_news": 44
   },
-  "match_rate_pct": 42.6,
+  "match_rate_pct": 78.6,
   "feeds": [
     {
       "publisher": "economic_times",
@@ -67,6 +67,26 @@
   "warnings": [],
   "items": [
     {
+      "headline": "From SpaceX to Anthropic, markets have a new playbook for mega-share debuts",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/news/from-spacex-to-anthropic-markets-have-a-new-playbook-for-mega-share-debuts/articleshow/135756798.cms",
+      "published": "2026-11-12T11:05:33+05:30",
+      "description": "Anthropic is gearing up for its highly anticipated IPO, aiming to raise as much as $64.4 billion with share prices ranging from $70 to $78. The company is targeting inclusion in major indexes soon aft",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/news/from-spacex-to-anthropic-markets-have-a-new-playbook-for-mega-share-debuts/articleshow/135756798.cms",
+      "symbols": []
+    },
+    {
+      "headline": "Vishal Mega Mart among 5 stocks showing RSI trending up",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/news/vishal-mega-mart-among-5-stocks-showing-rsi-trending-up/slideshow/135755604.cms",
+      "published": "2026-11-12T10:06:34+05:30",
+      "description": "Five Nifty500 stocks that gained over 4.5% on November 11 featured in StockEdge’s RSI Trending Up scan, with their Relative Strength Index (RSI) crossing above 50 from below, signalling strengthening ",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/news/vishal-mega-mart-among-5-stocks-showing-rsi-trending-up/slideshow/135755604.cms",
+      "symbols": [
+        "VMM"
+      ]
+    },
+    {
       "headline": "Oil India among 6 stocks closing above VWAP",
       "url": "https://economictimes.indiatimes.com/markets/stocks/news/oil-india-among-6-stocks-closing-above-vwap/slideshow/135755140.cms",
       "published": "2026-11-12T09:43:06+05:30",
@@ -75,6 +95,26 @@
       "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/news/oil-india-among-6-stocks-closing-above-vwap/slideshow/135755140.cms",
       "symbols": [
         "OIL"
+      ]
+    },
+    {
+      "headline": "Dr Reddys Share Price Live Updates: Dr. Reddys Current Price Update",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/dr-reddys-share-price-live-updates-12-nov-2026/liveblog/135754002.cms",
+      "published": "2026-11-12T09:06:31+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/dr-reddys-share-price-live-updates-12-nov-2026/liveblog/135754002.cms",
+      "symbols": []
+    },
+    {
+      "headline": "ITC Share Price Live Updates: ITC Stock Details",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/itc-share-price-today-live-12-nov-2026/liveblog/135753807.cms",
+      "published": "2026-11-12T09:00:23+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/itc-share-price-today-live-12-nov-2026/liveblog/135753807.cms",
+      "symbols": [
+        "ITC"
       ]
     },
     {
@@ -98,6 +138,39 @@
       "symbols": []
     },
     {
+      "headline": "Divis Labs Share Price Live Updates: Divis Labs Trading Insights",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/divis-labs-share-price-today-live-updates-12-nov-2026/liveblog/135753606.cms",
+      "published": "2026-11-12T08:50:11+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/divis-labs-share-price-today-live-updates-12-nov-2026/liveblog/135753606.cms",
+      "symbols": [
+        "DIVISLAB"
+      ]
+    },
+    {
+      "headline": "Eicher Motors Share Price Live Updates: Eicher Motors Price Movement",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/eicher-motors-stock-price-live-updates-12-nov-2026/liveblog/135753520.cms",
+      "published": "2026-11-12T08:45:05+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/eicher-motors-stock-price-live-updates-12-nov-2026/liveblog/135753520.cms",
+      "symbols": [
+        "EICHERMOT"
+      ]
+    },
+    {
+      "headline": "Grasim Inds Share Price Live Updates: Grasim Inds. Stock Details",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/grasim-inds-share-price-today-live-updates-12-nov-2026/liveblog/135753396.cms",
+      "published": "2026-11-12T08:40:22+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/grasim-inds-share-price-today-live-updates-12-nov-2026/liveblog/135753396.cms",
+      "symbols": [
+        "GRASIM"
+      ]
+    },
+    {
       "headline": "Hindalco Share Price Live Updates: Hindalco Falls Below Key Moving Average",
       "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/hindalco-share-price-today-live-updates-12-nov-2026/liveblog/135753389.cms",
       "published": "2026-11-12T08:40:05+05:30",
@@ -109,6 +182,28 @@
       ]
     },
     {
+      "headline": "Cipla Share Price Live Updates: Cipla's Daily Performance Update",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/cipla-stock-price-today-live-12-nov-2026/liveblog/135753318.cms",
+      "published": "2026-11-12T08:35:29+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/cipla-stock-price-today-live-12-nov-2026/liveblog/135753318.cms",
+      "symbols": [
+        "CIPLA"
+      ]
+    },
+    {
+      "headline": "RIL Share Price Live Updates: RIL's Current Market Price",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/ril-stock-price-today-live-12-nov-2026/liveblog/135753316.cms",
+      "published": "2026-11-12T08:35:24+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/ril-stock-price-today-live-12-nov-2026/liveblog/135753316.cms",
+      "symbols": [
+        "RELIANCE"
+      ]
+    },
+    {
       "headline": "Positive Breakout: These 5 stocks close above their 200 DMA",
       "url": "https://economictimes.indiatimes.com/markets/stocks/news/positive-breakout-these-5-stocks-close-above-their-200-dma/slideshow/135753555.cms",
       "published": "2026-11-12T08:33:46+05:30",
@@ -116,6 +211,92 @@
       "publisher": "Economic Times",
       "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/news/positive-breakout-these-5-stocks-close-above-their-200-dma/slideshow/135753555.cms",
       "symbols": []
+    },
+    {
+      "headline": "Axis Bank Share Price Live Updates: Axis Bank Stock Details",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/axis-bank-share-price-live-12-nov-2026/liveblog/135753254.cms",
+      "published": "2026-11-12T08:32:00+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/axis-bank-share-price-live-12-nov-2026/liveblog/135753254.cms",
+      "symbols": [
+        "AXISBANK"
+      ]
+    },
+    {
+      "headline": "SBI Life Share Price Live Updates: SBI Life Stock Details",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/sbi-life-share-price-live-12-nov-2026/liveblog/135753244.cms",
+      "published": "2026-11-12T08:31:23+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/sbi-life-share-price-live-12-nov-2026/liveblog/135753244.cms",
+      "symbols": [
+        "SBILIFE"
+      ]
+    },
+    {
+      "headline": "Bajaj Finance Share Price Live Updates: Bajaj Finance Stock Details",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/bajaj-finance-share-price-live-updates-12-nov-2026/liveblog/135753231.cms",
+      "published": "2026-11-12T08:30:46+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/bajaj-finance-share-price-live-updates-12-nov-2026/liveblog/135753231.cms",
+      "symbols": [
+        "BAJFINANCE"
+      ]
+    },
+    {
+      "headline": "Nestle India Share Price Live Updates: Nestle India Current Price Update",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/nestle-india-stock-price-today-live-12-nov-2026/liveblog/135753223.cms",
+      "published": "2026-11-12T08:30:29+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/nestle-india-stock-price-today-live-12-nov-2026/liveblog/135753223.cms",
+      "symbols": [
+        "NESTLEIND"
+      ]
+    },
+    {
+      "headline": "UPL Share Price Live Updates: UPL  Stock Details",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/upl-share-price-live-12-nov-2026/liveblog/135753213.cms",
+      "published": "2026-11-12T08:30:10+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/upl-share-price-live-12-nov-2026/liveblog/135753213.cms",
+      "symbols": []
+    },
+    {
+      "headline": "Power Grid Share Price Live Updates: Power Grid Stock Details",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/power-grid-share-price-today-live-updates-12-nov-2026/liveblog/135753153.cms",
+      "published": "2026-11-12T08:26:25+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/power-grid-share-price-today-live-updates-12-nov-2026/liveblog/135753153.cms",
+      "symbols": [
+        "POWERGRID"
+      ]
+    },
+    {
+      "headline": "Hero MotoCorp Share Price Live Updates: Hero MotoCorp's Current Trading Status",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/hero-motocorp-stock-price-today-live-12-nov-2026/liveblog/135753143.cms",
+      "published": "2026-11-12T08:26:07+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/hero-motocorp-stock-price-today-live-12-nov-2026/liveblog/135753143.cms",
+      "symbols": [
+        "HEROMOTOCO"
+      ]
+    },
+    {
+      "headline": "Jio Financial Services Share Price Live Updates: Jio Financial Services Surges Above 100-Day SMA",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/jio-financial-services-share-price-today-live-12-nov-2026/liveblog/135753130.cms",
+      "published": "2026-11-12T08:25:32+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/jio-financial-services-share-price-today-live-12-nov-2026/liveblog/135753130.cms",
+      "symbols": [
+        "JIOFIN"
+      ]
     },
     {
       "headline": "Tata Consumer Share Price Live Updates: Tata Consumer's Market Position",
@@ -129,7 +310,7 @@
       ]
     },
     {
-      "headline": "HDFC Life Share Price Live Updates: HDFC Life Surpasses Key Resistance Level",
+      "headline": "HDFC Life Share Price Live Updates: HDFC Life's Market Performance",
       "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/hdfc-life-share-price-today-live-updates-12-nov-2026/liveblog/135753066.cms",
       "published": "2026-11-12T08:21:23+05:30",
       "description": "",
@@ -140,7 +321,18 @@
       ]
     },
     {
-      "headline": "HCL Tech Share Price Live Updates: HCL Tech's three-month return insights",
+      "headline": "UltraTech Cem Share Price Live Updates: UltraTech Cem. Stock Details",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/ultratech-cem-share-price-live-12-nov-2026/liveblog/135753062.cms",
+      "published": "2026-11-12T08:21:05+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/ultratech-cem-share-price-live-12-nov-2026/liveblog/135753062.cms",
+      "symbols": [
+        "ULTRACEMCO"
+      ]
+    },
+    {
+      "headline": "HCL Tech Share Price Live Updates: HCL Tech Sees Slight Decline Today",
       "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/hcl-tech-stock-price-today-live-12-nov-2026/liveblog/135753053.cms",
       "published": "2026-11-12T08:20:27+05:30",
       "description": "",
@@ -149,7 +341,7 @@
       "symbols": []
     },
     {
-      "headline": "ICICI Bank Share Price Live Updates: ICICI Bank's beta suggests increased market sensitivity",
+      "headline": "ICICI Bank Share Price Live Updates: ICICI Bank's Current Market Position",
       "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/icici-bank-share-price-live-12-nov-2026/liveblog/135753052.cms",
       "published": "2026-11-12T08:20:27+05:30",
       "description": "",
@@ -182,6 +374,17 @@
       ]
     },
     {
+      "headline": "ONGC Share Price Live Updates: ONGC's Recent Decline Signals Caution",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/ongc-share-price-live-updates-12-nov-2026/liveblog/135753026.cms",
+      "published": "2026-11-12T08:19:15+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/ongc-share-price-live-updates-12-nov-2026/liveblog/135753026.cms",
+      "symbols": [
+        "ONGC"
+      ]
+    },
+    {
       "headline": "India bonds to stay hemmed in by oil, Treasury moves ahead of inflation data",
       "url": "https://economictimes.indiatimes.com/markets/bonds/india-bonds-to-stay-hemmed-in-by-oil-treasury-moves-ahead-of-inflation-data/articleshow/135752937.cms",
       "published": "2026-11-12T08:18:53+05:30",
@@ -189,6 +392,94 @@
       "publisher": "Economic Times",
       "url_normalised": "https://economictimes.indiatimes.com/markets/bonds/india-bonds-to-stay-hemmed-in-by-oil-treasury-moves-ahead-of-inflation-data/articleshow/135752937.cms",
       "symbols": []
+    },
+    {
+      "headline": "Bajaj Auto Share Price Live Updates: Bajaj Auto's Performance Overview",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/bajaj-auto-stock-price-live-updates-12-nov-2026/liveblog/135753019.cms",
+      "published": "2026-11-12T08:18:39+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/bajaj-auto-stock-price-live-updates-12-nov-2026/liveblog/135753019.cms",
+      "symbols": [
+        "BAJAJ-AUTO"
+      ]
+    },
+    {
+      "headline": "Maruti Suzuki Share Price Live Updates: Maruti Suzuki's Market Performance Overview",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/maruti-suzuki-share-price-today-live-updates-12-nov-2026/liveblog/135753015.cms",
+      "published": "2026-11-12T08:18:22+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/maruti-suzuki-share-price-today-live-updates-12-nov-2026/liveblog/135753015.cms",
+      "symbols": [
+        "MARUTI"
+      ]
+    },
+    {
+      "headline": "Britannia Share Price Live Updates: Britannia's Daily Performance Overview",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/britannia-share-price-today-live-updates-12-nov-2026/liveblog/135753007.cms",
+      "published": "2026-11-12T08:18:04+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/britannia-share-price-today-live-updates-12-nov-2026/liveblog/135753007.cms",
+      "symbols": [
+        "BRITANNIA"
+      ]
+    },
+    {
+      "headline": "HDFC Bank Share Price Live Updates: HDFC Bank Stock Details",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/hdfc-bank-stock-price-livestock-price-today-live-updates-12-nov-2026/liveblog/135753001.cms",
+      "published": "2026-11-12T08:17:47+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/hdfc-bank-stock-price-livestock-price-today-live-updates-12-nov-2026/liveblog/135753001.cms",
+      "symbols": [
+        "HDFCBANK"
+      ]
+    },
+    {
+      "headline": "TCS Share Price Live Updates: TCS Trading Insights",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/tcs-share-price-live-12-nov-2026/liveblog/135752992.cms",
+      "published": "2026-11-12T08:17:29+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/tcs-share-price-live-12-nov-2026/liveblog/135752992.cms",
+      "symbols": [
+        "TCS"
+      ]
+    },
+    {
+      "headline": "Wipro Share Price Live Updates: Wipro Stock Details",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/wipro-share-price-live-12-nov-2026/liveblog/135752991.cms",
+      "published": "2026-11-12T08:17:29+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/wipro-share-price-live-12-nov-2026/liveblog/135752991.cms",
+      "symbols": [
+        "WIPRO"
+      ]
+    },
+    {
+      "headline": "Adani Ports SEZ Share Price Live Updates: Adani Ports SEZ Stock Details",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/adani-ports-sez-share-price-live-updates-12-nov-2026/liveblog/135752876.cms",
+      "published": "2026-11-12T08:10:43+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/adani-ports-sez-share-price-live-updates-12-nov-2026/liveblog/135752876.cms",
+      "symbols": [
+        "ADANIPORTS"
+      ]
+    },
+    {
+      "headline": "L&T Share Price Live Updates: L&T's Daily Performance Update",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/lt-stock-price-today-live-12-nov-2026/liveblog/135752869.cms",
+      "published": "2026-11-12T08:10:25+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/lt-stock-price-today-live-12-nov-2026/liveblog/135752869.cms",
+      "symbols": [
+        "LT"
+      ]
     },
     {
       "headline": "Tata Steel Share Price Live Updates: Tata Steel's Current Trading Status",
@@ -241,6 +532,17 @@
       "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/adani-ent-share-price-live-updates-12-nov-2026/liveblog/135752761.cms",
       "symbols": [
         "ADANIENT"
+      ]
+    },
+    {
+      "headline": "Kotak Bank Share Price Live Updates: Kotak Bank's Daily Performance Overview",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/kotak-bank-share-price-today-live-12-nov-2026/liveblog/135752756.cms",
+      "published": "2026-11-12T08:02:01+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/kotak-bank-share-price-today-live-12-nov-2026/liveblog/135752756.cms",
+      "symbols": [
+        "KOTAKBANK"
       ]
     },
     {
@@ -299,130 +601,26 @@
       ]
     },
     {
-      "headline": "Bajaj Finserv Share Price Live Updates: Bajaj Finserv Market Update",
-      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/bajaj-finserv-share-price-live-updates-12-nov-2026/liveblog/135752688.cms",
+      "headline": "M&M Share Price Live Updates: M&M Stock Details",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/mm-stock-price-today-live-12-nov-2026/liveblog/135752699.cms",
+      "published": "2026-11-12T08:00:28+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/mm-stock-price-today-live-12-nov-2026/liveblog/135752699.cms",
+      "symbols": [
+        "M&M"
+      ]
+    },
+    {
+      "headline": "SBI Share Price Live Updates: SBI Stock Details",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/sbi-stock-price-livestock-price-today-live-updates-12-nov-2026/liveblog/135752689.cms",
       "published": "2026-11-12T08:00:09+05:30",
       "description": "",
       "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/bajaj-finserv-share-price-live-updates-12-nov-2026/liveblog/135752688.cms",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/sbi-stock-price-livestock-price-today-live-updates-12-nov-2026/liveblog/135752689.cms",
       "symbols": [
-        "BAJAJFINSV"
+        "SBIN"
       ]
-    },
-    {
-      "headline": "Coal India Share Price Live Updates: Coal India  Volatility Metrics",
-      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/coal-india-ltd-share-price-live-12-nov-2026/liveblog/135752687.cms",
-      "published": "2026-11-12T08:00:09+05:30",
-      "description": "",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/coal-india-ltd-share-price-live-12-nov-2026/liveblog/135752687.cms",
-      "symbols": [
-        "COALINDIA"
-      ]
-    },
-    {
-      "headline": "Stock Market Live Updates: Sensex gains over 300 pts, Nifty above 25,300; financial, media stocks rally",
-      "url": "https://economictimes.indiatimes.com/markets/stocks/live-blog/bse-sensex-today-nifty50-stock-market-live-updates-gift-nifty-tata-power-cupid-share-price-12-november-2026/liveblog/135752335.cms",
-      "published": "2026-11-12T07:26:51+05:30",
-      "description": "",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/live-blog/bse-sensex-today-nifty50-stock-market-live-updates-gift-nifty-tata-power-cupid-share-price-12-november-2026/liveblog/135752335.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Oil prices drop more than $1 as hopes for Iran, Ukraine peace talks pressure markets",
-      "url": "https://economictimes.indiatimes.com/markets/commodities/news/oil-prices-drop-more-than-1-as-hopes-for-iran-ukraine-peace-talks-pressure-markets/articleshow/135752159.cms",
-      "published": "2026-11-12T07:24:50+05:30",
-      "description": "Oil prices dropped more than $1 on Thursday as hopes for progress in peace talks over the Middle East and the Russia-Ukraine wars pressured the market. Brent",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/commodities/news/oil-prices-drop-more-than-1-as-hopes-for-iran-ukraine-peace-talks-pressure-markets/articleshow/135752159.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Wall Street gains as CoreWeave calms AI jitters",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/wall-street-gains-as-coreweave-calms-ai-jitters/articleshow/135752112.cms",
-      "published": "2026-11-12T07:22:23+05:30",
-      "description": "CoreWeave's strong earnings report alleviated investor worries regarding excessive spending in the AI sector. Following this, both the S&P 500 and Nasdaq saw gains exceeding 1%. Nvidia's stock also re",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/us-stocks/news/wall-street-gains-as-coreweave-calms-ai-jitters/articleshow/135752112.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Global Market Today: Asian stocks mixed as Nvidia turmoil hits AI-linked shares",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/global-market-today-us-stock-futures-fall-as-nvidia-turmoil-deepens/articleshow/135751953.cms",
-      "published": "2026-11-12T07:03:51+05:30",
-      "description": "Nasdaq 100 futures fell over 1% and S&P 500 contracts lost 0.5% after Nvidia tumbled about 10% in late trading. The company’s board is meeting to discuss Huang’s future after he admitted to an affair ",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/us-stocks/news/global-market-today-us-stock-futures-fall-as-nvidia-turmoil-deepens/articleshow/135751953.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Bajaj Finance unveils share sale to raise up to $1.25 billion",
-      "url": "https://economictimes.indiatimes.com/markets/stocks/news/bajaj-finance-unveils-share-sale-to-raise-up-to-1-25-billion/articleshow/135751856.cms",
-      "published": "2026-11-12T06:51:48+05:30",
-      "description": "Bajaj Finance has launched a share sale to raise up to ₹117 billion from institutional investors. This offering marks a significant event following a major IPO by Jio Platforms last month. The proceed",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/news/bajaj-finance-unveils-share-sale-to-raise-up-to-1-25-billion/articleshow/135751856.cms",
-      "symbols": [
-        "BAJFINANCE",
-        "JPL"
-      ]
-    },
-    {
-      "headline": "Gold slips as strong US inflation data bolsters dollar, Fed hike expectations",
-      "url": "https://economictimes.indiatimes.com/markets/commodities/news/gold-slips-as-strong-us-inflation-data-bolsters-dollar-fed-hike-expectations/articleshow/135751745.cms",
-      "published": "2026-11-12T06:26:46+05:30",
-      "description": "Gold prices edged lower on Thursday as hotter-than-expected US inflation data and hawkish Federal Reserve commentary lifted the dollar to near a one-month high and reinforced",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/commodities/news/gold-slips-as-strong-us-inflation-data-bolsters-dollar-fed-hike-expectations/articleshow/135751745.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Dollar near one-month high as yen edges toward 160",
-      "url": "https://economictimes.indiatimes.com/markets/forex/forex-news/dollar-near-one-month-high-as-yen-edges-toward-160/articleshow/135751707.cms",
-      "published": "2026-11-12T06:19:16+05:30",
-      "description": "The dollar index, which measures the greenback against a basket of currencies including the yen and the euro, rose 0.63% to 102.85, its highest level since October 14.",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/forex/forex-news/dollar-near-one-month-high-as-yen-edges-toward-160/articleshow/135751707.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Yes Bank bondholders press for compliance with Supreme Court's AT-1 order",
-      "url": "https://economictimes.indiatimes.com/markets/stocks/news/yes-bank-bondholders-press-for-compliance-with-supreme-courts-at-1-order/articleshow/135744450.cms",
-      "published": "2026-11-11T22:25:06+05:30",
-      "description": "Yes Bank bondholders filed a contempt petition in the Supreme Court regarding the restoration of AT-1 bonds. The Supreme Court upheld a ruling that set aside the lender's write-off of 84 billion rupee",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/news/yes-bank-bondholders-press-for-compliance-with-supreme-courts-at-1-order/articleshow/135744450.cms",
-      "symbols": [
-        "YESBANK"
-      ]
-    },
-    {
-      "headline": "Anthropic’s IPO is said to be multiple times oversubscribed",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/anthropics-ipo-is-said-to-be-multiple-times-oversubscribed/articleshow/135743507.cms",
-      "published": "2026-11-11T21:55:21+05:30",
-      "description": "Anthropic PBC is witnessing an overwhelming response for its initial public offering, potentially accumulating up to $90.4 billion. This bullish sentiment reflects a staggering anticipated market valu",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/us-stocks/news/anthropics-ipo-is-said-to-be-multiple-times-oversubscribed/articleshow/135743507.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Market Trading Guide: Astra Microwave among 3 stock recommendations for Thursday",
-      "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-trading-guide-astra-microwave-among-3-stock-recommendations-for-thursday/slideshow/135742034.cms",
-      "published": "2026-11-11T20:44:07+05:30",
-      "description": "Indian equities opened higher on positive global cues but surrendered gains amid rising bond yields and hawkish Fed commentary. Smallcaps outperformed as risk appetite improved. Analysts highlighted s",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/news/market-trading-guide-astra-microwave-among-3-stock-recommendations-for-thursday/slideshow/135742034.cms",
-      "symbols": []
-    },
-    {
-      "headline": "US stocks: S&P 500, Nasdaq rise as CoreWeave results ease AI spending concerns",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/us-stocks-us-market-opens-higher-as-coreweave-lifts-ai-trade/articleshow/135741336.cms",
-      "published": "2026-11-11T20:26:26+05:30",
-      "description": "The S&P 500 and Nasdaq indices showed positive growth as CoreWeave posted impressive financial results, calming fears regarding AI expenditure. Following its projection of reaching profitability by 20",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/us-stocks-us-market-opens-higher-as-coreweave-lifts-ai-trade/articleshow/135741336.cms",
-      "symbols": []
     },
     {
       "headline": "India's net direct tax collections rise 11.8% to Rs 14.42 lakh crore from April 1 to Nov 10",
@@ -431,126 +629,6 @@
       "description": "India's net direct tax collections recorded an increase of 11.76% to reach Rs 14.42 lakh crore. Gross direct tax collections rose by 14.02%, boosting receipts to Rs 17.50 lakh crore. Corporate tax col",
       "publisher": "Economic Times",
       "url_normalised": "https://economictimes.indiatimes.com/news/economy/finance/indias-net-direct-tax-collections-rise-11-8-from-april-1-to-nov-10/articleshow/135741242.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Baird downgrades Nvidia on China curbs, AI demand worries",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/baird-downgrades-nvidia-on-china-curbs-ai-demand-worries/articleshow/135740853.cms",
-      "published": "2026-11-11T20:04:53+05:30",
-      "description": "Baird downgraded Nvidia's stock and cut its price target significantly due to various market risks. Concerns over US restrictions on chip sales to China have emerged, affecting Nvidia's revenue outloo",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/us-stocks/news/baird-downgrades-nvidia-on-china-curbs-ai-demand-worries/articleshow/135740853.cms",
-      "symbols": []
-    },
-    {
-      "headline": "EasyJet shareholders approve £5.7 billion Apollo takeover",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/easyjet-shareholders-approve-5-7-billion-apollo-takeover/articleshow/135740460.cms",
-      "published": "2026-11-11T19:46:04+05:30",
-      "description": "EasyJet's shareholders voted to approve a £5.7 billion takeover by Apollo on Wednesday. This decision marks a major step towards removing EasyJet from the London stock market. With 97.07% of scheme sh",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/us-stocks/news/easyjet-shareholders-approve-5-7-billion-apollo-takeover/articleshow/135740460.cms",
-      "symbols": []
-    },
-    {
-      "headline": "India to switch bonds worth 250 billion rupees next week",
-      "url": "https://economictimes.indiatimes.com/markets/bonds/india-to-switch-bonds-worth-250-billion-rupees-next-week/articleshow/135740426.cms",
-      "published": "2026-11-11T19:43:38+05:30",
-      "description": "On November 16, the Reserve Bank of India will initiate a significant switch auction worth 250 billion rupees. This maneuver involves replacing six bonds that are set to mature between 2027 and 2029 w",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/bonds/india-to-switch-bonds-worth-250-billion-rupees-next-week/articleshow/135740426.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Dollar firms as hot inflation, hawkish Fed talk lift rate-hike bets",
-      "url": "https://economictimes.indiatimes.com/markets/forex/forex-news/dollar-firms-as-hot-inflation-hawkish-fed-talk-lift-rate-hike-bets/articleshow/135739033.cms",
-      "published": "2026-11-11T18:47:36+05:30",
-      "description": "The US dollar has gained against multiple currencies due to expectations of Federal Reserve interest rate hikes. Inflation data revealed an increase in consumer prices, prompting trader speculation ab",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/forex/forex-news/dollar-firms-as-hot-inflation-hawkish-fed-talk-lift-rate-hike-bets/articleshow/135739033.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Nasdaq futures rise nearly 2% as CoreWeave earnings calm AI spending fears",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/nasdaq-futures-rise-nearly-2-as-coreweave-earnings-calm-ai-spending-fears/articleshow/135738901.cms",
-      "published": "2026-11-11T18:43:58+05:30",
-      "description": "Futures for the S&P 500 and Nasdaq 100 have shown gains following CoreWeave's impressive earnings announcement. Investors reacted positively as CoreWeave predicts profitability by the first half of 20",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/us-stocks/news/nasdaq-futures-rise-nearly-2-as-coreweave-earnings-calm-ai-spending-fears/articleshow/135738901.cms",
-      "symbols": []
-    },
-    {
-      "headline": "US stocks end higher as CoreWeave results ease AI spending worries: Stock Market Highlights",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/stock-market-live-updates-dow-jones-nasdaq-sp-500-fed-anthropic-ipo-coreweave-nvidia-marvell-ai-chip-fed-rate-inflation-treasury-yield-news-11th-november-2026/liveblog/135739245.cms",
-      "published": "2026-11-11T18:42:11+05:30",
-      "description": "",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/stock-market-live-updates-dow-jones-nasdaq-sp-500-fed-anthropic-ipo-coreweave-nvidia-marvell-ai-chip-fed-rate-inflation-treasury-yield-news-11th-november-2026/liveblog/135739245.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Fairfax Financial likely to exit IIFL Finance, sources say",
-      "url": "https://economictimes.indiatimes.com/markets/stocks/news/fairfax-financial-likely-to-exit-iifl-finance-sources-say/articleshow/135738516.cms",
-      "published": "2026-11-11T18:39:37+05:30",
-      "description": "Canada's Fairfax Financial Holdings intends to divest its nearly 11% stake in IIFL Finance soon. The sale aims to raise funds for acquiring a significant stake in IDBI Bank from the Indian government.",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/news/fairfax-financial-likely-to-exit-iifl-finance-sources-say/articleshow/135738516.cms",
-      "symbols": [
-        "IIFL",
-        "IDBI"
-      ]
-    },
-    {
-      "headline": "Sterling drops against firmer dollar as markets price in a hawkish Fed",
-      "url": "https://economictimes.indiatimes.com/markets/forex/forex-news/sterling-drops-against-firmer-dollar-as-markets-price-in-a-hawkish-fed/articleshow/135738659.cms",
-      "published": "2026-11-11T18:38:01+05:30",
-      "description": "The pound fell against the dollar following strong US inflation data and comments from Federal Reserve officials. Despite recent hawkish expectations supporting the pound, crude oil prices are rising,",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/forex/forex-news/sterling-drops-against-firmer-dollar-as-markets-price-in-a-hawkish-fed/articleshow/135738659.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Anthropic IPO: A $1.4 trillion bet on the future of AI",
-      "url": "https://economictimes.indiatimes.com/markets/ipos/fpos/anthropic-ipo-a-1-4-trillion-bet-on-the-future-of-ai/videoshow/135738282.cms",
-      "published": "2026-11-11T18:21:21+05:30",
-      "description": "",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/ipos/fpos/anthropic-ipo-a-1-4-trillion-bet-on-the-future-of-ai/videoshow/135738282.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Realty firms' land acquisition falls 56% to 1,445 acres in Jan-Sep: Anarock",
-      "url": "https://economictimes.indiatimes.com/markets/digital-real-estate/realty-news/realty-firms-land-acquisition-falls-56-to-1445-acres-in-jan-sep-anarock/articleshow/135736891.cms",
-      "published": "2026-11-11T17:40:24+05:30",
-      "description": "In the first nine months of 2026, a notable drop in land acquisition activities by Indian real estate firms has been observed. Anarock attributes this decline to developers adopting a cautious strateg",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/digital-real-estate/realty-news/realty-firms-land-acquisition-falls-56-to-1445-acres-in-jan-sep-anarock/articleshow/135736891.cms",
-      "symbols": []
-    },
-    {
-      "headline": "US Treasury rout hands India's 10-year bond its worst day in a month",
-      "url": "https://economictimes.indiatimes.com/markets/bonds/us-treasury-rout-hands-indias-10-year-bond-its-worst-day-in-a-month/articleshow/135736836.cms",
-      "published": "2026-11-11T17:36:33+05:30",
-      "description": "On Wednesday, the Indian rupee gained strength against the dollar, reaching its highest point since April. This improvement was influenced by foreign investments in local stocks and upbeat sentiment i",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/bonds/us-treasury-rout-hands-indias-10-year-bond-its-worst-day-in-a-month/articleshow/135736836.cms",
-      "symbols": []
-    },
-    {
-      "headline": "These 12 midcap stocks rally up to 30% in just one month",
-      "url": "https://economictimes.indiatimes.com/markets/stocks/news/these-12-midcap-stocks-rally-up-to-30-in-just-one-month/slideshow/135734690.cms",
-      "published": "2026-11-11T16:10:03+05:30",
-      "description": "While the Nifty 50 has rallied nearly 11% in a month, several midcap stocks have outperformed the broader index. Here are 12 midcap stocks that have surged between 15% and 30% during this period, acco",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/news/these-12-midcap-stocks-rally-up-to-30-in-just-one-month/slideshow/135734690.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Rupee touches strongest since April as foreign inflows offset firm dollar",
-      "url": "https://economictimes.indiatimes.com/markets/forex/forex-news/rupee-touches-strongest-since-april-as-foreign-inflows-offset-firm-dollar/articleshow/135734005.cms",
-      "published": "2026-11-11T16:07:51+05:30",
-      "description": "On Wednesday, the Indian rupee surged to its healthiest value since April, closing at 93.69 against the dollar. This upswing was driven by a remarkable influx of foreign investments in local stocks, t",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/forex/forex-news/rupee-touches-strongest-since-april-as-foreign-inflows-offset-firm-dollar/articleshow/135734005.cms",
       "symbols": []
     },
     {
@@ -579,26 +657,6 @@
       "publisher": "Economic Times",
       "url_normalised": "https://economictimes.indiatimes.com/news/economy/agriculture/tea-industry-groups-back-panels-proposal-for-minimum-sustainable-price-as-costs-outpace-prices/articleshow/135731591.cms",
       "symbols": []
-    },
-    {
-      "headline": "Bajaj Finance to launch share sale worth up to Rs 11,700 cr this week: Report",
-      "url": "https://economictimes.indiatimes.com/markets/stocks/news/bajaj-finance-said-to-be-set-to-launch-up-to-1-2-billion-share-sale/articleshow/135729545.cms",
-      "published": "2026-11-11T13:06:59+05:30",
-      "description": "Bajaj Finance Ltd. is gearing up for a major share sale aimed at raising an impressive 117 billion rupees. The initiative seeks to draw in institutional investors, with the specifics of the offering c",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/news/bajaj-finance-said-to-be-set-to-launch-up-to-1-2-billion-share-sale/articleshow/135729545.cms",
-      "symbols": [
-        "BAJFINANCE"
-      ]
-    },
-    {
-      "headline": "CoreWeave stock jumps after earnings: 7 things driving the AI cloud company's rally",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/coreweave-stock-jumps-after-earnings-7-things-driving-the-ai-cloud-companys-rally/slideshow/135729203.cms",
-      "published": "2026-11-11T12:31:16+05:30",
-      "description": "​CoreWeave shares surge after beating Q3 earnings expectations, reporting 168% revenue growth and a $132.5 billion backlog, while raising 2026 guidance despite mounting debt and infrastructure spendin",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/us-stocks/news/coreweave-stock-jumps-after-earnings-7-things-driving-the-ai-cloud-companys-rally/slideshow/135729203.cms",
-      "symbols": []
     }
   ],
   "by_symbol": {
@@ -615,6 +673,19 @@
         ]
       }
     ],
+    "ADANIPORTS": [
+      {
+        "headline": "Adani Ports SEZ Share Price Live Updates: Adani Ports SEZ Stock Details",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/adani-ports-sez-share-price-live-updates-12-nov-2026/liveblog/135752876.cms",
+        "published": "2026-11-12T08:10:43+05:30",
+        "description": "",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/adani-ports-sez-share-price-live-updates-12-nov-2026/liveblog/135752876.cms",
+        "symbols": [
+          "ADANIPORTS"
+        ]
+      }
+    ],
     "ASIANPAINT": [
       {
         "headline": "Asian Paints Share Price Live Updates: Asian Paints Breaks Above Key Moving Average Level",
@@ -628,39 +699,40 @@
         ]
       }
     ],
-    "BAJAJFINSV": [
+    "AXISBANK": [
       {
-        "headline": "Bajaj Finserv Share Price Live Updates: Bajaj Finserv Market Update",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/bajaj-finserv-share-price-live-updates-12-nov-2026/liveblog/135752688.cms",
-        "published": "2026-11-12T08:00:09+05:30",
+        "headline": "Axis Bank Share Price Live Updates: Axis Bank Stock Details",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/axis-bank-share-price-live-12-nov-2026/liveblog/135753254.cms",
+        "published": "2026-11-12T08:32:00+05:30",
         "description": "",
         "publisher": "Economic Times",
-        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/bajaj-finserv-share-price-live-updates-12-nov-2026/liveblog/135752688.cms",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/axis-bank-share-price-live-12-nov-2026/liveblog/135753254.cms",
         "symbols": [
-          "BAJAJFINSV"
+          "AXISBANK"
+        ]
+      }
+    ],
+    "BAJAJ-AUTO": [
+      {
+        "headline": "Bajaj Auto Share Price Live Updates: Bajaj Auto's Performance Overview",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/bajaj-auto-stock-price-live-updates-12-nov-2026/liveblog/135753019.cms",
+        "published": "2026-11-12T08:18:39+05:30",
+        "description": "",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/bajaj-auto-stock-price-live-updates-12-nov-2026/liveblog/135753019.cms",
+        "symbols": [
+          "BAJAJ-AUTO"
         ]
       }
     ],
     "BAJFINANCE": [
       {
-        "headline": "Bajaj Finance unveils share sale to raise up to $1.25 billion",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/bajaj-finance-unveils-share-sale-to-raise-up-to-1-25-billion/articleshow/135751856.cms",
-        "published": "2026-11-12T06:51:48+05:30",
-        "description": "Bajaj Finance has launched a share sale to raise up to ₹117 billion from institutional investors. This offering marks a significant event following a major IPO by Jio Platforms last month. The proceed",
+        "headline": "Bajaj Finance Share Price Live Updates: Bajaj Finance Stock Details",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/bajaj-finance-share-price-live-updates-12-nov-2026/liveblog/135753231.cms",
+        "published": "2026-11-12T08:30:46+05:30",
+        "description": "",
         "publisher": "Economic Times",
-        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/news/bajaj-finance-unveils-share-sale-to-raise-up-to-1-25-billion/articleshow/135751856.cms",
-        "symbols": [
-          "BAJFINANCE",
-          "JPL"
-        ]
-      },
-      {
-        "headline": "Bajaj Finance to launch share sale worth up to Rs 11,700 cr this week: Report",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/bajaj-finance-said-to-be-set-to-launch-up-to-1-2-billion-share-sale/articleshow/135729545.cms",
-        "published": "2026-11-11T13:06:59+05:30",
-        "description": "Bajaj Finance Ltd. is gearing up for a major share sale aimed at raising an impressive 117 billion rupees. The initiative seeks to draw in institutional investors, with the specifics of the offering c",
-        "publisher": "Economic Times",
-        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/news/bajaj-finance-said-to-be-set-to-launch-up-to-1-2-billion-share-sale/articleshow/135729545.cms",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/bajaj-finance-share-price-live-updates-12-nov-2026/liveblog/135753231.cms",
         "symbols": [
           "BAJFINANCE"
         ]
@@ -692,22 +764,87 @@
         ]
       }
     ],
-    "COALINDIA": [
+    "BRITANNIA": [
       {
-        "headline": "Coal India Share Price Live Updates: Coal India  Volatility Metrics",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/coal-india-ltd-share-price-live-12-nov-2026/liveblog/135752687.cms",
-        "published": "2026-11-12T08:00:09+05:30",
+        "headline": "Britannia Share Price Live Updates: Britannia's Daily Performance Overview",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/britannia-share-price-today-live-updates-12-nov-2026/liveblog/135753007.cms",
+        "published": "2026-11-12T08:18:04+05:30",
         "description": "",
         "publisher": "Economic Times",
-        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/coal-india-ltd-share-price-live-12-nov-2026/liveblog/135752687.cms",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/britannia-share-price-today-live-updates-12-nov-2026/liveblog/135753007.cms",
         "symbols": [
-          "COALINDIA"
+          "BRITANNIA"
+        ]
+      }
+    ],
+    "CIPLA": [
+      {
+        "headline": "Cipla Share Price Live Updates: Cipla's Daily Performance Update",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/cipla-stock-price-today-live-12-nov-2026/liveblog/135753318.cms",
+        "published": "2026-11-12T08:35:29+05:30",
+        "description": "",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/cipla-stock-price-today-live-12-nov-2026/liveblog/135753318.cms",
+        "symbols": [
+          "CIPLA"
+        ]
+      }
+    ],
+    "DIVISLAB": [
+      {
+        "headline": "Divis Labs Share Price Live Updates: Divis Labs Trading Insights",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/divis-labs-share-price-today-live-updates-12-nov-2026/liveblog/135753606.cms",
+        "published": "2026-11-12T08:50:11+05:30",
+        "description": "",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/divis-labs-share-price-today-live-updates-12-nov-2026/liveblog/135753606.cms",
+        "symbols": [
+          "DIVISLAB"
+        ]
+      }
+    ],
+    "EICHERMOT": [
+      {
+        "headline": "Eicher Motors Share Price Live Updates: Eicher Motors Price Movement",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/eicher-motors-stock-price-live-updates-12-nov-2026/liveblog/135753520.cms",
+        "published": "2026-11-12T08:45:05+05:30",
+        "description": "",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/eicher-motors-stock-price-live-updates-12-nov-2026/liveblog/135753520.cms",
+        "symbols": [
+          "EICHERMOT"
+        ]
+      }
+    ],
+    "GRASIM": [
+      {
+        "headline": "Grasim Inds Share Price Live Updates: Grasim Inds. Stock Details",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/grasim-inds-share-price-today-live-updates-12-nov-2026/liveblog/135753396.cms",
+        "published": "2026-11-12T08:40:22+05:30",
+        "description": "",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/grasim-inds-share-price-today-live-updates-12-nov-2026/liveblog/135753396.cms",
+        "symbols": [
+          "GRASIM"
+        ]
+      }
+    ],
+    "HDFCBANK": [
+      {
+        "headline": "HDFC Bank Share Price Live Updates: HDFC Bank Stock Details",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/hdfc-bank-stock-price-livestock-price-today-live-updates-12-nov-2026/liveblog/135753001.cms",
+        "published": "2026-11-12T08:17:47+05:30",
+        "description": "",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/hdfc-bank-stock-price-livestock-price-today-live-updates-12-nov-2026/liveblog/135753001.cms",
+        "symbols": [
+          "HDFCBANK"
         ]
       }
     ],
     "HDFCLIFE": [
       {
-        "headline": "HDFC Life Share Price Live Updates: HDFC Life Surpasses Key Resistance Level",
+        "headline": "HDFC Life Share Price Live Updates: HDFC Life's Market Performance",
         "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/hdfc-life-share-price-today-live-updates-12-nov-2026/liveblog/135753066.cms",
         "published": "2026-11-12T08:21:23+05:30",
         "description": "",
@@ -715,6 +852,19 @@
         "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/hdfc-life-share-price-today-live-updates-12-nov-2026/liveblog/135753066.cms",
         "symbols": [
           "HDFCLIFE"
+        ]
+      }
+    ],
+    "HEROMOTOCO": [
+      {
+        "headline": "Hero MotoCorp Share Price Live Updates: Hero MotoCorp's Current Trading Status",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/hero-motocorp-stock-price-today-live-12-nov-2026/liveblog/135753143.cms",
+        "published": "2026-11-12T08:26:07+05:30",
+        "description": "",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/hero-motocorp-stock-price-today-live-12-nov-2026/liveblog/135753143.cms",
+        "symbols": [
+          "HEROMOTOCO"
         ]
       }
     ],
@@ -746,7 +896,7 @@
     ],
     "ICICIBANK": [
       {
-        "headline": "ICICI Bank Share Price Live Updates: ICICI Bank's beta suggests increased market sensitivity",
+        "headline": "ICICI Bank Share Price Live Updates: ICICI Bank's Current Market Position",
         "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/icici-bank-share-price-live-12-nov-2026/liveblog/135753052.cms",
         "published": "2026-11-12T08:20:27+05:30",
         "description": "",
@@ -754,34 +904,6 @@
         "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/icici-bank-share-price-live-12-nov-2026/liveblog/135753052.cms",
         "symbols": [
           "ICICIBANK"
-        ]
-      }
-    ],
-    "IDBI": [
-      {
-        "headline": "Fairfax Financial likely to exit IIFL Finance, sources say",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/fairfax-financial-likely-to-exit-iifl-finance-sources-say/articleshow/135738516.cms",
-        "published": "2026-11-11T18:39:37+05:30",
-        "description": "Canada's Fairfax Financial Holdings intends to divest its nearly 11% stake in IIFL Finance soon. The sale aims to raise funds for acquiring a significant stake in IDBI Bank from the Indian government.",
-        "publisher": "Economic Times",
-        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/news/fairfax-financial-likely-to-exit-iifl-finance-sources-say/articleshow/135738516.cms",
-        "symbols": [
-          "IIFL",
-          "IDBI"
-        ]
-      }
-    ],
-    "IIFL": [
-      {
-        "headline": "Fairfax Financial likely to exit IIFL Finance, sources say",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/fairfax-financial-likely-to-exit-iifl-finance-sources-say/articleshow/135738516.cms",
-        "published": "2026-11-11T18:39:37+05:30",
-        "description": "Canada's Fairfax Financial Holdings intends to divest its nearly 11% stake in IIFL Finance soon. The sale aims to raise funds for acquiring a significant stake in IDBI Bank from the Indian government.",
-        "publisher": "Economic Times",
-        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/news/fairfax-financial-likely-to-exit-iifl-finance-sources-say/articleshow/135738516.cms",
-        "symbols": [
-          "IIFL",
-          "IDBI"
         ]
       }
     ],
@@ -811,17 +933,55 @@
         ]
       }
     ],
-    "JPL": [
+    "ITC": [
       {
-        "headline": "Bajaj Finance unveils share sale to raise up to $1.25 billion",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/bajaj-finance-unveils-share-sale-to-raise-up-to-1-25-billion/articleshow/135751856.cms",
-        "published": "2026-11-12T06:51:48+05:30",
-        "description": "Bajaj Finance has launched a share sale to raise up to ₹117 billion from institutional investors. This offering marks a significant event following a major IPO by Jio Platforms last month. The proceed",
+        "headline": "ITC Share Price Live Updates: ITC Stock Details",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/itc-share-price-today-live-12-nov-2026/liveblog/135753807.cms",
+        "published": "2026-11-12T09:00:23+05:30",
+        "description": "",
         "publisher": "Economic Times",
-        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/news/bajaj-finance-unveils-share-sale-to-raise-up-to-1-25-billion/articleshow/135751856.cms",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/itc-share-price-today-live-12-nov-2026/liveblog/135753807.cms",
         "symbols": [
-          "BAJFINANCE",
-          "JPL"
+          "ITC"
+        ]
+      }
+    ],
+    "JIOFIN": [
+      {
+        "headline": "Jio Financial Services Share Price Live Updates: Jio Financial Services Surges Above 100-Day SMA",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/jio-financial-services-share-price-today-live-12-nov-2026/liveblog/135753130.cms",
+        "published": "2026-11-12T08:25:32+05:30",
+        "description": "",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/jio-financial-services-share-price-today-live-12-nov-2026/liveblog/135753130.cms",
+        "symbols": [
+          "JIOFIN"
+        ]
+      }
+    ],
+    "KOTAKBANK": [
+      {
+        "headline": "Kotak Bank Share Price Live Updates: Kotak Bank's Daily Performance Overview",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/kotak-bank-share-price-today-live-12-nov-2026/liveblog/135752756.cms",
+        "published": "2026-11-12T08:02:01+05:30",
+        "description": "",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/kotak-bank-share-price-today-live-12-nov-2026/liveblog/135752756.cms",
+        "symbols": [
+          "KOTAKBANK"
+        ]
+      }
+    ],
+    "LT": [
+      {
+        "headline": "L&T Share Price Live Updates: L&T's Daily Performance Update",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/lt-stock-price-today-live-12-nov-2026/liveblog/135752869.cms",
+        "published": "2026-11-12T08:10:25+05:30",
+        "description": "",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/lt-stock-price-today-live-12-nov-2026/liveblog/135752869.cms",
+        "symbols": [
+          "LT"
         ]
       }
     ],
@@ -835,6 +995,45 @@
         "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/ltimindtree-stock-price-livestock-price-today-live-updates-12-nov-2026/liveblog/135752863.cms",
         "symbols": [
           "LTIM"
+        ]
+      }
+    ],
+    "M&M": [
+      {
+        "headline": "M&M Share Price Live Updates: M&M Stock Details",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/mm-stock-price-today-live-12-nov-2026/liveblog/135752699.cms",
+        "published": "2026-11-12T08:00:28+05:30",
+        "description": "",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/mm-stock-price-today-live-12-nov-2026/liveblog/135752699.cms",
+        "symbols": [
+          "M&M"
+        ]
+      }
+    ],
+    "MARUTI": [
+      {
+        "headline": "Maruti Suzuki Share Price Live Updates: Maruti Suzuki's Market Performance Overview",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/maruti-suzuki-share-price-today-live-updates-12-nov-2026/liveblog/135753015.cms",
+        "published": "2026-11-12T08:18:22+05:30",
+        "description": "",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/maruti-suzuki-share-price-today-live-updates-12-nov-2026/liveblog/135753015.cms",
+        "symbols": [
+          "MARUTI"
+        ]
+      }
+    ],
+    "NESTLEIND": [
+      {
+        "headline": "Nestle India Share Price Live Updates: Nestle India Current Price Update",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/nestle-india-stock-price-today-live-12-nov-2026/liveblog/135753223.cms",
+        "published": "2026-11-12T08:30:29+05:30",
+        "description": "",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/nestle-india-stock-price-today-live-12-nov-2026/liveblog/135753223.cms",
+        "symbols": [
+          "NESTLEIND"
         ]
       }
     ],
@@ -861,6 +1060,71 @@
         "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/news/oil-india-among-6-stocks-closing-above-vwap/slideshow/135755140.cms",
         "symbols": [
           "OIL"
+        ]
+      }
+    ],
+    "ONGC": [
+      {
+        "headline": "ONGC Share Price Live Updates: ONGC's Recent Decline Signals Caution",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/ongc-share-price-live-updates-12-nov-2026/liveblog/135753026.cms",
+        "published": "2026-11-12T08:19:15+05:30",
+        "description": "",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/ongc-share-price-live-updates-12-nov-2026/liveblog/135753026.cms",
+        "symbols": [
+          "ONGC"
+        ]
+      }
+    ],
+    "POWERGRID": [
+      {
+        "headline": "Power Grid Share Price Live Updates: Power Grid Stock Details",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/power-grid-share-price-today-live-updates-12-nov-2026/liveblog/135753153.cms",
+        "published": "2026-11-12T08:26:25+05:30",
+        "description": "",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/power-grid-share-price-today-live-updates-12-nov-2026/liveblog/135753153.cms",
+        "symbols": [
+          "POWERGRID"
+        ]
+      }
+    ],
+    "RELIANCE": [
+      {
+        "headline": "RIL Share Price Live Updates: RIL's Current Market Price",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/ril-stock-price-today-live-12-nov-2026/liveblog/135753316.cms",
+        "published": "2026-11-12T08:35:24+05:30",
+        "description": "",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/ril-stock-price-today-live-12-nov-2026/liveblog/135753316.cms",
+        "symbols": [
+          "RELIANCE"
+        ]
+      }
+    ],
+    "SBILIFE": [
+      {
+        "headline": "SBI Life Share Price Live Updates: SBI Life Stock Details",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/sbi-life-share-price-live-12-nov-2026/liveblog/135753244.cms",
+        "published": "2026-11-12T08:31:23+05:30",
+        "description": "",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/sbi-life-share-price-live-12-nov-2026/liveblog/135753244.cms",
+        "symbols": [
+          "SBILIFE"
+        ]
+      }
+    ],
+    "SBIN": [
+      {
+        "headline": "SBI Share Price Live Updates: SBI Stock Details",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/sbi-stock-price-livestock-price-today-live-updates-12-nov-2026/liveblog/135752689.cms",
+        "published": "2026-11-12T08:00:09+05:30",
+        "description": "",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/sbi-stock-price-livestock-price-today-live-updates-12-nov-2026/liveblog/135752689.cms",
+        "symbols": [
+          "SBIN"
         ]
       }
     ],
@@ -916,21 +1180,78 @@
         ]
       }
     ],
-    "YESBANK": [
+    "TCS": [
       {
-        "headline": "Yes Bank bondholders press for compliance with Supreme Court's AT-1 order",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/news/yes-bank-bondholders-press-for-compliance-with-supreme-courts-at-1-order/articleshow/135744450.cms",
-        "published": "2026-11-11T22:25:06+05:30",
-        "description": "Yes Bank bondholders filed a contempt petition in the Supreme Court regarding the restoration of AT-1 bonds. The Supreme Court upheld a ruling that set aside the lender's write-off of 84 billion rupee",
+        "headline": "TCS Share Price Live Updates: TCS Trading Insights",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/tcs-share-price-live-12-nov-2026/liveblog/135752992.cms",
+        "published": "2026-11-12T08:17:29+05:30",
+        "description": "",
         "publisher": "Economic Times",
-        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/news/yes-bank-bondholders-press-for-compliance-with-supreme-courts-at-1-order/articleshow/135744450.cms",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/tcs-share-price-live-12-nov-2026/liveblog/135752992.cms",
         "symbols": [
-          "YESBANK"
+          "TCS"
+        ]
+      }
+    ],
+    "ULTRACEMCO": [
+      {
+        "headline": "UltraTech Cem Share Price Live Updates: UltraTech Cem. Stock Details",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/ultratech-cem-share-price-live-12-nov-2026/liveblog/135753062.cms",
+        "published": "2026-11-12T08:21:05+05:30",
+        "description": "",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/ultratech-cem-share-price-live-12-nov-2026/liveblog/135753062.cms",
+        "symbols": [
+          "ULTRACEMCO"
+        ]
+      }
+    ],
+    "VMM": [
+      {
+        "headline": "Vishal Mega Mart among 5 stocks showing RSI trending up",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/news/vishal-mega-mart-among-5-stocks-showing-rsi-trending-up/slideshow/135755604.cms",
+        "published": "2026-11-12T10:06:34+05:30",
+        "description": "Five Nifty500 stocks that gained over 4.5% on November 11 featured in StockEdge’s RSI Trending Up scan, with their Relative Strength Index (RSI) crossing above 50 from below, signalling strengthening ",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/news/vishal-mega-mart-among-5-stocks-showing-rsi-trending-up/slideshow/135755604.cms",
+        "symbols": [
+          "VMM"
+        ]
+      }
+    ],
+    "WIPRO": [
+      {
+        "headline": "Wipro Share Price Live Updates: Wipro Stock Details",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/wipro-share-price-live-12-nov-2026/liveblog/135752991.cms",
+        "published": "2026-11-12T08:17:29+05:30",
+        "description": "",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/wipro-share-price-live-12-nov-2026/liveblog/135752991.cms",
+        "symbols": [
+          "WIPRO"
         ]
       }
     ]
   },
   "unmapped": [
+    {
+      "headline": "From SpaceX to Anthropic, markets have a new playbook for mega-share debuts",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/news/from-spacex-to-anthropic-markets-have-a-new-playbook-for-mega-share-debuts/articleshow/135756798.cms",
+      "published": "2026-11-12T11:05:33+05:30",
+      "description": "Anthropic is gearing up for its highly anticipated IPO, aiming to raise as much as $64.4 billion with share prices ranging from $70 to $78. The company is targeting inclusion in major indexes soon aft",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/news/from-spacex-to-anthropic-markets-have-a-new-playbook-for-mega-share-debuts/articleshow/135756798.cms",
+      "symbols": []
+    },
+    {
+      "headline": "Dr Reddys Share Price Live Updates: Dr. Reddys Current Price Update",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/dr-reddys-share-price-live-updates-12-nov-2026/liveblog/135754002.cms",
+      "published": "2026-11-12T09:06:31+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/dr-reddys-share-price-live-updates-12-nov-2026/liveblog/135754002.cms",
+      "symbols": []
+    },
     {
       "headline": "Nvidia shares plummet 10% in after-hours trade as investors consider a future without Huang",
       "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/nvidia-shares-slide-as-investors-consider-future-without-huang/articleshow/135753594.cms",
@@ -950,7 +1271,16 @@
       "symbols": []
     },
     {
-      "headline": "HCL Tech Share Price Live Updates: HCL Tech's three-month return insights",
+      "headline": "UPL Share Price Live Updates: UPL  Stock Details",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/upl-share-price-live-12-nov-2026/liveblog/135753213.cms",
+      "published": "2026-11-12T08:30:10+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/upl-share-price-live-12-nov-2026/liveblog/135753213.cms",
+      "symbols": []
+    },
+    {
+      "headline": "HCL Tech Share Price Live Updates: HCL Tech Sees Slight Decline Today",
       "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/hcl-tech-stock-price-today-live-12-nov-2026/liveblog/135753053.cms",
       "published": "2026-11-12T08:20:27+05:30",
       "description": "",
@@ -977,201 +1307,12 @@
       "symbols": []
     },
     {
-      "headline": "Stock Market Live Updates: Sensex gains over 300 pts, Nifty above 25,300; financial, media stocks rally",
-      "url": "https://economictimes.indiatimes.com/markets/stocks/live-blog/bse-sensex-today-nifty50-stock-market-live-updates-gift-nifty-tata-power-cupid-share-price-12-november-2026/liveblog/135752335.cms",
-      "published": "2026-11-12T07:26:51+05:30",
-      "description": "",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/live-blog/bse-sensex-today-nifty50-stock-market-live-updates-gift-nifty-tata-power-cupid-share-price-12-november-2026/liveblog/135752335.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Oil prices drop more than $1 as hopes for Iran, Ukraine peace talks pressure markets",
-      "url": "https://economictimes.indiatimes.com/markets/commodities/news/oil-prices-drop-more-than-1-as-hopes-for-iran-ukraine-peace-talks-pressure-markets/articleshow/135752159.cms",
-      "published": "2026-11-12T07:24:50+05:30",
-      "description": "Oil prices dropped more than $1 on Thursday as hopes for progress in peace talks over the Middle East and the Russia-Ukraine wars pressured the market. Brent",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/commodities/news/oil-prices-drop-more-than-1-as-hopes-for-iran-ukraine-peace-talks-pressure-markets/articleshow/135752159.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Wall Street gains as CoreWeave calms AI jitters",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/wall-street-gains-as-coreweave-calms-ai-jitters/articleshow/135752112.cms",
-      "published": "2026-11-12T07:22:23+05:30",
-      "description": "CoreWeave's strong earnings report alleviated investor worries regarding excessive spending in the AI sector. Following this, both the S&P 500 and Nasdaq saw gains exceeding 1%. Nvidia's stock also re",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/us-stocks/news/wall-street-gains-as-coreweave-calms-ai-jitters/articleshow/135752112.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Global Market Today: Asian stocks mixed as Nvidia turmoil hits AI-linked shares",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/global-market-today-us-stock-futures-fall-as-nvidia-turmoil-deepens/articleshow/135751953.cms",
-      "published": "2026-11-12T07:03:51+05:30",
-      "description": "Nasdaq 100 futures fell over 1% and S&P 500 contracts lost 0.5% after Nvidia tumbled about 10% in late trading. The company’s board is meeting to discuss Huang’s future after he admitted to an affair ",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/us-stocks/news/global-market-today-us-stock-futures-fall-as-nvidia-turmoil-deepens/articleshow/135751953.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Gold slips as strong US inflation data bolsters dollar, Fed hike expectations",
-      "url": "https://economictimes.indiatimes.com/markets/commodities/news/gold-slips-as-strong-us-inflation-data-bolsters-dollar-fed-hike-expectations/articleshow/135751745.cms",
-      "published": "2026-11-12T06:26:46+05:30",
-      "description": "Gold prices edged lower on Thursday as hotter-than-expected US inflation data and hawkish Federal Reserve commentary lifted the dollar to near a one-month high and reinforced",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/commodities/news/gold-slips-as-strong-us-inflation-data-bolsters-dollar-fed-hike-expectations/articleshow/135751745.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Dollar near one-month high as yen edges toward 160",
-      "url": "https://economictimes.indiatimes.com/markets/forex/forex-news/dollar-near-one-month-high-as-yen-edges-toward-160/articleshow/135751707.cms",
-      "published": "2026-11-12T06:19:16+05:30",
-      "description": "The dollar index, which measures the greenback against a basket of currencies including the yen and the euro, rose 0.63% to 102.85, its highest level since October 14.",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/forex/forex-news/dollar-near-one-month-high-as-yen-edges-toward-160/articleshow/135751707.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Anthropic’s IPO is said to be multiple times oversubscribed",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/anthropics-ipo-is-said-to-be-multiple-times-oversubscribed/articleshow/135743507.cms",
-      "published": "2026-11-11T21:55:21+05:30",
-      "description": "Anthropic PBC is witnessing an overwhelming response for its initial public offering, potentially accumulating up to $90.4 billion. This bullish sentiment reflects a staggering anticipated market valu",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/us-stocks/news/anthropics-ipo-is-said-to-be-multiple-times-oversubscribed/articleshow/135743507.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Market Trading Guide: Astra Microwave among 3 stock recommendations for Thursday",
-      "url": "https://economictimes.indiatimes.com/markets/stocks/news/market-trading-guide-astra-microwave-among-3-stock-recommendations-for-thursday/slideshow/135742034.cms",
-      "published": "2026-11-11T20:44:07+05:30",
-      "description": "Indian equities opened higher on positive global cues but surrendered gains amid rising bond yields and hawkish Fed commentary. Smallcaps outperformed as risk appetite improved. Analysts highlighted s",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/news/market-trading-guide-astra-microwave-among-3-stock-recommendations-for-thursday/slideshow/135742034.cms",
-      "symbols": []
-    },
-    {
-      "headline": "US stocks: S&P 500, Nasdaq rise as CoreWeave results ease AI spending concerns",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/us-stocks-us-market-opens-higher-as-coreweave-lifts-ai-trade/articleshow/135741336.cms",
-      "published": "2026-11-11T20:26:26+05:30",
-      "description": "The S&P 500 and Nasdaq indices showed positive growth as CoreWeave posted impressive financial results, calming fears regarding AI expenditure. Following its projection of reaching profitability by 20",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/us-stocks-us-market-opens-higher-as-coreweave-lifts-ai-trade/articleshow/135741336.cms",
-      "symbols": []
-    },
-    {
       "headline": "India's net direct tax collections rise 11.8% to Rs 14.42 lakh crore from April 1 to Nov 10",
       "url": "https://economictimes.indiatimes.com/news/economy/finance/indias-net-direct-tax-collections-rise-11-8-from-april-1-to-nov-10/articleshow/135741242.cms",
       "published": "2026-11-11T20:20:11+05:30",
       "description": "India's net direct tax collections recorded an increase of 11.76% to reach Rs 14.42 lakh crore. Gross direct tax collections rose by 14.02%, boosting receipts to Rs 17.50 lakh crore. Corporate tax col",
       "publisher": "Economic Times",
       "url_normalised": "https://economictimes.indiatimes.com/news/economy/finance/indias-net-direct-tax-collections-rise-11-8-from-april-1-to-nov-10/articleshow/135741242.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Baird downgrades Nvidia on China curbs, AI demand worries",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/baird-downgrades-nvidia-on-china-curbs-ai-demand-worries/articleshow/135740853.cms",
-      "published": "2026-11-11T20:04:53+05:30",
-      "description": "Baird downgraded Nvidia's stock and cut its price target significantly due to various market risks. Concerns over US restrictions on chip sales to China have emerged, affecting Nvidia's revenue outloo",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/us-stocks/news/baird-downgrades-nvidia-on-china-curbs-ai-demand-worries/articleshow/135740853.cms",
-      "symbols": []
-    },
-    {
-      "headline": "EasyJet shareholders approve £5.7 billion Apollo takeover",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/easyjet-shareholders-approve-5-7-billion-apollo-takeover/articleshow/135740460.cms",
-      "published": "2026-11-11T19:46:04+05:30",
-      "description": "EasyJet's shareholders voted to approve a £5.7 billion takeover by Apollo on Wednesday. This decision marks a major step towards removing EasyJet from the London stock market. With 97.07% of scheme sh",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/us-stocks/news/easyjet-shareholders-approve-5-7-billion-apollo-takeover/articleshow/135740460.cms",
-      "symbols": []
-    },
-    {
-      "headline": "India to switch bonds worth 250 billion rupees next week",
-      "url": "https://economictimes.indiatimes.com/markets/bonds/india-to-switch-bonds-worth-250-billion-rupees-next-week/articleshow/135740426.cms",
-      "published": "2026-11-11T19:43:38+05:30",
-      "description": "On November 16, the Reserve Bank of India will initiate a significant switch auction worth 250 billion rupees. This maneuver involves replacing six bonds that are set to mature between 2027 and 2029 w",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/bonds/india-to-switch-bonds-worth-250-billion-rupees-next-week/articleshow/135740426.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Dollar firms as hot inflation, hawkish Fed talk lift rate-hike bets",
-      "url": "https://economictimes.indiatimes.com/markets/forex/forex-news/dollar-firms-as-hot-inflation-hawkish-fed-talk-lift-rate-hike-bets/articleshow/135739033.cms",
-      "published": "2026-11-11T18:47:36+05:30",
-      "description": "The US dollar has gained against multiple currencies due to expectations of Federal Reserve interest rate hikes. Inflation data revealed an increase in consumer prices, prompting trader speculation ab",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/forex/forex-news/dollar-firms-as-hot-inflation-hawkish-fed-talk-lift-rate-hike-bets/articleshow/135739033.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Nasdaq futures rise nearly 2% as CoreWeave earnings calm AI spending fears",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/nasdaq-futures-rise-nearly-2-as-coreweave-earnings-calm-ai-spending-fears/articleshow/135738901.cms",
-      "published": "2026-11-11T18:43:58+05:30",
-      "description": "Futures for the S&P 500 and Nasdaq 100 have shown gains following CoreWeave's impressive earnings announcement. Investors reacted positively as CoreWeave predicts profitability by the first half of 20",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/us-stocks/news/nasdaq-futures-rise-nearly-2-as-coreweave-earnings-calm-ai-spending-fears/articleshow/135738901.cms",
-      "symbols": []
-    },
-    {
-      "headline": "US stocks end higher as CoreWeave results ease AI spending worries: Stock Market Highlights",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/stock-market-live-updates-dow-jones-nasdaq-sp-500-fed-anthropic-ipo-coreweave-nvidia-marvell-ai-chip-fed-rate-inflation-treasury-yield-news-11th-november-2026/liveblog/135739245.cms",
-      "published": "2026-11-11T18:42:11+05:30",
-      "description": "",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/stock-market-live-updates-dow-jones-nasdaq-sp-500-fed-anthropic-ipo-coreweave-nvidia-marvell-ai-chip-fed-rate-inflation-treasury-yield-news-11th-november-2026/liveblog/135739245.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Sterling drops against firmer dollar as markets price in a hawkish Fed",
-      "url": "https://economictimes.indiatimes.com/markets/forex/forex-news/sterling-drops-against-firmer-dollar-as-markets-price-in-a-hawkish-fed/articleshow/135738659.cms",
-      "published": "2026-11-11T18:38:01+05:30",
-      "description": "The pound fell against the dollar following strong US inflation data and comments from Federal Reserve officials. Despite recent hawkish expectations supporting the pound, crude oil prices are rising,",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/forex/forex-news/sterling-drops-against-firmer-dollar-as-markets-price-in-a-hawkish-fed/articleshow/135738659.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Anthropic IPO: A $1.4 trillion bet on the future of AI",
-      "url": "https://economictimes.indiatimes.com/markets/ipos/fpos/anthropic-ipo-a-1-4-trillion-bet-on-the-future-of-ai/videoshow/135738282.cms",
-      "published": "2026-11-11T18:21:21+05:30",
-      "description": "",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/ipos/fpos/anthropic-ipo-a-1-4-trillion-bet-on-the-future-of-ai/videoshow/135738282.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Realty firms' land acquisition falls 56% to 1,445 acres in Jan-Sep: Anarock",
-      "url": "https://economictimes.indiatimes.com/markets/digital-real-estate/realty-news/realty-firms-land-acquisition-falls-56-to-1445-acres-in-jan-sep-anarock/articleshow/135736891.cms",
-      "published": "2026-11-11T17:40:24+05:30",
-      "description": "In the first nine months of 2026, a notable drop in land acquisition activities by Indian real estate firms has been observed. Anarock attributes this decline to developers adopting a cautious strateg",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/digital-real-estate/realty-news/realty-firms-land-acquisition-falls-56-to-1445-acres-in-jan-sep-anarock/articleshow/135736891.cms",
-      "symbols": []
-    },
-    {
-      "headline": "US Treasury rout hands India's 10-year bond its worst day in a month",
-      "url": "https://economictimes.indiatimes.com/markets/bonds/us-treasury-rout-hands-indias-10-year-bond-its-worst-day-in-a-month/articleshow/135736836.cms",
-      "published": "2026-11-11T17:36:33+05:30",
-      "description": "On Wednesday, the Indian rupee gained strength against the dollar, reaching its highest point since April. This improvement was influenced by foreign investments in local stocks and upbeat sentiment i",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/bonds/us-treasury-rout-hands-indias-10-year-bond-its-worst-day-in-a-month/articleshow/135736836.cms",
-      "symbols": []
-    },
-    {
-      "headline": "These 12 midcap stocks rally up to 30% in just one month",
-      "url": "https://economictimes.indiatimes.com/markets/stocks/news/these-12-midcap-stocks-rally-up-to-30-in-just-one-month/slideshow/135734690.cms",
-      "published": "2026-11-11T16:10:03+05:30",
-      "description": "While the Nifty 50 has rallied nearly 11% in a month, several midcap stocks have outperformed the broader index. Here are 12 midcap stocks that have surged between 15% and 30% during this period, acco",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/news/these-12-midcap-stocks-rally-up-to-30-in-just-one-month/slideshow/135734690.cms",
-      "symbols": []
-    },
-    {
-      "headline": "Rupee touches strongest since April as foreign inflows offset firm dollar",
-      "url": "https://economictimes.indiatimes.com/markets/forex/forex-news/rupee-touches-strongest-since-april-as-foreign-inflows-offset-firm-dollar/articleshow/135734005.cms",
-      "published": "2026-11-11T16:07:51+05:30",
-      "description": "On Wednesday, the Indian rupee surged to its healthiest value since April, closing at 93.69 against the dollar. This upswing was driven by a remarkable influx of foreign investments in local stocks, t",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/forex/forex-news/rupee-touches-strongest-since-april-as-foreign-inflows-offset-firm-dollar/articleshow/135734005.cms",
       "symbols": []
     },
     {
@@ -1199,15 +1340,6 @@
       "description": "Five tea industry associations have welcomed the government committee's recommendation for a minimum sustainable price for tea. This recommendation aims to address rising production costs that are exc",
       "publisher": "Economic Times",
       "url_normalised": "https://economictimes.indiatimes.com/news/economy/agriculture/tea-industry-groups-back-panels-proposal-for-minimum-sustainable-price-as-costs-outpace-prices/articleshow/135731591.cms",
-      "symbols": []
-    },
-    {
-      "headline": "CoreWeave stock jumps after earnings: 7 things driving the AI cloud company's rally",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/coreweave-stock-jumps-after-earnings-7-things-driving-the-ai-cloud-companys-rally/slideshow/135729203.cms",
-      "published": "2026-11-11T12:31:16+05:30",
-      "description": "​CoreWeave shares surge after beating Q3 earnings expectations, reporting 168% revenue growth and a $132.5 billion backlog, while raising 2026 guidance despite mounting debt and infrastructure spendin",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/us-stocks/news/coreweave-stock-jumps-after-earnings-7-things-driving-the-ai-cloud-companys-rally/slideshow/135729203.cms",
       "symbols": []
     }
   ],
