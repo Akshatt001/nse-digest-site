@@ -620,12 +620,9 @@ function renderShortlist(){
       nc.appendChild(bad);
     } else if (nv && nv.news_score >= ((DATA.news_layer || {}).materiality_floor || 0.4)){
       var g = el("span", "tag news", String(nv.event).replace(/_/g, " "));
-      g.title = (nv.headline || "") + "
-
-matched: "
+      g.title = (nv.headline || "") + "\n\nmatched: "
         + ((nv.matched || []).join(", ") || "n/a")
-        + "
-publisher: " + (nv.publisher || "n/a");
+        + "\npublisher: " + (nv.publisher || "n/a");
       nc.appendChild(g);
       if (nv.hedged) nc.appendChild(el("span", "tag", "unconfirmed"));
       if (nv.third_party_recommendation) nc.appendChild(el("span", "tag", "broker call"));
