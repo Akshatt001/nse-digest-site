@@ -1,1051 +1,775 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
 <meta name="robots" content="noindex, nofollow">
 <title>NSE Digest</title>
 <style>
+/* Layout: one column, one view. Sticky header holds the only control; the
+   gated list sits above the shortlist so the stronger claim is read first. */
 :root{
-  --bg:#0b0f14; --panel:#121820; --panel-2:#171f29; --line:#232e3b;
-  --ink:#e6edf3; --ink-dim:#9fb0c0; --ink-faint:#6b7d8f;
-  --accent:#5aa9e6; --good:#3fb950; --bad:#f85149; --warn:#d29922;
-  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
-  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color-scheme: light;
+  --bg:#ffffff;
+  --surface:#f6f7fa;
+  --surface-2:#eef1f6;
+  --line:#dfe3ea;
+  --line-strong:#c6ccd8;
+  --ink:#12151b;
+  --ink-2:#4b5264;
+  --ink-3:#79818f;
+  --accent:#1b43c8;
+  --accent-soft:#eaeeff;
+  --up:#0a6d3c;
+  --up-soft:#e7f4ec;
+  --down:#b32626;
+  --down-soft:#fdeceb;
+  --warn:#8a5000;
+  --warn-soft:#fff3e0;
+  /* System stacks only. V3's stack rule is explicit: no CDN, no external
+     fonts. Any webfont here would be a silent dependency on a third party
+     for a page that must render identically offline. */
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  --r:6px;
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
-  background:var(--bg); color:var(--ink); font-family:var(--sans);
-  font-size:14px; line-height:1.5; padding-bottom:64px;
+  background:var(--bg); color:var(--ink);
+  font-family:var(--sans); font-size:15px; line-height:1.5;
   -webkit-text-size-adjust:100%;
 }
-a{color:var(--accent); text-decoration:none}
+.wrap{
+  max-width:1040px; margin:0 auto;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+}
+a{color:var(--accent)}
 a:hover{text-decoration:underline}
-.wrap{max-width:1280px; margin:0 auto; padding:0 16px}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+.num{font-family:var(--mono); font-variant-numeric:tabular-nums}
 
 /* ---------- header ---------- */
-header{border-bottom:1px solid var(--line); background:var(--panel); padding:14px 0}
-.hrow{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 18px}
-h1{font-size:17px; margin:0; letter-spacing:.2px; font-weight:650}
-.sub{color:var(--ink-faint); font-size:12px}
-.stamps{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px}
+body::before{
+  content:""; position:fixed; inset:0 0 auto;
+  height:env(safe-area-inset-top, 0px); z-index:10; background:var(--bg);
+}
+header{
+  position:sticky; top:env(safe-area-inset-top, 0px); z-index:9;
+  background:var(--bg); border-bottom:1px solid var(--line);
+}
+.masthead{display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 14px; padding-block:14px 10px}
+h1{margin:0; font-size:19px; font-weight:600; letter-spacing:-.02em}
+.tagline{color:var(--ink-3); font-size:13px}
+.stamps{display:flex; flex-wrap:wrap; gap:6px; padding-bottom:12px}
 .stamp{
-  font-family:var(--mono); font-size:11px; padding:3px 8px; border-radius:4px;
-  background:var(--panel-2); border:1px solid var(--line); color:var(--ink-dim);
-  white-space:nowrap;
+  font-family:var(--mono); font-size:11px; padding:3px 8px;
+  border:1px solid var(--line); border-radius:var(--r);
+  background:var(--surface); color:var(--ink-2); white-space:nowrap;
 }
-.stamp b{color:var(--ink); font-weight:600}
-.stamp.warn{border-color:var(--warn); color:var(--warn)}
+.stamp b{color:var(--ink); font-weight:500}
+.stamp.warn{background:var(--warn-soft); border-color:#f0d9ae; color:var(--warn)}
 .stamp.warn b{color:var(--warn)}
-.stamp.bad{border-color:var(--bad); color:var(--bad)}
-.stamp.bad b{color:var(--bad)}
+.stamp.bad{background:var(--down-soft); border-color:#f3c9c6; color:var(--down)}
+.stamp.bad b{color:var(--down)}
 
-/* ---------- scorecard ---------- */
-.scorecard{
-  margin-top:12px; padding:10px 12px; border:1px solid var(--line);
-  border-radius:6px; background:var(--panel-2);
-  display:flex; flex-wrap:wrap; gap:8px 26px; align-items:center;
+/* ---------- mode selector ---------- */
+.modes{display:flex; gap:8px; padding-bottom:14px; flex-wrap:wrap}
+.mode{
+  flex:1 1 150px; min-width:0; text-align:left; cursor:pointer;
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--r); padding:10px 12px; font:inherit; color:var(--ink-2);
 }
-.sc-item{display:flex; flex-direction:column; gap:1px}
-.sc-k{font-size:10px; text-transform:uppercase; letter-spacing:.7px; color:var(--ink-faint)}
-.sc-v{font-family:var(--mono); font-size:15px; font-weight:600}
-.sc-note{font-size:11px; color:var(--ink-faint); flex:1 1 240px; min-width:200px}
+.mode:hover{border-color:var(--line-strong)}
+.mode[aria-pressed="true"]{
+  background:var(--accent-soft); border-color:var(--accent); color:var(--ink);
+}
+.mode .mt{display:block; font-weight:600; font-size:14px; color:var(--ink)}
+.mode .ms{display:block; font-size:12px; color:var(--ink-3); margin-top:1px}
 
-/* ---------- tabs / controls ---------- */
-nav.tabs{display:flex; gap:2px; border-bottom:1px solid var(--line); margin-top:14px; overflow-x:auto}
-.tab{
-  background:none; border:0; border-bottom:2px solid transparent; color:var(--ink-dim);
-  padding:9px 13px; font:inherit; cursor:pointer; white-space:nowrap;
-}
-.tab[aria-selected="true"]{color:var(--ink); border-bottom-color:var(--accent)}
-.controls{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:14px 0}
-.seg{display:flex; border:1px solid var(--line); border-radius:6px; overflow:hidden}
-.seg button{
-  background:var(--panel); border:0; color:var(--ink-dim); padding:7px 13px;
-  font:inherit; cursor:pointer; border-right:1px solid var(--line);
-}
-.seg button:last-child{border-right:0}
-.seg button[aria-pressed="true"]{background:var(--accent); color:#06101a; font-weight:600}
-.seg button:disabled{color:var(--ink-faint); cursor:not-allowed; background:var(--panel-2)}
-select,input[type=search]{
-  background:var(--panel); color:var(--ink); border:1px solid var(--line);
-  border-radius:6px; padding:7px 9px; font:inherit; max-width:100%;
-}
-.btn{
-  background:var(--panel); color:var(--ink); border:1px solid var(--line);
-  border-radius:6px; padding:7px 11px; font:inherit; cursor:pointer;
-}
-.btn:hover{border-color:var(--accent)}
-.btn.warn{border-color:var(--warn); color:var(--warn)}
+/* ---------- sections ---------- */
+section{padding-block:18px}
+.sechead{display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px; margin-bottom:4px}
+h2{margin:0; font-size:15px; font-weight:600; letter-spacing:-.01em}
+.count{font-family:var(--mono); font-size:12px; color:var(--ink-3)}
+.sub{color:var(--ink-2); font-size:13px; margin:0 0 12px; max-width:68ch}
 
 /* ---------- table ---------- */
-.tablewrap{overflow-x:auto; border:1px solid var(--line); border-radius:6px}
-table{border-collapse:collapse; width:100%; font-size:13px}
-th,td{padding:7px 10px; text-align:right; white-space:nowrap}
+.tablewrap{overflow-x:auto; border:1px solid var(--line); border-radius:var(--r)}
+table{border-collapse:collapse; width:100%; font-size:14px}
+th,td{padding:9px 11px; text-align:right; white-space:nowrap}
 th:first-child,td:first-child{text-align:left}
-th{
-  background:var(--panel-2); color:var(--ink-faint); font-size:10px;
-  text-transform:uppercase; letter-spacing:.6px; font-weight:600;
-  position:sticky; top:0; border-bottom:1px solid var(--line);
+th:last-child,td:last-child{text-align:left}
+thead th{
+  background:var(--surface); color:var(--ink-3); font-size:11px;
+  font-weight:500; text-transform:uppercase; letter-spacing:.06em;
+  border-bottom:1px solid var(--line);
 }
 tbody tr{border-top:1px solid var(--line); cursor:pointer}
-tbody tr:hover{background:var(--panel)}
-td.num{font-family:var(--mono)}
-.sym{font-weight:650; letter-spacing:.2px}
-.up{color:var(--good)} .down{color:var(--bad)} .flat{color:var(--ink-faint)}
-.detail td{background:var(--panel); cursor:default; white-space:normal; text-align:left}
+tbody tr:hover{background:var(--surface)}
+tbody tr.open{background:var(--accent-soft)}
+.sym{font-weight:600}
+.up{color:var(--up)} .down{color:var(--down)} .flat{color:var(--ink-3)}
+tr.detail{cursor:default}
+tr.detail>td{background:var(--surface); white-space:normal; text-align:left; padding:14px 11px}
 
-/* ---------- pills ---------- */
-.pill{
-  display:inline-block; font-size:10px; font-family:var(--mono);
-  padding:2px 6px; border-radius:3px; border:1px solid var(--line);
-  background:var(--panel-2); color:var(--ink-dim); margin:1px 2px 1px 0;
+/* ---------- tags ---------- */
+.tag{
+  display:inline-block; font-size:11px; font-family:var(--mono);
+  padding:2px 7px; border-radius:var(--r); margin:2px 3px 2px 0;
+  border:1px solid var(--line); background:var(--bg); color:var(--ink-2);
 }
-.pill.v-BULLISH{border-color:var(--good); color:var(--good)}
-.pill.v-CAUTIOUSLY_BULLISH{border-color:#2a7a3f; color:#79c98a}
-.pill.v-NEUTRAL{color:var(--ink-faint)}
-.pill.v-BEARISH{border-color:var(--bad); color:var(--bad)}
-.pill.v-INSUFFICIENT_DATA{border-color:var(--warn); color:var(--warn)}
-.pill.factor{border-color:#4b3b7a; color:#b9a7ea}
-.pill.news{border-color:var(--accent); color:var(--accent)}
+.tag.move-up{background:var(--up-soft); border-color:#bfe3cd; color:var(--up)}
+.tag.move-down{background:var(--down-soft); border-color:#f3c9c6; color:var(--down)}
+.tag.volume{background:var(--accent-soft); border-color:#c3cefc; color:var(--accent)}
+.tag.breakout{background:var(--warn-soft); border-color:#f0d9ae; color:var(--warn)}
+.tag.squeeze,.tag.result{background:var(--surface-2)}
+.tag.v-BULLISH{background:var(--up-soft); border-color:#bfe3cd; color:var(--up)}
+.tag.v-BEARISH{background:var(--down-soft); border-color:#f3c9c6; color:var(--down)}
 
-/* ---------- panels ---------- */
-.grid{display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
-.card{border:1px solid var(--line); border-radius:6px; background:var(--panel); padding:12px}
-.card h3{margin:0 0 8px; font-size:12px; text-transform:uppercase;
-  letter-spacing:.7px; color:var(--ink-faint); font-weight:600}
-details{border:1px solid var(--line); border-radius:6px; background:var(--panel);
-  margin-bottom:8px}
-summary{padding:9px 12px; cursor:pointer; font-size:13px; color:var(--ink-dim)}
+/* ---------- detail ---------- */
+.dgrid{display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.dcard{min-width:0}
+.dcard h3{
+  margin:0 0 7px; font-size:11px; font-weight:500; color:var(--ink-3);
+  text-transform:uppercase; letter-spacing:.06em;
+}
+.kv{display:grid; grid-template-columns:auto 1fr; gap:3px 12px; font-size:13px; margin:0}
+.kv dt{color:var(--ink-3); font-family:var(--mono)}
+.kv dd{margin:0; font-family:var(--mono); font-variant-numeric:tabular-nums}
+.note{font-size:13px; color:var(--ink-2); margin:4px 0; padding-left:10px; border-left:2px solid var(--line)}
+.note.bad{border-left-color:var(--down)}
+.nitem{padding:7px 0; border-top:1px solid var(--line)}
+.nitem:first-of-type{border-top:0}
+.nmeta{font-family:var(--mono); font-size:11px; color:var(--ink-3); margin-top:2px}
+
+/* ---------- callouts ---------- */
+.callout{
+  border:1px solid var(--line); border-left:3px solid var(--accent);
+  border-radius:var(--r); background:var(--surface); padding:12px 14px;
+  font-size:13px; color:var(--ink-2);
+}
+.callout.warn{border-left-color:var(--warn); background:var(--warn-soft)}
+.callout b{color:var(--ink); font-weight:600}
+.callout p{margin:0 0 6px}
+.callout p:last-child{margin:0}
+.callout code{font-family:var(--mono); font-size:12px; background:var(--bg);
+  border:1px solid var(--line); border-radius:3px; padding:1px 4px}
+details{border:1px solid var(--line); border-radius:var(--r); background:var(--bg)}
+summary{padding:10px 12px; cursor:pointer; font-size:13px; color:var(--ink-2)}
 summary:hover{color:var(--ink)}
 details[open] summary{border-bottom:1px solid var(--line); color:var(--ink)}
-.details-body{padding:10px 12px; font-size:12px}
-.kv{display:grid; grid-template-columns:auto 1fr; gap:3px 12px; font-size:12px}
-.kv dt{color:var(--ink-faint); font-family:var(--mono)}
-.kv dd{margin:0; font-family:var(--mono)}
-.reason{color:var(--ink-dim); font-size:12px; margin:3px 0; padding-left:12px;
-  border-left:2px solid var(--line)}
+.dbody{padding:12px}
+.rlist{display:grid; gap:4px; font-size:13px}
+.rrow{display:flex; gap:10px; align-items:baseline}
+.rn{font-family:var(--mono); color:var(--ink-3); min-width:4ch; text-align:right}
+.empty{padding:20px 12px; text-align:center; color:var(--ink-3); font-size:14px}
+.err{border:1px solid var(--down); border-left:3px solid var(--down);
+  border-radius:var(--r); background:var(--down-soft); color:var(--down);
+  padding:12px 14px; margin:16px 0; font-size:14px}
 
-/* ---------- heatmap ---------- */
-.hm-sector{margin-bottom:14px}
-.hm-sector h4{margin:0 0 6px; font-size:12px; color:var(--ink-dim); font-weight:600}
-.hm-grid{display:grid; gap:3px; grid-template-columns:repeat(auto-fill,minmax(86px,1fr))}
-.hm-cell{
-  border-radius:3px; padding:6px 5px; text-align:center; font-family:var(--mono);
-  font-size:10px; line-height:1.35; color:#0b0f14; overflow:hidden;
-}
-.hm-cell .s{display:block; font-weight:700; font-size:11px}
-.breadth{display:flex; flex-wrap:wrap; gap:3px}
-.bchip{
-  font-family:var(--mono); font-size:10px; padding:3px 7px; border-radius:3px;
-  color:#0b0f14; white-space:nowrap;
-}
+footer{border-top:1px solid var(--line); margin-top:10px}
+.disc{padding-block:14px 22px; font-size:12px; color:var(--ink-3); max-width:72ch}
 
-/* ---------- news ---------- */
-.nitem{padding:9px 0; border-top:1px solid var(--line)}
-.nitem:first-child{border-top:0}
-.nhead{font-size:13px; line-height:1.4; margin-bottom:3px}
-.nmeta{font-size:11px; color:var(--ink-faint); font-family:var(--mono)}
-.ndesc{font-size:12px; color:var(--ink-dim); margin-top:3px}
-
-/* ---------- banner ---------- */
-.banner{
-  position:fixed; bottom:0; left:0; right:0; z-index:50;
-  background:#0a0d12; border-top:1px solid var(--line);
-  padding:9px 16px; font-size:11px; color:var(--ink-dim); text-align:center;
-}
-.empty{padding:22px 12px; text-align:center; color:var(--ink-faint); font-size:13px}
-.err{border:1px solid var(--bad); border-radius:6px; padding:12px;
-  color:var(--bad); background:#1a0f10; margin:12px 0; font-size:13px}
-.hidden{display:none !important}
-section[role=tabpanel]{padding:4px 0 18px}
 @media (max-width:620px){
-  th,td{padding:6px 7px; font-size:12px}
-  .wrap{padding:0 12px}
-  .banner{text-align:left}
+  body{font-size:14px}
+  th,td{padding:8px 9px; font-size:13px}
+  .mode{flex:1 1 100%}
 }
+@media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <div class="hrow">
+    <div class="masthead">
       <h1>NSE Digest</h1>
-      <span class="sub">personal research &middot; conditional levels, not recommendations</span>
+      <span class="tagline">conditional levels from NSE data &mdash; not advice</span>
     </div>
     <div class="stamps" id="stamps"></div>
-    <div class="scorecard" id="scorecard"></div>
-    <nav class="tabs" role="tablist" id="tablist">
-      <button class="tab" role="tab" data-panel="p-cand" aria-selected="true">Candidates</button>
-      <button class="tab" role="tab" data-panel="p-heat" aria-selected="false">Heatmap</button>
-      <button class="tab" role="tab" data-panel="p-news" aria-selected="false">News</button>
-      <button class="tab" role="tab" data-panel="p-diag" aria-selected="false">Diagnostics</button>
-    </nav>
+    <div class="modes" id="modes" role="group" aria-label="Horizon"></div>
   </div>
 </header>
 
 <main class="wrap">
   <div id="fatal"></div>
 
-  <!-- ============ CANDIDATES ============ -->
-  <section id="p-cand" role="tabpanel">
-    <div class="controls">
-      <div class="seg" id="ttsel" role="group" aria-label="Trade type"></div>
-      <select id="idxfilter" aria-label="Filter by index"></select>
-      <input type="search" id="symsearch" placeholder="filter symbol" aria-label="Filter by symbol">
-      <span class="sub" id="candcount"></span>
+  <section id="sec-gated">
+    <div class="sechead">
+      <h2>Trade-ready</h2>
+      <span class="count" id="gated-count"></span>
     </div>
-    <div class="tablewrap">
-      <table id="candtable">
-        <thead><tr>
-          <th>Symbol</th><th>Close</th><th>Chg%</th><th>Segment</th><th>Sector</th>
-          <th>Mom rank</th><th>Factors</th><th>Verdict</th>
-          <th>Entry</th><th>Stop</th><th>Target 1</th><th>R:R</th>
-          <th class="qtycol hidden">Qty</th><th>News</th>
-        </tr></thead>
-        <tbody id="candbody"></tbody>
-      </table>
-    </div>
-    <div id="candempty"></div>
+    <p class="sub" id="gated-sub"></p>
+    <div id="gated-body"></div>
+  </section>
 
-    <div class="grid" style="margin-top:14px">
-      <div class="card" id="factorcard">
-        <h3>Factor overlap &mdash; two or more NSE factor indices agree</h3>
-        <div id="factorbody"></div>
-        <p class="sub" style="margin:8px 0 0">
-          Unlike correlated oscillators, these are independent NSE
-          methodologies selecting the same name. This panel deserves real
-          attention; indicator confluence does not.
-        </p>
+  <section id="sec-short">
+    <div class="sechead">
+      <h2>Shortlist to research</h2>
+      <span class="count" id="short-count"></span>
+    </div>
+    <p class="sub" id="short-sub"></p>
+    <div id="short-body"></div>
+  </section>
+
+  <section id="sec-why">
+    <details id="why">
+      <summary id="why-summary">Why so few passed</summary>
+      <div class="dbody">
+        <p class="sub" id="why-sub"></p>
+        <div class="rlist" id="why-body"></div>
       </div>
-      <div class="card">
-        <h3>Momentum vs NSE's published list</h3>
-        <div id="divergebody"></div>
-        <p class="sub" style="margin:8px 0 0" id="divergenote"></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ HEATMAP ============ -->
-  <section id="p-heat" role="tabpanel" class="hidden">
-    <div class="controls">
-      <select id="hmindex" aria-label="Universe index to show"></select>
-      <span class="sub">end-of-day change, computed from bhavcopy close vs previous close</span>
-    </div>
-    <div class="card" style="margin-bottom:12px">
-      <h3>Sector breadth</h3>
-      <div class="breadth" id="breadthbody"></div>
-    </div>
-    <div id="hmbody"></div>
-  </section>
-
-  <!-- ============ NEWS ============ -->
-  <section id="p-news" role="tabpanel" class="hidden">
-    <div class="controls">
-      <button class="btn" id="newsrefresh">Refresh</button>
-      <span class="sub" id="newsmeta"></span>
-    </div>
-    <div class="card">
-      <h3>Headlines &mdash; Economic Times and Moneycontrol</h3>
-      <div id="newsbody"></div>
-      <p class="sub" style="margin:10px 0 0" id="newsnote"></p>
-    </div>
-  </section>
-
-  <!-- ============ DIAGNOSTICS ============ -->
-  <section id="p-diag" role="tabpanel" class="hidden">
-    <div id="diagbody"></div>
+    </details>
   </section>
 </main>
 
-<div class="banner">
-  Personal research tool. Computed from public NSE data. Headlines link to
-  their publishers. Not investment advice. Levels are conditional, not
-  recommendations.
-</div>
+<footer>
+  <div class="wrap disc" id="disclaimer"></div>
+</footer>
 
 <script>
 "use strict";
-/* ------------------------------------------------------------------
-   Everything displayed here comes from ./data.json and ./news.json.
-   Paths are RELATIVE because the site is served from a subpath.
-   ------------------------------------------------------------------ */
-var DATA = null, NEWS = null, PRIVATE = null;
-var state = { tradeType: null, index: "", symbol: "", hmIndex: "" };
+/* Everything displayed comes from ./data.json and ./news.json, fetched at
+   runtime with relative paths so the file works from a Pages subpath, a local
+   server, or published alongside its data. */
+var DATA = null, NEWS = null, PRIV = null;
+var mode = null;
 
-var $ = function (id) { return document.getElementById(id); };
-function el(tag, cls, text) {
-  var n = document.createElement(tag);
-  if (cls) n.className = cls;
-  if (text !== undefined && text !== null) n.textContent = String(text);
+var MODES = [
+  { key: "intraday",   title: "Intraday",   sub: "same-day, needs broker candles" },
+  { key: "positional", title: "Short term", sub: "days to weeks, daily bars" },
+  { key: "longterm",   title: "Long term",  sub: "months, daily and weekly" }
+];
+
+function $(id){ return document.getElementById(id); }
+function el(t, c, txt){
+  var n = document.createElement(t);
+  if (c) n.className = c;
+  if (txt !== undefined && txt !== null) n.textContent = String(txt);
   return n;
 }
-function num(v, dp) {
-  if (v === null || v === undefined || v === "") return "—";
+var DASH = "—";
+function num(v, dp){
+  if (v === null || v === undefined || v === "") return DASH;
   var n = Number(v);
-  if (!isFinite(n)) return "—";
-  return n.toLocaleString("en-IN", {
-    minimumFractionDigits: dp === undefined ? 2 : dp,
-    maximumFractionDigits: dp === undefined ? 2 : dp
-  });
+  if (!isFinite(n)) return DASH;
+  var d = dp === undefined ? 2 : dp;
+  return n.toLocaleString("en-IN", { minimumFractionDigits: d, maximumFractionDigits: d });
 }
-function signClass(v) {
+function pct(v){
+  if (v === null || v === undefined || !isFinite(Number(v))) return DASH;
+  return (Number(v) > 0 ? "+" : "") + num(v, 2) + "%";
+}
+function signClass(v){
   if (v === null || v === undefined || !isFinite(Number(v))) return "flat";
   return Number(v) > 0 ? "up" : (Number(v) < 0 ? "down" : "flat");
 }
-function fmtIST(iso) {
-  if (!iso) return "—";
-  try {
-    var d = new Date(iso);
-    if (isNaN(d.getTime())) return String(iso);
-    return d.toLocaleString("en-IN", {
-      timeZone: "Asia/Kolkata", day: "2-digit", month: "short",
-      hour: "2-digit", minute: "2-digit", hour12: false
-    }) + " IST";
-  } catch (e) { return String(iso); }
+function fmtIST(iso){
+  if (!iso) return DASH;
+  var d = new Date(iso);
+  if (isNaN(d.getTime())) return String(iso);
+  return d.toLocaleString("en-IN", {
+    timeZone: "Asia/Kolkata", day: "2-digit", month: "short",
+    hour: "2-digit", minute: "2-digit", hour12: false
+  }) + " IST";
 }
-function minutesSince(iso) {
+function minsSince(iso){
   if (!iso) return null;
   var d = new Date(iso);
-  if (isNaN(d.getTime())) return null;
-  return (Date.now() - d.getTime()) / 60000;
+  return isNaN(d.getTime()) ? null : (Date.now() - d.getTime()) / 60000;
 }
-function heatColor(pct) {
-  var p = Math.max(-4, Math.min(4, Number(pct) || 0));
-  var a = 0.18 + Math.abs(p) / 4 * 0.72;
-  return p >= 0 ? "rgba(63,185,80," + a.toFixed(2) + ")"
-                : "rgba(248,81,73," + a.toFixed(2) + ")";
-}
+function bust(u){ return u + "?t=" + Date.now(); }
 
-/* ---------------- loading ---------------- */
-function bust(url) { return url + "?t=" + Date.now(); }
-
-function loadAll() {
-  return fetch(bust("./data.json"), { cache: "no-store" })
-    .then(function (r) {
+/* ---------------- load ---------------- */
+function boot(){
+  fetch(bust("./data.json"), { cache: "no-store" })
+    .then(function(r){
       if (!r.ok) throw new Error("data.json returned HTTP " + r.status);
       return r.json();
     })
-    .then(function (d) {
+    .then(function(d){
       DATA = d;
-      /* The private file exists only on the operator's machine. Its absence
-         is normal and silent: the quantity column is simply omitted, so the
-         same page works locally and live. */
-      return fetch(bust("./data.private.json"), { cache: "no-store" })
-        .then(function (r) { return r.ok ? r.json() : null; })
-        .catch(function () { return null; });
+      return Promise.all([
+        fetch(bust("./news.json"), { cache: "no-store" })
+          .then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }),
+        /* Present only on the operator's own machine. Absent is normal and
+           silent, so the quantity column simply does not appear. */
+        fetch(bust("./data.private.json"), { cache: "no-store" })
+          .then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; })
+      ]);
     })
-    .then(function (p) {
-      PRIVATE = p;
-      return fetch(bust("./news.json"), { cache: "no-store" })
-        .then(function (r) { return r.ok ? r.json() : null; })
-        .catch(function () { return null; });
+    .then(function(res){
+      NEWS = res[0]; PRIV = res[1];
+      mode = pickMode();
+      render();
     })
-    .then(function (n) { NEWS = n; render(); })
-    .catch(function (e) {
-      $("fatal").innerHTML = "";
+    .catch(function(e){
       var box = el("div", "err");
       box.appendChild(el("strong", null, "Could not load the report. "));
-      box.appendChild(document.createTextNode(e.message + " "));
       box.appendChild(document.createTextNode(
-        "If this is the published site, data.json may not have been included " +
-        "in the deploy. If it is local, run: python -m src.scan"));
+        e.message + " If this is the published page, data.json may be missing " +
+        "from the deploy. Locally, run: python -m src.scan"));
       $("fatal").appendChild(box);
     });
 }
 
+function pickMode(){
+  var tt = DATA.trade_types || {};
+  for (var i = 0; i < MODES.length; i++){
+    var k = MODES[i].key;
+    if (tt[k] && (tt[k].candidates || []).length) return k;
+  }
+  for (var j = 0; j < MODES.length; j++){
+    var k2 = MODES[j].key;
+    if ((DATA.shortlist || {})[k2] && DATA.shortlist[k2].length) return k2;
+  }
+  return "positional";
+}
+
 /* ---------------- header ---------------- */
-function renderStamps() {
+function renderStamps(){
   var box = $("stamps"); box.innerHTML = "";
-  function add(label, value, cls) {
+  function add(label, value, cls){
     var s = el("span", "stamp" + (cls ? " " + cls : ""));
     s.appendChild(document.createTextNode(label + " "));
     s.appendChild(el("b", null, value));
     box.appendChild(s);
   }
-  var age = minutesSince(DATA.generated_at);
+  var age = minsSince(DATA.generated_at);
   var stale = age !== null && age > 24 * 60;
-  add("generated", fmtIST(DATA.generated_at), stale ? "bad" : "");
-  if (stale) {
-    var hrs = Math.floor(age / 60);
-    add("STALE", "data is " + hrs + " hours old", "bad");
-  }
+  add("computed", fmtIST(DATA.generated_at), stale ? "bad" : "");
+  if (stale) add("STALE", Math.floor(age / 60) + " hours old", "bad");
 
-  if (NEWS) {
-    var nage = minutesSince(NEWS.fetched_at);
-    add("news", fmtIST(NEWS.fetched_at), (nage !== null && nage > 60) ? "warn" : "");
+  if (NEWS){
+    var na = minsSince(NEWS.fetched_at);
+    add("news", fmtIST(NEWS.fetched_at), (na !== null && na > 60) ? "warn" : "");
   } else {
-    add("news", "not available", "warn");
+    add("news", "unavailable", "warn");
   }
 
   var u = DATA.universe || {};
-  if (u.reference_fetched_at) {
-    var days = minutesSince(u.reference_fetched_at);
-    days = days === null ? null : days / 1440;
-    add("index cache", fmtIST(u.reference_fetched_at),
-        (days !== null && days > 14) ? "warn" : "");
-  }
-  var f = DATA.fundamentals || {};
-  add("fundamentals", f.available ? fmtIST(f.as_of) : "unavailable",
-      f.available ? (f.stale ? "warn" : "") : "warn");
-  add("symbols scanned", String(u.symbols_scanned === undefined ? "—" : u.symbols_scanned));
-  if (u.indices_failed) add("indices failed", String(u.indices_failed), "warn");
-}
+  add("scanned", String(u.symbols_scanned === undefined ? DASH : u.symbols_scanned));
 
-function renderScorecard() {
-  var box = $("scorecard"); box.innerHTML = "";
   var sc = DATA.scorecard || {};
-  function item(k, v) {
-    var d = el("div", "sc-item");
-    d.appendChild(el("span", "sc-k", k));
-    d.appendChild(el("span", "sc-v", v));
-    box.appendChild(d);
-  }
-  item("calls logged", String(sc.calls_logged === undefined ? "—" : sc.calls_logged));
-  if (sc.status === "live") {
-    item("hit rate", num(sc.hit_rate_pct, 1) + "%");
-    item("net expectancy", num(sc.net_expectancy, 3) + "%");
-    box.appendChild(el("span", "sc-note",
-      "Net of brokerage, STT, exchange fees, GST, stamp duty, DP charges and tax."));
+  if (sc.status === "live"){
+    add("hit rate", num(sc.hit_rate_pct, 1) + "%");
+    add("net expectancy", num(sc.net_expectancy, 2) + "%");
   } else {
-    item("hit rate", "insufficient data");
-    item("net expectancy", "insufficient data");
-    box.appendChild(el("span", "sc-note", sc.message || ""));
+    add("track record", String(sc.calls_logged === undefined ? DASH : sc.calls_logged) + " calls logged");
   }
+
+  var f = DATA.fundamentals || {};
+  if (!f.available) add("fundamentals", "unavailable", "warn");
 }
 
-/* ---------------- candidates ---------------- */
-function renderTradeTypes() {
-  var box = $("ttsel"); box.innerHTML = "";
-  var tts = DATA.trade_types || {};
-  var keys = Object.keys(tts);
-  if (!state.tradeType) {
-    state.tradeType = keys.filter(function (k) {
-      return (tts[k].candidates || []).length > 0;
-    })[0] || keys[0] || null;
-  }
-  keys.forEach(function (k) {
-    var r = tts[k] || {};
-    var n = (r.candidates || []).length;
-    var b = el("button", null, k + " (" + n + ")");
-    b.setAttribute("aria-pressed", k === state.tradeType ? "true" : "false");
-    var needsIntraday = (k === "intraday" || k === "swing");
-    var noIntraday = needsIntraday && n === 0 &&
-      !(DATA.intraday && DATA.intraday.available && DATA.intraday.available.length);
-    if (noIntraday) {
-      b.disabled = true;
-      b.title = "No intraday candles on disk. " +
-        ((DATA.intraday && DATA.intraday.configured)
-          ? "Run: python -m src.intraday  then  python -m src.scan --with-intraday"
-          : "Angel One credentials are not configured, so 1h/15m/5m cannot be computed.");
-      b.textContent = k + " (no data)";
-    }
-    b.onclick = function () { state.tradeType = k; render(); };
+function renderModes(){
+  var box = $("modes"); box.innerHTML = "";
+  MODES.forEach(function(m){
+    var tt = (DATA.trade_types || {})[m.key] || {};
+    var n = (tt.candidates || []).length;
+    var sn = ((DATA.shortlist || {})[m.key] || []).length;
+    var b = el("button", "mode");
+    b.type = "button";
+    b.setAttribute("aria-pressed", m.key === mode ? "true" : "false");
+    b.appendChild(el("span", "mt", m.title));
+    b.appendChild(el("span", "ms", n + " trade-ready · " + sn + " shortlisted"));
+    b.title = m.sub;
+    b.onclick = function(){ mode = m.key; render(); };
     box.appendChild(b);
   });
 }
 
-function renderIndexFilter() {
-  var sel = $("idxfilter");
-  if (sel.options.length) { sel.value = state.index; return; }
-  var all = {};
-  Object.keys(DATA.symbols || {}).forEach(function (s) {
-    (DATA.symbols[s].indices || []).forEach(function (i) { all[i] = 1; });
-  });
-  var opts = [""].concat(Object.keys(all).sort());
-  opts.forEach(function (o) {
-    var op = el("option", null, o === "" ? "all indices" : o);
-    op.value = o; sel.appendChild(op);
-  });
-  sel.value = state.index;
-  sel.onchange = function () { state.index = sel.value; render(); };
+/* ---------------- tables ---------------- */
+function flagTag(f){
+  var cls = "tag " + f.kind;
+  if (f.kind === "move") cls = "tag " + (String(f.label).charAt(0) === "-" ? "move-down" : "move-up");
+  var t = el("span", cls, f.label);
+  t.title = f.detail || "";
+  return t;
 }
 
-function visibleCandidates() {
-  var tt = DATA.trade_types[state.tradeType] || {};
-  var syms = (tt.candidates || []).slice();
-  return syms.filter(function (s) {
-    var c = DATA.symbols[s];
-    if (!c) return false;
-    if (state.index && (c.indices || []).indexOf(state.index) < 0) return false;
-    if (state.symbol && s.toLowerCase().indexOf(state.symbol.toLowerCase()) < 0) return false;
-    return true;
-  });
+function headerRow(cols){
+  var tr = el("tr");
+  cols.forEach(function(c){ tr.appendChild(el("th", null, c)); });
+  var thead = el("thead"); thead.appendChild(tr);
+  return thead;
 }
 
-function newsCountFor(sym) {
-  if (!NEWS || !NEWS.by_symbol) return 0;
-  return (NEWS.by_symbol[sym] || []).length;
+function tableShell(cols){
+  var wrap = el("div", "tablewrap");
+  var t = el("table");
+  t.appendChild(headerRow(cols));
+  var tb = el("tbody");
+  t.appendChild(tb);
+  wrap.appendChild(t);
+  return { wrap: wrap, body: tb, span: cols.length };
 }
 
-function renderCandidates() {
-  var body = $("candbody"); body.innerHTML = "";
-  var hasQty = !!(PRIVATE && PRIVATE.sizing);
-  Array.prototype.forEach.call(document.querySelectorAll(".qtycol"), function (n) {
-    n.classList.toggle("hidden", !hasQty);
-  });
+function newsFor(sym){
+  return (NEWS && NEWS.by_symbol && NEWS.by_symbol[sym]) || [];
+}
 
-  var syms = visibleCandidates();
-  $("candcount").textContent = syms.length + " candidate(s) shown";
-  $("candempty").innerHTML = "";
+function attachDetail(tr, sym, detailBuilder, span){
+  var open = null;
+  tr.onclick = function(){
+    if (open){ open.remove(); open = null; tr.classList.remove("open"); return; }
+    open = detailBuilder(span);
+    tr.classList.add("open");
+    tr.parentNode.insertBefore(open, tr.nextSibling);
+  };
+}
 
-  if (!syms.length) {
-    var tt = DATA.trade_types[state.tradeType] || {};
-    var msg = el("div", "empty");
-    msg.textContent = "No candidates passed the " + state.tradeType +
-      " gates. " + (tt.rejected || 0) + " symbols were rejected. " +
-      "Few passing is correct behaviour — see the Diagnostics tab for " +
-      "the reasons, which is where the gates prove they are doing something.";
-    $("candempty").appendChild(msg);
+function renderGated(){
+  var tt = (DATA.trade_types || {})[mode] || {};
+  var syms = tt.candidates || [];
+  var hasQty = !!(PRIV && PRIV.sizing);
+
+  $("gated-count").textContent = syms.length + " passed every gate";
+  $("gated-sub").textContent =
+    "Every threshold in the specification applied: liquidity, measured reward "
+    + "to risk against a real overhead level, surveillance and ban lists, "
+    + "circuit locks, a results blackout, and position sizing. Few passing is "
+    + "the intended behaviour.";
+
+  var host = $("gated-body"); host.innerHTML = "";
+
+  if (!syms.length){
+    if (mode === "intraday" || mode === "swing"){
+      host.appendChild(intradayNotice());
+    } else {
+      var e = el("div", "empty");
+      e.textContent = "Nothing cleared every gate for this horizon. "
+        + tt.rejected + " symbols were rejected; the reasons are below.";
+      host.appendChild(e);
+    }
     return;
   }
 
-  syms.forEach(function (sym) {
-    var c = DATA.symbols[sym], ex = c.execution || {}, m = c.momentum || {};
+  var cols = ["Symbol", "Close", "Chg", "Entry above", "Stop", "Target", "R:R"];
+  if (hasQty) cols.push("Qty");
+  cols.push("Why");
+  var t = tableShell(cols);
+
+  syms.forEach(function(sym){
+    var c = DATA.symbols[sym];
+    var ex = c.execution || {};
+    var d1 = (c.timeframes || {})["1d"] || {};
     var tr = el("tr");
     tr.appendChild(el("td", "sym", sym));
-    var d1 = (c.timeframes || {})["1d"] || {};
     tr.appendChild(el("td", "num", num(d1.close)));
-    var chg = el("td", "num " + signClass(c.pct_change),
-      c.pct_change === null || c.pct_change === undefined
-        ? "—" : num(c.pct_change, 2) + "%");
-    tr.appendChild(chg);
-    tr.appendChild(el("td", null, c.segment || "—"));
-    tr.appendChild(el("td", null, (c.sector || "—").replace(/^NIFTY /, "")));
-    tr.appendChild(el("td", "num",
-      m.rank_in_segment ? ("#" + m.rank_in_segment) : "—"));
-
-    var ftd = el("td");
-    (c.factor_tags || []).forEach(function (t) {
-      ftd.appendChild(el("span", "pill factor", t));
-    });
-    if (!(c.factor_tags || []).length) ftd.textContent = "—";
-    tr.appendChild(ftd);
-
-    var vtd = el("td");
-    var vl = (c.verdict || {}).label || "INSUFFICIENT_DATA";
-    vtd.appendChild(el("span", "pill v-" + vl, vl.replace(/_/g, " ").toLowerCase()));
-    tr.appendChild(vtd);
-
+    tr.appendChild(el("td", "num " + signClass(c.pct_change), pct(c.pct_change)));
     tr.appendChild(el("td", "num", num(ex.trigger_entry)));
     tr.appendChild(el("td", "num", num(ex.hard_stop)));
     tr.appendChild(el("td", "num", num(ex.target_1)));
-
-    var rr = el("td", "num", num(ex.rr_to_t1, 2));
-    if (ex.rr_is_measured === false) {
-      rr.textContent = num(ex.rr_to_t1, 2) + " assumed";
-      rr.className = "num flat";
-      rr.title = "target_1 came from the 2R fallback, not a measured level";
+    tr.appendChild(el("td", "num", num(ex.rr_to_t1, 2)));
+    if (hasQty){
+      var q = (PRIV.sizing[sym] || {}).qty_for_risk;
+      tr.appendChild(el("td", "num", q === undefined || q === null ? DASH : String(q)));
     }
-    tr.appendChild(rr);
+    var why = el("td");
+    (c.catalyst_flags || []).forEach(function(f){ why.appendChild(flagTag(f)); });
+    var v = (c.verdict || {}).label;
+    if (v) why.appendChild(el("span", "tag v-" + v, String(v).replace(/_/g, " ").toLowerCase()));
+    tr.appendChild(why);
 
-    if (hasQty) {
-      var q = (PRIVATE.sizing[sym] || {}).qty_for_risk;
-      tr.appendChild(el("td", "num qtycol", q === undefined || q === null ? "—" : String(q)));
-    }
-
-    var ntd = el("td");
-    var nc = newsCountFor(sym);
-    if (nc) ntd.appendChild(el("span", "pill news", nc));
-    else ntd.textContent = "—";
-    tr.appendChild(ntd);
-
-    var detail = null;
-    tr.onclick = function () {
-      if (detail) { detail.remove(); detail = null; return; }
-      detail = buildDetail(sym, c, hasQty ? 14 : 13);
-      tr.parentNode.insertBefore(detail, tr.nextSibling);
-    };
-    body.appendChild(tr);
+    attachDetail(tr, sym, function(span){ return detailRow(sym, c, span); }, t.span);
+    t.body.appendChild(tr);
   });
+
+  host.appendChild(t.wrap);
 }
 
-function buildDetail(sym, c, span) {
+function intradayNotice(){
+  var d = el("div", "callout warn");
+  var p1 = el("p");
+  p1.appendChild(el("b", null, "Intraday has no data source yet. "));
+  p1.appendChild(document.createTextNode(
+    "The daily bhavcopy that feeds everything else is end-of-day only, so "
+    + "fifteen- and five-minute candles cannot be derived from it at all. "
+    + "They come from the broker feed."));
+  d.appendChild(p1);
+  var p2 = el("p");
+  p2.appendChild(document.createTextNode("Fill in "));
+  p2.appendChild(el("code", null, "config/broker.yaml"));
+  p2.appendChild(document.createTextNode(" and run "));
+  p2.appendChild(el("code", null, "python -m src.intraday"));
+  p2.appendChild(document.createTextNode(", then rescan with "));
+  p2.appendChild(el("code", null, "python -m src.scan --with-intraday"));
+  p2.appendChild(document.createTextNode("."));
+  d.appendChild(p2);
+  var p3 = el("p");
+  p3.appendChild(document.createTextNode(
+    "Short term is not relabelled as intraday in the meantime: a daily-bar "
+    + "signal presented as a same-day one would be wrong in a way nobody "
+    + "could see. The shortlist below still works, since it is driven by "
+    + "movement, volume and breakout distance from daily data."));
+  d.appendChild(p3);
+  return d;
+}
+
+function renderShortlist(){
+  var rows = ((DATA.shortlist || {})[mode]) || [];
+  $("short-count").textContent = rows.length + " names";
+  $("short-sub").textContent = DATA.shortlist_note || "";
+
+  var host = $("short-body"); host.innerHTML = "";
+  if (!rows.length){
+    host.appendChild(el("div", "empty", "No symbol currently shows a computed catalyst."));
+    return;
+  }
+
+  var cols = ["Symbol", "Close", "Chg", "Sector", "Mom", "Catalysts", "Blocked by"];
+  var t = tableShell(cols);
+
+  rows.forEach(function(r){
+    var tr = el("tr");
+    tr.appendChild(el("td", "sym", r.symbol));
+    tr.appendChild(el("td", "num", num(r.close)));
+    tr.appendChild(el("td", "num " + signClass(r.pct_change), pct(r.pct_change)));
+    tr.appendChild(el("td", null, (r.sector || DASH).replace(/^NIFTY /, "")));
+    tr.appendChild(el("td", "num", r.momentum_rank_in_segment ? "#" + r.momentum_rank_in_segment : DASH));
+    var cat = el("td");
+    (r.catalyst_flags || []).forEach(function(f){ cat.appendChild(flagTag(f)); });
+    tr.appendChild(cat);
+    var blocked = el("td");
+    var fg = r.failed_gates || [];
+    blocked.textContent = fg.length ? shortGate(fg[0]) : "cap only";
+    blocked.title = fg.join(" | ");
+    blocked.className = "flat";
+    tr.appendChild(blocked);
+
+    attachDetail(tr, r.symbol, function(span){
+      return shortDetailRow(r, span);
+    }, t.span);
+    t.body.appendChild(tr);
+  });
+
+  host.appendChild(t.wrap);
+}
+
+function shortGate(reason){
+  var s = String(reason);
+  if (s.indexOf("R:R") >= 0 || s.indexOf("reward") >= 0) return "reward to risk";
+  if (s.indexOf("turnover") >= 0) return "liquidity";
+  if (s.indexOf("results") >= 0) return "results blackout";
+  if (s.indexOf("surveillance") >= 0) return "surveillance list";
+  if (s.indexOf("circuit") >= 0) return "circuit locked";
+  if (s.indexOf("EMA") >= 0) return "trend filter";
+  if (s.indexOf("sizing") >= 0) return "sizing";
+  if (s.indexOf("corporate action") >= 0) return "unadjusted split";
+  if (s.indexOf("no 1h") >= 0 || s.indexOf("no 15m") >= 0 || s.indexOf("no 5m") >= 0) return "no intraday data";
+  return s.length > 34 ? s.slice(0, 32) + "…" : s;
+}
+
+/* ---------------- detail rows ---------------- */
+function kvCard(title, pairs){
+  var c = el("div", "dcard");
+  c.appendChild(el("h3", null, title));
+  var dl = el("dl", "kv");
+  pairs.forEach(function(p){
+    dl.appendChild(el("dt", null, p[0]));
+    dl.appendChild(el("dd", null, p[1]));
+  });
+  c.appendChild(dl);
+  return c;
+}
+
+function newsCard(sym){
+  var items = newsFor(sym);
+  var c = el("div", "dcard");
+  c.appendChild(el("h3", null, "Headlines (" + items.length + ")"));
+  if (!items.length){
+    c.appendChild(el("div", "note", "No mapped headline in the window."));
+  } else {
+    items.forEach(function(it){
+      var w = el("div", "nitem");
+      var a = el("a", null, it.headline);
+      a.href = it.url; a.target = "_blank"; a.rel = "noopener noreferrer";
+      w.appendChild(a);
+      w.appendChild(el("div", "nmeta", (it.publisher || "") + " · " + fmtIST(it.published)));
+      c.appendChild(w);
+    });
+  }
+  c.appendChild(el("div", "note",
+    "Headlines are shown for context. They never affect a level, a gate or a "
+    + "ranking."));
+  return c;
+}
+
+function detailRow(sym, c, span){
   var tr = el("tr", "detail");
   var td = el("td"); td.colSpan = span;
-
-  var grid = el("div", "grid");
-
-  /* timeframes */
-  var tfs = c.timeframes || {};
-  Object.keys(tfs).forEach(function (tf) {
-    var s = tfs[tf];
-    var card = el("div", "card");
-    card.appendChild(el("h3", null, tf + " — " + s.bars + " bars"));
-    var dl = el("dl", "kv");
-    [["close", num(s.close)], ["ema9", num(s.ema9)], ["ema20", num(s.ema20)],
-     ["ema50", num(s.ema50)],
-     ["ema200", s.ema200 === null ? "null (under 200 bars)" : num(s.ema200)],
-     ["rsi14", num(s.rsi14, 1)], ["macd hist", num(s.macd_hist, 3)],
-     ["stoch k/d", num(s.stoch_k, 1) + " / " + num(s.stoch_d, 1)],
-     ["bb width", num(s.bb_bandwidth, 2)],
-     ["squeeze", s.squeeze === null ? "—" : (s.squeeze ? "yes" : "no")],
-     ["atr14", num(s.atr14)],
-     ["vol ratio", num(s.volume_ratio, 2) + (s.volume_spike ? " spike" : "")],
-     ["support", (s.support_levels || []).map(function (x) { return num(x); }).join("  ") || "—"],
-     ["resistance", (s.resistance_levels || []).map(function (x) { return num(x); }).join("  ") || "—"]
-    ].forEach(function (kv) {
-      dl.appendChild(el("dt", null, kv[0]));
-      dl.appendChild(el("dd", null, kv[1]));
-    });
-    card.appendChild(dl);
-    grid.appendChild(card);
-  });
-
-  /* verdict reasons */
-  var vc = el("div", "card");
-  vc.appendChild(el("h3", null, "Verdict reasoning"));
-  ((c.verdict || {}).reasons || []).forEach(function (r) {
-    vc.appendChild(el("div", "reason", r));
-  });
+  var grid = el("div", "dgrid");
+  var d1 = (c.timeframes || {})["1d"] || {};
   var ex = c.execution || {};
-  vc.appendChild(el("div", "reason",
-    "target_1 source: " + (ex.target_1_source || "—")));
-  if (ex.invalid_reason) {
-    vc.appendChild(el("div", "reason", "sizing: " + ex.invalid_reason));
-  }
+  var m = c.momentum || {};
+
+  grid.appendChild(kvCard("Daily indicators", [
+    ["close", num(d1.close)],
+    ["20 EMA", num(d1.ema20)],
+    ["50 EMA", num(d1.ema50)],
+    ["200 EMA", d1.ema200 === null ? "under 200 bars" : num(d1.ema200)],
+    ["RSI", num(d1.rsi14, 1)],
+    ["ATR", num(d1.atr14)],
+    ["volume vs avg", num(d1.volume_ratio, 2) + "x"],
+    ["bars", String(d1.bars || DASH)]
+  ]));
+
+  grid.appendChild(kvCard("Levels", [
+    ["entry above", num(ex.trigger_entry)],
+    ["stop", num(ex.hard_stop)],
+    ["risk per share", num(ex.risk_per_share)],
+    ["target", num(ex.target_1)],
+    ["target source", ex.target_1_source || DASH],
+    ["second target", num(ex.target_2)],
+    ["reward to risk", num(ex.rr_to_t1, 2)],
+    ["support", (d1.support_levels || []).map(function(x){ return num(x); }).join("  ") || DASH],
+    ["resistance", (d1.resistance_levels || []).map(function(x){ return num(x); }).join("  ") || DASH]
+  ]));
+
+  grid.appendChild(kvCard("Standing", [
+    ["segment", c.segment || DASH],
+    ["sector", (c.sector || DASH).replace(/^NIFTY /, "")],
+    ["momentum rank", m.rank_in_segment ? "#" + m.rank_in_segment : DASH],
+    ["percentile", num(m.percentile_in_segment, 1)],
+    ["six month return", pct(m.return_6m === null || m.return_6m === undefined ? null : m.return_6m * 100)],
+    ["twelve month", pct(m.return_12m === null || m.return_12m === undefined ? null : m.return_12m * 100)],
+    ["turnover", num(c.turnover_20d_cr, 2) + " cr"],
+    ["factor tags", (c.factor_tags || []).join(", ") || "none"]
+  ]));
+
+  var vc = el("div", "dcard");
+  vc.appendChild(el("h3", null, "How the verdict was reached"));
+  ((c.verdict || {}).reasons || []).forEach(function(r){
+    vc.appendChild(el("div", "note", r));
+  });
+  if (ex.invalid_reason) vc.appendChild(el("div", "note bad", ex.invalid_reason));
   grid.appendChild(vc);
 
-  /* gap matrix */
-  var gm = c.gap_matrix || {};
-  var gc = el("div", "card");
-  gc.appendChild(el("h3", null, "Gap execution matrix"));
-  if (!gm.available) {
-    gc.appendChild(el("div", "reason", gm.reason || "unavailable"));
-  } else {
-    var up = gm.gap_up || {}, dn = gm.gap_down || {};
-    var dl2 = el("dl", "kv");
-    [["do not chase above", num(up.do_not_chase_above)],
-     ["retest zone", (up.retest_entry_zone || []).map(function (x) { return num(x); }).join(" – ") || "—"],
-     ["invalidation", num(up.invalidation)]
-    ].forEach(function (kv) {
-      dl2.appendChild(el("dt", null, kv[0]));
-      dl2.appendChild(el("dd", null, kv[1]));
-    });
-    gc.appendChild(el("div", "sc-k", "gap up"));
-    gc.appendChild(dl2);
-    gc.appendChild(el("div", "reason", up.rule || ""));
-    gc.appendChild(el("div", "sc-k", "gap down"));
-    if (dn.available === false) {
-      gc.appendChild(el("div", "reason", dn.reason || "unavailable"));
-    } else {
-      var dl3 = el("dl", "kv");
-      [["watch zone", (dn.reversal_watch_zone || []).map(function (x) { return num(x); }).join(" – ")],
-       ["breakdown below", num(dn.breakdown_confirm_below)]
-      ].forEach(function (kv) {
-        dl3.appendChild(el("dt", null, kv[0]));
-        dl3.appendChild(el("dd", null, kv[1]));
-      });
-      gc.appendChild(dl3);
-      gc.appendChild(el("div", "reason", dn.reversal_trigger || ""));
-      gc.appendChild(el("div", "reason", dn.rule || ""));
-    }
-  }
-  grid.appendChild(gc);
-
-  /* membership */
-  var mc = el("div", "card");
-  mc.appendChild(el("h3", null, "Index membership (" + (c.indices || []).length + ")"));
-  (c.indices || []).forEach(function (i) {
-    mc.appendChild(el("span", "pill", i));
-  });
-  var mm = c.momentum || {};
-  mc.appendChild(el("div", "reason",
-    "momentum score " + num(mm.score, 3) + ", rank " +
-    (mm.rank_in_segment || "—") + " in segment, percentile " +
-    num(mm.percentile_in_segment, 1) +
-    (c.in_nse_momentum_index === null ? " — no matching NSE momentum index for this segment"
-      : (c.in_nse_momentum_index ? " — NSE lists this name in its momentum index"
-        : " — NSE does NOT currently list this name"))));
-  if (mm.ineligible_reason) {
-    mc.appendChild(el("div", "reason", "ineligible: " + mm.ineligible_reason));
-  }
-  grid.appendChild(mc);
-
-  /* headlines */
-  var items = (NEWS && NEWS.by_symbol && NEWS.by_symbol[sym]) || [];
-  var nc2 = el("div", "card");
-  nc2.appendChild(el("h3", null, "Headlines (" + items.length + ")"));
-  if (!items.length) {
-    nc2.appendChild(el("div", "reason", "no mapped headlines in the window"));
-  } else {
-    items.forEach(function (it) { nc2.appendChild(newsNode(it)); });
-  }
-  nc2.appendChild(el("div", "reason",
-    "Headlines are context only. They never affect a level, a gate or a verdict."));
-  grid.appendChild(nc2);
+  grid.appendChild(newsCard(sym));
 
   td.appendChild(grid);
   tr.appendChild(td);
   return tr;
 }
 
-function renderFactorOverlap() {
-  var box = $("factorbody"); box.innerHTML = "";
-  var rows = Object.keys(DATA.symbols || {}).map(function (s) {
-    return DATA.symbols[s];
-  }).filter(function (c) { return (c.factor_tag_count || 0) >= 2; });
-  rows.sort(function (a, b) {
-    return (b.factor_tag_count || 0) - (a.factor_tag_count || 0) ||
-      a.symbol.localeCompare(b.symbol);
+function shortDetailRow(r, span){
+  var tr = el("tr", "detail");
+  var td = el("td"); td.colSpan = span;
+  var grid = el("div", "dgrid");
+
+  grid.appendChild(kvCard("Where it stands", [
+    ["close", num(r.close)],
+    ["change", pct(r.pct_change)],
+    ["segment", r.segment || DASH],
+    ["momentum rank", r.momentum_rank_in_segment ? "#" + r.momentum_rank_in_segment : DASH],
+    ["percentile", num(r.percentile_in_segment, 1)],
+    ["turnover", num(r.turnover_20d_cr, 2) + " cr"],
+    ["verdict", r.verdict ? String(r.verdict).replace(/_/g, " ").toLowerCase() : DASH]
+  ]));
+
+  var lv = kvCard("Indicative levels", [
+    ["entry above", num(r.trigger_entry)],
+    ["stop", num(r.hard_stop)],
+    ["target", num(r.target_1)],
+    ["reward to risk", num(r.rr_to_t1, 2)]
+  ]);
+  if (r.rr_is_measured === false){
+    lv.appendChild(el("div", "note bad",
+      "The target here was assumed rather than measured against a real "
+      + "overhead level, so this reward-to-risk figure cannot be relied on."));
+  }
+  grid.appendChild(lv);
+
+  var cc = el("div", "dcard");
+  cc.appendChild(el("h3", null, "Catalysts, computed"));
+  (r.catalyst_flags || []).forEach(function(f){
+    cc.appendChild(el("div", "note", f.label + " — " + (f.detail || "")));
   });
-  if (!rows.length) {
-    box.appendChild(el("div", "reason", "No symbol carries two or more factor tags."));
+  grid.appendChild(cc);
+
+  var gc = el("div", "dcard");
+  gc.appendChild(el("h3", null, "Gates it did not clear"));
+  var fg = r.failed_gates || [];
+  if (!fg.length){
+    gc.appendChild(el("div", "note", "Cleared the gates but fell outside the per-horizon or per-sector cap."));
+  }
+  fg.forEach(function(x){ gc.appendChild(el("div", "note bad", x)); });
+  grid.appendChild(gc);
+
+  grid.appendChild(newsCard(r.symbol));
+
+  td.appendChild(grid);
+  tr.appendChild(td);
+  return tr;
+}
+
+/* ---------------- why so few ---------------- */
+function renderWhy(){
+  var rej = (DATA.rejected || {})[mode] || [];
+  $("why-summary").textContent = "Why so few passed — " + rej.length + " rejected";
+  $("why-sub").textContent =
+    "Grouped reasons. A permanently empty list here would mean the gates are "
+    + "decorative, so it is shown rather than hidden.";
+
+  var counts = {};
+  rej.forEach(function(r){
+    (r.reasons || []).forEach(function(x){
+      var k = shortGate(x);
+      counts[k] = (counts[k] || 0) + 1;
+    });
+  });
+  var keys = Object.keys(counts).sort(function(a, b){ return counts[b] - counts[a]; });
+
+  var host = $("why-body"); host.innerHTML = "";
+  if (!keys.length){
+    host.appendChild(el("div", "note",
+      "Nothing was rejected, which with a universe this wide is implausible. "
+      + "Check the thresholds and the gate feeds."));
     return;
   }
-  rows.slice(0, 40).forEach(function (c) {
-    var d = el("div", "nitem");
-    var h = el("div", "nhead");
-    h.appendChild(el("span", "sym", c.symbol));
-    h.appendChild(document.createTextNode("  "));
-    (c.factor_tags || []).forEach(function (t) {
-      h.appendChild(el("span", "pill factor", t));
-    });
-    d.appendChild(h);
-    d.appendChild(el("div", "nmeta",
-      (c.segment || "—") + "  ·  rank " +
-      ((c.momentum || {}).rank_in_segment || "—")));
-    box.appendChild(d);
+  keys.forEach(function(k){
+    var row = el("div", "rrow");
+    row.appendChild(el("span", "rn", String(counts[k])));
+    row.appendChild(el("span", null, k));
+    host.appendChild(row);
   });
-}
-
-function renderDivergence() {
-  var box = $("divergebody"); box.innerHTML = "";
-  var d = (DATA.momentum_meta || {}).divergences || {};
-  function group(label, arr) {
-    var w = el("div", "nitem");
-    w.appendChild(el("div", "sc-k", label + " (" + (arr || []).length + ")"));
-    var p = el("div", "nmeta", (arr || []).slice(0, 25).join(", ") || "—");
-    w.appendChild(p);
-    box.appendChild(w);
-  }
-  group("my top rank, not in NSE's list", d.my_top_not_in_nse);
-  group("in NSE's list, not in my top rank", d.in_nse_not_my_top);
-  group("agree", d.agree);
-  $("divergenote").textContent =
-    (d.note || "") + " " + ((DATA.momentum_meta || {}).eligibility_note || "");
-}
-
-/* ---------------- heatmap ---------------- */
-function renderHeatmap() {
-  var sel = $("hmindex");
-  if (!sel.options.length) {
-    var broad = {};
-    Object.keys(DATA.symbols || {}).forEach(function (s) {
-      var seg = DATA.symbols[s].segment;
-      if (seg) broad[seg] = 1;
-    });
-    var keys = Object.keys(broad).sort();
-    keys.forEach(function (k) {
-      var o = el("option", null, k); o.value = k; sel.appendChild(o);
-    });
-    state.hmIndex = state.hmIndex || keys[0] || "";
-    sel.value = state.hmIndex;
-    sel.onchange = function () { state.hmIndex = sel.value; renderHeatmap(); };
-  }
-
-  var bb = $("breadthbody"); bb.innerHTML = "";
-  var br = DATA.breadth || {};
-  if (!br.available) {
-    bb.appendChild(el("div", "reason", br.reason || "breadth unavailable"));
-  } else {
-    (br.indices || []).slice(0, 44).forEach(function (r) {
-      var c = el("span", "bchip",
-        r.index.replace(/^NIFTY /, "") + "  " +
-        (r.pct_change > 0 ? "+" : "") + num(r.pct_change, 2) + "%");
-      c.style.background = heatColor(r.pct_change);
-      bb.appendChild(c);
-    });
-  }
-
-  var body = $("hmbody"); body.innerHTML = "";
-  var bySector = {};
-  Object.keys(DATA.symbols || {}).forEach(function (s) {
-    var c = DATA.symbols[s];
-    if (state.hmIndex && (c.indices || []).indexOf(state.hmIndex) < 0) return;
-    var sec = c.sector || "no sector index";
-    (bySector[sec] = bySector[sec] || []).push(c);
-  });
-  var sectors = Object.keys(bySector).sort();
-  if (!sectors.length) {
-    body.appendChild(el("div", "empty", "No constituents to show for this index."));
-    return;
-  }
-  sectors.forEach(function (sec) {
-    var wrap = el("div", "hm-sector");
-    var list = bySector[sec].slice().sort(function (a, b) {
-      return (b.pct_change || 0) - (a.pct_change || 0);
-    });
-    wrap.appendChild(el("h4", null,
-      sec.replace(/^NIFTY /, "") + "  (" + list.length + ")"));
-    var grid = el("div", "hm-grid");
-    list.forEach(function (c) {
-      var cell = el("div", "hm-cell");
-      cell.style.background = heatColor(c.pct_change);
-      cell.appendChild(el("span", "s", c.symbol));
-      cell.appendChild(document.createTextNode(
-        (c.pct_change > 0 ? "+" : "") + num(c.pct_change, 2) + "%"));
-      cell.title = c.symbol + "  close " + num(((c.timeframes || {})["1d"] || {}).close);
-      grid.appendChild(cell);
-    });
-    wrap.appendChild(grid);
-    body.appendChild(wrap);
-  });
-}
-
-/* ---------------- news ---------------- */
-function newsNode(it) {
-  var d = el("div", "nitem");
-  var h = el("div", "nhead");
-  var a = el("a", null, it.headline);
-  a.href = it.url; a.target = "_blank"; a.rel = "noopener noreferrer";
-  h.appendChild(a);
-  d.appendChild(h);
-  d.appendChild(el("div", "nmeta",
-    (it.publisher || "") + "  ·  " + fmtIST(it.published) +
-    ((it.symbols && it.symbols.length) ? "  ·  " + it.symbols.join(", ") : "")));
-  if (it.description) d.appendChild(el("div", "ndesc", it.description));
-  return d;
-}
-
-function renderNews() {
-  var btn = $("newsrefresh"), meta = $("newsmeta"), body = $("newsbody");
-  body.innerHTML = "";
-
-  if (!NEWS) {
-    btn.textContent = "Refresh";
-    btn.disabled = true;
-    meta.textContent = "news.json not found. Run: python -m src.news";
-    body.appendChild(el("div", "empty", "No news file was loaded."));
-    $("newsnote").textContent = "";
-    return;
-  }
-
-  /* The control re-reads a file. It CANNOT fetch ET or Moneycontrol: those
-     feeds send no CORS headers, so a browser request to them is blocked.
-     Labelling it "fetch latest news" would claim a freshness the page does
-     not have. */
-  var age = minutesSince(NEWS.fetched_at);
-  btn.textContent = "Refresh — news as of " +
-    (NEWS.fetched_at ? fmtIST(NEWS.fetched_at) : "unknown");
-  btn.disabled = false;
-  btn.classList.toggle("warn", age !== null && age > 60);
-  btn.title = "Re-reads ./news.json from the server. It does not contact " +
-    "the publishers — their feeds send no CORS headers, so the browser " +
-    "cannot fetch them directly.";
-
-  var c = NEWS.counts || {};
-  meta.textContent = c.published + " items · " + c.duplicates_collapsed +
-    " duplicates collapsed · match rate " + num(NEWS.match_rate_pct, 1) +
-    "% · " + c.unmapped + " market-wide" +
-    (age !== null && age > 60 ? "  — over an hour old" : "");
-
-  (NEWS.items || []).forEach(function (it) { body.appendChild(newsNode(it)); });
-  if (!(NEWS.items || []).length) {
-    body.appendChild(el("div", "empty", "No headlines in the window."));
-  }
-  $("newsnote").textContent = NEWS.copyright_note || "";
-}
-
-function refreshNews() {
-  var btn = $("newsrefresh");
-  btn.disabled = true;
-  btn.textContent = "re-reading news.json…";
-  fetch(bust("./news.json"), { cache: "no-store" })
-    .then(function (r) { return r.ok ? r.json() : null; })
-    .then(function (n) { if (n) NEWS = n; renderNews(); renderStamps(); })
-    .catch(function () { renderNews(); });
-}
-
-/* ---------------- diagnostics ---------------- */
-function panel(title, build) {
-  var d = el("details");
-  d.appendChild(el("summary", null, title));
-  var b = el("div", "details-body");
-  build(b);
-  d.appendChild(b);
-  return d;
-}
-
-function renderDiagnostics() {
-  var box = $("diagbody"); box.innerHTML = "";
-  var rej = (DATA.rejected || {})[state.tradeType] || [];
-
-  box.appendChild(panel(
-    "Rejected symbols — " + state.tradeType + " (" + rej.length + ")",
-    function (b) {
-      if (!rej.length) {
-        b.appendChild(el("div", "reason",
-          "Nothing was rejected. With a universe this wide that is " +
-          "implausible, and a permanently empty rejection list means the " +
-          "gates are decorative. Check the thresholds and the gate feeds."));
-        return;
-      }
-      rej.slice(0, 300).forEach(function (r) {
-        var w = el("div", "nitem");
-        w.appendChild(el("div", "nhead", r.symbol +
-          "  (" + (r.segment || "—") + ")"));
-        (r.reasons || []).forEach(function (x) {
-          w.appendChild(el("div", "reason", x));
-        });
-        b.appendChild(w);
-      });
-      if (rej.length > 300) {
-        b.appendChild(el("div", "reason",
-          "showing the first 300 of " + rej.length));
-      }
-    }));
-
-  var cut = (DATA.trade_types[state.tradeType] || {}).cut_by_cap || [];
-  box.appendChild(panel("Cut by the caps (" + cut.length + ")", function (b) {
-    if (!cut.length) {
-      b.appendChild(el("div", "reason", "No candidate was cut by a cap."));
-    }
-    cut.forEach(function (r) {
-      var w = el("div", "nitem");
-      w.appendChild(el("div", "nhead", r.symbol));
-      w.appendChild(el("div", "reason", r.reason));
-      b.appendChild(w);
-    });
-  }));
-
-  var disputed = Object.keys(DATA.symbols || {}).filter(function (s) {
-    return DATA.symbols[s].disputed;
-  });
-  box.appendChild(panel("DISPUTED closes (" + disputed.length + ")", function (b) {
-    if (!disputed.length) {
-      b.appendChild(el("div", "reason",
-        "No disagreement between NSE and yfinance beyond tolerance. " +
-        "Reconciliation runs only with --reconcile, and only on gate survivors."));
-    }
-    disputed.forEach(function (s) {
-      b.appendChild(el("div", "reason",
-        s + ": " + DATA.symbols[s].disputed_detail));
-    });
-  }));
 
   var gf = DATA.gate_feeds_unavailable || {};
-  var gfk = Object.keys(gf);
-  box.appendChild(panel("Gate feeds unavailable (" + gfk.length + ")", function (b) {
-    if (!gfk.length) {
-      b.appendChild(el("div", "reason", "Every gate-critical feed was collected."));
-    }
-    gfk.forEach(function (k) {
-      b.appendChild(el("div", "reason", k + ": " + gf[k]));
-    });
-    if (gfk.length) {
-      b.appendChild(el("div", "reason",
-        "Gates depending on a missing feed held candidates BACK rather than " +
-        "passing them. A gate with no data that approves everything is worse " +
-        "than no gate."));
-    }
-  }));
-
-  var ifail = (DATA.universe || {}).index_failures || {};
-  var ifk = Object.keys(ifail);
-  box.appendChild(panel("Indices that failed to fetch (" + ifk.length + ")", function (b) {
-    if (!ifk.length) b.appendChild(el("div", "reason", "All indices fetched."));
-    ifk.forEach(function (k) {
-      b.appendChild(el("div", "reason", k + ": " + ifail[k]));
-    });
-  }));
-
-  var feeds = (NEWS && NEWS.feeds) || [];
-  var bad = feeds.filter(function (f) { return !f.ok; });
-  box.appendChild(panel("News feeds that failed (" + bad.length + " of " +
-    feeds.length + ")", function (b) {
-    if (!feeds.length) {
-      b.appendChild(el("div", "reason", "No news file loaded."));
-    }
-    feeds.forEach(function (f) {
-      b.appendChild(el("div", "reason",
-        (f.ok ? "[ok]   " : "[FAIL] ") + f.publisher + "/" + f.name +
-        (f.error ? " — " + f.error : " — " + f.items + " items")));
-    });
-    ((NEWS && NEWS.disabled_publishers) || []).forEach(function (d) {
-      b.appendChild(el("div", "reason",
-        "publisher not active: " + d.publisher + " (" + d.status + ") — " + d.reason));
-    });
-    ((NEWS && NEWS.warnings) || []).forEach(function (w) {
-      b.appendChild(el("div", "reason", "WARNING: " + w));
-    });
-  }));
-
-  var uncl = (DATA.universe || {}).unclassified || [];
-  box.appendChild(panel("Unclassified symbols (" + uncl.length + ")", function (b) {
-    b.appendChild(el("div", "reason",
-      "In no broad-market index, so there is no peer group to score momentum " +
-      "within. Excluded from candidates, listed here so you can see what was " +
-      "dropped rather than wondering where it went."));
-    b.appendChild(el("div", "nmeta", uncl.slice(0, 400).join(", ") || "—"));
-  }));
-
-  var unm = (NEWS && NEWS.unmapped) || [];
-  box.appendChild(panel("Unmapped / market-wide news (" + unm.length + ")", function (b) {
-    b.appendChild(el("div", "reason",
-      "Headlines that matched no symbol. A match is never forced."));
-    unm.forEach(function (it) { b.appendChild(newsNode(it)); });
-  }));
-
-  box.appendChild(panel("Intraday data", function (b) {
-    var i = DATA.intraday || {};
-    b.appendChild(el("div", "reason",
-      "credentials configured: " + (i.configured ? "yes" : "no")));
-    b.appendChild(el("div", "reason",
-      "symbols with cached candles: " + (i.available || []).length));
-    b.appendChild(el("div", "reason",
-      "gate survivors still needing candles: " + (i.wanted || []).length));
-    b.appendChild(el("div", "reason", i.note || ""));
-  }));
+  Object.keys(gf).forEach(function(k){
+    host.appendChild(el("div", "note bad", k + ": " + gf[k]
+      + " — gates needing it held candidates back rather than passing them."));
+  });
 }
 
-/* ---------------- tabs & boot ---------------- */
-function render() {
+function renderDisclaimer(){
+  var d = $("disclaimer"); d.innerHTML = "";
+  d.appendChild(el("p", null, DATA.disclaimer || ""));
+  var notes = [];
+  if ((DATA.momentum_meta || {}).eligibility_note) notes.push(DATA.momentum_meta.eligibility_note);
+  notes.push("Price history comes from NSE's end-of-day bhavcopy, which is "
+    + "unadjusted, so any symbol whose series contains an unadjusted split or "
+    + "bonus is excluded rather than shown with levels drawn across the gap.");
+  notes.push("A target is the next real overhead level, never a multiple of "
+    + "the risk. Where no such level exists the figure is marked as assumed "
+    + "and cannot satisfy the reward-to-risk gate.");
+  notes.forEach(function(n){ d.appendChild(el("p", null, n)); });
+}
+
+function render(){
   if (!DATA) return;
   renderStamps();
-  renderScorecard();
-  renderTradeTypes();
-  renderIndexFilter();
-  renderCandidates();
-  renderFactorOverlap();
-  renderDivergence();
-  renderHeatmap();
-  renderNews();
-  renderDiagnostics();
+  renderModes();
+  renderGated();
+  renderShortlist();
+  renderWhy();
+  renderDisclaimer();
 }
 
-(function boot() {
-  Array.prototype.forEach.call(document.querySelectorAll(".tab"), function (t) {
-    t.onclick = function () {
-      Array.prototype.forEach.call(document.querySelectorAll(".tab"), function (x) {
-        x.setAttribute("aria-selected", x === t ? "true" : "false");
-      });
-      Array.prototype.forEach.call(
-        document.querySelectorAll("section[role=tabpanel]"), function (p) {
-          p.classList.toggle("hidden", p.id !== t.dataset.panel);
-        });
-    };
-  });
-  $("symsearch").oninput = function (e) {
-    state.symbol = e.target.value; renderCandidates();
-  };
-  $("newsrefresh").onclick = refreshNews;
-
-  loadAll();
-  /* Keep an open tab current without a click. Re-reads the file only. */
-  setInterval(function () {
-    fetch(bust("./news.json"), { cache: "no-store" })
-      .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (n) {
-        if (n && (!NEWS || n.fetched_at !== NEWS.fetched_at)) {
-          NEWS = n; renderNews(); renderStamps(); renderCandidates();
-        }
-      })
-      .catch(function () { });
-  }, 300000);
-})();
+boot();
 </script>
 </body>
 </html>
