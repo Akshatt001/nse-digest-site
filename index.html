@@ -500,7 +500,7 @@ function renderGated(){
     return;
   }
 
-  var cols = ["Symbol", "Close", "Chg", "Entry above", "Stop", "Target", "R:R"];
+  var cols = ["Symbol", "Close", "Chg", "Entry above", "Stop", "Target", "R:R", "Hit %", "Net R"];
   if (hasQty) cols.push("Qty");
   cols.push("Why");
   var t = tableShell(cols);
@@ -517,6 +517,29 @@ function renderGated(){
     tr.appendChild(el("td", "num", num(ex.hard_stop)));
     tr.appendChild(el("td", "num", num(ex.target_1)));
     tr.appendChild(el("td", "num", num(ex.rr_to_t1, 2)));
+
+    /* R:R is a ratio of DISTANCES. It says nothing about how often the
+       target is actually reached, and showing it alone displays the
+       flattering half of the answer. These two columns are the other half. */
+    var rp = c.replay || {};
+    if (rp.available){
+      var hit = el("td", "num", num(rp.historical.target_first_pct, 1) + "%");
+      hit.title = "Historically the target came first " + rp.historical.target_first_pct
+        + "% of the time, the stop first " + rp.historical.stop_first_pct
+        + "%, unresolved " + rp.historical.unresolved_pct + "% within "
+        + rp.horizon_bars + " sessions (" + rp.historical.paths + " paths).";
+      tr.appendChild(hit);
+      var nr = (rp.net || {}).net_r;
+      var cls = "num " + (nr > 0.1 ? "up" : (nr <= 0 ? "down" : ""));
+      var ncell = el("td", cls, nr === null || nr === undefined ? DASH : num(nr, 2) + "R");
+      ncell.title = (rp.verdict || {}).text || "";
+      tr.appendChild(ncell);
+    } else {
+      var na = el("td", "flat", DASH);
+      na.title = rp.reason || "not replayed";
+      tr.appendChild(na);
+      tr.appendChild(el("td", "flat", DASH));
+    }
     if (hasQty){
       var q = (PRIV.sizing[sym] || {}).qty_for_risk;
       tr.appendChild(el("td", "num", q === undefined || q === null ? DASH : String(q)));

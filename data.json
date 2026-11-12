@@ -857,7 +857,7 @@
     "stale": null
   },
   "gate_feeds_unavailable": {},
-  "generated_at": "2026-11-12T17:11:41.247182+05:30",
+  "generated_at": "2026-11-12T17:25:49.911360+05:30",
   "intraday": {
     "available": [],
     "configured": false,
@@ -78727,6 +78727,57 @@
       },
       "pct_change": -0.91,
       "price_discontinuities": [],
+      "replay": {
+        "available": true,
+        "bars_of_history": 390,
+        "caveats": [
+          "config/costs.yaml is NOT operator-verified (verified_by_operator: false), so every net figure here rests on unconfirmed rates.",
+          "Daily bars cannot say whether the high or the low came first. 0 path(s) touched both barriers in one bar and every one was counted as a STOP, never as a target.",
+          "The Monte Carlo resamples bars independently, which removes autocorrelation and volatility clustering. Real paths trend and cluster more, so treat it as a floor on tail risk.",
+          "This replays price behaviour between two barriers, not an entry rule. It carries no entry-timing edge and claims none.",
+          "Costs use the published modelling notional of Rs 100,000, not your capital. Flat charges hurt smaller positions far more."
+        ],
+        "historical": {
+          "ambiguous_bars": 0,
+          "ambiguous_pct": 0.0,
+          "expectancy_r_gross": -0.372,
+          "mean_unresolved_r": -0.019,
+          "paths": 369,
+          "stop_first_pct": 52.3,
+          "target_first_pct": 7.9,
+          "unresolved_pct": 39.8
+        },
+        "horizon_bars": 20,
+        "monte_carlo": {
+          "ambiguous_bars": 0,
+          "ambiguous_pct": 0.0,
+          "expectancy_r_gross": -0.203,
+          "mean_unresolved_r": 0.235,
+          "paths": 10000,
+          "stop_first_pct": 45.4,
+          "target_first_pct": 6.9,
+          "unresolved_pct": 47.7
+        },
+        "net": {
+          "charges": 234.87,
+          "cost_drag_r": 0.032,
+          "gross_pnl": -2713.55,
+          "net_pnl": -2948.43,
+          "net_r": -0.404,
+          "notional_modelled": 99778.5,
+          "qty_modelled": 450,
+          "tax": 0.0
+        },
+        "reason": null,
+        "rr_on_paper": 2.022,
+        "symbol": "CROMPTON",
+        "trade_type": "positional",
+        "verdict": {
+          "engines_agree": true,
+          "label": "negative",
+          "text": "Net expectancy is -0.40R after costs. The target came first 8% of the time historically, and that is not often enough to pay for the round trip."
+        }
+      },
       "sector": "NIFTY CONSUMER DURABLES",
       "segment": "NIFTY SMALLCAP 50",
       "series_contaminated": false,
@@ -148205,6 +148256,57 @@
       },
       "pct_change": 0.61,
       "price_discontinuities": [],
+      "replay": {
+        "available": true,
+        "bars_of_history": 390,
+        "caveats": [
+          "config/costs.yaml is NOT operator-verified (verified_by_operator: false), so every net figure here rests on unconfirmed rates.",
+          "Daily bars cannot say whether the high or the low came first. 0 path(s) touched both barriers in one bar and every one was counted as a STOP, never as a target.",
+          "The Monte Carlo resamples bars independently, which removes autocorrelation and volatility clustering. Real paths trend and cluster more, so treat it as a floor on tail risk.",
+          "This replays price behaviour between two barriers, not an entry rule. It carries no entry-timing edge and claims none.",
+          "Costs use the published modelling notional of Rs 100,000, not your capital. Flat charges hurt smaller positions far more."
+        ],
+        "historical": {
+          "ambiguous_bars": 0,
+          "ambiguous_pct": 0.0,
+          "expectancy_r_gross": -0.021,
+          "mean_unresolved_r": -0.519,
+          "paths": 329,
+          "stop_first_pct": 67.8,
+          "target_first_pct": 30.7,
+          "unresolved_pct": 1.5
+        },
+        "horizon_bars": 60,
+        "monte_carlo": {
+          "ambiguous_bars": 0,
+          "ambiguous_pct": 0.0,
+          "expectancy_r_gross": 0.306,
+          "mean_unresolved_r": 0.544,
+          "paths": 10000,
+          "stop_first_pct": 57.1,
+          "target_first_pct": 39.7,
+          "unresolved_pct": 3.2
+        },
+        "net": {
+          "charges": 227.52,
+          "cost_drag_r": 0.04,
+          "gross_pnl": -120.69,
+          "net_pnl": -348.2,
+          "net_r": -0.061,
+          "notional_modelled": 95260.5,
+          "qty_modelled": 9,
+          "tax": 0.0
+        },
+        "reason": null,
+        "rr_on_paper": 2.167,
+        "symbol": "OFSS",
+        "trade_type": "longterm",
+        "verdict": {
+          "engines_agree": true,
+          "label": "negative",
+          "text": "Net expectancy is -0.06R after costs. The target came first 31% of the time historically, and that is not often enough to pay for the round trip."
+        }
+      },
       "sector": "NIFTY IT",
       "segment": "NIFTY MIDCAP 100",
       "series_contaminated": false,
@@ -152071,6 +152173,57 @@
       },
       "pct_change": 3.82,
       "price_discontinuities": [],
+      "replay": {
+        "available": true,
+        "bars_of_history": 390,
+        "caveats": [
+          "config/costs.yaml is NOT operator-verified (verified_by_operator: false), so every net figure here rests on unconfirmed rates.",
+          "Daily bars cannot say whether the high or the low came first. 0 path(s) touched both barriers in one bar and every one was counted as a STOP, never as a target.",
+          "The Monte Carlo resamples bars independently, which removes autocorrelation and volatility clustering. Real paths trend and cluster more, so treat it as a floor on tail risk.",
+          "This replays price behaviour between two barriers, not an entry rule. It carries no entry-timing edge and claims none.",
+          "Costs use the published modelling notional of Rs 100,000, not your capital. Flat charges hurt smaller positions far more."
+        ],
+        "historical": {
+          "ambiguous_bars": 0,
+          "ambiguous_pct": 0.0,
+          "expectancy_r_gross": 0.03,
+          "mean_unresolved_r": 0.258,
+          "paths": 329,
+          "stop_first_pct": 59.9,
+          "target_first_pct": 36.5,
+          "unresolved_pct": 3.6
+        },
+        "horizon_bars": 60,
+        "monte_carlo": {
+          "ambiguous_bars": 0,
+          "ambiguous_pct": 0.0,
+          "expectancy_r_gross": 0.209,
+          "mean_unresolved_r": 0.175,
+          "paths": 10000,
+          "stop_first_pct": 51.2,
+          "target_first_pct": 41.7,
+          "unresolved_pct": 7.0
+        },
+        "net": {
+          "charges": 238.57,
+          "cost_drag_r": 0.02,
+          "gross_pnl": 389.43,
+          "net_pnl": 132.0,
+          "net_r": 0.01,
+          "notional_modelled": 99997.1,
+          "qty_modelled": 6211,
+          "tax": 18.86
+        },
+        "reason": null,
+        "rr_on_paper": 1.699,
+        "symbol": "PCJEWELLER",
+        "trade_type": "longterm",
+        "verdict": {
+          "engines_agree": true,
+          "label": "marginal",
+          "text": "Net expectancy is +0.01R - positive but inside the noise of an unverified cost model."
+        }
+      },
       "sector": null,
       "segment": "NIFTY MICROCAP 250",
       "series_contaminated": false,
@@ -185893,6 +186046,57 @@
       },
       "pct_change": -0.64,
       "price_discontinuities": [],
+      "replay": {
+        "available": true,
+        "bars_of_history": 390,
+        "caveats": [
+          "config/costs.yaml is NOT operator-verified (verified_by_operator: false), so every net figure here rests on unconfirmed rates.",
+          "Daily bars cannot say whether the high or the low came first. 0 path(s) touched both barriers in one bar and every one was counted as a STOP, never as a target.",
+          "The Monte Carlo resamples bars independently, which removes autocorrelation and volatility clustering. Real paths trend and cluster more, so treat it as a floor on tail risk.",
+          "This replays price behaviour between two barriers, not an entry rule. It carries no entry-timing edge and claims none.",
+          "Costs use the published modelling notional of Rs 100,000, not your capital. Flat charges hurt smaller positions far more."
+        ],
+        "historical": {
+          "ambiguous_bars": 0,
+          "ambiguous_pct": 0.0,
+          "expectancy_r_gross": -0.322,
+          "mean_unresolved_r": 0.135,
+          "paths": 369,
+          "stop_first_pct": 63.4,
+          "target_first_pct": 15.2,
+          "unresolved_pct": 21.4
+        },
+        "horizon_bars": 20,
+        "monte_carlo": {
+          "ambiguous_bars": 0,
+          "ambiguous_pct": 0.0,
+          "expectancy_r_gross": -0.086,
+          "mean_unresolved_r": 0.298,
+          "paths": 10000,
+          "stop_first_pct": 52.6,
+          "target_first_pct": 19.1,
+          "unresolved_pct": 28.3
+        },
+        "net": {
+          "charges": 231.52,
+          "cost_drag_r": 0.04,
+          "gross_pnl": -1865.83,
+          "net_pnl": -2097.35,
+          "net_r": -0.362,
+          "notional_modelled": 97875.0,
+          "qty_modelled": 25,
+          "tax": 0.0
+        },
+        "reason": null,
+        "rr_on_paper": 1.866,
+        "symbol": "TATAELXSI",
+        "trade_type": "positional",
+        "verdict": {
+          "engines_agree": true,
+          "label": "negative",
+          "text": "Net expectancy is -0.36R after costs. The target came first 15% of the time historically, and that is not often enough to pay for the round trip."
+        }
+      },
       "sector": "NIFTY MIDSMALL IT & TELECOM",
       "segment": "NIFTY SMALLCAP 50",
       "series_contaminated": false,
