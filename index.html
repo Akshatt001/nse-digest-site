@@ -88,6 +88,11 @@ h1{margin:0; font-size:19px; font-weight:600; letter-spacing:-.02em}
 }
 .mode .mt{display:block; font-weight:600; font-size:14px; color:var(--ink)}
 .mode .ms{display:block; font-size:12px; color:var(--ink-3); margin-top:1px}
+.modes.drivers{padding-top:0; padding-bottom:16px}
+.mode.sm{padding:6px 10px}
+.mode.sm .mt{font-size:13px}
+.mode.sm .ms{font-size:11px}
+.tag.news{background:#eef4ff; border-color:#c9d8f3; color:#1f4ea8}
 
 /* ---------- sections ---------- */
 section{padding-block:18px}
@@ -191,6 +196,7 @@ footer{border-top:1px solid var(--line); margin-top:10px}
     </div>
     <div class="stamps" id="stamps"></div>
     <div class="modes" id="modes" role="group" aria-label="Horizon"></div>
+    <div class="modes drivers" id="drivers" role="group" aria-label="What to show"></div>
   </div>
 </header>
 
@@ -238,6 +244,21 @@ footer{border-top:1px solid var(--line); margin-top:10px}
    server, or published alongside its data. */
 var DATA = null, NEWS = null, PRIV = null;
 var mode = null;
+var driver = "moving";
+
+/* The second control. Each option names ONE sort key, stated on the page, so
+   the ordering is checkable. There is deliberately no "best overall" option:
+   that would need weights nobody has fitted against costed outcomes. */
+var DRIVERS = [
+  { key: "moving", title: "Moving now",
+    sub: "largest session move, then volume against its own 10-bar average" },
+  { key: "news",   title: "News catalyst",
+    sub: "highest classified headline materiality. Broker calls score zero" },
+  { key: "upside", title: "Upside potential",
+    sub: "closest to its nearest real overhead level, measured R:R preferred" },
+  { key: "any",    title: "Momentum",
+    sub: "momentum percentile within its own size segment" }
+];
 
 var MODES = [
   { key: "intraday",   title: "Intraday",   sub: "same-day, needs broker candles" },
@@ -384,7 +405,8 @@ function renderModes(){
   MODES.forEach(function(m){
     var tt = (DATA.trade_types || {})[m.key] || {};
     var n = (tt.candidates || []).length;
-    var sn = ((DATA.shortlist || {})[m.key] || []).length;
+    var sl = ((DATA.shortlist || {})[m.key] || {});
+    var sn = ((sl[driver]) || []).length;
     var b = el("button", "mode");
     b.type = "button";
     b.setAttribute("aria-pressed", m.key === mode ? "true" : "false");
@@ -392,6 +414,22 @@ function renderModes(){
     b.appendChild(el("span", "ms", n + " trade-ready · " + sn + " shortlisted"));
     b.title = m.sub;
     b.onclick = function(){ mode = m.key; render(); };
+    box.appendChild(b);
+  });
+}
+
+function renderDrivers(){
+  var box = $("drivers"); box.innerHTML = "";
+  var sl = ((DATA.shortlist || {})[mode]) || {};
+  DRIVERS.forEach(function(d){
+    var n = (sl[d.key] || []).length;
+    var b = el("button", "mode sm");
+    b.type = "button";
+    b.setAttribute("aria-pressed", d.key === driver ? "true" : "false");
+    b.appendChild(el("span", "mt", d.title));
+    b.appendChild(el("span", "ms", n + " names"));
+    b.title = d.sub;
+    b.onclick = function(){ driver = d.key; render(); };
     box.appendChild(b);
   });
 }
@@ -525,17 +563,39 @@ function intradayNotice(){
 }
 
 function renderShortlist(){
-  var rows = ((DATA.shortlist || {})[mode]) || [];
+  var sl = ((DATA.shortlist || {})[mode]) || {};
+  var rows = sl[driver] || [];
+  var dmeta = null;
+  DRIVERS.forEach(function(d){ if (d.key === driver) dmeta = d; });
+
   $("short-count").textContent = rows.length + " names";
-  $("short-sub").textContent = DATA.shortlist_note || "";
+  var sub = dmeta ? ("Ordered by: " + dmeta.sub + ".") : "";
+  var nl = DATA.news_layer || {};
+  if (driver === "news"){
+    sub += nl.available
+      ? (" Headlines classified by " + (nl.classifier || "a rule-based lexicon")
+         + " Materiality floor " + nl.materiality_floor + ".")
+      : (" News unavailable: " + (nl.reason || "unknown") + ".");
+  }
+  $("short-sub").textContent = sub + " " + (DATA.shortlist_note || "");
 
   var host = $("short-body"); host.innerHTML = "";
   if (!rows.length){
-    host.appendChild(el("div", "empty", "No symbol currently shows a computed catalyst."));
+    var why = "No symbol currently shows a computed catalyst.";
+    if (driver === "news"){
+      why = (DATA.news_layer || {}).available
+        ? ("No symbol has a headline above the materiality floor. A quiet news "
+           + "day is the normal case, and this list is not padded with momentum "
+           + "names to look fuller.")
+        : ("News is unavailable: " + ((DATA.news_layer || {}).reason || "unknown"));
+    } else if (driver === "upside"){
+      why = "No symbol sits below a real overhead level, so no measured upside exists.";
+    }
+    host.appendChild(el("div", "empty", why));
     return;
   }
 
-  var cols = ["Symbol", "Close", "Chg", "Sector", "Mom", "Catalysts", "Blocked by"];
+  var cols = ["Symbol", "Close", "Chg", "Sector", "Why now", "News", "Blocked by"];
   var t = tableShell(cols);
 
   rows.forEach(function(r){
@@ -544,10 +604,36 @@ function renderShortlist(){
     tr.appendChild(el("td", "num", num(r.close)));
     tr.appendChild(el("td", "num " + signClass(r.pct_change), pct(r.pct_change)));
     tr.appendChild(el("td", null, (r.sector || DASH).replace(/^NIFTY /, "")));
-    tr.appendChild(el("td", "num", r.momentum_rank_in_segment ? "#" + r.momentum_rank_in_segment : DASH));
     var cat = el("td");
     (r.catalyst_flags || []).forEach(function(f){ cat.appendChild(flagTag(f)); });
     tr.appendChild(cat);
+
+    /* News cell. A negative headline shows in red on EVERY driver's view,
+       not only the news one: a symbol can top "Moving now" on a bounce that
+       follows a fraud report, and the warning has to travel with it. */
+    var nc = el("td");
+    var nv = r.news;
+    if (r.news_risk){
+      var bad = el("span", "tag v-AVOID",
+        String(r.news_risk.event).replace(/_/g, " "));
+      bad.title = r.news_risk.headline || "";
+      nc.appendChild(bad);
+    } else if (nv && nv.news_score >= ((DATA.news_layer || {}).materiality_floor || 0.4)){
+      var g = el("span", "tag news", String(nv.event).replace(/_/g, " "));
+      g.title = (nv.headline || "") + "
+
+matched: "
+        + ((nv.matched || []).join(", ") || "n/a")
+        + "
+publisher: " + (nv.publisher || "n/a");
+      nc.appendChild(g);
+      if (nv.hedged) nc.appendChild(el("span", "tag", "unconfirmed"));
+      if (nv.third_party_recommendation) nc.appendChild(el("span", "tag", "broker call"));
+    } else {
+      nc.textContent = DASH;
+      nc.className = "flat";
+    }
+    tr.appendChild(nc);
     var blocked = el("td");
     var fg = r.failed_gates || [];
     blocked.textContent = fg.length ? shortGate(fg[0]) : "cap only";
@@ -789,6 +875,7 @@ function render(){
   renderBanner();
   renderStamps();
   renderModes();
+  renderDrivers();
   renderGated();
   renderShortlist();
   renderWhy();
