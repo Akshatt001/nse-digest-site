@@ -857,7 +857,7 @@
     "stale": null
   },
   "gate_feeds_unavailable": {},
-  "generated_at": "2026-11-12T17:07:25.349467+05:30",
+  "generated_at": "2026-11-12T17:11:41.247182+05:30",
   "intraday": {
     "available": [],
     "configured": false,
@@ -1009,12 +1009,12 @@
   "news_layer": {
     "available": true,
     "classifier": "rule-based, src/nlp_news.py. No language model.",
-    "fetched_at": "2026-11-12T13:09:10.716156+05:30",
-    "match_rate_pct": 48.0,
+    "fetched_at": "2026-11-12T17:08:21.972135+05:30",
+    "match_rate_pct": 48.1,
     "materiality_floor": 0.4,
     "note": "Headlines are classified by a deterministic rule-based lexicon, never by a language model. News orders the shortlist only; it is not an input to any gate, and no price, level, stop or target comes from it.",
     "reason": null,
-    "symbols_classified": 81
+    "symbols_classified": 88
   },
   "rejected": {
     "intraday": [
@@ -36758,21 +36758,19 @@
           "hard_stop": null,
           "momentum_rank_in_segment": 1,
           "news": {
-            "co_mentions": 1,
+            "co_mentions": null,
             "direction": "neutral",
-            "event": "price_move_reported",
-            "headline": "ICICI Bank shares hits 52-week high; Morgan Stanley adds to focus list",
-            "hedged": false,
-            "items_material": 1,
-            "items_seen": 2,
-            "matched": [
-              "# week high"
-            ],
-            "mention_only": false,
-            "news_score": 0.25,
-            "publisher": "hindu_businessline",
-            "roundup": false,
-            "third_party_recommendation": false
+            "event": "none",
+            "headline": null,
+            "hedged": null,
+            "items_material": 0,
+            "items_seen": 1,
+            "matched": null,
+            "mention_only": null,
+            "news_score": 0.0,
+            "publisher": null,
+            "roundup": null,
+            "third_party_recommendation": null
           },
           "news_risk": null,
           "pct_change": -1.1,
@@ -37488,68 +37486,6 @@
         {
           "catalyst_flags": [
             {
-              "detail": "nearest overhead level 2495.0, 0.93% away",
-              "kind": "breakout",
-              "label": "0.9% below resistance"
-            },
-            {
-              "detail": "classified from the headline by src/nlp_news.py, materiality 0.85; terms matched: bags rio marathon tech deal",
-              "kind": "news",
-              "label": "order win (positive)"
-            }
-          ],
-          "close": 2472.1,
-          "factor_tags": [
-            "dividend",
-            "equal_weight",
-            "growth",
-            "low_volatility",
-            "multifactor",
-            "quality",
-            "value"
-          ],
-          "failed_gates": [
-            "no 15m data (required for intraday)",
-            "no 5m data (required for intraday)",
-            "measured R:R 0.79 below the 2.00 minimum"
-          ],
-          "hard_stop": 2355.78,
-          "momentum_rank_in_segment": 30,
-          "news": {
-            "co_mentions": 1,
-            "direction": "positive",
-            "event": "order_win",
-            "headline": "TCS bags Rio Marathon tech deal; stocks in red",
-            "hedged": false,
-            "items_material": 1,
-            "items_seen": 1,
-            "matched": [
-              "bags rio marathon tech deal"
-            ],
-            "mention_only": false,
-            "news_score": 0.85,
-            "publisher": "hindu_businessline",
-            "roundup": false,
-            "third_party_recommendation": false
-          },
-          "news_risk": null,
-          "pct_change": -0.13,
-          "pct_to_resistance": 0.93,
-          "percentile_in_segment": 42.0,
-          "rr_is_measured": true,
-          "rr_to_t1": 0.79,
-          "sector": "NIFTY IT",
-          "segment": "NIFTY 50",
-          "symbol": "TCS",
-          "target_1": 2605.0,
-          "trigger_entry": 2495.0,
-          "turnover_20d_cr": 1086.389,
-          "verdict": "BULLISH",
-          "volume_ratio": 1.0837
-        },
-        {
-          "catalyst_flags": [
-            {
               "detail": "1.60x its own 10-bar average, threshold 1.2x",
               "kind": "volume",
               "label": "volume 1.6x"
@@ -37634,7 +37570,7 @@
             "event": "results_strong",
             "headline": "Tata Power shares gain 2% after Q2 profit rises 33%; analysts upbeat",
             "hedged": false,
-            "items_material": 2,
+            "items_material": 3,
             "items_seen": 5,
             "matched": [
               "gain #%",
@@ -37664,71 +37600,70 @@
         {
           "catalyst_flags": [
             {
-              "detail": "close vs previous close, 4.3% >= 3.0%",
-              "kind": "move",
-              "label": "+4.3% move"
-            },
-            {
-              "detail": "1.96x its own 10-bar average, threshold 1.2x",
+              "detail": "1.36x its own 10-bar average, threshold 1.2x",
               "kind": "volume",
-              "label": "volume 2.0x"
+              "label": "volume 1.4x"
             },
             {
-              "detail": "nearest overhead level 5665.5, 0.01% away",
+              "detail": "nearest overhead level 36900.0, 0.90% away",
               "kind": "breakout",
-              "label": "0.0% below resistance"
+              "label": "0.9% below resistance"
             },
             {
-              "detail": "classified from the headline by src/nlp_news.py, materiality 0.56; terms matched: q# beat, surge",
+              "detail": "classified from the headline by src/nlp_news.py, materiality 0.55; terms matched: dividend, hits #% lower circuit",
               "kind": "news",
-              "label": "results strong (positive)"
+              "label": "capital return (positive)"
             }
           ],
-          "close": 5665.0,
+          "close": 36570.0,
           "factor_tags": [
+            "dividend",
             "equal_weight",
-            "high_beta"
+            "low_volatility",
+            "momentum",
+            "multifactor",
+            "quality"
           ],
           "failed_gates": [
             "no 15m data (required for intraday)",
             "no 5m data (required for intraday)",
-            "turnover 272.65 cr below its own segment's median 335.94 cr",
-            "measured R:R 0.21 below the 2.00 minimum"
+            "turnover 51.12 cr below its own segment's median 85.27 cr",
+            "measured R:R 0.52 below the 2.00 minimum"
           ],
-          "hard_stop": 5360.41,
-          "momentum_rank_in_segment": 10,
+          "hard_stop": 35066.25,
+          "momentum_rank_in_segment": 24,
           "news": {
             "co_mentions": 1,
             "direction": "positive",
-            "event": "results_strong",
-            "headline": "IndiGo shares surge past analyst target as falling crude, Q2 beat draw buyers",
+            "event": "capital_return",
+            "headline": "Page Industries hits 10% lower circuit post Q2 show; \u20b9150 dividend declared",
             "hedged": false,
             "items_material": 1,
-            "items_seen": 3,
+            "items_seen": 2,
             "matched": [
-              "q# beat",
-              "surge"
+              "dividend",
+              "hits #% lower circuit"
             ],
             "mention_only": false,
-            "news_score": 0.56,
-            "publisher": "hindu_businessline",
+            "news_score": 0.55,
+            "publisher": "business_standard",
             "roundup": false,
-            "third_party_recommendation": true
+            "third_party_recommendation": false
           },
           "news_risk": null,
-          "pct_change": 4.33,
-          "pct_to_resistance": 0.01,
-          "percentile_in_segment": 82.0,
+          "pct_change": 0.52,
+          "pct_to_resistance": 0.9,
+          "percentile_in_segment": 50.0,
           "rr_is_measured": true,
-          "rr_to_t1": 0.208,
+          "rr_to_t1": 0.515,
           "sector": null,
-          "segment": "NIFTY 50",
-          "symbol": "INDIGO",
-          "target_1": 5729.0,
-          "trigger_entry": 5665.5,
-          "turnover_20d_cr": 272.647,
-          "verdict": "BULLISH",
-          "volume_ratio": 1.9571
+          "segment": "NIFTY MIDCAP 100",
+          "symbol": "PAGEIND",
+          "target_1": 37845.0,
+          "trigger_entry": 36900.0,
+          "turnover_20d_cr": 51.122,
+          "verdict": "CAUTIOUSLY_BULLISH",
+          "volume_ratio": 1.3638
         },
         {
           "catalyst_flags": [
@@ -37782,6 +37717,74 @@
           "turnover_20d_cr": 121.897,
           "verdict": "NEUTRAL",
           "volume_ratio": 0.6711
+        },
+        {
+          "catalyst_flags": [
+            {
+              "detail": "nearest overhead level 409.5, 0.79% away",
+              "kind": "breakout",
+              "label": "0.8% below resistance"
+            },
+            {
+              "detail": "classified from the headline by src/nlp_news.py, materiality 0.50; terms matched: offer for sale",
+              "kind": "news",
+              "label": "stake exit (negative)"
+            }
+          ],
+          "close": 406.3,
+          "factor_tags": [
+            "alpha",
+            "dividend",
+            "equal_weight",
+            "low_volatility",
+            "momentum",
+            "multifactor",
+            "quality",
+            "value"
+          ],
+          "failed_gates": [
+            "no 15m data (required for intraday)",
+            "no 5m data (required for intraday)",
+            "turnover 282.04 cr below its own segment's median 335.94 cr",
+            "measured R:R 0.15 below the 2.00 minimum"
+          ],
+          "hard_stop": 390.84,
+          "momentum_rank_in_segment": 32,
+          "news": {
+            "co_mentions": 1,
+            "direction": "negative",
+            "event": "stake_exit",
+            "headline": "India's Next Billion-Dollar IPO? Coal India subsidiary Mahanadi Coalfields in line after Jio, NSE - key things to know",
+            "hedged": false,
+            "items_material": 1,
+            "items_seen": 1,
+            "matched": [
+              "offer for sale"
+            ],
+            "mention_only": false,
+            "news_score": 0.5,
+            "publisher": "livemint",
+            "roundup": false,
+            "third_party_recommendation": false
+          },
+          "news_risk": {
+            "event": "stake_exit",
+            "headline": "India's Next Billion-Dollar IPO? Coal India subsidiary Mahanadi Coalfields in line after Jio, NSE - key things to know",
+            "score": 0.5
+          },
+          "pct_change": 1.2,
+          "pct_to_resistance": 0.79,
+          "percentile_in_segment": 38.0,
+          "rr_is_measured": true,
+          "rr_to_t1": 0.155,
+          "sector": null,
+          "segment": "NIFTY 50",
+          "symbol": "COALINDIA",
+          "target_1": 412.4,
+          "trigger_entry": 409.5,
+          "turnover_20d_cr": 282.035,
+          "verdict": "NEUTRAL",
+          "volume_ratio": 1.0621
         }
       ],
       "upside": [
@@ -37842,11 +37845,6 @@
               "detail": "nearest overhead level 5665.5, 0.01% away",
               "kind": "breakout",
               "label": "0.0% below resistance"
-            },
-            {
-              "detail": "classified from the headline by src/nlp_news.py, materiality 0.56; terms matched: q# beat, surge",
-              "kind": "news",
-              "label": "results strong (positive)"
             }
           ],
           "close": 5665.0,
@@ -37863,22 +37861,19 @@
           "hard_stop": 5360.41,
           "momentum_rank_in_segment": 10,
           "news": {
-            "co_mentions": 1,
-            "direction": "positive",
-            "event": "results_strong",
-            "headline": "IndiGo shares surge past analyst target as falling crude, Q2 beat draw buyers",
-            "hedged": false,
-            "items_material": 1,
-            "items_seen": 3,
-            "matched": [
-              "q# beat",
-              "surge"
-            ],
-            "mention_only": false,
-            "news_score": 0.56,
-            "publisher": "hindu_businessline",
-            "roundup": false,
-            "third_party_recommendation": true
+            "co_mentions": null,
+            "direction": "neutral",
+            "event": "none",
+            "headline": null,
+            "hedged": null,
+            "items_material": 0,
+            "items_seen": 2,
+            "matched": null,
+            "mention_only": null,
+            "news_score": 0.0,
+            "publisher": null,
+            "roundup": null,
+            "third_party_recommendation": null
           },
           "news_risk": null,
           "pct_change": 4.33,
@@ -38402,21 +38397,19 @@
           "hard_stop": null,
           "momentum_rank_in_segment": 1,
           "news": {
-            "co_mentions": 1,
+            "co_mentions": null,
             "direction": "neutral",
-            "event": "price_move_reported",
-            "headline": "ICICI Bank shares hits 52-week high; Morgan Stanley adds to focus list",
-            "hedged": false,
-            "items_material": 1,
-            "items_seen": 2,
-            "matched": [
-              "# week high"
-            ],
-            "mention_only": false,
-            "news_score": 0.25,
-            "publisher": "hindu_businessline",
-            "roundup": false,
-            "third_party_recommendation": false
+            "event": "none",
+            "headline": null,
+            "hedged": null,
+            "items_material": 0,
+            "items_seen": 1,
+            "matched": null,
+            "mention_only": null,
+            "news_score": 0.0,
+            "publisher": null,
+            "roundup": null,
+            "third_party_recommendation": null
           },
           "news_risk": null,
           "pct_change": -1.1,
@@ -39067,6 +39060,55 @@
         {
           "catalyst_flags": [
             {
+              "detail": "classified from the headline by src/nlp_news.py, materiality 0.85; terms matched: order book",
+              "kind": "news",
+              "label": "order win (positive)"
+            }
+          ],
+          "close": 234.18,
+          "factor_tags": [],
+          "failed_gates": [
+            "turnover 5.48 cr below its own segment's median 12.83 cr",
+            "measured R:R 0.20 below the 1.50 minimum",
+            "close 234.18 not above 200 EMA 283.6442"
+          ],
+          "hard_stop": 235.09,
+          "momentum_rank_in_segment": 147,
+          "news": {
+            "co_mentions": 1,
+            "direction": "positive",
+            "event": "order_win",
+            "headline": "Refex Industries\u2019 ash and coal handling order book rises to Rs 1,721 crore",
+            "hedged": false,
+            "items_material": 1,
+            "items_seen": 1,
+            "matched": [
+              "order book"
+            ],
+            "mention_only": false,
+            "news_score": 0.85,
+            "publisher": "hindu_businessline",
+            "roundup": false,
+            "third_party_recommendation": false
+          },
+          "news_risk": null,
+          "pct_change": 1.98,
+          "pct_to_resistance": 9.6,
+          "percentile_in_segment": 36.0,
+          "rr_is_measured": true,
+          "rr_to_t1": 0.202,
+          "sector": null,
+          "segment": "NIFTY MICROCAP 250",
+          "symbol": "REFEX",
+          "target_1": 261.0,
+          "trigger_entry": 256.65,
+          "turnover_20d_cr": 5.475,
+          "verdict": "BEARISH",
+          "volume_ratio": 0.5545
+        },
+        {
+          "catalyst_flags": [
+            {
               "detail": "nearest overhead level 4272.3, 1.43% away",
               "kind": "breakout",
               "label": "1.4% below resistance"
@@ -39119,66 +39161,6 @@
           "turnover_20d_cr": 833.987,
           "verdict": "BULLISH",
           "volume_ratio": 0.9534
-        },
-        {
-          "catalyst_flags": [
-            {
-              "detail": "nearest overhead level 2495.0, 0.93% away",
-              "kind": "breakout",
-              "label": "0.9% below resistance"
-            },
-            {
-              "detail": "classified from the headline by src/nlp_news.py, materiality 0.85; terms matched: bags rio marathon tech deal",
-              "kind": "news",
-              "label": "order win (positive)"
-            }
-          ],
-          "close": 2472.1,
-          "factor_tags": [
-            "dividend",
-            "equal_weight",
-            "growth",
-            "low_volatility",
-            "multifactor",
-            "quality",
-            "value"
-          ],
-          "failed_gates": [
-            "measured R:R 0.79 below the 1.50 minimum"
-          ],
-          "hard_stop": 2355.78,
-          "momentum_rank_in_segment": 30,
-          "news": {
-            "co_mentions": 1,
-            "direction": "positive",
-            "event": "order_win",
-            "headline": "TCS bags Rio Marathon tech deal; stocks in red",
-            "hedged": false,
-            "items_material": 1,
-            "items_seen": 1,
-            "matched": [
-              "bags rio marathon tech deal"
-            ],
-            "mention_only": false,
-            "news_score": 0.85,
-            "publisher": "hindu_businessline",
-            "roundup": false,
-            "third_party_recommendation": false
-          },
-          "news_risk": null,
-          "pct_change": -0.13,
-          "pct_to_resistance": 0.93,
-          "percentile_in_segment": 42.0,
-          "rr_is_measured": true,
-          "rr_to_t1": 0.79,
-          "sector": "NIFTY IT",
-          "segment": "NIFTY 50",
-          "symbol": "TCS",
-          "target_1": 2605.0,
-          "trigger_entry": 2495.0,
-          "turnover_20d_cr": 1086.389,
-          "verdict": "BULLISH",
-          "volume_ratio": 1.0837
         },
         {
           "catalyst_flags": [
@@ -39264,7 +39246,7 @@
             "event": "results_strong",
             "headline": "Tata Power shares gain 2% after Q2 profit rises 33%; analysts upbeat",
             "hedged": false,
-            "items_material": 2,
+            "items_material": 3,
             "items_seen": 5,
             "matched": [
               "gain #%",
@@ -39294,69 +39276,69 @@
         {
           "catalyst_flags": [
             {
-              "detail": "close vs previous close, 4.3% >= 3.0%",
-              "kind": "move",
-              "label": "+4.3% move"
-            },
-            {
-              "detail": "1.96x its own 10-bar average, threshold 1.2x",
+              "detail": "1.36x its own 10-bar average, threshold 1.2x",
               "kind": "volume",
-              "label": "volume 2.0x"
+              "label": "volume 1.4x"
             },
             {
-              "detail": "nearest overhead level 5665.5, 0.01% away",
+              "detail": "nearest overhead level 36900.0, 0.90% away",
               "kind": "breakout",
-              "label": "0.0% below resistance"
+              "label": "0.9% below resistance"
             },
             {
-              "detail": "classified from the headline by src/nlp_news.py, materiality 0.56; terms matched: q# beat, surge",
+              "detail": "classified from the headline by src/nlp_news.py, materiality 0.55; terms matched: dividend, hits #% lower circuit",
               "kind": "news",
-              "label": "results strong (positive)"
+              "label": "capital return (positive)"
             }
           ],
-          "close": 5665.0,
+          "close": 36570.0,
           "factor_tags": [
+            "dividend",
             "equal_weight",
-            "high_beta"
+            "low_volatility",
+            "momentum",
+            "multifactor",
+            "quality"
           ],
           "failed_gates": [
-            "turnover 272.65 cr below its own segment's median 335.94 cr",
-            "measured R:R 0.21 below the 1.50 minimum"
+            "turnover 51.12 cr below its own segment's median 85.27 cr",
+            "measured R:R 0.52 below the 1.50 minimum",
+            "close 36570.0 not above 200 EMA 37398.4871"
           ],
-          "hard_stop": 5360.41,
-          "momentum_rank_in_segment": 10,
+          "hard_stop": 35066.25,
+          "momentum_rank_in_segment": 24,
           "news": {
             "co_mentions": 1,
             "direction": "positive",
-            "event": "results_strong",
-            "headline": "IndiGo shares surge past analyst target as falling crude, Q2 beat draw buyers",
+            "event": "capital_return",
+            "headline": "Page Industries hits 10% lower circuit post Q2 show; \u20b9150 dividend declared",
             "hedged": false,
             "items_material": 1,
-            "items_seen": 3,
+            "items_seen": 2,
             "matched": [
-              "q# beat",
-              "surge"
+              "dividend",
+              "hits #% lower circuit"
             ],
             "mention_only": false,
-            "news_score": 0.56,
-            "publisher": "hindu_businessline",
+            "news_score": 0.55,
+            "publisher": "business_standard",
             "roundup": false,
-            "third_party_recommendation": true
+            "third_party_recommendation": false
           },
           "news_risk": null,
-          "pct_change": 4.33,
-          "pct_to_resistance": 0.01,
-          "percentile_in_segment": 82.0,
+          "pct_change": 0.52,
+          "pct_to_resistance": 0.9,
+          "percentile_in_segment": 50.0,
           "rr_is_measured": true,
-          "rr_to_t1": 0.208,
+          "rr_to_t1": 0.515,
           "sector": null,
-          "segment": "NIFTY 50",
-          "symbol": "INDIGO",
-          "target_1": 5729.0,
-          "trigger_entry": 5665.5,
-          "turnover_20d_cr": 272.647,
-          "verdict": "BULLISH",
-          "volume_ratio": 1.9571
+          "segment": "NIFTY MIDCAP 100",
+          "symbol": "PAGEIND",
+          "target_1": 37845.0,
+          "trigger_entry": 36900.0,
+          "turnover_20d_cr": 51.122,
+          "verdict": "CAUTIOUSLY_BULLISH",
+          "volume_ratio": 1.3638
         },
         {
           "catalyst_flags": [
@@ -39408,6 +39390,73 @@
           "turnover_20d_cr": 121.897,
           "verdict": "NEUTRAL",
           "volume_ratio": 0.6711
+        },
+        {
+          "catalyst_flags": [
+            {
+              "detail": "nearest overhead level 409.5, 0.79% away",
+              "kind": "breakout",
+              "label": "0.8% below resistance"
+            },
+            {
+              "detail": "classified from the headline by src/nlp_news.py, materiality 0.50; terms matched: offer for sale",
+              "kind": "news",
+              "label": "stake exit (negative)"
+            }
+          ],
+          "close": 406.3,
+          "factor_tags": [
+            "alpha",
+            "dividend",
+            "equal_weight",
+            "low_volatility",
+            "momentum",
+            "multifactor",
+            "quality",
+            "value"
+          ],
+          "failed_gates": [
+            "turnover 282.04 cr below its own segment's median 335.94 cr",
+            "measured R:R 0.15 below the 1.50 minimum",
+            "close 406.3 not above 200 EMA 419.8027"
+          ],
+          "hard_stop": 390.84,
+          "momentum_rank_in_segment": 32,
+          "news": {
+            "co_mentions": 1,
+            "direction": "negative",
+            "event": "stake_exit",
+            "headline": "India's Next Billion-Dollar IPO? Coal India subsidiary Mahanadi Coalfields in line after Jio, NSE - key things to know",
+            "hedged": false,
+            "items_material": 1,
+            "items_seen": 1,
+            "matched": [
+              "offer for sale"
+            ],
+            "mention_only": false,
+            "news_score": 0.5,
+            "publisher": "livemint",
+            "roundup": false,
+            "third_party_recommendation": false
+          },
+          "news_risk": {
+            "event": "stake_exit",
+            "headline": "India's Next Billion-Dollar IPO? Coal India subsidiary Mahanadi Coalfields in line after Jio, NSE - key things to know",
+            "score": 0.5
+          },
+          "pct_change": 1.2,
+          "pct_to_resistance": 0.79,
+          "percentile_in_segment": 38.0,
+          "rr_is_measured": true,
+          "rr_to_t1": 0.155,
+          "sector": null,
+          "segment": "NIFTY 50",
+          "symbol": "COALINDIA",
+          "target_1": 412.4,
+          "trigger_entry": 409.5,
+          "turnover_20d_cr": 282.035,
+          "verdict": "NEUTRAL",
+          "volume_ratio": 1.0621
         }
       ],
       "upside": [
@@ -39467,11 +39516,6 @@
               "detail": "nearest overhead level 5665.5, 0.01% away",
               "kind": "breakout",
               "label": "0.0% below resistance"
-            },
-            {
-              "detail": "classified from the headline by src/nlp_news.py, materiality 0.56; terms matched: q# beat, surge",
-              "kind": "news",
-              "label": "results strong (positive)"
             }
           ],
           "close": 5665.0,
@@ -39486,22 +39530,19 @@
           "hard_stop": 5360.41,
           "momentum_rank_in_segment": 10,
           "news": {
-            "co_mentions": 1,
-            "direction": "positive",
-            "event": "results_strong",
-            "headline": "IndiGo shares surge past analyst target as falling crude, Q2 beat draw buyers",
-            "hedged": false,
-            "items_material": 1,
-            "items_seen": 3,
-            "matched": [
-              "q# beat",
-              "surge"
-            ],
-            "mention_only": false,
-            "news_score": 0.56,
-            "publisher": "hindu_businessline",
-            "roundup": false,
-            "third_party_recommendation": true
+            "co_mentions": null,
+            "direction": "neutral",
+            "event": "none",
+            "headline": null,
+            "hedged": null,
+            "items_material": 0,
+            "items_seen": 2,
+            "matched": null,
+            "mention_only": null,
+            "news_score": 0.0,
+            "publisher": null,
+            "roundup": null,
+            "third_party_recommendation": null
           },
           "news_risk": null,
           "pct_change": 4.33,
@@ -40002,21 +40043,19 @@
           "hard_stop": null,
           "momentum_rank_in_segment": 1,
           "news": {
-            "co_mentions": 1,
+            "co_mentions": null,
             "direction": "neutral",
-            "event": "price_move_reported",
-            "headline": "ICICI Bank shares hits 52-week high; Morgan Stanley adds to focus list",
-            "hedged": false,
-            "items_material": 1,
-            "items_seen": 2,
-            "matched": [
-              "# week high"
-            ],
-            "mention_only": false,
-            "news_score": 0.25,
-            "publisher": "hindu_businessline",
-            "roundup": false,
-            "third_party_recommendation": false
+            "event": "none",
+            "headline": null,
+            "hedged": null,
+            "items_material": 0,
+            "items_seen": 1,
+            "matched": null,
+            "mention_only": null,
+            "news_score": 0.0,
+            "publisher": null,
+            "roundup": null,
+            "third_party_recommendation": null
           },
           "news_risk": null,
           "pct_change": -1.1,
@@ -40668,6 +40707,55 @@
         {
           "catalyst_flags": [
             {
+              "detail": "classified from the headline by src/nlp_news.py, materiality 0.85; terms matched: order book",
+              "kind": "news",
+              "label": "order win (positive)"
+            }
+          ],
+          "close": 234.18,
+          "factor_tags": [],
+          "failed_gates": [
+            "turnover 5.48 cr below its own segment's median 12.83 cr",
+            "measured R:R 0.20 below the 1.80 minimum",
+            "close 234.18 not above 50 EMA 254.2758"
+          ],
+          "hard_stop": 235.09,
+          "momentum_rank_in_segment": 147,
+          "news": {
+            "co_mentions": 1,
+            "direction": "positive",
+            "event": "order_win",
+            "headline": "Refex Industries\u2019 ash and coal handling order book rises to Rs 1,721 crore",
+            "hedged": false,
+            "items_material": 1,
+            "items_seen": 1,
+            "matched": [
+              "order book"
+            ],
+            "mention_only": false,
+            "news_score": 0.85,
+            "publisher": "hindu_businessline",
+            "roundup": false,
+            "third_party_recommendation": false
+          },
+          "news_risk": null,
+          "pct_change": 1.98,
+          "pct_to_resistance": 9.6,
+          "percentile_in_segment": 36.0,
+          "rr_is_measured": true,
+          "rr_to_t1": 0.202,
+          "sector": null,
+          "segment": "NIFTY MICROCAP 250",
+          "symbol": "REFEX",
+          "target_1": 261.0,
+          "trigger_entry": 256.65,
+          "turnover_20d_cr": 5.475,
+          "verdict": "BEARISH",
+          "volume_ratio": 0.5545
+        },
+        {
+          "catalyst_flags": [
+            {
               "detail": "nearest overhead level 4272.3, 1.43% away",
               "kind": "breakout",
               "label": "1.4% below resistance"
@@ -40720,66 +40808,6 @@
           "turnover_20d_cr": 833.987,
           "verdict": "BULLISH",
           "volume_ratio": 0.9534
-        },
-        {
-          "catalyst_flags": [
-            {
-              "detail": "nearest overhead level 2495.0, 0.93% away",
-              "kind": "breakout",
-              "label": "0.9% below resistance"
-            },
-            {
-              "detail": "classified from the headline by src/nlp_news.py, materiality 0.85; terms matched: bags rio marathon tech deal",
-              "kind": "news",
-              "label": "order win (positive)"
-            }
-          ],
-          "close": 2472.1,
-          "factor_tags": [
-            "dividend",
-            "equal_weight",
-            "growth",
-            "low_volatility",
-            "multifactor",
-            "quality",
-            "value"
-          ],
-          "failed_gates": [
-            "measured R:R 0.79 below the 1.80 minimum"
-          ],
-          "hard_stop": 2355.78,
-          "momentum_rank_in_segment": 30,
-          "news": {
-            "co_mentions": 1,
-            "direction": "positive",
-            "event": "order_win",
-            "headline": "TCS bags Rio Marathon tech deal; stocks in red",
-            "hedged": false,
-            "items_material": 1,
-            "items_seen": 1,
-            "matched": [
-              "bags rio marathon tech deal"
-            ],
-            "mention_only": false,
-            "news_score": 0.85,
-            "publisher": "hindu_businessline",
-            "roundup": false,
-            "third_party_recommendation": false
-          },
-          "news_risk": null,
-          "pct_change": -0.13,
-          "pct_to_resistance": 0.93,
-          "percentile_in_segment": 42.0,
-          "rr_is_measured": true,
-          "rr_to_t1": 0.79,
-          "sector": "NIFTY IT",
-          "segment": "NIFTY 50",
-          "symbol": "TCS",
-          "target_1": 2605.0,
-          "trigger_entry": 2495.0,
-          "turnover_20d_cr": 1086.389,
-          "verdict": "BULLISH",
-          "volume_ratio": 1.0837
         },
         {
           "catalyst_flags": [
@@ -40865,7 +40893,7 @@
             "event": "results_strong",
             "headline": "Tata Power shares gain 2% after Q2 profit rises 33%; analysts upbeat",
             "hedged": false,
-            "items_material": 2,
+            "items_material": 3,
             "items_seen": 5,
             "matched": [
               "gain #%",
@@ -40895,69 +40923,68 @@
         {
           "catalyst_flags": [
             {
-              "detail": "close vs previous close, 4.3% >= 3.0%",
-              "kind": "move",
-              "label": "+4.3% move"
-            },
-            {
-              "detail": "1.96x its own 10-bar average, threshold 1.2x",
+              "detail": "1.36x its own 10-bar average, threshold 1.2x",
               "kind": "volume",
-              "label": "volume 2.0x"
+              "label": "volume 1.4x"
             },
             {
-              "detail": "nearest overhead level 5665.5, 0.01% away",
+              "detail": "nearest overhead level 36900.0, 0.90% away",
               "kind": "breakout",
-              "label": "0.0% below resistance"
+              "label": "0.9% below resistance"
             },
             {
-              "detail": "classified from the headline by src/nlp_news.py, materiality 0.56; terms matched: q# beat, surge",
+              "detail": "classified from the headline by src/nlp_news.py, materiality 0.55; terms matched: dividend, hits #% lower circuit",
               "kind": "news",
-              "label": "results strong (positive)"
+              "label": "capital return (positive)"
             }
           ],
-          "close": 5665.0,
+          "close": 36570.0,
           "factor_tags": [
+            "dividend",
             "equal_weight",
-            "high_beta"
+            "low_volatility",
+            "momentum",
+            "multifactor",
+            "quality"
           ],
           "failed_gates": [
-            "turnover 272.65 cr below its own segment's median 335.94 cr",
-            "measured R:R 0.21 below the 1.80 minimum"
+            "turnover 51.12 cr below its own segment's median 85.27 cr",
+            "measured R:R 0.52 below the 1.80 minimum"
           ],
-          "hard_stop": 5360.41,
-          "momentum_rank_in_segment": 10,
+          "hard_stop": 35066.25,
+          "momentum_rank_in_segment": 24,
           "news": {
             "co_mentions": 1,
             "direction": "positive",
-            "event": "results_strong",
-            "headline": "IndiGo shares surge past analyst target as falling crude, Q2 beat draw buyers",
+            "event": "capital_return",
+            "headline": "Page Industries hits 10% lower circuit post Q2 show; \u20b9150 dividend declared",
             "hedged": false,
             "items_material": 1,
-            "items_seen": 3,
+            "items_seen": 2,
             "matched": [
-              "q# beat",
-              "surge"
+              "dividend",
+              "hits #% lower circuit"
             ],
             "mention_only": false,
-            "news_score": 0.56,
-            "publisher": "hindu_businessline",
+            "news_score": 0.55,
+            "publisher": "business_standard",
             "roundup": false,
-            "third_party_recommendation": true
+            "third_party_recommendation": false
           },
           "news_risk": null,
-          "pct_change": 4.33,
-          "pct_to_resistance": 0.01,
-          "percentile_in_segment": 82.0,
+          "pct_change": 0.52,
+          "pct_to_resistance": 0.9,
+          "percentile_in_segment": 50.0,
           "rr_is_measured": true,
-          "rr_to_t1": 0.208,
+          "rr_to_t1": 0.515,
           "sector": null,
-          "segment": "NIFTY 50",
-          "symbol": "INDIGO",
-          "target_1": 5729.0,
-          "trigger_entry": 5665.5,
-          "turnover_20d_cr": 272.647,
-          "verdict": "BULLISH",
-          "volume_ratio": 1.9571
+          "segment": "NIFTY MIDCAP 100",
+          "symbol": "PAGEIND",
+          "target_1": 37845.0,
+          "trigger_entry": 36900.0,
+          "turnover_20d_cr": 51.122,
+          "verdict": "CAUTIOUSLY_BULLISH",
+          "volume_ratio": 1.3638
         },
         {
           "catalyst_flags": [
@@ -41010,6 +41037,73 @@
           "turnover_20d_cr": 121.897,
           "verdict": "NEUTRAL",
           "volume_ratio": 0.6711
+        },
+        {
+          "catalyst_flags": [
+            {
+              "detail": "nearest overhead level 409.5, 0.79% away",
+              "kind": "breakout",
+              "label": "0.8% below resistance"
+            },
+            {
+              "detail": "classified from the headline by src/nlp_news.py, materiality 0.50; terms matched: offer for sale",
+              "kind": "news",
+              "label": "stake exit (negative)"
+            }
+          ],
+          "close": 406.3,
+          "factor_tags": [
+            "alpha",
+            "dividend",
+            "equal_weight",
+            "low_volatility",
+            "momentum",
+            "multifactor",
+            "quality",
+            "value"
+          ],
+          "failed_gates": [
+            "turnover 282.04 cr below its own segment's median 335.94 cr",
+            "measured R:R 0.15 below the 1.80 minimum",
+            "close 406.3 not above 50 EMA 410.1633"
+          ],
+          "hard_stop": 390.84,
+          "momentum_rank_in_segment": 32,
+          "news": {
+            "co_mentions": 1,
+            "direction": "negative",
+            "event": "stake_exit",
+            "headline": "India's Next Billion-Dollar IPO? Coal India subsidiary Mahanadi Coalfields in line after Jio, NSE - key things to know",
+            "hedged": false,
+            "items_material": 1,
+            "items_seen": 1,
+            "matched": [
+              "offer for sale"
+            ],
+            "mention_only": false,
+            "news_score": 0.5,
+            "publisher": "livemint",
+            "roundup": false,
+            "third_party_recommendation": false
+          },
+          "news_risk": {
+            "event": "stake_exit",
+            "headline": "India's Next Billion-Dollar IPO? Coal India subsidiary Mahanadi Coalfields in line after Jio, NSE - key things to know",
+            "score": 0.5
+          },
+          "pct_change": 1.2,
+          "pct_to_resistance": 0.79,
+          "percentile_in_segment": 38.0,
+          "rr_is_measured": true,
+          "rr_to_t1": 0.155,
+          "sector": null,
+          "segment": "NIFTY 50",
+          "symbol": "COALINDIA",
+          "target_1": 412.4,
+          "trigger_entry": 409.5,
+          "turnover_20d_cr": 282.035,
+          "verdict": "NEUTRAL",
+          "volume_ratio": 1.0621
         }
       ],
       "upside": [
@@ -41068,11 +41162,6 @@
               "detail": "nearest overhead level 5665.5, 0.01% away",
               "kind": "breakout",
               "label": "0.0% below resistance"
-            },
-            {
-              "detail": "classified from the headline by src/nlp_news.py, materiality 0.56; terms matched: q# beat, surge",
-              "kind": "news",
-              "label": "results strong (positive)"
             }
           ],
           "close": 5665.0,
@@ -41087,22 +41176,19 @@
           "hard_stop": 5360.41,
           "momentum_rank_in_segment": 10,
           "news": {
-            "co_mentions": 1,
-            "direction": "positive",
-            "event": "results_strong",
-            "headline": "IndiGo shares surge past analyst target as falling crude, Q2 beat draw buyers",
-            "hedged": false,
-            "items_material": 1,
-            "items_seen": 3,
-            "matched": [
-              "q# beat",
-              "surge"
-            ],
-            "mention_only": false,
-            "news_score": 0.56,
-            "publisher": "hindu_businessline",
-            "roundup": false,
-            "third_party_recommendation": true
+            "co_mentions": null,
+            "direction": "neutral",
+            "event": "none",
+            "headline": null,
+            "hedged": null,
+            "items_material": 0,
+            "items_seen": 2,
+            "matched": null,
+            "mention_only": null,
+            "news_score": 0.0,
+            "publisher": null,
+            "roundup": null,
+            "third_party_recommendation": null
           },
           "news_risk": null,
           "pct_change": 4.33,
@@ -41608,21 +41694,19 @@
           "hard_stop": null,
           "momentum_rank_in_segment": 1,
           "news": {
-            "co_mentions": 1,
+            "co_mentions": null,
             "direction": "neutral",
-            "event": "price_move_reported",
-            "headline": "ICICI Bank shares hits 52-week high; Morgan Stanley adds to focus list",
-            "hedged": false,
-            "items_material": 1,
-            "items_seen": 2,
-            "matched": [
-              "# week high"
-            ],
-            "mention_only": false,
-            "news_score": 0.25,
-            "publisher": "hindu_businessline",
-            "roundup": false,
-            "third_party_recommendation": false
+            "event": "none",
+            "headline": null,
+            "hedged": null,
+            "items_material": 0,
+            "items_seen": 1,
+            "matched": null,
+            "mention_only": null,
+            "news_score": 0.0,
+            "publisher": null,
+            "roundup": null,
+            "third_party_recommendation": null
           },
           "news_risk": null,
           "pct_change": -1.1,
@@ -42266,6 +42350,55 @@
         {
           "catalyst_flags": [
             {
+              "detail": "classified from the headline by src/nlp_news.py, materiality 0.85; terms matched: order book",
+              "kind": "news",
+              "label": "order win (positive)"
+            }
+          ],
+          "close": 234.18,
+          "factor_tags": [],
+          "failed_gates": [
+            "no 1h data (required for swing)",
+            "turnover 5.48 cr below its own segment's median 12.83 cr",
+            "measured R:R 0.20 below the 2.00 minimum"
+          ],
+          "hard_stop": 235.09,
+          "momentum_rank_in_segment": 147,
+          "news": {
+            "co_mentions": 1,
+            "direction": "positive",
+            "event": "order_win",
+            "headline": "Refex Industries\u2019 ash and coal handling order book rises to Rs 1,721 crore",
+            "hedged": false,
+            "items_material": 1,
+            "items_seen": 1,
+            "matched": [
+              "order book"
+            ],
+            "mention_only": false,
+            "news_score": 0.85,
+            "publisher": "hindu_businessline",
+            "roundup": false,
+            "third_party_recommendation": false
+          },
+          "news_risk": null,
+          "pct_change": 1.98,
+          "pct_to_resistance": 9.6,
+          "percentile_in_segment": 36.0,
+          "rr_is_measured": true,
+          "rr_to_t1": 0.202,
+          "sector": null,
+          "segment": "NIFTY MICROCAP 250",
+          "symbol": "REFEX",
+          "target_1": 261.0,
+          "trigger_entry": 256.65,
+          "turnover_20d_cr": 5.475,
+          "verdict": "BEARISH",
+          "volume_ratio": 0.5545
+        },
+        {
+          "catalyst_flags": [
+            {
               "detail": "nearest overhead level 4272.3, 1.43% away",
               "kind": "breakout",
               "label": "1.4% below resistance"
@@ -42319,67 +42452,6 @@
           "turnover_20d_cr": 833.987,
           "verdict": "BULLISH",
           "volume_ratio": 0.9534
-        },
-        {
-          "catalyst_flags": [
-            {
-              "detail": "nearest overhead level 2495.0, 0.93% away",
-              "kind": "breakout",
-              "label": "0.9% below resistance"
-            },
-            {
-              "detail": "classified from the headline by src/nlp_news.py, materiality 0.85; terms matched: bags rio marathon tech deal",
-              "kind": "news",
-              "label": "order win (positive)"
-            }
-          ],
-          "close": 2472.1,
-          "factor_tags": [
-            "dividend",
-            "equal_weight",
-            "growth",
-            "low_volatility",
-            "multifactor",
-            "quality",
-            "value"
-          ],
-          "failed_gates": [
-            "no 1h data (required for swing)",
-            "measured R:R 0.79 below the 2.00 minimum"
-          ],
-          "hard_stop": 2355.78,
-          "momentum_rank_in_segment": 30,
-          "news": {
-            "co_mentions": 1,
-            "direction": "positive",
-            "event": "order_win",
-            "headline": "TCS bags Rio Marathon tech deal; stocks in red",
-            "hedged": false,
-            "items_material": 1,
-            "items_seen": 1,
-            "matched": [
-              "bags rio marathon tech deal"
-            ],
-            "mention_only": false,
-            "news_score": 0.85,
-            "publisher": "hindu_businessline",
-            "roundup": false,
-            "third_party_recommendation": false
-          },
-          "news_risk": null,
-          "pct_change": -0.13,
-          "pct_to_resistance": 0.93,
-          "percentile_in_segment": 42.0,
-          "rr_is_measured": true,
-          "rr_to_t1": 0.79,
-          "sector": "NIFTY IT",
-          "segment": "NIFTY 50",
-          "symbol": "TCS",
-          "target_1": 2605.0,
-          "trigger_entry": 2495.0,
-          "turnover_20d_cr": 1086.389,
-          "verdict": "BULLISH",
-          "volume_ratio": 1.0837
         },
         {
           "catalyst_flags": [
@@ -42466,7 +42538,7 @@
             "event": "results_strong",
             "headline": "Tata Power shares gain 2% after Q2 profit rises 33%; analysts upbeat",
             "hedged": false,
-            "items_material": 2,
+            "items_material": 3,
             "items_seen": 5,
             "matched": [
               "gain #%",
@@ -42496,70 +42568,69 @@
         {
           "catalyst_flags": [
             {
-              "detail": "close vs previous close, 4.3% >= 3.0%",
-              "kind": "move",
-              "label": "+4.3% move"
-            },
-            {
-              "detail": "1.96x its own 10-bar average, threshold 1.2x",
+              "detail": "1.36x its own 10-bar average, threshold 1.2x",
               "kind": "volume",
-              "label": "volume 2.0x"
+              "label": "volume 1.4x"
             },
             {
-              "detail": "nearest overhead level 5665.5, 0.01% away",
+              "detail": "nearest overhead level 36900.0, 0.90% away",
               "kind": "breakout",
-              "label": "0.0% below resistance"
+              "label": "0.9% below resistance"
             },
             {
-              "detail": "classified from the headline by src/nlp_news.py, materiality 0.56; terms matched: q# beat, surge",
+              "detail": "classified from the headline by src/nlp_news.py, materiality 0.55; terms matched: dividend, hits #% lower circuit",
               "kind": "news",
-              "label": "results strong (positive)"
+              "label": "capital return (positive)"
             }
           ],
-          "close": 5665.0,
+          "close": 36570.0,
           "factor_tags": [
+            "dividend",
             "equal_weight",
-            "high_beta"
+            "low_volatility",
+            "momentum",
+            "multifactor",
+            "quality"
           ],
           "failed_gates": [
             "no 1h data (required for swing)",
-            "turnover 272.65 cr below its own segment's median 335.94 cr",
-            "measured R:R 0.21 below the 2.00 minimum"
+            "turnover 51.12 cr below its own segment's median 85.27 cr",
+            "measured R:R 0.52 below the 2.00 minimum"
           ],
-          "hard_stop": 5360.41,
-          "momentum_rank_in_segment": 10,
+          "hard_stop": 35066.25,
+          "momentum_rank_in_segment": 24,
           "news": {
             "co_mentions": 1,
             "direction": "positive",
-            "event": "results_strong",
-            "headline": "IndiGo shares surge past analyst target as falling crude, Q2 beat draw buyers",
+            "event": "capital_return",
+            "headline": "Page Industries hits 10% lower circuit post Q2 show; \u20b9150 dividend declared",
             "hedged": false,
             "items_material": 1,
-            "items_seen": 3,
+            "items_seen": 2,
             "matched": [
-              "q# beat",
-              "surge"
+              "dividend",
+              "hits #% lower circuit"
             ],
             "mention_only": false,
-            "news_score": 0.56,
-            "publisher": "hindu_businessline",
+            "news_score": 0.55,
+            "publisher": "business_standard",
             "roundup": false,
-            "third_party_recommendation": true
+            "third_party_recommendation": false
           },
           "news_risk": null,
-          "pct_change": 4.33,
-          "pct_to_resistance": 0.01,
-          "percentile_in_segment": 82.0,
+          "pct_change": 0.52,
+          "pct_to_resistance": 0.9,
+          "percentile_in_segment": 50.0,
           "rr_is_measured": true,
-          "rr_to_t1": 0.208,
+          "rr_to_t1": 0.515,
           "sector": null,
-          "segment": "NIFTY 50",
-          "symbol": "INDIGO",
-          "target_1": 5729.0,
-          "trigger_entry": 5665.5,
-          "turnover_20d_cr": 272.647,
-          "verdict": "BULLISH",
-          "volume_ratio": 1.9571
+          "segment": "NIFTY MIDCAP 100",
+          "symbol": "PAGEIND",
+          "target_1": 37845.0,
+          "trigger_entry": 36900.0,
+          "turnover_20d_cr": 51.122,
+          "verdict": "CAUTIOUSLY_BULLISH",
+          "volume_ratio": 1.3638
         },
         {
           "catalyst_flags": [
@@ -42612,6 +42683,73 @@
           "turnover_20d_cr": 121.897,
           "verdict": "NEUTRAL",
           "volume_ratio": 0.6711
+        },
+        {
+          "catalyst_flags": [
+            {
+              "detail": "nearest overhead level 409.5, 0.79% away",
+              "kind": "breakout",
+              "label": "0.8% below resistance"
+            },
+            {
+              "detail": "classified from the headline by src/nlp_news.py, materiality 0.50; terms matched: offer for sale",
+              "kind": "news",
+              "label": "stake exit (negative)"
+            }
+          ],
+          "close": 406.3,
+          "factor_tags": [
+            "alpha",
+            "dividend",
+            "equal_weight",
+            "low_volatility",
+            "momentum",
+            "multifactor",
+            "quality",
+            "value"
+          ],
+          "failed_gates": [
+            "no 1h data (required for swing)",
+            "turnover 282.04 cr below its own segment's median 335.94 cr",
+            "measured R:R 0.15 below the 2.00 minimum"
+          ],
+          "hard_stop": 390.84,
+          "momentum_rank_in_segment": 32,
+          "news": {
+            "co_mentions": 1,
+            "direction": "negative",
+            "event": "stake_exit",
+            "headline": "India's Next Billion-Dollar IPO? Coal India subsidiary Mahanadi Coalfields in line after Jio, NSE - key things to know",
+            "hedged": false,
+            "items_material": 1,
+            "items_seen": 1,
+            "matched": [
+              "offer for sale"
+            ],
+            "mention_only": false,
+            "news_score": 0.5,
+            "publisher": "livemint",
+            "roundup": false,
+            "third_party_recommendation": false
+          },
+          "news_risk": {
+            "event": "stake_exit",
+            "headline": "India's Next Billion-Dollar IPO? Coal India subsidiary Mahanadi Coalfields in line after Jio, NSE - key things to know",
+            "score": 0.5
+          },
+          "pct_change": 1.2,
+          "pct_to_resistance": 0.79,
+          "percentile_in_segment": 38.0,
+          "rr_is_measured": true,
+          "rr_to_t1": 0.155,
+          "sector": null,
+          "segment": "NIFTY 50",
+          "symbol": "COALINDIA",
+          "target_1": 412.4,
+          "trigger_entry": 409.5,
+          "turnover_20d_cr": 282.035,
+          "verdict": "NEUTRAL",
+          "volume_ratio": 1.0621
         }
       ],
       "upside": [
@@ -42671,11 +42809,6 @@
               "detail": "nearest overhead level 5665.5, 0.01% away",
               "kind": "breakout",
               "label": "0.0% below resistance"
-            },
-            {
-              "detail": "classified from the headline by src/nlp_news.py, materiality 0.56; terms matched: q# beat, surge",
-              "kind": "news",
-              "label": "results strong (positive)"
             }
           ],
           "close": 5665.0,
@@ -42691,22 +42824,19 @@
           "hard_stop": 5360.41,
           "momentum_rank_in_segment": 10,
           "news": {
-            "co_mentions": 1,
-            "direction": "positive",
-            "event": "results_strong",
-            "headline": "IndiGo shares surge past analyst target as falling crude, Q2 beat draw buyers",
-            "hedged": false,
-            "items_material": 1,
-            "items_seen": 3,
-            "matched": [
-              "q# beat",
-              "surge"
-            ],
-            "mention_only": false,
-            "news_score": 0.56,
-            "publisher": "hindu_businessline",
-            "roundup": false,
-            "third_party_recommendation": true
+            "co_mentions": null,
+            "direction": "neutral",
+            "event": "none",
+            "headline": null,
+            "hedged": null,
+            "items_material": 0,
+            "items_seen": 2,
+            "matched": null,
+            "mention_only": null,
+            "news_score": 0.0,
+            "publisher": null,
+            "roundup": null,
+            "third_party_recommendation": null
           },
           "news_risk": null,
           "pct_change": 4.33,
@@ -47555,19 +47685,21 @@
         "z_6m": 0.55225
       },
       "news_catalyst": {
-        "co_mentions": null,
-        "direction": "neutral",
-        "event": "none",
-        "headline": null,
-        "hedged": null,
-        "items_material": 0,
-        "items_seen": 1,
-        "matched": null,
-        "mention_only": null,
-        "news_score": 0.0,
-        "publisher": null,
-        "roundup": null,
-        "third_party_recommendation": null
+        "co_mentions": 1,
+        "direction": "positive",
+        "event": "deal_inorganic",
+        "headline": "Adani Group's  \u20b926,000 crore Evos deal: What the Dutch firm's acquisition means for its global ports business",
+        "hedged": true,
+        "items_material": 1,
+        "items_seen": 2,
+        "matched": [
+          "acquisition of"
+        ],
+        "mention_only": true,
+        "news_score": 0.042,
+        "publisher": "livemint",
+        "roundup": false,
+        "third_party_recommendation": false
       },
       "pct_change": -1.84,
       "price_discontinuities": [],
@@ -63837,6 +63969,21 @@
         "z_12m": -0.792536,
         "z_6m": 0.186868
       },
+      "news_catalyst": {
+        "co_mentions": null,
+        "direction": "neutral",
+        "event": "none",
+        "headline": null,
+        "hedged": null,
+        "items_material": 0,
+        "items_seen": 1,
+        "matched": null,
+        "mention_only": null,
+        "news_score": 0.0,
+        "publisher": null,
+        "roundup": null,
+        "third_party_recommendation": null
+      },
       "pct_change": 6.05,
       "price_discontinuities": [
         {
@@ -64643,21 +64790,6 @@
         "score": 1.790619,
         "z_12m": 0.138395,
         "z_6m": 1.442843
-      },
-      "news_catalyst": {
-        "co_mentions": null,
-        "direction": "neutral",
-        "event": "none",
-        "headline": null,
-        "hedged": null,
-        "items_material": 0,
-        "items_seen": 1,
-        "matched": null,
-        "mention_only": null,
-        "news_score": 0.0,
-        "publisher": null,
-        "roundup": null,
-        "third_party_recommendation": null
       },
       "pct_change": 1.78,
       "price_discontinuities": [],
@@ -67652,7 +67784,7 @@
         "headline": null,
         "hedged": null,
         "items_material": 0,
-        "items_seen": 2,
+        "items_seen": 1,
         "matched": null,
         "mention_only": null,
         "news_score": 0.0,
@@ -70533,19 +70665,21 @@
         "z_6m": 0.032087
       },
       "news_catalyst": {
-        "co_mentions": null,
+        "co_mentions": 1,
         "direction": "neutral",
-        "event": "none",
-        "headline": null,
-        "hedged": null,
-        "items_material": 0,
-        "items_seen": 1,
-        "matched": null,
-        "mention_only": null,
-        "news_score": 0.0,
-        "publisher": null,
-        "roundup": null,
-        "third_party_recommendation": null
+        "event": "price_move_reported",
+        "headline": "Breakout stock: CDSL gains 4%, up 30% from 52-week low; more upside ahead?",
+        "hedged": false,
+        "items_material": 1,
+        "items_seen": 2,
+        "matched": [
+          "# week low"
+        ],
+        "mention_only": false,
+        "news_score": 0.25,
+        "publisher": "business_standard",
+        "roundup": false,
+        "third_party_recommendation": false
       },
       "pct_change": 3.76,
       "price_discontinuities": [],
@@ -72021,6 +72155,21 @@
         "score": 0.466651,
         "z_12m": -0.932358,
         "z_6m": -1.353496
+      },
+      "news_catalyst": {
+        "co_mentions": null,
+        "direction": "neutral",
+        "event": "none",
+        "headline": null,
+        "hedged": null,
+        "items_material": 0,
+        "items_seen": 1,
+        "matched": null,
+        "mention_only": null,
+        "news_score": 0.0,
+        "publisher": null,
+        "roundup": null,
+        "third_party_recommendation": null
       },
       "pct_change": 1.68,
       "price_discontinuities": [],
@@ -75318,6 +75467,11 @@
           "detail": "nearest overhead level 409.5, 0.79% away",
           "kind": "breakout",
           "label": "0.8% below resistance"
+        },
+        {
+          "detail": "classified from the headline by src/nlp_news.py, materiality 0.50; terms matched: offer for sale",
+          "kind": "news",
+          "label": "stake exit (negative)"
         }
       ],
       "execution": {
@@ -75421,6 +75575,23 @@
         "score": 0.700854,
         "z_12m": 0.193155,
         "z_6m": -1.046817
+      },
+      "news_catalyst": {
+        "co_mentions": 1,
+        "direction": "negative",
+        "event": "stake_exit",
+        "headline": "India's Next Billion-Dollar IPO? Coal India subsidiary Mahanadi Coalfields in line after Jio, NSE - key things to know",
+        "hedged": false,
+        "items_material": 1,
+        "items_seen": 1,
+        "matched": [
+          "offer for sale"
+        ],
+        "mention_only": false,
+        "news_score": 0.5,
+        "publisher": "livemint",
+        "roundup": false,
+        "third_party_recommendation": false
       },
       "pct_change": 1.2,
       "price_discontinuities": [],
@@ -79459,7 +79630,7 @@
         "headline": "Cupid shares jump 10% to record high on 133% Q2 PAT growth, higher guidance",
         "hedged": false,
         "items_material": 1,
-        "items_seen": 3,
+        "items_seen": 2,
         "matched": [
           "jump"
         ],
@@ -83615,6 +83786,23 @@
         "score": 1.27266,
         "z_12m": -0.451067,
         "z_6m": 0.996387
+      },
+      "news_catalyst": {
+        "co_mentions": 2,
+        "direction": "neutral",
+        "event": "price_move_reported",
+        "headline": "Realty index surges 4%; Oberoi, Sobha, Lodha up 5%; DLF nears 52-week high",
+        "hedged": false,
+        "items_material": 1,
+        "items_seen": 1,
+        "matched": [
+          "surges"
+        ],
+        "mention_only": false,
+        "news_score": 0.25,
+        "publisher": "business_standard",
+        "roundup": false,
+        "third_party_recommendation": false
       },
       "pct_change": -1.64,
       "price_discontinuities": [],
@@ -93029,6 +93217,23 @@
         "score": 1.571311,
         "z_12m": 0.263056,
         "z_6m": 0.879567
+      },
+      "news_catalyst": {
+        "co_mentions": 1,
+        "direction": "neutral",
+        "event": "price_move_reported",
+        "headline": "Gabriel India hits 20% upper circuit on huge volume; up 112% from March low",
+        "hedged": false,
+        "items_material": 1,
+        "items_seen": 1,
+        "matched": [
+          "hits #% upper circuit"
+        ],
+        "mention_only": false,
+        "news_score": 0.25,
+        "publisher": "business_standard",
+        "roundup": false,
+        "third_party_recommendation": false
       },
       "pct_change": -0.83,
       "price_discontinuities": [],
@@ -108070,21 +108275,19 @@
         "z_6m": 2.487575
       },
       "news_catalyst": {
-        "co_mentions": 1,
+        "co_mentions": null,
         "direction": "neutral",
-        "event": "price_move_reported",
-        "headline": "ICICI Bank shares hits 52-week high; Morgan Stanley adds to focus list",
-        "hedged": false,
-        "items_material": 1,
-        "items_seen": 2,
-        "matched": [
-          "# week high"
-        ],
-        "mention_only": false,
-        "news_score": 0.25,
-        "publisher": "hindu_businessline",
-        "roundup": false,
-        "third_party_recommendation": false
+        "event": "none",
+        "headline": null,
+        "hedged": null,
+        "items_material": 0,
+        "items_seen": 1,
+        "matched": null,
+        "mention_only": null,
+        "news_score": 0.0,
+        "publisher": null,
+        "roundup": null,
+        "third_party_recommendation": null
       },
       "pct_change": -1.1,
       "price_discontinuities": [],
@@ -112079,11 +112282,6 @@
           "detail": "nearest overhead level 5665.5, 0.01% away",
           "kind": "breakout",
           "label": "0.0% below resistance"
-        },
-        {
-          "detail": "classified from the headline by src/nlp_news.py, materiality 0.56; terms matched: q# beat, surge",
-          "kind": "news",
-          "label": "results strong (positive)"
         }
       ],
       "execution": {
@@ -112179,22 +112377,19 @@
         "z_6m": 1.533251
       },
       "news_catalyst": {
-        "co_mentions": 1,
-        "direction": "positive",
-        "event": "results_strong",
-        "headline": "IndiGo shares surge past analyst target as falling crude, Q2 beat draw buyers",
-        "hedged": false,
-        "items_material": 1,
-        "items_seen": 3,
-        "matched": [
-          "q# beat",
-          "surge"
-        ],
-        "mention_only": false,
-        "news_score": 0.56,
-        "publisher": "hindu_businessline",
-        "roundup": false,
-        "third_party_recommendation": true
+        "co_mentions": null,
+        "direction": "neutral",
+        "event": "none",
+        "headline": null,
+        "hedged": null,
+        "items_material": 0,
+        "items_seen": 2,
+        "matched": null,
+        "mention_only": null,
+        "news_score": 0.0,
+        "publisher": null,
+        "roundup": null,
+        "third_party_recommendation": null
       },
       "pct_change": 4.33,
       "price_discontinuities": [],
@@ -115617,6 +115812,21 @@
         "z_12m": -1.474553,
         "z_6m": -1.066464
       },
+      "news_catalyst": {
+        "co_mentions": null,
+        "direction": "neutral",
+        "event": "none",
+        "headline": null,
+        "hedged": null,
+        "items_material": 0,
+        "items_seen": 1,
+        "matched": null,
+        "mention_only": null,
+        "news_score": 0.0,
+        "publisher": null,
+        "roundup": null,
+        "third_party_recommendation": null
+      },
       "pct_change": 3.83,
       "price_discontinuities": [],
       "sector": "NIFTY FINANCIAL SERVICES EX-BANK",
@@ -115830,7 +116040,7 @@
         "headline": null,
         "hedged": null,
         "items_material": 0,
-        "items_seen": 4,
+        "items_seen": 5,
         "matched": null,
         "mention_only": null,
         "news_score": 0.0,
@@ -133270,7 +133480,7 @@
         "headline": null,
         "hedged": null,
         "items_material": 0,
-        "items_seen": 5,
+        "items_seen": 3,
         "matched": null,
         "mention_only": null,
         "news_score": 0.0,
@@ -136292,6 +136502,21 @@
         "score": 0.785024,
         "z_12m": -0.772385,
         "z_6m": 0.224691
+      },
+      "news_catalyst": {
+        "co_mentions": null,
+        "direction": "neutral",
+        "event": "none",
+        "headline": null,
+        "hedged": null,
+        "items_material": 0,
+        "items_seen": 1,
+        "matched": null,
+        "mention_only": null,
+        "news_score": 0.0,
+        "publisher": null,
+        "roundup": null,
+        "third_party_recommendation": null
       },
       "pct_change": 2.05,
       "price_discontinuities": [
@@ -143878,7 +144103,7 @@
         "headline": null,
         "hedged": null,
         "items_material": 0,
-        "items_seen": 2,
+        "items_seen": 1,
         "matched": null,
         "mention_only": null,
         "news_score": 0.0,
@@ -148195,7 +148420,7 @@
         "headline": null,
         "hedged": null,
         "items_material": 0,
-        "items_seen": 1,
+        "items_seen": 2,
         "matched": null,
         "mention_only": null,
         "news_score": 0.0,
@@ -150121,6 +150346,11 @@
           "detail": "nearest overhead level 36900.0, 0.90% away",
           "kind": "breakout",
           "label": "0.9% below resistance"
+        },
+        {
+          "detail": "classified from the headline by src/nlp_news.py, materiality 0.55; terms matched: dividend, hits #% lower circuit",
+          "kind": "news",
+          "label": "capital return (positive)"
         }
       ],
       "execution": {
@@ -150220,6 +150450,24 @@
         "score": 0.887386,
         "z_12m": -0.330363,
         "z_6m": 0.076553
+      },
+      "news_catalyst": {
+        "co_mentions": 1,
+        "direction": "positive",
+        "event": "capital_return",
+        "headline": "Page Industries hits 10% lower circuit post Q2 show; \u20b9150 dividend declared",
+        "hedged": false,
+        "items_material": 1,
+        "items_seen": 2,
+        "matched": [
+          "dividend",
+          "hits #% lower circuit"
+        ],
+        "mention_only": false,
+        "news_score": 0.55,
+        "publisher": "business_standard",
+        "roundup": false,
+        "third_party_recommendation": false
       },
       "pct_change": 0.52,
       "price_discontinuities": [],
@@ -151444,19 +151692,21 @@
         "z_6m": 1.690333
       },
       "news_catalyst": {
-        "co_mentions": null,
+        "co_mentions": 1,
         "direction": "neutral",
-        "event": "none",
-        "headline": null,
-        "hedged": null,
-        "items_material": 0,
-        "items_seen": 1,
-        "matched": null,
-        "mention_only": null,
-        "news_score": 0.0,
-        "publisher": null,
-        "roundup": null,
-        "third_party_recommendation": null
+        "event": "price_move_reported",
+        "headline": "Paytm zooms 7%, reclaims \u20b91,900 for 1st time since listing day in Nov 2021",
+        "hedged": false,
+        "items_material": 1,
+        "items_seen": 2,
+        "matched": [
+          "zooms"
+        ],
+        "mention_only": false,
+        "news_score": 0.25,
+        "publisher": "business_standard",
+        "roundup": false,
+        "third_party_recommendation": false
       },
       "pct_change": 0.32,
       "price_discontinuities": [],
@@ -155122,23 +155372,6 @@
         "z_12m": 0.429699,
         "z_6m": 1.510856
       },
-      "news_catalyst": {
-        "co_mentions": 1,
-        "direction": "neutral",
-        "event": "price_move_reported",
-        "headline": "Punjab National Bank share price soars 11% in two days; hits 52-week high",
-        "hedged": false,
-        "items_material": 1,
-        "items_seen": 1,
-        "matched": [
-          "soars"
-        ],
-        "mention_only": false,
-        "news_score": 0.25,
-        "publisher": "business_standard",
-        "roundup": false,
-        "third_party_recommendation": false
-      },
       "pct_change": 4.77,
       "price_discontinuities": [],
       "sector": "NIFTY BANK",
@@ -157035,7 +157268,7 @@
         "headline": null,
         "hedged": null,
         "items_material": 0,
-        "items_seen": 2,
+        "items_seen": 1,
         "matched": null,
         "mention_only": null,
         "news_score": 0.0,
@@ -164389,7 +164622,13 @@
       }
     },
     "REFEX": {
-      "catalyst_flags": [],
+      "catalyst_flags": [
+        {
+          "detail": "classified from the headline by src/nlp_news.py, materiality 0.85; terms matched: order book",
+          "kind": "news",
+          "label": "order win (positive)"
+        }
+      ],
       "execution": {
         "buy_zone": [
           228.26,
@@ -164458,6 +164697,23 @@
         "score": 0.669451,
         "z_12m": -0.643833,
         "z_6m": -0.343688
+      },
+      "news_catalyst": {
+        "co_mentions": 1,
+        "direction": "positive",
+        "event": "order_win",
+        "headline": "Refex Industries\u2019 ash and coal handling order book rises to Rs 1,721 crore",
+        "hedged": false,
+        "items_material": 1,
+        "items_seen": 1,
+        "matched": [
+          "order book"
+        ],
+        "mention_only": false,
+        "news_score": 0.85,
+        "publisher": "hindu_businessline",
+        "roundup": false,
+        "third_party_recommendation": false
       },
       "pct_change": 1.98,
       "price_discontinuities": [],
@@ -165168,11 +165424,6 @@
           "detail": "6.59x its own 10-bar average, threshold 1.2x",
           "kind": "volume",
           "label": "volume 6.6x"
-        },
-        {
-          "detail": "classified from the headline by src/nlp_news.py, materiality 0.80; terms matched: pat dips",
-          "kind": "news",
-          "label": "results weak (negative)"
         }
       ],
       "execution": {
@@ -165240,23 +165491,6 @@
         "score": null,
         "z_12m": null,
         "z_6m": null
-      },
-      "news_catalyst": {
-        "co_mentions": 1,
-        "direction": "negative",
-        "event": "results_weak",
-        "headline": "Rentomojo climbs 10% to 52-wk high; what's behind gains as Q2 PAT dips 63%?",
-        "hedged": false,
-        "items_material": 1,
-        "items_seen": 1,
-        "matched": [
-          "pat dips"
-        ],
-        "mention_only": false,
-        "news_score": 0.8,
-        "publisher": "business_standard",
-        "roundup": false,
-        "third_party_recommendation": false
       },
       "pct_change": 3.27,
       "price_discontinuities": [],
@@ -171144,6 +171378,21 @@
         "z_12m": 0.996738,
         "z_6m": 0.322906
       },
+      "news_catalyst": {
+        "co_mentions": null,
+        "direction": "neutral",
+        "event": "none",
+        "headline": null,
+        "hedged": null,
+        "items_material": 0,
+        "items_seen": 1,
+        "matched": null,
+        "mention_only": null,
+        "news_score": 0.0,
+        "publisher": null,
+        "roundup": null,
+        "third_party_recommendation": null
+      },
       "pct_change": 1.84,
       "price_discontinuities": [],
       "sector": "NIFTY BANK",
@@ -171712,6 +171961,21 @@
         "score": 0.755316,
         "z_12m": -0.018047,
         "z_6m": -0.629851
+      },
+      "news_catalyst": {
+        "co_mentions": null,
+        "direction": "neutral",
+        "event": "none",
+        "headline": null,
+        "hedged": null,
+        "items_material": 0,
+        "items_seen": 1,
+        "matched": null,
+        "mention_only": null,
+        "news_score": 0.0,
+        "publisher": null,
+        "roundup": null,
+        "third_party_recommendation": null
       },
       "pct_change": 2.05,
       "price_discontinuities": [],
@@ -175120,21 +175384,6 @@
         "z_12m": 1.439478,
         "z_6m": -0.279338
       },
-      "news_catalyst": {
-        "co_mentions": null,
-        "direction": "neutral",
-        "event": "none",
-        "headline": null,
-        "hedged": null,
-        "items_material": 0,
-        "items_seen": 1,
-        "matched": null,
-        "mention_only": null,
-        "news_score": 0.0,
-        "publisher": null,
-        "roundup": null,
-        "third_party_recommendation": null
-      },
       "pct_change": 0.43,
       "price_discontinuities": [],
       "sector": "NIFTY FINANCIAL SERVICES",
@@ -177311,6 +177560,23 @@
         "score": 0.645196,
         "z_12m": -0.573353,
         "z_6m": -0.526481
+      },
+      "news_catalyst": {
+        "co_mentions": 2,
+        "direction": "neutral",
+        "event": "price_move_reported",
+        "headline": "Realty index surges 4%; Oberoi, Sobha, Lodha up 5%; DLF nears 52-week high",
+        "hedged": false,
+        "items_material": 1,
+        "items_seen": 1,
+        "matched": [
+          "surges"
+        ],
+        "mention_only": false,
+        "news_score": 0.25,
+        "publisher": "business_standard",
+        "roundup": false,
+        "third_party_recommendation": false
       },
       "pct_change": -1.11,
       "price_discontinuities": [],
@@ -183383,21 +183649,6 @@
         "z_12m": -1.306913,
         "z_6m": -1.070187
       },
-      "news_catalyst": {
-        "co_mentions": null,
-        "direction": "neutral",
-        "event": "none",
-        "headline": null,
-        "hedged": null,
-        "items_material": 0,
-        "items_seen": 1,
-        "matched": null,
-        "mention_only": null,
-        "news_score": 0.0,
-        "publisher": null,
-        "roundup": null,
-        "third_party_recommendation": null
-      },
       "pct_change": 0.56,
       "price_discontinuities": [],
       "sector": null,
@@ -185829,7 +186080,7 @@
         "headline": null,
         "hedged": null,
         "items_material": 0,
-        "items_seen": 2,
+        "items_seen": 1,
         "matched": null,
         "mention_only": null,
         "news_score": 0.0,
@@ -186055,7 +186306,7 @@
         "event": "results_strong",
         "headline": "Tata Power shares gain 2% after Q2 profit rises 33%; analysts upbeat",
         "hedged": false,
-        "items_material": 2,
+        "items_material": 3,
         "items_seen": 5,
         "matched": [
           "gain #%",
@@ -186288,7 +186539,7 @@
         "headline": null,
         "hedged": null,
         "items_material": 0,
-        "items_seen": 1,
+        "items_seen": 2,
         "matched": null,
         "mention_only": null,
         "news_score": 0.0,
@@ -186790,11 +187041,6 @@
           "detail": "nearest overhead level 2495.0, 0.93% away",
           "kind": "breakout",
           "label": "0.9% below resistance"
-        },
-        {
-          "detail": "classified from the headline by src/nlp_news.py, materiality 0.85; terms matched: bags rio marathon tech deal",
-          "kind": "news",
-          "label": "order win (positive)"
         }
       ],
       "execution": {
@@ -186907,23 +187153,6 @@
         "score": 0.716799,
         "z_12m": -0.975087,
         "z_6m": 0.184905
-      },
-      "news_catalyst": {
-        "co_mentions": 1,
-        "direction": "positive",
-        "event": "order_win",
-        "headline": "TCS bags Rio Marathon tech deal; stocks in red",
-        "hedged": false,
-        "items_material": 1,
-        "items_seen": 1,
-        "matched": [
-          "bags rio marathon tech deal"
-        ],
-        "mention_only": false,
-        "news_score": 0.85,
-        "publisher": "hindu_businessline",
-        "roundup": false,
-        "third_party_recommendation": false
       },
       "pct_change": -0.13,
       "price_discontinuities": [],
