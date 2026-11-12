@@ -1,18 +1,18 @@
 {
-  "fetched_at": "2026-11-12T12:38:55.925865+05:30",
-  "window_start": "2026-11-11T12:38:46.875732+05:30",
-  "newest_item": "2026-11-12T12:35:51+05:30",
+  "fetched_at": "2026-11-12T12:43:08.112294+05:30",
+  "window_start": "2026-11-11T12:42:59.151565+05:30",
+  "newest_item": "2026-11-12T12:39:13+05:30",
   "counts": {
     "fetched_raw": 364,
     "in_window": 253,
     "undated_dropped": 0,
     "duplicates_collapsed": 48,
     "published": 60,
-    "mapped": 96,
-    "unmapped": 109,
-    "symbols_with_news": 78
+    "mapped": 97,
+    "unmapped": 108,
+    "symbols_with_news": 79
   },
-  "match_rate_pct": 46.8,
+  "match_rate_pct": 47.3,
   "feeds": [
     {
       "publisher": "economic_times",
@@ -65,7 +65,7 @@
       "ok": true,
       "items": 35,
       "error": null,
-      "newest_item": "2026-11-12T12:10:52+05:30",
+      "newest_item": "2026-11-12T12:36:51+05:30",
       "age_days": 0,
       "stale": false
     },
@@ -87,7 +87,7 @@
       "ok": true,
       "items": 35,
       "error": null,
-      "newest_item": "2026-11-12T12:25:34+05:30",
+      "newest_item": "2026-11-12T12:39:13+05:30",
       "age_days": 0,
       "stale": false
     },
@@ -114,6 +114,30 @@
     "Publisher 'moneycontrol' is not active (disabled_abandoned_feeds)."
   ],
   "items": [
+    {
+      "headline": "India bans lithium-ion battery black mass exports: What led to the move and what happens next?",
+      "url": "https://www.livemint.com/companies/news/india-bans-lithium-ion-battery-black-mass-exports-what-led-to-the-move-and-what-happens-next-11794466823336.html",
+      "published": "2026-11-12T12:39:13+05:30",
+      "description": "India has banned exports of lithium-ion battery black mass to secure raw material for domestic recyclers. What prompted the move, how will it strengthen critical mineral recovery, and what challenges ",
+      "publisher": "livemint",
+      "url_normalised": "https://www.livemint.com/companies/news/india-bans-lithium-ion-battery-black-mass-exports-what-led-to-the-move-and-what-happens-next-11794466823336.html",
+      "symbols": [],
+      "headline_symbols": []
+    },
+    {
+      "headline": "Aegis Logistics shares gain 3% as QIP opens; floor price set at ₹1,161.85",
+      "url": "https://www.business-standard.com/markets/news/aegis-logistics-shares-gain-3-as-qip-opens-floor-price-set-at-1-161-85-126111200424_1.html",
+      "published": "2026-11-12T12:36:51+05:30",
+      "description": "The company's Fund Raising Committee approved a floor price of ₹1,161.85 per equity share for the issue and cleared the preliminary placement document and application form.",
+      "publisher": "business_standard",
+      "url_normalised": "https://www.business-standard.com/markets/news/aegis-logistics-shares-gain-3-as-qip-opens-floor-price-set-at-1-161-85-126111200424_1.html",
+      "symbols": [
+        "AEGISLOG"
+      ],
+      "headline_symbols": [
+        "AEGISLOG"
+      ]
+    },
     {
       "headline": "Ola Electric shares rise 4% ahead of Q2 results; earnings call set for today",
       "url": "https://www.thehindubusinessline.com/markets/stock-markets/ola-electric-shares-rise-4-ahead-of-q2-results-earnings-call-set-for-today/article71692652.ece",
@@ -236,7 +260,7 @@
     {
       "headline": "Matrimony downgraded by ICICI Sec despite 167% rise in Q2 PAT; stock skids",
       "url": "https://www.business-standard.com/markets/news/matrimony-downgraded-by-icici-sec-despite-167-rise-in-q2-pat-stock-skids-126111200412_1.html",
-      "published": "2026-11-12T12:10:52+05:30",
+      "published": "2026-11-12T12:10:14+05:30",
       "description": "Matrimony's consolidated profit in Q2FY27 increased by 167.3 per cent Y-o-Y to ₹20.7 crore.",
       "publisher": "business_standard",
       "url_normalised": "https://www.business-standard.com/markets/news/matrimony-downgraded-by-icici-sec-despite-167-rise-in-q2-pat-stock-skids-126111200412_1.html",
@@ -805,36 +829,12 @@
       "headline_symbols": [
         "JSWSTEEL"
       ]
-    },
-    {
-      "headline": "ITC Share Price Live Updates: ITC Stock Details",
-      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/itc-share-price-today-live-12-nov-2026/liveblog/135753807.cms",
-      "published": "2026-11-12T09:00:23+05:30",
-      "description": "",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/itc-share-price-today-live-12-nov-2026/liveblog/135753807.cms",
-      "symbols": [
-        "ITC"
-      ],
-      "headline_symbols": [
-        "ITC"
-      ]
-    },
-    {
-      "headline": "Up and down, Why Nvidia stock crashed after bouncing back - What led to its fall? More trouble for CEO Jensen Huang!",
-      "url": "https://www.livemint.com/market/stock-market-news/up-and-down-why-nvidia-stock-crashed-after-bouncing-back-what-led-to-its-fall-more-trouble-for-ceo-jensen-huang-11794452034623.html",
-      "published": "2026-11-12T08:58:54+05:30",
-      "description": "Nvidia shares rebounded 2.92% to close at $173.73 during Wednesday's regular trading session, recovering some of their losses after suffering sharp declines in the previous two sessions.",
-      "publisher": "livemint",
-      "url_normalised": "https://www.livemint.com/market/stock-market-news/up-and-down-why-nvidia-stock-crashed-after-bouncing-back-what-led-to-its-fall-more-trouble-for-ceo-jensen-huang-11794452034623.html",
-      "symbols": [],
-      "headline_symbols": []
     }
   ],
   "by_symbol": {
     "ADANIENT": [
       {
-        "headline": "Adani Ent Share Price Live Updates: Adani Enterprises posts a notable monthly performance",
+        "headline": "Adani Ent Share Price Live Updates: Adani Enterprises  Trading Volume Insights",
         "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/adani-ent-share-price-live-updates-12-nov-2026/liveblog/135752761.cms",
         "published": "2026-11-12T08:02:20+05:30",
         "description": "",
@@ -902,6 +902,22 @@
         ],
         "headline_symbols": [
           "ADANIPORTS"
+        ]
+      }
+    ],
+    "AEGISLOG": [
+      {
+        "headline": "Aegis Logistics shares gain 3% as QIP opens; floor price set at ₹1,161.85",
+        "url": "https://www.business-standard.com/markets/news/aegis-logistics-shares-gain-3-as-qip-opens-floor-price-set-at-1-161-85-126111200424_1.html",
+        "published": "2026-11-12T12:36:51+05:30",
+        "description": "The company's Fund Raising Committee approved a floor price of ₹1,161.85 per equity share for the issue and cleared the preliminary placement document and application form.",
+        "publisher": "business_standard",
+        "url_normalised": "https://www.business-standard.com/markets/news/aegis-logistics-shares-gain-3-as-qip-opens-floor-price-set-at-1-161-85-126111200424_1.html",
+        "symbols": [
+          "AEGISLOG"
+        ],
+        "headline_symbols": [
+          "AEGISLOG"
         ]
       }
     ],
@@ -1517,7 +1533,7 @@
     ],
     "HEROMOTOCO": [
       {
-        "headline": "Hero MotoCorp Share Price Live Updates: Hero MotoCorp's Current Trading Status",
+        "headline": "Hero MotoCorp Share Price Live Updates: Current Trading Status of Hero MotoCorp",
         "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/hero-motocorp-stock-price-today-live-12-nov-2026/liveblog/135753143.cms",
         "published": "2026-11-12T08:26:07+05:30",
         "description": "",
@@ -2451,7 +2467,7 @@
     ],
     "POWERGRID": [
       {
-        "headline": "Power Grid Share Price Live Updates: Power Grid Stock Details",
+        "headline": "Power Grid Share Price Live Updates: Power Grid's Market Performance",
         "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/power-grid-share-price-today-live-updates-12-nov-2026/liveblog/135753153.cms",
         "published": "2026-11-12T08:26:25+05:30",
         "description": "",
@@ -2954,6 +2970,16 @@
   },
   "unmapped": [
     {
+      "headline": "India bans lithium-ion battery black mass exports: What led to the move and what happens next?",
+      "url": "https://www.livemint.com/companies/news/india-bans-lithium-ion-battery-black-mass-exports-what-led-to-the-move-and-what-happens-next-11794466823336.html",
+      "published": "2026-11-12T12:39:13+05:30",
+      "description": "India has banned exports of lithium-ion battery black mass to secure raw material for domestic recyclers. What prompted the move, how will it strengthen critical mineral recovery, and what challenges ",
+      "publisher": "livemint",
+      "url_normalised": "https://www.livemint.com/companies/news/india-bans-lithium-ion-battery-black-mass-exports-what-led-to-the-move-and-what-happens-next-11794466823336.html",
+      "symbols": [],
+      "headline_symbols": []
+    },
+    {
       "headline": "Ola Electric shares rise 4% ahead of Q2 results; earnings call set for today",
       "url": "https://www.thehindubusinessline.com/markets/stock-markets/ola-electric-shares-rise-4-ahead-of-q2-results-earnings-call-set-for-today/article71692652.ece",
       "published": "2026-11-12T12:35:51+05:30",
@@ -2986,7 +3012,7 @@
     {
       "headline": "Matrimony downgraded by ICICI Sec despite 167% rise in Q2 PAT; stock skids",
       "url": "https://www.business-standard.com/markets/news/matrimony-downgraded-by-icici-sec-despite-167-rise-in-q2-pat-stock-skids-126111200412_1.html",
-      "published": "2026-11-12T12:10:52+05:30",
+      "published": "2026-11-12T12:10:14+05:30",
       "description": "Matrimony's consolidated profit in Q2FY27 increased by 167.3 per cent Y-o-Y to ₹20.7 crore.",
       "publisher": "business_standard",
       "url_normalised": "https://www.business-standard.com/markets/news/matrimony-downgraded-by-icici-sec-despite-167-rise-in-q2-pat-stock-skids-126111200412_1.html",
@@ -3540,16 +3566,6 @@
       "description": "The agreement marks a step in Adani’s overseas sourcing plans as India seeks to strengthen copper supplies through investments abroad",
       "publisher": "hindu_businessline",
       "url_normalised": "https://www.thehindubusinessline.com/markets/commodities/adani-group-partners-chiles-codelco-for-copper-exploration-project/article71691417.ece",
-      "symbols": [],
-      "headline_symbols": []
-    },
-    {
-      "headline": "Index Provider MSCI Removes Strategy From Equity Benchmark",
-      "url": "https://www.livemint.com/market/index-provider-msci-removes-strategy-from-equity-benchmark-11794438343903.html",
-      "published": "2026-11-12T04:35:43+05:30",
-      "description": "MSCI Inc. has dropped Strategy Inc. from its global equity benchmarks, potentially triggering billions of dollars in stock sales and adding fresh pressure to the financing model behind Michael Saylor’",
-      "publisher": "livemint",
-      "url_normalised": "https://www.livemint.com/market/index-provider-msci-removes-strategy-from-equity-benchmark-11794438343903.html",
       "symbols": [],
       "headline_symbols": []
     }

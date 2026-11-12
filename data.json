@@ -857,7 +857,7 @@
     "stale": null
   },
   "gate_feeds_unavailable": {},
-  "generated_at": "2026-11-12T12:40:54.871069+05:30",
+  "generated_at": "2026-11-12T12:46:25.097252+05:30",
   "intraday": {
     "available": [],
     "configured": false,
@@ -1009,12 +1009,12 @@
   "news_layer": {
     "available": true,
     "classifier": "rule-based, src/nlp_news.py. No language model.",
-    "fetched_at": "2026-11-12T12:38:55.925865+05:30",
-    "match_rate_pct": 46.8,
+    "fetched_at": "2026-11-12T12:43:08.112294+05:30",
+    "match_rate_pct": 47.3,
     "materiality_floor": 0.4,
     "note": "Headlines are classified by a deterministic rule-based lexicon, never by a language model. News orders the shortlist only; it is not an input to any gate, and no price, level, stop or target comes from it.",
     "reason": null,
-    "symbols_classified": 78
+    "symbols_classified": 79
   },
   "rejected": {
     "intraday": [
@@ -37729,6 +37729,59 @@
           "turnover_20d_cr": 272.647,
           "verdict": "BULLISH",
           "volume_ratio": 1.9571
+        },
+        {
+          "catalyst_flags": [
+            {
+              "detail": "classified from the headline by src/nlp_news.py, materiality 0.50; terms matched: gain #%, qip",
+              "kind": "news",
+              "label": "fundraise (neutral)"
+            }
+          ],
+          "close": 1227.1,
+          "factor_tags": [
+            "equal_weight",
+            "momentum"
+          ],
+          "failed_gates": [
+            "no 15m data (required for intraday)",
+            "no 5m data (required for intraday)",
+            "measured R:R 0.07 below the 2.00 minimum"
+          ],
+          "hard_stop": 1254.82,
+          "momentum_rank_in_segment": 10,
+          "news": {
+            "co_mentions": 1,
+            "direction": "neutral",
+            "event": "fundraise",
+            "headline": "Aegis Logistics shares gain 3% as QIP opens; floor price set at \u20b91,161.85",
+            "hedged": false,
+            "items_material": 1,
+            "items_seen": 1,
+            "matched": [
+              "gain #%",
+              "qip"
+            ],
+            "mention_only": false,
+            "news_score": 0.5,
+            "publisher": "business_standard",
+            "roundup": false,
+            "third_party_recommendation": false
+          },
+          "news_risk": null,
+          "pct_change": 0.03,
+          "pct_to_resistance": 16.01,
+          "percentile_in_segment": 82.0,
+          "rr_is_measured": true,
+          "rr_to_t1": 0.065,
+          "sector": "NIFTY OIL & GAS",
+          "segment": "NIFTY SMALLCAP 50",
+          "symbol": "AEGISLOG",
+          "target_1": 1434.5,
+          "trigger_entry": 1423.5,
+          "turnover_20d_cr": 121.897,
+          "verdict": "NEUTRAL",
+          "volume_ratio": 0.6711
         }
       ],
       "upside": [
@@ -39304,6 +39357,57 @@
           "turnover_20d_cr": 272.647,
           "verdict": "BULLISH",
           "volume_ratio": 1.9571
+        },
+        {
+          "catalyst_flags": [
+            {
+              "detail": "classified from the headline by src/nlp_news.py, materiality 0.50; terms matched: gain #%, qip",
+              "kind": "news",
+              "label": "fundraise (neutral)"
+            }
+          ],
+          "close": 1227.1,
+          "factor_tags": [
+            "equal_weight",
+            "momentum"
+          ],
+          "failed_gates": [
+            "measured R:R 0.07 below the 1.50 minimum"
+          ],
+          "hard_stop": 1254.82,
+          "momentum_rank_in_segment": 10,
+          "news": {
+            "co_mentions": 1,
+            "direction": "neutral",
+            "event": "fundraise",
+            "headline": "Aegis Logistics shares gain 3% as QIP opens; floor price set at \u20b91,161.85",
+            "hedged": false,
+            "items_material": 1,
+            "items_seen": 1,
+            "matched": [
+              "gain #%",
+              "qip"
+            ],
+            "mention_only": false,
+            "news_score": 0.5,
+            "publisher": "business_standard",
+            "roundup": false,
+            "third_party_recommendation": false
+          },
+          "news_risk": null,
+          "pct_change": 0.03,
+          "pct_to_resistance": 16.01,
+          "percentile_in_segment": 82.0,
+          "rr_is_measured": true,
+          "rr_to_t1": 0.065,
+          "sector": "NIFTY OIL & GAS",
+          "segment": "NIFTY SMALLCAP 50",
+          "symbol": "AEGISLOG",
+          "target_1": 1434.5,
+          "trigger_entry": 1423.5,
+          "turnover_20d_cr": 121.897,
+          "verdict": "NEUTRAL",
+          "volume_ratio": 0.6711
         }
       ],
       "upside": [
@@ -40854,6 +40958,58 @@
           "turnover_20d_cr": 272.647,
           "verdict": "BULLISH",
           "volume_ratio": 1.9571
+        },
+        {
+          "catalyst_flags": [
+            {
+              "detail": "classified from the headline by src/nlp_news.py, materiality 0.50; terms matched: gain #%, qip",
+              "kind": "news",
+              "label": "fundraise (neutral)"
+            }
+          ],
+          "close": 1227.1,
+          "factor_tags": [
+            "equal_weight",
+            "momentum"
+          ],
+          "failed_gates": [
+            "measured R:R 0.07 below the 1.80 minimum",
+            "close 1227.1 not above 50 EMA 1276.3882"
+          ],
+          "hard_stop": 1254.82,
+          "momentum_rank_in_segment": 10,
+          "news": {
+            "co_mentions": 1,
+            "direction": "neutral",
+            "event": "fundraise",
+            "headline": "Aegis Logistics shares gain 3% as QIP opens; floor price set at \u20b91,161.85",
+            "hedged": false,
+            "items_material": 1,
+            "items_seen": 1,
+            "matched": [
+              "gain #%",
+              "qip"
+            ],
+            "mention_only": false,
+            "news_score": 0.5,
+            "publisher": "business_standard",
+            "roundup": false,
+            "third_party_recommendation": false
+          },
+          "news_risk": null,
+          "pct_change": 0.03,
+          "pct_to_resistance": 16.01,
+          "percentile_in_segment": 82.0,
+          "rr_is_measured": true,
+          "rr_to_t1": 0.065,
+          "sector": "NIFTY OIL & GAS",
+          "segment": "NIFTY SMALLCAP 50",
+          "symbol": "AEGISLOG",
+          "target_1": 1434.5,
+          "trigger_entry": 1423.5,
+          "turnover_20d_cr": 121.897,
+          "verdict": "NEUTRAL",
+          "volume_ratio": 0.6711
         }
       ],
       "upside": [
@@ -42404,6 +42560,58 @@
           "turnover_20d_cr": 272.647,
           "verdict": "BULLISH",
           "volume_ratio": 1.9571
+        },
+        {
+          "catalyst_flags": [
+            {
+              "detail": "classified from the headline by src/nlp_news.py, materiality 0.50; terms matched: gain #%, qip",
+              "kind": "news",
+              "label": "fundraise (neutral)"
+            }
+          ],
+          "close": 1227.1,
+          "factor_tags": [
+            "equal_weight",
+            "momentum"
+          ],
+          "failed_gates": [
+            "no 1h data (required for swing)",
+            "measured R:R 0.07 below the 2.00 minimum"
+          ],
+          "hard_stop": 1254.82,
+          "momentum_rank_in_segment": 10,
+          "news": {
+            "co_mentions": 1,
+            "direction": "neutral",
+            "event": "fundraise",
+            "headline": "Aegis Logistics shares gain 3% as QIP opens; floor price set at \u20b91,161.85",
+            "hedged": false,
+            "items_material": 1,
+            "items_seen": 1,
+            "matched": [
+              "gain #%",
+              "qip"
+            ],
+            "mention_only": false,
+            "news_score": 0.5,
+            "publisher": "business_standard",
+            "roundup": false,
+            "third_party_recommendation": false
+          },
+          "news_risk": null,
+          "pct_change": 0.03,
+          "pct_to_resistance": 16.01,
+          "percentile_in_segment": 82.0,
+          "rr_is_measured": true,
+          "rr_to_t1": 0.065,
+          "sector": "NIFTY OIL & GAS",
+          "segment": "NIFTY SMALLCAP 50",
+          "symbol": "AEGISLOG",
+          "target_1": 1434.5,
+          "trigger_entry": 1423.5,
+          "turnover_20d_cr": 121.897,
+          "verdict": "NEUTRAL",
+          "volume_ratio": 0.6711
         }
       ],
       "upside": [
@@ -47963,7 +48171,13 @@
       }
     },
     "AEGISLOG": {
-      "catalyst_flags": [],
+      "catalyst_flags": [
+        {
+          "detail": "classified from the headline by src/nlp_news.py, materiality 0.50; terms matched: gain #%, qip",
+          "kind": "news",
+          "label": "fundraise (neutral)"
+        }
+      ],
       "execution": {
         "buy_zone": [
           1201.66,
@@ -48042,6 +48256,24 @@
         "score": 1.713622,
         "z_12m": 0.394467,
         "z_6m": 1.032776
+      },
+      "news_catalyst": {
+        "co_mentions": 1,
+        "direction": "neutral",
+        "event": "fundraise",
+        "headline": "Aegis Logistics shares gain 3% as QIP opens; floor price set at \u20b91,161.85",
+        "hedged": false,
+        "items_material": 1,
+        "items_seen": 1,
+        "matched": [
+          "gain #%",
+          "qip"
+        ],
+        "mention_only": false,
+        "news_score": 0.5,
+        "publisher": "business_standard",
+        "roundup": false,
+        "third_party_recommendation": false
       },
       "pct_change": 0.03,
       "price_discontinuities": [],
