@@ -196,6 +196,7 @@ footer{border-top:1px solid var(--line); margin-top:10px}
 
 <main class="wrap">
   <div id="fatal"></div>
+  <div id="banner"></div>
 
   <section id="sec-gated">
     <div class="sechead">
@@ -342,6 +343,19 @@ function renderStamps(){
   var stale = age !== null && age > 24 * 60;
   add("computed", fmtIST(DATA.generated_at), stale ? "bad" : "");
   if (stale) add("STALE", Math.floor(age / 60) + " hours old", "bad");
+
+  /* The session the prices came from, stated separately from the run time.
+     "computed 12 Nov 11:27" above reads as today's prices; it is not. Every
+     close on this page is that session's close. Without this stamp a reader
+     has no way to tell, which is the invisible failure CLAUDE.md rule 4 is
+     written against. */
+  var ds = DATA.data_session || {};
+  if (ds.latest){
+    add("prices from", ds.latest + " close", ds.stale ? "bad" : "");
+    if (ds.stale) add("DATA BEHIND", String(ds.sessions_behind) + " session(s)", "bad");
+  } else {
+    add("prices from", "not recorded", "warn");
+  }
 
   if (NEWS){
     var na = minsSince(NEWS.fetched_at);
@@ -759,8 +773,20 @@ function renderDisclaimer(){
   notes.forEach(function(n){ d.appendChild(el("p", null, n)); });
 }
 
+/* Rule 4 requires staleness stated PROMINENTLY, not only as a badge in a row
+   of badges. A reader who has already acted on a level will not re-read the
+   stamps. */
+function renderBanner(){
+  var b = $("banner"); b.innerHTML = "";
+  var ds = DATA.data_session || {};
+  if (ds.stale && ds.reason){
+    b.appendChild(el("div", "note bad", "STALE DATA — " + ds.reason));
+  }
+}
+
 function render(){
   if (!DATA) return;
+  renderBanner();
   renderStamps();
   renderModes();
   renderGated();

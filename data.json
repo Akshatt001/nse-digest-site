@@ -839,6 +839,14 @@
       }
     ]
   },
+  "data_session": {
+    "expected_at_least": "2026-11-11",
+    "latest": "2026-11-11",
+    "note": "Every close, indicator and level on this page is computed from this session. It is not today's live price.",
+    "reason": null,
+    "sessions_behind": 0,
+    "stale": false
+  },
   "disclaimer": "Personal research tool. Computed from public NSE data. Headlines link to their publishers. Not investment advice. Levels are conditional, not recommendations.",
   "fundamentals": {
     "age_days": null,
@@ -849,7 +857,7 @@
     "stale": null
   },
   "gate_feeds_unavailable": {},
-  "generated_at": "2026-11-12T11:27:57.062879+05:30",
+  "generated_at": "2026-11-12T11:57:05.712872+05:30",
   "intraday": {
     "available": [],
     "configured": false,
