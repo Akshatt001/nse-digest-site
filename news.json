@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-11-12T11:24:18.395839+05:30",
-  "window_start": "2026-11-11T11:24:16.994036+05:30",
+  "fetched_at": "2026-11-12T12:00:32.531687+05:30",
+  "window_start": "2026-11-11T12:00:31.122991+05:30",
   "newest_item": "2026-11-12T11:05:33+05:30",
   "counts": {
     "fetched_raw": 232,
@@ -95,6 +95,28 @@
       "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/news/oil-india-among-6-stocks-closing-above-vwap/slideshow/135755140.cms",
       "symbols": [
         "OIL"
+      ]
+    },
+    {
+      "headline": "Tech Mahindra Share Price Live Updates: Tech Mahindra's Financial Snapshot",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/tech-mahindra-share-price-today-live-updates-12-nov-2026/liveblog/135754851.cms",
+      "published": "2026-11-12T09:36:09+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/tech-mahindra-share-price-today-live-updates-12-nov-2026/liveblog/135754851.cms",
+      "symbols": [
+        "TECHM"
+      ]
+    },
+    {
+      "headline": "Tata Motors PV Share Price Live Updates: Tata Motors PV Market Update: Price and Change",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/tata-motors-pv-stock-price-today-live-12-nov-2026/liveblog/135754348.cms",
+      "published": "2026-11-12T09:15:24+05:30",
+      "description": "",
+      "publisher": "Economic Times",
+      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/tata-motors-pv-stock-price-today-live-12-nov-2026/liveblog/135754348.cms",
+      "symbols": [
+        "TATAMOTORS"
       ]
     },
     {
@@ -515,7 +537,7 @@
       ]
     },
     {
-      "headline": "Apollo Hospital Share Price Live Updates: Apollo Hospital's Stock Price Slips Under 100-Day SMA",
+      "headline": "Apollo Hospital Share Price Live Updates: Apollo Hospital's Financial Snapshot",
       "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/apollo-hospital-stock-price-live-updates-12-nov-2026/liveblog/135752861.cms",
       "published": "2026-11-12T08:10:06+05:30",
       "description": "",
@@ -568,7 +590,7 @@
       ]
     },
     {
-      "headline": "Infosys Share Price Live Updates: Infosys showcases stability with a low beta",
+      "headline": "Infosys Share Price Live Updates: Six Promising Researchers Win The Infosys Prize 2026 Awarded By The Infosys Science Foundation",
       "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/infosys-share-price-live-updates-12-nov-2026/liveblog/135752724.cms",
       "published": "2026-11-12T08:01:05+05:30",
       "description": "",
@@ -579,7 +601,7 @@
       ]
     },
     {
-      "headline": "HUL Share Price Live Updates: HUL Dips Below Key Moving Average",
+      "headline": "HUL Share Price Live Updates: HUL's Stock Performance Overview",
       "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/hul-share-price-live-updates-12-nov-2026/liveblog/135752707.cms",
       "published": "2026-11-12T08:00:46+05:30",
       "description": "",
@@ -590,7 +612,7 @@
       ]
     },
     {
-      "headline": "BPCL Share Price Live Updates: BPCL's recent returns reflect a minor setback.",
+      "headline": "BPCL Share Price Live Updates: Market Insights on BPCL",
       "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/bpcl-share-price-live-12-nov-2026/liveblog/135752701.cms",
       "published": "2026-11-12T08:00:33+05:30",
       "description": "",
@@ -598,28 +620,6 @@
       "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/bpcl-share-price-live-12-nov-2026/liveblog/135752701.cms",
       "symbols": [
         "BPCL"
-      ]
-    },
-    {
-      "headline": "M&M Share Price Live Updates: M&M Stock Details",
-      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/mm-stock-price-today-live-12-nov-2026/liveblog/135752699.cms",
-      "published": "2026-11-12T08:00:28+05:30",
-      "description": "",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/mm-stock-price-today-live-12-nov-2026/liveblog/135752699.cms",
-      "symbols": [
-        "M&M"
-      ]
-    },
-    {
-      "headline": "SBI Share Price Live Updates: SBI Stock Details",
-      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/sbi-stock-price-livestock-price-today-live-updates-12-nov-2026/liveblog/135752689.cms",
-      "published": "2026-11-12T08:00:09+05:30",
-      "description": "",
-      "publisher": "Economic Times",
-      "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/sbi-stock-price-livestock-price-today-live-updates-12-nov-2026/liveblog/135752689.cms",
-      "symbols": [
-        "SBIN"
       ]
     },
     {
@@ -753,7 +753,7 @@
     ],
     "BPCL": [
       {
-        "headline": "BPCL Share Price Live Updates: BPCL's recent returns reflect a minor setback.",
+        "headline": "BPCL Share Price Live Updates: Market Insights on BPCL",
         "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/bpcl-share-price-live-12-nov-2026/liveblog/135752701.cms",
         "published": "2026-11-12T08:00:33+05:30",
         "description": "",
@@ -883,7 +883,7 @@
     ],
     "HINDUNILVR": [
       {
-        "headline": "HUL Share Price Live Updates: HUL Dips Below Key Moving Average",
+        "headline": "HUL Share Price Live Updates: HUL's Stock Performance Overview",
         "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/hul-share-price-live-updates-12-nov-2026/liveblog/135752707.cms",
         "published": "2026-11-12T08:00:46+05:30",
         "description": "",
@@ -922,7 +922,7 @@
     ],
     "INFY": [
       {
-        "headline": "Infosys Share Price Live Updates: Infosys showcases stability with a low beta",
+        "headline": "Infosys Share Price Live Updates: Six Promising Researchers Win The Infosys Prize 2026 Awarded By The Infosys Science Foundation",
         "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/infosys-share-price-live-updates-12-nov-2026/liveblog/135752724.cms",
         "published": "2026-11-12T08:01:05+05:30",
         "description": "",
@@ -995,19 +995,6 @@
         "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/ltimindtree-stock-price-livestock-price-today-live-updates-12-nov-2026/liveblog/135752863.cms",
         "symbols": [
           "LTIM"
-        ]
-      }
-    ],
-    "M&M": [
-      {
-        "headline": "M&M Share Price Live Updates: M&M Stock Details",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/mm-stock-price-today-live-12-nov-2026/liveblog/135752699.cms",
-        "published": "2026-11-12T08:00:28+05:30",
-        "description": "",
-        "publisher": "Economic Times",
-        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/mm-stock-price-today-live-12-nov-2026/liveblog/135752699.cms",
-        "symbols": [
-          "M&M"
         ]
       }
     ],
@@ -1115,19 +1102,6 @@
         ]
       }
     ],
-    "SBIN": [
-      {
-        "headline": "SBI Share Price Live Updates: SBI Stock Details",
-        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/sbi-stock-price-livestock-price-today-live-updates-12-nov-2026/liveblog/135752689.cms",
-        "published": "2026-11-12T08:00:09+05:30",
-        "description": "",
-        "publisher": "Economic Times",
-        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/sbi-stock-price-livestock-price-today-live-updates-12-nov-2026/liveblog/135752689.cms",
-        "symbols": [
-          "SBIN"
-        ]
-      }
-    ],
     "SUNPHARMA": [
       {
         "headline": "Sun Pharma Share Price Live Updates: Sun Pharma's six-month beta highlights consistent performance",
@@ -1151,6 +1125,19 @@
         "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/tata-consumer-stock-price-live-updates-12-nov-2026/liveblog/135753121.cms",
         "symbols": [
           "TATACONSUM"
+        ]
+      }
+    ],
+    "TATAMOTORS": [
+      {
+        "headline": "Tata Motors PV Share Price Live Updates: Tata Motors PV Market Update: Price and Change",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/tata-motors-pv-stock-price-today-live-12-nov-2026/liveblog/135754348.cms",
+        "published": "2026-11-12T09:15:24+05:30",
+        "description": "",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/tata-motors-pv-stock-price-today-live-12-nov-2026/liveblog/135754348.cms",
+        "symbols": [
+          "TATAMOTORS"
         ]
       }
     ],
@@ -1190,6 +1177,19 @@
         "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/tcs-share-price-live-12-nov-2026/liveblog/135752992.cms",
         "symbols": [
           "TCS"
+        ]
+      }
+    ],
+    "TECHM": [
+      {
+        "headline": "Tech Mahindra Share Price Live Updates: Tech Mahindra's Financial Snapshot",
+        "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/tech-mahindra-share-price-today-live-updates-12-nov-2026/liveblog/135754851.cms",
+        "published": "2026-11-12T09:36:09+05:30",
+        "description": "",
+        "publisher": "Economic Times",
+        "url_normalised": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/tech-mahindra-share-price-today-live-updates-12-nov-2026/liveblog/135754851.cms",
+        "symbols": [
+          "TECHM"
         ]
       }
     ],
@@ -1298,7 +1298,7 @@
       "symbols": []
     },
     {
-      "headline": "Apollo Hospital Share Price Live Updates: Apollo Hospital's Stock Price Slips Under 100-Day SMA",
+      "headline": "Apollo Hospital Share Price Live Updates: Apollo Hospital's Financial Snapshot",
       "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/apollo-hospital-stock-price-live-updates-12-nov-2026/liveblog/135752861.cms",
       "published": "2026-11-12T08:10:06+05:30",
       "description": "",
