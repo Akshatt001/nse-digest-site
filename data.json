@@ -857,7 +857,7 @@
     "stale": null
   },
   "gate_feeds_unavailable": {},
-  "generated_at": "2026-11-12T13:12:29.111345+05:30",
+  "generated_at": "2026-11-12T17:07:25.349467+05:30",
   "intraday": {
     "available": [],
     "configured": false,
@@ -43068,7 +43068,7 @@
     "upside",
     "any"
   ],
-  "shortlist_note": "A research shortlist, NOT trade-ready calls. Ranked by momentum percentile within segment among symbols with at least one computed catalyst. Every gate in report-spec.md section 5 still applies to the candidate list above and none was loosened to fill this one; each row below carries the exact gates it failed. News is displayed, never used to select.",
+  "shortlist_note": "A research shortlist, NOT trade-ready calls. Every gate in report-spec.md section 5 still applies to the trade-ready list above, and none was loosened to fill this one - each row here carries the exact gate it failed. In the News view the headline classification does order this list; it never sets a price, level, stop or target, and it is not an input to any gate.",
   "symbols": {
     "360ONE": {
       "catalyst_flags": [
