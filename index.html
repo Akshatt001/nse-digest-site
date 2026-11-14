@@ -146,6 +146,22 @@ tr.detail>td{background:var(--surface); white-space:normal; text-align:left; pad
 .kv dd{margin:0; font-family:var(--mono); font-variant-numeric:tabular-nums}
 .note{font-size:13px; color:var(--ink-2); margin:4px 0; padding-left:10px; border-left:2px solid var(--line)}
 .note.bad{border-left-color:var(--down)}
+
+/* Index & derivatives. The four buildup states are deliberately NOT coloured
+   green/red: they describe positioning that has already happened, not a
+   direction, and a green "long buildup" badge would read as a buy signal the
+   classifier never made. Neutral surface for all four. */
+.idxline{display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 16px; margin-bottom:10px}
+.idxval{font-family:var(--mono); font-variant-numeric:tabular-nums;
+  font-size:19px; font-weight:600; color:var(--ink)}
+.idxlab{font-size:12px; color:var(--ink-3)}
+.tag.bu{background:var(--surface-2); border-color:var(--line-strong); color:var(--ink-2)}
+.tag.nostate{background:var(--surface); border-color:var(--line); color:var(--ink-3);
+  font-style:italic}
+.mtf th:not(:first-child),.mtf td:not(:first-child){text-align:right}
+.mtf td:last-child,.mtf th:last-child{text-align:right}
+.mtf .ind{color:var(--ink-2)}
+.hitbar{display:grid; grid-template-columns:auto 1fr; gap:2px 10px; font-size:13px}
 .nitem{padding:7px 0; border-top:1px solid var(--line)}
 .nitem:first-of-type{border-top:0}
 .nmeta{font-family:var(--mono); font-size:11px; color:var(--ink-3); margin-top:2px}
@@ -204,6 +220,16 @@ footer{border-top:1px solid var(--line); margin-top:10px}
   <div id="fatal"></div>
   <div id="banner"></div>
 
+  <section id="sec-index">
+    <div class="sechead">
+      <h2>Index &amp; derivatives</h2>
+      <span class="count" id="idx-count"></span>
+    </div>
+    <p class="sub" id="idx-sub"></p>
+    <div class="modes" id="idx-tabs" role="group" aria-label="Instrument"></div>
+    <div id="idx-body"></div>
+  </section>
+
   <section id="sec-gated">
     <div class="sechead">
       <h2>Trade-ready</h2>
@@ -242,7 +268,7 @@ footer{border-top:1px solid var(--line); margin-top:10px}
 /* Everything displayed comes from ./data.json and ./news.json, fetched at
    runtime with relative paths so the file works from a Pages subpath, a local
    server, or published alongside its data. */
-var DATA = null, NEWS = null, PRIV = null;
+var DATA = null, NEWS = null, PRIV = null, IDX = null;
 var mode = null;
 var driver = "moving";
 
@@ -320,11 +346,16 @@ function boot(){
         /* Present only on the operator's own machine. Absent is normal and
            silent, so the quantity column simply does not appear. */
         fetch(bust("./data.private.json"), { cache: "no-store" })
+          .then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }),
+        /* Index and derivatives. Absent is survivable - the section says to
+           run src.index_view rather than taking the whole page down with it.
+           data.json remains the only payload the page cannot render without. */
+        fetch(bust("./index_view.json"), { cache: "no-store" })
           .then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; })
       ]);
     })
     .then(function(res){
-      NEWS = res[0]; PRIV = res[1];
+      NEWS = res[0]; PRIV = res[1]; IDX = res[2];
       mode = pickMode();
       render();
     })
@@ -890,12 +921,395 @@ function renderBanner(){
   }
 }
 
+/* ---------------- index & derivatives ---------------- */
+/* Every figure below arrives from ./index_view.json, computed by
+   src/index_view.py and src/derivatives.py. Nothing here decides anything:
+   the verdict is the rule-based one from report-spec section 3, the zones are
+   section 4's, the gap plans are section 6's, and the buildup state is the
+   price/open-interest cross. No direction is forecast. */
+var idxKey = null;
+
+var MTF_ROWS = [
+  ["close",            function(s){ return num(s.close); }],
+  ["9 EMA",            function(s){ return num(s.ema9); }],
+  ["20 EMA",           function(s){ return num(s.ema20); }],
+  ["50 EMA",           function(s){ return num(s.ema50); }],
+  ["200 EMA",          function(s){ return num(s.ema200); }],
+  ["RSI(14) Wilder",   function(s){ return num(s.rsi14, 1); }],
+  ["MACD histogram",   function(s){ return num(s.macd_hist); }],
+  ["MACD prev hist",   function(s){ return num(s.macd_hist_prev); }],
+  ["Stochastic %K",    function(s){ return num(s.stoch_k, 1); }],
+  ["Stochastic %D",    function(s){ return num(s.stoch_d, 1); }],
+  ["Bollinger upper",  function(s){ return num(s.bb_upper); }],
+  ["Bollinger lower",  function(s){ return num(s.bb_lower); }],
+  ["BB bandwidth",     function(s){ return num(s.bb_bandwidth, 2); }],
+  ["BB squeeze",       function(s){ return s.squeeze === null || s.squeeze === undefined
+                                      ? DASH : (s.squeeze ? "yes" : "no"); }],
+  ["ATR(14)",          function(s){ return num(s.atr14); }],
+  ["volume",           function(s){ return num(s.volume, 0); }],
+  ["volume vs 10-bar", function(s){ return s.volume_ratio === null ? DASH
+                                      : num(s.volume_ratio, 2) + "x"; }],
+  ["volume spike",     function(s){ return s.volume_spike === null
+                                      || s.volume_spike === undefined ? DASH
+                                      : (s.volume_spike ? "yes" : "no"); }],
+  ["bars",             function(s){ return num(s.bars, 0); }]
+];
+
+function idxKeys(){
+  var insts = (IDX && IDX.instruments) || {};
+  var all = Object.keys(insts);
+  /* Configured order, not alphabetical: the payload is written sorted, so
+     without this the page defaults to whichever key sorts first. */
+  var order = (IDX && IDX.order) || [];
+  var out = [];
+  order.forEach(function(k){ if (insts[k]) out.push(k); });
+  all.forEach(function(k){ if (out.indexOf(k) < 0) out.push(k); });
+  return out;
+}
+
+function pickIdx(){
+  var keys = idxKeys();
+  if (!keys.length) return null;
+  if (idxKey && keys.indexOf(idxKey) >= 0) return idxKey;
+  var insts = IDX.instruments;
+  for (var i = 0; i < keys.length; i++){
+    if (insts[keys[i]] && insts[keys[i]].available) return keys[i];
+  }
+  return keys[0];
+}
+
+function renderIndexTabs(){
+  var box = $("idx-tabs"); box.innerHTML = "";
+  var keys = idxKeys();
+  if (keys.length < 2) return;
+  keys.forEach(function(k){
+    var inst = IDX.instruments[k] || {};
+    var b = el("button", "mode sm");
+    b.type = "button";
+    b.setAttribute("aria-pressed", k === idxKey ? "true" : "false");
+    b.appendChild(el("span", "mt", inst.display || k));
+    var v = ((inst.verdicts || {})["1d"] || {}).label;
+    b.appendChild(el("span", "ms", inst.available
+      ? (v || DASH).toLowerCase().replace(/_/g, " ")
+      : "unavailable"));
+    b.onclick = function(){ idxKey = k; renderIndex(); };
+    box.appendChild(b);
+  });
+}
+
+function buildupTag(b){
+  if (!b) return el("span", "tag nostate", "no buildup reading");
+  if (!b.state) return el("span", "tag nostate", "no state");
+  return el("span", "tag bu", b.state.replace(/_/g, " "));
+}
+
+function renderIndex(){
+  var sub = $("idx-sub"), body = $("idx-body"), count = $("idx-count");
+  body.innerHTML = ""; sub.textContent = ""; count.textContent = "";
+
+  /* index_view.json absent is a legitimate state - the operator may not have
+     run it yet. The section explains itself IN THE BODY rather than leaving
+     an empty panel, so "nothing here" always carries a reason and the render
+     check never passes over a silently blank section. */
+  if (!IDX){
+    sub.textContent = "Not computed yet.";
+    $("idx-tabs").innerHTML = "";
+    body.appendChild(el("p", "note",
+      "dist/index_view.json is not present, so there is nothing to show for "
+      + "NIFTY or BANK NIFTY. Run: python -m src.index_view"));
+    return;
+  }
+
+  idxKey = pickIdx();
+  renderIndexTabs();
+  var inst = (IDX.instruments || {})[idxKey];
+  if (!inst){
+    sub.textContent = "No instruments in the payload.";
+    body.appendChild(el("p", "note bad",
+      "index_view.json carries no instruments. Check "
+      + "config/derivatives.yaml index_view.instruments."));
+    return;
+  }
+  if (!inst.available){
+    sub.textContent = "This instrument has no stored history.";
+    body.appendChild(el("p", "note bad",
+      inst.reason || "No stored history for this instrument."));
+    return;
+  }
+
+  count.textContent = num(inst.sessions, 0) + " sessions";
+  sub.textContent = "Computed from stored index OHLC and end-of-day open "
+    + "interest. The verdict is rule-based, the levels are measured, and no "
+    + "direction is forecast.";
+
+  /* headline line */
+  var line = el("div", "idxline");
+  function stat(label, value, cls){
+    var w = el("div");
+    var v = el("div", "idxval" + (cls ? " " + cls : ""), value);
+    w.appendChild(v);
+    w.appendChild(el("div", "idxlab", label));
+    line.appendChild(w);
+  }
+  var v1d = (inst.verdicts || {})["1d"] || {};
+  var v1w = (inst.verdicts || {})["1w"] || {};
+  stat("close, " + (inst.as_of || DASH), num(inst.last_close));
+  stat("daily verdict (score " + num(v1d.score, 0) + ")",
+       (v1d.label || DASH).replace(/_/g, " "));
+  stat("weekly verdict", (v1w.label || DASH).replace(/_/g, " "));
+  body.appendChild(line);
+
+  var dv = inst.derivatives || {};
+  var bl = dv.buildup_latest;
+  var tags = el("div", "tags");
+  tags.appendChild(buildupTag(bl));
+  var opt = dv.options || {};
+  if (opt.pcr_oi !== undefined && opt.pcr_oi !== null){
+    tags.appendChild(el("span", "tag", "PCR " + num(opt.pcr_oi, 2)));
+  }
+  var ph = dv.pcr_history || {};
+  if (ph.available){
+    tags.appendChild(el("span", "tag", num(ph.percentile, 0)
+      + "th percentile of " + num(ph.observations, 0) + " sessions"));
+  }
+  if (inst.valuation && inst.valuation.pe){
+    tags.appendChild(el("span", "tag", "P/E " + num(inst.valuation.pe, 2)));
+  }
+  body.appendChild(tags);
+
+  if (inst.volume_note) body.appendChild(el("p", "note", inst.volume_note));
+
+  /* multi-timeframe table */
+  var tfs = Object.keys(inst.timeframes || {});
+  if (tfs.length){
+    var det = el("details");
+    det.appendChild(el("summary", null,
+      "Multi-timeframe indicators (" + tfs.join(", ") + ")"));
+    var dbody = el("div", "dbody");
+    var sh = tableShell(["indicator"].concat(tfs));
+    sh.wrap.firstChild.className = "mtf";
+    MTF_ROWS.forEach(function(row){
+      var tr = el("tr");
+      tr.appendChild(el("td", "ind", row[0]));
+      tfs.forEach(function(tf){
+        tr.appendChild(el("td", "num", row[1](inst.timeframes[tf] || {})));
+      });
+      sh.body.appendChild(tr);
+    });
+    dbody.appendChild(sh.wrap);
+    if (inst.confluence_note)
+      dbody.appendChild(el("p", "note", inst.confluence_note));
+    tfs.forEach(function(tf){
+      var vd = (inst.verdicts || {})[tf];
+      if (!vd || !vd.reasons) return;
+      var c = el("div", "dcard");
+      c.appendChild(el("h3", null, tf + " verdict: "
+        + (vd.label || DASH).replace(/_/g, " ")));
+      var ul = el("div", "rlist");
+      vd.reasons.forEach(function(r){ ul.appendChild(el("div", "rrow", r)); });
+      c.appendChild(ul);
+      dbody.appendChild(c);
+    });
+    det.appendChild(dbody);
+    body.appendChild(det);
+  }
+
+  /* zones, expected range, gap plans */
+  var det2 = el("details");
+  det2.appendChild(el("summary", null, "Levels, expected range and gap plans"));
+  var d2 = el("div", "dbody");
+  var grid = el("div", "dgrid");
+
+  var z = inst.zones || {};
+  /* NOT titled "measured". When target_1 falls back to twice the risk the
+     heading would contradict the card's own t1 source line, and a heading is
+     read first and believed longest. */
+  grid.appendChild(kvCard("Levels", [
+    ["trigger", num(z.trigger_entry)],
+    ["hard stop", num(z.hard_stop)],
+    ["risk/unit", num(z.risk_per_share)],
+    ["target 1", num(z.target_1)],
+    ["t1 source", z.target_1_source || DASH],
+    ["target 2", num(z.target_2)],
+    ["R:R to t1", num(z.rr_to_t1, 3)],
+    ["buy zone", z.buy_zone ? num(z.buy_zone[0]) + " - " + num(z.buy_zone[1]) : DASH],
+    ["strong buy", (z.strong_buy_zone || []).map(function(x){ return num(x); }).join(", ") || DASH],
+    ["selling zone", (z.selling_zone || []).map(function(x){ return num(x); }).join(", ") || DASH]
+  ]));
+
+  var er = inst.expected_range || {};
+  if (er.available){
+    var erc = el("div", "dcard");
+    erc.appendChild(el("h3", null, "Expected range, with its hit rate"));
+    var hb = el("div", "hitbar");
+    Object.keys(er.bands).forEach(function(k){
+      var b = er.bands[k];
+      hb.appendChild(el("div", "num", num(b.low) + " - " + num(b.high)));
+      hb.appendChild(el("div", null, b.multiple + "x ATR: next close inside "
+        + num(b.close_inside_pct, 1) + "%, whole next session inside "
+        + num(b.range_inside_pct, 1) + "% (" + num(b.observations, 0)
+        + " sessions)"));
+    });
+    erc.appendChild(hb);
+    erc.appendChild(el("p", "note", er.note || ""));
+    grid.appendChild(erc);
+  }
+
+  var gm = inst.gap_matrix || {};
+  if (gm.available){
+    var gu = gm.gap_up || {};
+    grid.appendChild(kvCard("If it opens up", [
+      ["do not chase above", num(gu.do_not_chase_above)],
+      ["retest zone", gu.retest_entry_zone
+        ? num(gu.retest_entry_zone[0]) + " - " + num(gu.retest_entry_zone[1]) : DASH],
+      ["invalidation", num(gu.invalidation)],
+      ["rule", gu.rule || DASH]
+    ]));
+    var gd = gm.gap_down || {};
+    grid.appendChild(gd.available === false
+      ? kvCard("If it opens down", [["unavailable", gd.reason || DASH]])
+      : kvCard("If it opens down", [
+          ["reversal watch", gd.reversal_watch_zone
+            ? num(gd.reversal_watch_zone[0]) + " - " + num(gd.reversal_watch_zone[1]) : DASH],
+          ["trigger", gd.reversal_trigger || DASH],
+          ["breakdown below", num(gd.breakdown_confirm_below)],
+          ["rule", gd.rule || DASH]
+        ]));
+  }
+  /* An assumed target must never read as a measured one. When there is no
+     real level above the trigger the R:R is 2.0 by construction, and 2.0
+     looks like the best number on the panel. Say so before the card. */
+  if (z.trigger_entry !== null && z.trigger_entry !== undefined
+      && z.rr_is_measured === false){
+    d2.appendChild(el("p", "note bad",
+      "The R:R below is NOT measured. There is no real level above the "
+      + "trigger, so target 1 falls back to twice the risk and the ratio is "
+      + "2.0 by construction - it carries no information. Source: "
+      + (z.target_1_source || DASH) + "."));
+  }
+  if (z.sizing_omitted){
+    d2.appendChild(el("p", "note", z.sizing_omitted_reason || ""));
+  }
+  d2.appendChild(grid);
+  det2.appendChild(d2);
+  body.appendChild(det2);
+
+  /* derivatives */
+  var det3 = el("details");
+  det3.appendChild(el("summary", null,
+    "Open interest, long/short buildup and the option chain"));
+  var d3 = el("div", "dbody");
+  if (!dv.available){
+    d3.appendChild(el("p", "note", dv.reason || "No F&O data on disk."));
+  } else {
+    var g3 = el("div", "dgrid");
+    var f = dv.futures_latest || {};
+    g3.appendChild(kvCard("Near-month future", [
+      ["expiry", f.near_expiry || DASH],
+      ["close", num(f.close)],
+      ["underlying", num(f.underlying)],
+      ["open interest", num(f.oi, 0)],
+      ["change in OI", num(f.oi_change_reported, 0)],
+      ["volume", num(f.volume, 0)],
+      ["lot size", num(f.lot_size, 0)],
+      ["all expiries OI", num((f.all_expiries || {}).oi, 0)]
+    ]));
+    g3.appendChild(kvCard("Buildup, latest session", bl ? [
+      ["state", bl.state ? bl.state.replace(/_/g, " ") : "none"],
+      ["means", bl.meaning || DASH],
+      ["price change", pct(bl.price_change_pct)],
+      ["OI change", pct(bl.oi_change_pct)],
+      ["why", bl.reason || DASH]
+    ] : [["state", "no reading"]]));
+
+    var counts = dv.buildup_counts || {};
+    var ck = Object.keys(counts);
+    if (ck.length){
+      g3.appendChild(kvCard("Buildup over " + num(dv.sessions_on_disk, 0)
+        + " sessions", ck.map(function(k){
+          return [k.replace(/_/g, " "), num(counts[k], 0)];
+        })));
+    }
+
+    if (opt.expiry){
+      g3.appendChild(kvCard("Option chain, " + opt.expiry, [
+        ["PCR by OI", num(opt.pcr_oi, 3)],
+        ["PCR by volume", num(opt.pcr_volume, 3)],
+        ["total CE OI", num(opt.total_oi_ce, 0)],
+        ["total PE OI", num(opt.total_oi_pe, 0)],
+        ["CE strikes", num(opt.strikes_ce, 0)],
+        ["PE strikes", num(opt.strikes_pe, 0)]
+      ]));
+      var w = opt.walls || {};
+      g3.appendChild(w.available
+        ? kvCard("Heaviest open interest", [
+            ["call wall", num(w.call_wall, 0)],
+            ["its OI", num(w.call_wall_oi, 0)],
+            ["put wall", num(w.put_wall, 0)],
+            ["its OI", num(w.put_wall_oi, 0)],
+            ["window", w.strike_window
+              ? num(w.strike_window[0]) + " - " + num(w.strike_window[1]) : DASH]
+          ])
+        : kvCard("Heaviest open interest", [["unavailable", w.reason || DASH]]));
+    }
+    if (ph.available){
+      g3.appendChild(kvCard("PCR in its own distribution", [
+        ["latest", num(ph.latest_pcr_oi, 3)],
+        ["percentile", num(ph.percentile, 1) + "%"],
+        ["min", num(ph.min, 3)],
+        ["median", num(ph.median, 3)],
+        ["max", num(ph.max, 3)],
+        ["observations", num(ph.observations, 0)]
+      ]));
+    } else if (ph.reason){
+      g3.appendChild(kvCard("PCR in its own distribution",
+        [["unavailable", ph.reason]]));
+    }
+    d3.appendChild(g3);
+    ((opt.walls || {}).flags || []).forEach(function(fl){
+      d3.appendChild(el("p", "note bad", fl));
+    });
+    if (opt.pcr_note) d3.appendChild(el("p", "note", opt.pcr_note));
+    if ((opt.walls || {}).note) d3.appendChild(el("p", "note", opt.walls.note));
+    if (dv.source) d3.appendChild(el("p", "note", dv.source));
+  }
+  det3.appendChild(d3);
+  body.appendChild(det3);
+
+  /* what is NOT available, and why - stated, never approximated */
+  var un = inst.unavailable_timeframes || {};
+  var uk = Object.keys(un);
+  if (uk.length){
+    var det4 = el("details");
+    det4.appendChild(el("summary", null,
+      "Timeframes not available (" + uk.length + ")"));
+    var d4 = el("div", "dbody");
+    /* Grouped by reason. Three timeframes blocked by the same missing feed
+       printed the same paragraph three times, which buries the one fact it
+       is trying to convey. */
+    var byReason = {};
+    uk.forEach(function(tf){
+      var r = un[tf];
+      if (!byReason[r]) byReason[r] = [];
+      byReason[r].push(tf);
+    });
+    Object.keys(byReason).forEach(function(r){
+      d4.appendChild(el("p", "note bad", byReason[r].join(", ") + " - " + r));
+    });
+    det4.appendChild(d4);
+    body.appendChild(det4);
+  }
+
+  if (IDX.rule_1_note) body.appendChild(el("p", "note", IDX.rule_1_note));
+}
+
 function render(){
   if (!DATA) return;
   renderBanner();
   renderStamps();
   renderModes();
   renderDrivers();
+  renderIndex();
   renderGated();
   renderShortlist();
   renderWhy();

@@ -1,0 +1,2785 @@
+{
+  "generated_at": "2026-11-14T20:46:02.852658+05:30",
+  "instruments": {
+    "BANKNIFTY": {
+      "as_of": "2026-11-13",
+      "available": true,
+      "confluence_note": "RSI, MACD and Stochastic are all functions of the same close series. They are shown, not counted as independent confirmation - 'all three agree' is one signal counted three times (report-spec section 1, amendments table).",
+      "derivatives": {
+        "as_of": "2026-11-13",
+        "available": true,
+        "buildup_counts": {
+          "long_buildup": 6,
+          "long_unwinding": 9,
+          "no_state": 2,
+          "rollover": 1,
+          "short_buildup": 1,
+          "short_covering": 10
+        },
+        "buildup_latest": {
+          "meaning": "longs closing",
+          "oi_change": -176760,
+          "oi_change_pct": -8.0456,
+          "prev_session": "2026-11-12",
+          "price_change": -404.2,
+          "price_change_pct": -0.659,
+          "reason": "price -0.66%, open interest -8.05% over one session",
+          "session": "2026-11-13",
+          "state": "long_unwinding"
+        },
+        "buildup_series": [
+          {
+            "meaning": "longs closing",
+            "oi_change": -48780,
+            "oi_change_pct": -2.0368,
+            "prev_session": "2026-09-30",
+            "price_change": -211.2,
+            "price_change_pct": -0.384,
+            "reason": "price -0.38%, open interest -2.04% over one session",
+            "session": "2026-10-01",
+            "state": "long_unwinding"
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -45450,
+            "oi_change_pct": -1.9372,
+            "prev_session": "2026-10-01",
+            "price_change": 128.2,
+            "price_change_pct": 0.234,
+            "reason": "price +0.23%, open interest -1.94% over one session",
+            "session": "2026-10-05",
+            "state": "short_covering"
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -13530,
+            "oi_change_pct": -0.5881,
+            "prev_session": "2026-10-05",
+            "price_change": 324.4,
+            "price_change_pct": 0.5906,
+            "reason": "price +0.59%, open interest -0.59% over one session",
+            "session": "2026-10-06",
+            "state": "short_covering"
+          },
+          {
+            "oi_change": 101610,
+            "oi_change_pct": 4.4425,
+            "prev_session": "2026-10-06",
+            "price_change": 2.2,
+            "price_change_pct": 0.004,
+            "reason": "price flat (+0.004% < 0.05% threshold)",
+            "session": "2026-10-07",
+            "state": null
+          },
+          {
+            "meaning": "longs closing",
+            "oi_change": -72930,
+            "oi_change_pct": -3.053,
+            "prev_session": "2026-10-07",
+            "price_change": -510.8,
+            "price_change_pct": -0.9245,
+            "reason": "price -0.92%, open interest -3.05% over one session",
+            "session": "2026-10-08",
+            "state": "long_unwinding"
+          },
+          {
+            "meaning": "new longs opening",
+            "oi_change": 27900,
+            "oi_change_pct": 1.2047,
+            "prev_session": "2026-10-08",
+            "price_change": 740.8,
+            "price_change_pct": 1.3533,
+            "reason": "price +1.35%, open interest +1.20% over one session",
+            "session": "2026-10-09",
+            "state": "long_buildup"
+          },
+          {
+            "meaning": "longs closing",
+            "oi_change": -49470,
+            "oi_change_pct": -2.1107,
+            "prev_session": "2026-10-09",
+            "price_change": -462.8,
+            "price_change_pct": -0.8342,
+            "reason": "price -0.83%, open interest -2.11% over one session",
+            "session": "2026-10-12",
+            "state": "long_unwinding"
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -41130,
+            "oi_change_pct": -1.7927,
+            "prev_session": "2026-10-12",
+            "price_change": 761.4,
+            "price_change_pct": 1.3839,
+            "reason": "price +1.38%, open interest -1.79% over one session",
+            "session": "2026-10-13",
+            "state": "short_covering"
+          },
+          {
+            "meaning": "new shorts opening",
+            "oi_change": 11670,
+            "oi_change_pct": 0.5179,
+            "prev_session": "2026-10-13",
+            "price_change": -297.4,
+            "price_change_pct": -0.5332,
+            "reason": "price -0.53%, open interest +0.52% over one session",
+            "session": "2026-10-14",
+            "state": "short_buildup"
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -8280,
+            "oi_change_pct": -0.3656,
+            "prev_session": "2026-10-14",
+            "price_change": 378.6,
+            "price_change_pct": 0.6824,
+            "reason": "price +0.68%, open interest -0.37% over one session",
+            "session": "2026-10-15",
+            "state": "short_covering"
+          },
+          {
+            "meaning": "new longs opening",
+            "oi_change": 19680,
+            "oi_change_pct": 0.8721,
+            "prev_session": "2026-10-15",
+            "price_change": 58.6,
+            "price_change_pct": 0.1049,
+            "reason": "price +0.10%, open interest +0.87% over one session",
+            "session": "2026-10-16",
+            "state": "long_buildup"
+          },
+          {
+            "meaning": "longs closing",
+            "oi_change": -80340,
+            "oi_change_pct": -3.5295,
+            "prev_session": "2026-10-16",
+            "price_change": -341.6,
+            "price_change_pct": -0.6109,
+            "reason": "price -0.61%, open interest -3.53% over one session",
+            "session": "2026-10-19",
+            "state": "long_unwinding"
+          },
+          {
+            "meaning": "longs closing",
+            "oi_change": -180150,
+            "oi_change_pct": -8.2039,
+            "prev_session": "2026-10-19",
+            "price_change": -587.8,
+            "price_change_pct": -1.0576,
+            "reason": "price -1.06%, open interest -8.20% over one session",
+            "session": "2026-10-21",
+            "state": "long_unwinding"
+          },
+          {
+            "oi_change": -122610,
+            "oi_change_pct": -6.0826,
+            "prev_session": "2026-10-21",
+            "price_change": -27.2,
+            "price_change_pct": -0.0495,
+            "reason": "price flat (-0.049% < 0.05% threshold)",
+            "session": "2026-10-22",
+            "state": null
+          },
+          {
+            "meaning": "longs closing",
+            "oi_change": -437160,
+            "oi_change_pct": -23.0917,
+            "prev_session": "2026-10-22",
+            "price_change": -719.2,
+            "price_change_pct": -1.3086,
+            "reason": "price -1.31%, open interest -23.09% over one session",
+            "session": "2026-10-23",
+            "state": "long_unwinding"
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -528000,
+            "oi_change_pct": -36.264,
+            "prev_session": "2026-10-23",
+            "price_change": 135.8,
+            "price_change_pct": 0.2504,
+            "reason": "price +0.25%, open interest -36.26% over one session",
+            "session": "2026-10-26",
+            "state": "short_covering"
+          },
+          {
+            "meaning": "longs closing",
+            "oi_change": -468450,
+            "oi_change_pct": -50.4801,
+            "prev_session": "2026-10-26",
+            "price_change": -263.6,
+            "price_change_pct": -0.4848,
+            "reason": "price -0.48%, open interest -50.48% over one session",
+            "session": "2026-10-27",
+            "state": "long_unwinding"
+          },
+          {
+            "oi_change_pct": null,
+            "prev_session": "2026-10-27",
+            "price_change_pct": null,
+            "reason": "near-month expiry rolled 2026-10-27 -> 2026-11-23; near-month open interest is not comparable across a rollover. Use the all-expiry aggregate.",
+            "rollover": true,
+            "session": "2026-10-28",
+            "state": null
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -92460,
+            "oi_change_pct": -3.9805,
+            "prev_session": "2026-10-28",
+            "price_change": 645.6,
+            "price_change_pct": 1.1835,
+            "reason": "price +1.18%, open interest -3.98% over one session",
+            "session": "2026-10-29",
+            "state": "short_covering"
+          },
+          {
+            "meaning": "longs closing",
+            "oi_change": -13860,
+            "oi_change_pct": -0.6214,
+            "prev_session": "2026-10-29",
+            "price_change": -371.2,
+            "price_change_pct": -0.6725,
+            "reason": "price -0.67%, open interest -0.62% over one session",
+            "session": "2026-10-30",
+            "state": "long_unwinding"
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -73650,
+            "oi_change_pct": -3.3228,
+            "prev_session": "2026-10-30",
+            "price_change": 296.4,
+            "price_change_pct": 0.5406,
+            "reason": "price +0.54%, open interest -3.32% over one session",
+            "session": "2026-11-02",
+            "state": "short_covering"
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -12210,
+            "oi_change_pct": -0.5698,
+            "prev_session": "2026-11-02",
+            "price_change": 444.8,
+            "price_change_pct": 0.807,
+            "reason": "price +0.81%, open interest -0.57% over one session",
+            "session": "2026-11-03",
+            "state": "short_covering"
+          },
+          {
+            "meaning": "new longs opening",
+            "oi_change": 37290,
+            "oi_change_pct": 1.7502,
+            "prev_session": "2026-11-03",
+            "price_change": 418.6,
+            "price_change_pct": 0.7534,
+            "reason": "price +0.75%, open interest +1.75% over one session",
+            "session": "2026-11-04",
+            "state": "long_buildup"
+          },
+          {
+            "meaning": "new longs opening",
+            "oi_change": 112950,
+            "oi_change_pct": 5.21,
+            "prev_session": "2026-11-04",
+            "price_change": 1882.0,
+            "price_change_pct": 3.3617,
+            "reason": "price +3.36%, open interest +5.21% over one session",
+            "session": "2026-11-05",
+            "state": "long_buildup"
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -104610,
+            "oi_change_pct": -4.5863,
+            "prev_session": "2026-11-05",
+            "price_change": 1114.2,
+            "price_change_pct": 1.9255,
+            "reason": "price +1.93%, open interest -4.59% over one session",
+            "session": "2026-11-06",
+            "state": "short_covering"
+          },
+          {
+            "meaning": "new longs opening",
+            "oi_change": 57660,
+            "oi_change_pct": 2.6495,
+            "prev_session": "2026-11-06",
+            "price_change": 624.2,
+            "price_change_pct": 1.0583,
+            "reason": "price +1.06%, open interest +2.65% over one session",
+            "session": "2026-11-09",
+            "state": "long_buildup"
+          },
+          {
+            "meaning": "new longs opening",
+            "oi_change": 16050,
+            "oi_change_pct": 0.7185,
+            "prev_session": "2026-11-09",
+            "price_change": 1034.2,
+            "price_change_pct": 1.7351,
+            "reason": "price +1.74%, open interest +0.72% over one session",
+            "session": "2026-11-11",
+            "state": "long_buildup"
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -53010,
+            "oi_change_pct": -2.356,
+            "prev_session": "2026-11-11",
+            "price_change": 699.8,
+            "price_change_pct": 1.1541,
+            "reason": "price +1.15%, open interest -2.36% over one session",
+            "session": "2026-11-12",
+            "state": "short_covering"
+          },
+          {
+            "meaning": "longs closing",
+            "oi_change": -176760,
+            "oi_change_pct": -8.0456,
+            "prev_session": "2026-11-12",
+            "price_change": -404.2,
+            "price_change_pct": -0.659,
+            "reason": "price -0.66%, open interest -8.05% over one session",
+            "session": "2026-11-13",
+            "state": "long_unwinding"
+          }
+        ],
+        "futures_latest": {
+          "all_expiries": {
+            "expiries": [
+              "2026-11-23",
+              "2026-12-29",
+              "2027-01-25"
+            ],
+            "oi": 2365470.0,
+            "volume": 26011.0
+          },
+          "close": 60933.4,
+          "contracts_live": 3,
+          "instrument": "IDF",
+          "lot_size": 30.0,
+          "near_expiry": "2026-11-23",
+          "oi": 2020230.0,
+          "oi_change_reported": -176760.0,
+          "session": "2026-11-13",
+          "symbol": "BANKNIFTY",
+          "underlying": 61034.1,
+          "volume": 21100.0
+        },
+        "futures_series": [
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 2566950.0,
+              "volume": 26622.0
+            },
+            "close": 55006.0,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-10-27",
+            "oi": 2394960.0,
+            "oi_change_reported": 134640.0,
+            "session": "2026-09-30",
+            "symbol": "BANKNIFTY",
+            "underlying": 54633.05,
+            "volume": 24111.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 2524650.0,
+              "volume": 30875.0
+            },
+            "close": 54794.8,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-10-27",
+            "oi": 2346180.0,
+            "oi_change_reported": -48780.0,
+            "session": "2026-10-01",
+            "symbol": "BANKNIFTY",
+            "underlying": 54450.75,
+            "volume": 28180.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 2483700.0,
+              "volume": 21688.0
+            },
+            "close": 54923.0,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-10-27",
+            "oi": 2300730.0,
+            "oi_change_reported": -45450.0,
+            "session": "2026-10-05",
+            "symbol": "BANKNIFTY",
+            "underlying": 54714.1,
+            "volume": 19210.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 2466900.0,
+              "volume": 15858.0
+            },
+            "close": 55247.4,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-10-27",
+            "oi": 2287200.0,
+            "oi_change_reported": -13530.0,
+            "session": "2026-10-06",
+            "symbol": "BANKNIFTY",
+            "underlying": 55128.4,
+            "volume": 14412.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 2585010.0,
+              "volume": 32504.0
+            },
+            "close": 55249.6,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-10-27",
+            "oi": 2388810.0,
+            "oi_change_reported": 101610.0,
+            "session": "2026-10-07",
+            "symbol": "BANKNIFTY",
+            "underlying": 55055.55,
+            "volume": 29357.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 2523810.0,
+              "volume": 20235.0
+            },
+            "close": 54738.8,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-10-27",
+            "oi": 2315880.0,
+            "oi_change_reported": -72930.0,
+            "session": "2026-10-08",
+            "symbol": "BANKNIFTY",
+            "underlying": 54515.05,
+            "volume": 17717.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 2553660.0,
+              "volume": 22141.0
+            },
+            "close": 55479.6,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-10-27",
+            "oi": 2343780.0,
+            "oi_change_reported": 27900.0,
+            "session": "2026-10-09",
+            "symbol": "BANKNIFTY",
+            "underlying": 55256.65,
+            "volume": 19693.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 2528220.0,
+              "volume": 18838.0
+            },
+            "close": 55016.8,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-10-27",
+            "oi": 2294310.0,
+            "oi_change_reported": -49470.0,
+            "session": "2026-10-12",
+            "symbol": "BANKNIFTY",
+            "underlying": 54918.0,
+            "volume": 16697.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 2491830.0,
+              "volume": 24567.0
+            },
+            "close": 55778.2,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-10-27",
+            "oi": 2253180.0,
+            "oi_change_reported": -41130.0,
+            "session": "2026-10-13",
+            "symbol": "BANKNIFTY",
+            "underlying": 55481.05,
+            "volume": 21816.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 2512140.0,
+              "volume": 14990.0
+            },
+            "close": 55480.8,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-10-27",
+            "oi": 2264850.0,
+            "oi_change_reported": 11670.0,
+            "session": "2026-10-14",
+            "symbol": "BANKNIFTY",
+            "underlying": 55316.0,
+            "volume": 13330.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 2508720.0,
+              "volume": 23662.0
+            },
+            "close": 55859.4,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-10-27",
+            "oi": 2256570.0,
+            "oi_change_reported": -8280.0,
+            "session": "2026-10-15",
+            "symbol": "BANKNIFTY",
+            "underlying": 55810.5,
+            "volume": 20542.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 2547540.0,
+              "volume": 15298.0
+            },
+            "close": 55918.0,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-10-27",
+            "oi": 2276250.0,
+            "oi_change_reported": 19680.0,
+            "session": "2026-10-16",
+            "symbol": "BANKNIFTY",
+            "underlying": 55844.0,
+            "volume": 12878.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 2514780.0,
+              "volume": 17972.0
+            },
+            "close": 55576.4,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-10-27",
+            "oi": 2195910.0,
+            "oi_change_reported": -80340.0,
+            "session": "2026-10-19",
+            "symbol": "BANKNIFTY",
+            "underlying": 55488.1,
+            "volume": 14377.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 2496870.0,
+              "volume": 34458.0
+            },
+            "close": 54988.6,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-10-27",
+            "oi": 2015760.0,
+            "oi_change_reported": -180150.0,
+            "session": "2026-10-21",
+            "symbol": "BANKNIFTY",
+            "underlying": 54976.9,
+            "volume": 24427.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 2621100.0,
+              "volume": 31203.0
+            },
+            "close": 54961.4,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-10-27",
+            "oi": 1893150.0,
+            "oi_change_reported": -122610.0,
+            "session": "2026-10-22",
+            "symbol": "BANKNIFTY",
+            "underlying": 54925.7,
+            "volume": 16189.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 2803230.0,
+              "volume": 56554.0
+            },
+            "close": 54242.2,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-10-27",
+            "oi": 1455990.0,
+            "oi_change_reported": -437160.0,
+            "session": "2026-10-23",
+            "symbol": "BANKNIFTY",
+            "underlying": 54287.35,
+            "volume": 26532.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 2814030.0,
+              "volume": 65975.0
+            },
+            "close": 54378.0,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-10-27",
+            "oi": 927990.0,
+            "oi_change_reported": -528000.0,
+            "session": "2026-10-26",
+            "symbol": "BANKNIFTY",
+            "underlying": 54366.7,
+            "volume": 30517.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 2898360.0,
+              "volume": 61480.0
+            },
+            "close": 54114.4,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-10-27",
+            "oi": 459540.0,
+            "oi_change_reported": -468450.0,
+            "session": "2026-10-27",
+            "symbol": "BANKNIFTY",
+            "underlying": 53974.9,
+            "volume": 26098.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 2484390.0,
+              "volume": 22342.0
+            },
+            "close": 54549.0,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-11-23",
+            "oi": 2322840.0,
+            "oi_change_reported": 31830.0,
+            "session": "2026-10-28",
+            "symbol": "BANKNIFTY",
+            "underlying": 54267.4,
+            "volume": 20442.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 2382060.0,
+              "volume": 21933.0
+            },
+            "close": 55194.6,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-11-23",
+            "oi": 2230380.0,
+            "oi_change_reported": -92460.0,
+            "session": "2026-10-29",
+            "symbol": "BANKNIFTY",
+            "underlying": 54909.65,
+            "volume": 20308.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 2372370.0,
+              "volume": 20161.0
+            },
+            "close": 54823.4,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-11-23",
+            "oi": 2216520.0,
+            "oi_change_reported": -13860.0,
+            "session": "2026-10-30",
+            "symbol": "BANKNIFTY",
+            "underlying": 54686.95,
+            "volume": 18743.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 2300550.0,
+              "volume": 20254.0
+            },
+            "close": 55119.8,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-11-23",
+            "oi": 2142870.0,
+            "oi_change_reported": -73650.0,
+            "session": "2026-11-02",
+            "symbol": "BANKNIFTY",
+            "underlying": 55002.2,
+            "volume": 18999.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 2286450.0,
+              "volume": 34394.0
+            },
+            "close": 55564.6,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-11-23",
+            "oi": 2130660.0,
+            "oi_change_reported": -12210.0,
+            "session": "2026-11-03",
+            "symbol": "BANKNIFTY",
+            "underlying": 55540.05,
+            "volume": 31755.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 2324310.0,
+              "volume": 26521.0
+            },
+            "close": 55983.2,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-11-23",
+            "oi": 2167950.0,
+            "oi_change_reported": 37290.0,
+            "session": "2026-11-04",
+            "symbol": "BANKNIFTY",
+            "underlying": 55913.6,
+            "volume": 23697.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 2477250.0,
+              "volume": 54065.0
+            },
+            "close": 57865.2,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-11-23",
+            "oi": 2280900.0,
+            "oi_change_reported": 112950.0,
+            "session": "2026-11-05",
+            "symbol": "BANKNIFTY",
+            "underlying": 57773.65,
+            "volume": 46474.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 2381280.0,
+              "volume": 52309.0
+            },
+            "close": 58979.4,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-11-23",
+            "oi": 2176290.0,
+            "oi_change_reported": -104610.0,
+            "session": "2026-11-06",
+            "symbol": "BANKNIFTY",
+            "underlying": 59086.0,
+            "volume": 44749.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 2474160.0,
+              "volume": 35769.0
+            },
+            "close": 59603.6,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-11-23",
+            "oi": 2233950.0,
+            "oi_change_reported": 30810.0,
+            "session": "2026-11-09",
+            "symbol": "BANKNIFTY",
+            "underlying": 59741.25,
+            "volume": 30585.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 2505240.0,
+              "volume": 53575.0
+            },
+            "close": 60637.8,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-11-23",
+            "oi": 2250000.0,
+            "oi_change_reported": 16050.0,
+            "session": "2026-11-11",
+            "symbol": "BANKNIFTY",
+            "underlying": 60792.4,
+            "volume": 43483.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 2509620.0,
+              "volume": 35336.0
+            },
+            "close": 61337.6,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-11-23",
+            "oi": 2196990.0,
+            "oi_change_reported": -53010.0,
+            "session": "2026-11-12",
+            "symbol": "BANKNIFTY",
+            "underlying": 61518.5,
+            "volume": 28994.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 2365470.0,
+              "volume": 26011.0
+            },
+            "close": 60933.4,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 30.0,
+            "near_expiry": "2026-11-23",
+            "oi": 2020230.0,
+            "oi_change_reported": -176760.0,
+            "session": "2026-11-13",
+            "symbol": "BANKNIFTY",
+            "underlying": 61034.1,
+            "volume": 21100.0
+          }
+        ],
+        "options": {
+          "expiry": "2026-11-23",
+          "pcr_note": "measured ratio only. No bullish/bearish label is attached to an absolute PCR - see pcr_percentile.",
+          "pcr_oi": 1.2407,
+          "pcr_volume": 1.0552,
+          "session": "2026-11-13",
+          "spot": 61034.1,
+          "strikes_ce": 190,
+          "strikes_pe": 190,
+          "symbol": "BANKNIFTY",
+          "total_oi_ce": 16106010.0,
+          "total_oi_pe": 19983210.0,
+          "walls": {
+            "available": true,
+            "call_wall": 61000.0,
+            "call_wall_oi": 867990.0,
+            "flags": [
+              "call wall 61000.0 is BELOW spot 61034.10 - price has traded through it; not overhead resistance"
+            ],
+            "note": "heaviest open interest within the window. Reported as context for the index view; these do NOT feed target_1, hard_stop or any equity gate (config/derivatives.yaml, constraints.oi_walls_feed_equity_levels: false).",
+            "put_wall": 60500.0,
+            "put_wall_oi": 1237140.0,
+            "strike_window": [
+              54930.69,
+              67137.51
+            ],
+            "window_pct": 10.0
+          }
+        },
+        "pcr_history": {
+          "available": true,
+          "latest_pcr_oi": 1.2407,
+          "max": 1.2813,
+          "median": 0.963,
+          "min": 0.558,
+          "observations": 30,
+          "percentile": 86.7,
+          "series": [
+            {
+              "pcr_oi": 0.8755,
+              "session": "2026-09-30"
+            },
+            {
+              "pcr_oi": 0.8646,
+              "session": "2026-10-01"
+            },
+            {
+              "pcr_oi": 0.8744,
+              "session": "2026-10-05"
+            },
+            {
+              "pcr_oi": 0.9085,
+              "session": "2026-10-06"
+            },
+            {
+              "pcr_oi": 0.9238,
+              "session": "2026-10-07"
+            },
+            {
+              "pcr_oi": 0.8658,
+              "session": "2026-10-08"
+            },
+            {
+              "pcr_oi": 0.9831,
+              "session": "2026-10-09"
+            },
+            {
+              "pcr_oi": 0.9007,
+              "session": "2026-10-12"
+            },
+            {
+              "pcr_oi": 1.0723,
+              "session": "2026-10-13"
+            },
+            {
+              "pcr_oi": 0.9801,
+              "session": "2026-10-14"
+            },
+            {
+              "pcr_oi": 1.0824,
+              "session": "2026-10-15"
+            },
+            {
+              "pcr_oi": 1.0632,
+              "session": "2026-10-16"
+            },
+            {
+              "pcr_oi": 0.9551,
+              "session": "2026-10-19"
+            },
+            {
+              "pcr_oi": 0.883,
+              "session": "2026-10-21"
+            },
+            {
+              "pcr_oi": 0.9368,
+              "session": "2026-10-22"
+            },
+            {
+              "pcr_oi": 0.8697,
+              "session": "2026-10-23"
+            },
+            {
+              "pcr_oi": 0.798,
+              "session": "2026-10-26"
+            },
+            {
+              "pcr_oi": 0.558,
+              "session": "2026-10-27"
+            },
+            {
+              "pcr_oi": 0.9352,
+              "session": "2026-10-28"
+            },
+            {
+              "pcr_oi": 0.9698,
+              "session": "2026-10-29"
+            },
+            {
+              "pcr_oi": 0.9543,
+              "session": "2026-10-30"
+            },
+            {
+              "pcr_oi": 0.963,
+              "session": "2026-11-02"
+            },
+            {
+              "pcr_oi": 0.9712,
+              "session": "2026-11-03"
+            },
+            {
+              "pcr_oi": 0.9953,
+              "session": "2026-11-04"
+            },
+            {
+              "pcr_oi": 1.1562,
+              "session": "2026-11-05"
+            },
+            {
+              "pcr_oi": 1.2424,
+              "session": "2026-11-06"
+            },
+            {
+              "pcr_oi": 1.2704,
+              "session": "2026-11-09"
+            },
+            {
+              "pcr_oi": 1.1741,
+              "session": "2026-11-11"
+            },
+            {
+              "pcr_oi": 1.2813,
+              "session": "2026-11-12"
+            },
+            {
+              "pcr_oi": 1.2407,
+              "session": "2026-11-13"
+            }
+          ]
+        },
+        "sessions_on_disk": 30,
+        "source": "F&O bhavcopy, end of day. There is no intraday open interest in this source.",
+        "symbol": "BANKNIFTY"
+      },
+      "display": "NIFTY BANK",
+      "expected_range": {
+        "atr14": 877.25,
+        "available": true,
+        "bands": {
+          "1.0x_atr": {
+            "close_inside_pct": 84.0,
+            "high": 61911.35,
+            "low": 60156.85,
+            "multiple": 1.0,
+            "observations": 250,
+            "range_inside_pct": 71.6
+          },
+          "1.5x_atr": {
+            "close_inside_pct": 94.4,
+            "high": 62349.97,
+            "low": 59718.23,
+            "multiple": 1.5,
+            "observations": 250,
+            "range_inside_pct": 91.2
+          }
+        },
+        "from_close": 61034.1,
+        "note": "A RANGE, not a direction. Hit rates are measured on this instrument's own history over the sessions shown. range_inside_pct is the figure that matters for a stop: it asks whether the whole next session stayed inside, not just its close."
+      },
+      "gap_matrix": {
+        "available": true,
+        "gap_down": {
+          "available": true,
+          "breakdown_confirm_below": 59422.48,
+          "reversal_trigger": "15m close back above 60124.27 with volume >= 1.2x its 10-bar average",
+          "reversal_watch_zone": [
+            59597.93,
+            60124.27
+          ],
+          "rule": "no catching the knife - the 15m reclaim candle is required"
+        },
+        "gap_up": {
+          "do_not_chase_above": 62349.97,
+          "invalidation": 60595.48,
+          "retest_entry_zone": [
+            57603.48,
+            61034.1
+          ],
+          "rule": "enter only on a retest holding prior close / 20 EMA; no entry if the open is already past do_not_chase_above"
+        }
+      },
+      "history_from": "2015-01-01",
+      "key": "BANKNIFTY",
+      "last_close": 61034.1,
+      "sessions": 2941,
+      "sessions_with_volume": 61,
+      "source_ohlc": "https://niftyindices.com/BackPage/getHistoricaldatatabletoString",
+      "timeframes": {
+        "1d": {
+          "atr14": 877.2482,
+          "bars": 2941,
+          "bb_bandwidth": 17.6137,
+          "bb_lower": 51660.0147,
+          "bb_mid": 56649.0025,
+          "bb_upper": 61637.9903,
+          "close": 61034.1,
+          "ema20": 57603.4821,
+          "ema200": 56537.0736,
+          "ema50": 56677.7753,
+          "ema9": 59228.4605,
+          "high": 61300.55,
+          "low": 60780.55,
+          "macd": 1403.9168,
+          "macd_hist": 696.2383,
+          "macd_hist_prev": 735.8532,
+          "macd_signal": 707.6785,
+          "open": 61300.55,
+          "prev_close": 61518.5,
+          "resistance_levels": [
+            61678.8
+          ],
+          "rsi14": 75.6956,
+          "squeeze": false,
+          "stoch_d": 95.8444,
+          "stoch_k": 95.1482,
+          "support_levels": [
+            59861.1,
+            58864.2,
+            57783.2,
+            57157.85,
+            56549.4
+          ],
+          "timeframe": "1d",
+          "volume": 310381747.0,
+          "volume_ratio": 0.7572,
+          "volume_spike": false
+        },
+        "1w": {
+          "atr14": 1805.036,
+          "bars": 620,
+          "bb_bandwidth": 11.4278,
+          "bb_lower": 53720.4881,
+          "bb_mid": 56976.0525,
+          "bb_upper": 60231.6169,
+          "close": 61034.1,
+          "ema20": 56798.7851,
+          "ema200": 50968.9463,
+          "ema50": 56508.3697,
+          "ema9": 57175.2947,
+          "high": 61545.85,
+          "low": 58791.35,
+          "macd": 224.179,
+          "macd_hist": 326.3417,
+          "macd_hist_prev": 12.9433,
+          "macd_signal": -102.1627,
+          "open": 59240.5,
+          "prev_close": 59086.0,
+          "resistance_levels": [
+            61764.85
+          ],
+          "rsi14": 65.326,
+          "squeeze": false,
+          "stoch_d": 47.5178,
+          "stoch_k": 72.1635,
+          "support_levels": [
+            56023.6,
+            53561.75,
+            52783.45,
+            49954.85,
+            49654.65
+          ],
+          "timeframe": "1w",
+          "volume": 1894366246.0,
+          "volume_ratio": 1.2986,
+          "volume_spike": true
+        }
+      },
+      "unavailable_timeframes": {
+        "15m": "No intraday feed. A 5- or 15-minute candle cannot be resampled from a daily bar, and the two archive sources used here are end of day. Needs either Angel One (config/broker.yaml) or NSE's live chart endpoint, which returned Akamai HTTP 403 on 2026-11-14. The >=120% volume-spike rule on lower timeframes therefore cannot be evaluated yet.",
+        "1h": "No intraday feed. A 5- or 15-minute candle cannot be resampled from a daily bar, and the two archive sources used here are end of day. Needs either Angel One (config/broker.yaml) or NSE's live chart endpoint, which returned Akamai HTTP 403 on 2026-11-14. The >=120% volume-spike rule on lower timeframes therefore cannot be evaluated yet.",
+        "5m": "No intraday feed. A 5- or 15-minute candle cannot be resampled from a daily bar, and the two archive sources used here are end of day. Needs either Angel One (config/broker.yaml) or NSE's live chart endpoint, which returned Akamai HTTP 403 on 2026-11-14. The >=120% volume-spike rule on lower timeframes therefore cannot be evaluated yet."
+      },
+      "valuation": {
+        "div_yield": 1.03,
+        "pb": 1.84,
+        "pe": 13.49,
+        "turnover_cr": 9025.34,
+        "volume": 310381747.0
+      },
+      "verdicts": {
+        "1d": {
+          "label": "BULLISH",
+          "reasons": [
+            "close 61034.1 above 20 EMA 57603.4821",
+            "20 EMA 57603.4821 above 50 EMA 56677.7753",
+            "close above 200 EMA 56537.0736",
+            "RSI 75.6956 above 55",
+            "MACD histogram falling (735.8532 -> 696.2383)"
+          ],
+          "score": 3
+        },
+        "1w": {
+          "label": "BULLISH",
+          "reasons": [
+            "close 61034.1 above 20 EMA 56798.7851",
+            "20 EMA 56798.7851 above 50 EMA 56508.3697",
+            "close above 200 EMA 50968.9463",
+            "RSI 65.326 above 55",
+            "MACD histogram rising (12.9433 -> 326.3417)"
+          ],
+          "score": 5
+        }
+      },
+      "zones": {
+        "buy_zone": [
+          57603.48,
+          59228.46
+        ],
+        "hard_stop": 59924.3,
+        "invalid_reason": null,
+        "risk_per_share": 1754.5,
+        "rr_is_measured": false,
+        "rr_to_t1": 2.0,
+        "selling_zone": [
+          61678.8
+        ],
+        "sizing_omitted": true,
+        "sizing_omitted_reason": "An index is not directly tradeable. Futures and options on it carry lot sizes, margin and premium decay that config/risk.yaml does not model, so any quantity here would be a plausible wrong number.",
+        "strong_buy_zone": [
+          59861.1,
+          58864.2
+        ],
+        "target_1": 65187.8,
+        "target_1_source": "fallback 2R (no overhead level)",
+        "target_2": 66942.3,
+        "target_2_source": "fallback 3R",
+        "trigger_entry": 61678.8
+      }
+    },
+    "NIFTY50": {
+      "as_of": "2026-11-13",
+      "available": true,
+      "confluence_note": "RSI, MACD and Stochastic are all functions of the same close series. They are shown, not counted as independent confirmation - 'all three agree' is one signal counted three times (report-spec section 1, amendments table).",
+      "derivatives": {
+        "as_of": "2026-11-13",
+        "available": true,
+        "buildup_counts": {
+          "long_buildup": 1,
+          "long_unwinding": 6,
+          "no_state": 3,
+          "rollover": 1,
+          "short_buildup": 3,
+          "short_covering": 15
+        },
+        "buildup_latest": {
+          "meaning": "longs closing",
+          "oi_change": -269165,
+          "oi_change_pct": -2.232,
+          "prev_session": "2026-11-12",
+          "price_change": -137.7,
+          "price_change_pct": -0.5441,
+          "reason": "price -0.54%, open interest -2.23% over one session",
+          "session": "2026-11-13",
+          "state": "long_unwinding"
+        },
+        "buildup_series": [
+          {
+            "meaning": "new shorts opening",
+            "oi_change": 1140880,
+            "oi_change_pct": 6.3329,
+            "prev_session": "2026-09-30",
+            "price_change": -177.0,
+            "price_change_pct": -0.7795,
+            "reason": "price -0.78%, open interest +6.33% over one session",
+            "session": "2026-10-01",
+            "state": "short_buildup"
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -140335,
+            "oi_change_pct": -0.7326,
+            "prev_session": "2026-10-01",
+            "price_change": 90.5,
+            "price_change_pct": 0.4017,
+            "reason": "price +0.40%, open interest -0.73% over one session",
+            "session": "2026-10-05",
+            "state": "short_covering"
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -328705,
+            "oi_change_pct": -1.7286,
+            "prev_session": "2026-10-05",
+            "price_change": 174.6,
+            "price_change_pct": 0.7719,
+            "reason": "price +0.77%, open interest -1.73% over one session",
+            "session": "2026-10-06",
+            "state": "short_covering"
+          },
+          {
+            "meaning": "new shorts opening",
+            "oi_change": 336440,
+            "oi_change_pct": 1.8004,
+            "prev_session": "2026-10-06",
+            "price_change": -162.5,
+            "price_change_pct": -0.7129,
+            "reason": "price -0.71%, open interest +1.80% over one session",
+            "session": "2026-10-07",
+            "state": "short_buildup"
+          },
+          {
+            "meaning": "new shorts opening",
+            "oi_change": 113750,
+            "oi_change_pct": 0.5979,
+            "prev_session": "2026-10-07",
+            "price_change": -339.7,
+            "price_change_pct": -1.5009,
+            "reason": "price -1.50%, open interest +0.60% over one session",
+            "session": "2026-10-08",
+            "state": "short_buildup"
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -194155,
+            "oi_change_pct": -1.0145,
+            "prev_session": "2026-10-08",
+            "price_change": 319.4,
+            "price_change_pct": 1.4327,
+            "reason": "price +1.43%, open interest -1.01% over one session",
+            "session": "2026-10-09",
+            "state": "short_covering"
+          },
+          {
+            "meaning": "longs closing",
+            "oi_change": -239200,
+            "oi_change_pct": -1.2627,
+            "prev_session": "2026-10-09",
+            "price_change": -226.1,
+            "price_change_pct": -0.9999,
+            "reason": "price -1.00%, open interest -1.26% over one session",
+            "session": "2026-10-12",
+            "state": "long_unwinding"
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -256295,
+            "oi_change_pct": -1.3703,
+            "prev_session": "2026-10-12",
+            "price_change": 448.3,
+            "price_change_pct": 2.0025,
+            "reason": "price +2.00%, open interest -1.37% over one session",
+            "session": "2026-10-13",
+            "state": "short_covering"
+          },
+          {
+            "oi_change": 3900,
+            "oi_change_pct": 0.0211,
+            "prev_session": "2026-10-13",
+            "price_change": -186.3,
+            "price_change_pct": -0.8159,
+            "reason": "open interest flat (+0.021% < 0.1% threshold)",
+            "session": "2026-10-14",
+            "state": null
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -1443260,
+            "oi_change_pct": -7.822,
+            "prev_session": "2026-10-14",
+            "price_change": 336.3,
+            "price_change_pct": 1.4849,
+            "reason": "price +1.48%, open interest -7.82% over one session",
+            "session": "2026-10-15",
+            "state": "short_covering"
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -348725,
+            "oi_change_pct": -2.0503,
+            "prev_session": "2026-10-15",
+            "price_change": 134.4,
+            "price_change_pct": 0.5847,
+            "reason": "price +0.58%, open interest -2.05% over one session",
+            "session": "2026-10-16",
+            "state": "short_covering"
+          },
+          {
+            "meaning": "longs closing",
+            "oi_change": -307645,
+            "oi_change_pct": -1.8467,
+            "prev_session": "2026-10-16",
+            "price_change": -224.0,
+            "price_change_pct": -0.9689,
+            "reason": "price -0.97%, open interest -1.85% over one session",
+            "session": "2026-10-19",
+            "state": "long_unwinding"
+          },
+          {
+            "meaning": "longs closing",
+            "oi_change": -1060280,
+            "oi_change_pct": -6.4842,
+            "prev_session": "2026-10-19",
+            "price_change": -151.9,
+            "price_change_pct": -0.6635,
+            "reason": "price -0.66%, open interest -6.48% over one session",
+            "session": "2026-10-21",
+            "state": "long_unwinding"
+          },
+          {
+            "meaning": "longs closing",
+            "oi_change": -1480505,
+            "oi_change_pct": -9.6819,
+            "prev_session": "2026-10-21",
+            "price_change": -32.0,
+            "price_change_pct": -0.1407,
+            "reason": "price -0.14%, open interest -9.68% over one session",
+            "session": "2026-10-22",
+            "state": "long_unwinding"
+          },
+          {
+            "meaning": "longs closing",
+            "oi_change": -2487550,
+            "oi_change_pct": -18.0114,
+            "prev_session": "2026-10-22",
+            "price_change": -134.7,
+            "price_change_pct": -0.5931,
+            "reason": "price -0.59%, open interest -18.01% over one session",
+            "session": "2026-10-23",
+            "state": "long_unwinding"
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -3102905,
+            "oi_change_pct": -27.4026,
+            "prev_session": "2026-10-23",
+            "price_change": 190.7,
+            "price_change_pct": 0.8447,
+            "reason": "price +0.84%, open interest -27.40% over one session",
+            "session": "2026-10-26",
+            "state": "short_covering"
+          },
+          {
+            "oi_change": -1890980,
+            "oi_change_pct": -23.0033,
+            "prev_session": "2026-10-26",
+            "price_change": 9.4,
+            "price_change_pct": 0.0413,
+            "reason": "price flat (+0.041% < 0.05% threshold)",
+            "session": "2026-10-27",
+            "state": null
+          },
+          {
+            "oi_change_pct": null,
+            "prev_session": "2026-10-27",
+            "price_change_pct": null,
+            "reason": "near-month expiry rolled 2026-10-27 -> 2026-11-23; near-month open interest is not comparable across a rollover. Use the all-expiry aggregate.",
+            "rollover": true,
+            "session": "2026-10-28",
+            "state": null
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -236470,
+            "oi_change_pct": -1.4733,
+            "prev_session": "2026-10-28",
+            "price_change": 269.4,
+            "price_change_pct": 1.1827,
+            "reason": "price +1.18%, open interest -1.47% over one session",
+            "session": "2026-10-29",
+            "state": "short_covering"
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -214305,
+            "oi_change_pct": -1.3552,
+            "prev_session": "2026-10-29",
+            "price_change": 51.5,
+            "price_change_pct": 0.2235,
+            "reason": "price +0.22%, open interest -1.36% over one session",
+            "session": "2026-10-30",
+            "state": "short_covering"
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -536120,
+            "oi_change_pct": -3.4368,
+            "prev_session": "2026-10-30",
+            "price_change": 308.5,
+            "price_change_pct": 1.3356,
+            "reason": "price +1.34%, open interest -3.44% over one session",
+            "session": "2026-11-02",
+            "state": "short_covering"
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -1297205,
+            "oi_change_pct": -8.6118,
+            "prev_session": "2026-11-02",
+            "price_change": 373.1,
+            "price_change_pct": 1.5939,
+            "reason": "price +1.59%, open interest -8.61% over one session",
+            "session": "2026-11-03",
+            "state": "short_covering"
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -284180,
+            "oi_change_pct": -2.0644,
+            "prev_session": "2026-11-03",
+            "price_change": 190.2,
+            "price_change_pct": 0.7998,
+            "reason": "price +0.80%, open interest -2.06% over one session",
+            "session": "2026-11-04",
+            "state": "short_covering"
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -840125,
+            "oi_change_pct": -6.2316,
+            "prev_session": "2026-11-04",
+            "price_change": 617.3,
+            "price_change_pct": 2.5752,
+            "reason": "price +2.58%, open interest -6.23% over one session",
+            "session": "2026-11-05",
+            "state": "short_covering"
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -553085,
+            "oi_change_pct": -4.3751,
+            "prev_session": "2026-11-05",
+            "price_change": 444.4,
+            "price_change_pct": 1.8074,
+            "reason": "price +1.81%, open interest -4.38% over one session",
+            "session": "2026-11-06",
+            "state": "short_covering"
+          },
+          {
+            "oi_change": -25805,
+            "oi_change_pct": -0.2135,
+            "prev_session": "2026-11-06",
+            "price_change": 0.8,
+            "price_change_pct": 0.0032,
+            "reason": "price flat (+0.003% < 0.05% threshold)",
+            "session": "2026-11-09",
+            "state": null
+          },
+          {
+            "meaning": "shorts closing",
+            "oi_change": -607425,
+            "oi_change_pct": -5.0356,
+            "prev_session": "2026-11-09",
+            "price_change": 181.0,
+            "price_change_pct": 0.723,
+            "reason": "price +0.72%, open interest -5.04% over one session",
+            "session": "2026-11-11",
+            "state": "short_covering"
+          },
+          {
+            "meaning": "new longs opening",
+            "oi_change": 604240,
+            "oi_change_pct": 5.2748,
+            "prev_session": "2026-11-11",
+            "price_change": 94.5,
+            "price_change_pct": 0.3748,
+            "reason": "price +0.37%, open interest +5.27% over one session",
+            "session": "2026-11-12",
+            "state": "long_buildup"
+          },
+          {
+            "meaning": "longs closing",
+            "oi_change": -269165,
+            "oi_change_pct": -2.232,
+            "prev_session": "2026-11-12",
+            "price_change": -137.7,
+            "price_change_pct": -0.5441,
+            "reason": "price -0.54%, open interest -2.23% over one session",
+            "session": "2026-11-13",
+            "state": "long_unwinding"
+          }
+        ],
+        "futures_latest": {
+          "all_expiries": {
+            "expiries": [
+              "2026-11-23",
+              "2026-12-29",
+              "2027-01-25"
+            ],
+            "oi": 14067365.0,
+            "volume": 51266.0
+          },
+          "close": 25171.0,
+          "contracts_live": 3,
+          "instrument": "IDF",
+          "lot_size": 65.0,
+          "near_expiry": "2026-11-23",
+          "oi": 11790350.0,
+          "oi_change_reported": -269165.0,
+          "session": "2026-11-13",
+          "symbol": "NIFTY",
+          "underlying": 25144.3,
+          "volume": 42051.0
+        },
+        "futures_series": [
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 20220460.0,
+              "volume": 66539.0
+            },
+            "close": 22707.3,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-10-27",
+            "oi": 18015075.0,
+            "oi_change_reported": 879840.0,
+            "session": "2026-09-30",
+            "symbol": "NIFTY",
+            "underlying": 22620.45,
+            "volume": 58953.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 21610485.0,
+              "volume": 102527.0
+            },
+            "close": 22530.3,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-10-27",
+            "oi": 19155955.0,
+            "oi_change_reported": 1140880.0,
+            "session": "2026-10-01",
+            "symbol": "NIFTY",
+            "underlying": 22421.95,
+            "volume": 89334.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 21554260.0,
+              "volume": 63682.0
+            },
+            "close": 22620.8,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-10-27",
+            "oi": 19015620.0,
+            "oi_change_reported": -140335.0,
+            "session": "2026-10-05",
+            "symbol": "NIFTY",
+            "underlying": 22555.75,
+            "volume": 56909.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 21297185.0,
+              "volume": 49386.0
+            },
+            "close": 22795.4,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-10-27",
+            "oi": 18686915.0,
+            "oi_change_reported": -328705.0,
+            "session": "2026-10-06",
+            "symbol": "NIFTY",
+            "underlying": 22776.1,
+            "volume": 44614.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 21680880.0,
+              "volume": 55940.0
+            },
+            "close": 22632.9,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-10-27",
+            "oi": 19023355.0,
+            "oi_change_reported": 336440.0,
+            "session": "2026-10-07",
+            "symbol": "NIFTY",
+            "underlying": 22603.05,
+            "volume": 51013.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 21937825.0,
+              "volume": 76283.0
+            },
+            "close": 22293.2,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-10-27",
+            "oi": 19137105.0,
+            "oi_change_reported": 113750.0,
+            "session": "2026-10-08",
+            "symbol": "NIFTY",
+            "underlying": 22231.8,
+            "volume": 66176.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 21745295.0,
+              "volume": 68800.0
+            },
+            "close": 22612.6,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-10-27",
+            "oi": 18942950.0,
+            "oi_change_reported": -194155.0,
+            "session": "2026-10-09",
+            "symbol": "NIFTY",
+            "underlying": 22520.45,
+            "volume": 60159.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 21597420.0,
+              "volume": 48375.0
+            },
+            "close": 22386.5,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-10-27",
+            "oi": 18703750.0,
+            "oi_change_reported": -239200.0,
+            "session": "2026-10-12",
+            "symbol": "NIFTY",
+            "underlying": 22363.35,
+            "volume": 40671.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 21365695.0,
+              "volume": 70571.0
+            },
+            "close": 22834.8,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-10-27",
+            "oi": 18447455.0,
+            "oi_change_reported": -256295.0,
+            "session": "2026-10-13",
+            "symbol": "NIFTY",
+            "underlying": 22721.95,
+            "volume": 60503.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 21514025.0,
+              "volume": 60579.0
+            },
+            "close": 22648.5,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-10-27",
+            "oi": 18451355.0,
+            "oi_change_reported": 3900.0,
+            "session": "2026-10-14",
+            "symbol": "NIFTY",
+            "underlying": 22622.7,
+            "volume": 53505.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 20231510.0,
+              "volume": 91456.0
+            },
+            "close": 22984.8,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-10-27",
+            "oi": 17008095.0,
+            "oi_change_reported": -1443260.0,
+            "session": "2026-10-15",
+            "symbol": "NIFTY",
+            "underlying": 22997.35,
+            "volume": 76596.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 20055685.0,
+              "volume": 52872.0
+            },
+            "close": 23119.2,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-10-27",
+            "oi": 16659370.0,
+            "oi_change_reported": -348725.0,
+            "session": "2026-10-16",
+            "symbol": "NIFTY",
+            "underlying": 23146.15,
+            "volume": 42263.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 20054255.0,
+              "volume": 61593.0
+            },
+            "close": 22895.2,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-10-27",
+            "oi": 16351725.0,
+            "oi_change_reported": -307645.0,
+            "session": "2026-10-19",
+            "symbol": "NIFTY",
+            "underlying": 22888.95,
+            "volume": 45986.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 19563570.0,
+              "volume": 90617.0
+            },
+            "close": 22743.3,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-10-27",
+            "oi": 15291445.0,
+            "oi_change_reported": -1060280.0,
+            "session": "2026-10-21",
+            "symbol": "NIFTY",
+            "underlying": 22811.35,
+            "volume": 65564.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 20467200.0,
+              "volume": 134545.0
+            },
+            "close": 22711.3,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-10-27",
+            "oi": 13810940.0,
+            "oi_change_reported": -1480505.0,
+            "session": "2026-10-22",
+            "symbol": "NIFTY",
+            "underlying": 22687.65,
+            "volume": 80397.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 20724600.0,
+              "volume": 159040.0
+            },
+            "close": 22576.6,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-10-27",
+            "oi": 11323390.0,
+            "oi_change_reported": -2487550.0,
+            "session": "2026-10-23",
+            "symbol": "NIFTY",
+            "underlying": 22600.0,
+            "volume": 88632.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 21495110.0,
+              "volume": 195689.0
+            },
+            "close": 22767.3,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-10-27",
+            "oi": 8220485.0,
+            "oi_change_reported": -3102905.0,
+            "session": "2026-10-26",
+            "symbol": "NIFTY",
+            "underlying": 22753.2,
+            "volume": 95563.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-10-27",
+                "2026-11-23",
+                "2026-12-29"
+              ],
+              "oi": 23141560.0,
+              "volume": 175153.0
+            },
+            "close": 22776.7,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-10-27",
+            "oi": 6329505.0,
+            "oi_change_reported": -1890980.0,
+            "session": "2026-10-27",
+            "symbol": "NIFTY",
+            "underlying": 22749.75,
+            "volume": 74467.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 17365465.0,
+              "volume": 82214.0
+            },
+            "close": 22778.0,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-11-23",
+            "oi": 16049995.0,
+            "oi_change_reported": 477685.0,
+            "session": "2026-10-28",
+            "symbol": "NIFTY",
+            "underlying": 22698.85,
+            "volume": 75166.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 17115800.0,
+              "volume": 59364.0
+            },
+            "close": 23047.4,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-11-23",
+            "oi": 15813525.0,
+            "oi_change_reported": -236470.0,
+            "session": "2026-10-29",
+            "symbol": "NIFTY",
+            "underlying": 22936.75,
+            "volume": 53551.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 16918525.0,
+              "volume": 54486.0
+            },
+            "close": 23098.9,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-11-23",
+            "oi": 15599220.0,
+            "oi_change_reported": -214305.0,
+            "session": "2026-10-30",
+            "symbol": "NIFTY",
+            "underlying": 23053.1,
+            "volume": 48729.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 16458000.0,
+              "volume": 65317.0
+            },
+            "close": 23407.4,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-11-23",
+            "oi": 15063100.0,
+            "oi_change_reported": -536120.0,
+            "session": "2026-11-02",
+            "symbol": "NIFTY",
+            "underlying": 23440.8,
+            "volume": 58209.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 15256670.0,
+              "volume": 86378.0
+            },
+            "close": 23780.5,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-11-23",
+            "oi": 13765895.0,
+            "oi_change_reported": -1297205.0,
+            "session": "2026-11-03",
+            "symbol": "NIFTY",
+            "underlying": 23810.85,
+            "volume": 75773.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 15045095.0,
+              "volume": 84188.0
+            },
+            "close": 23970.7,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-11-23",
+            "oi": 13481715.0,
+            "oi_change_reported": -284180.0,
+            "session": "2026-11-04",
+            "symbol": "NIFTY",
+            "underlying": 23960.6,
+            "volume": 73823.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 14359605.0,
+              "volume": 115847.0
+            },
+            "close": 24588.0,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-11-23",
+            "oi": 12641590.0,
+            "oi_change_reported": -840125.0,
+            "session": "2026-11-05",
+            "symbol": "NIFTY",
+            "underlying": 24536.6,
+            "volume": 99930.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 13936325.0,
+              "volume": 144093.0
+            },
+            "close": 25032.4,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-11-23",
+            "oi": 12088505.0,
+            "oi_change_reported": -553085.0,
+            "session": "2026-11-06",
+            "symbol": "NIFTY",
+            "underlying": 25030.35,
+            "volume": 125137.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 14102010.0,
+              "volume": 78781.0
+            },
+            "close": 25033.2,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-11-23",
+            "oi": 12062700.0,
+            "oi_change_reported": 111280.0,
+            "session": "2026-11-09",
+            "symbol": "NIFTY",
+            "underlying": 25044.65,
+            "volume": 65934.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 13487825.0,
+              "volume": 113553.0
+            },
+            "close": 25214.2,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-11-23",
+            "oi": 11455275.0,
+            "oi_change_reported": -607425.0,
+            "session": "2026-11-11",
+            "symbol": "NIFTY",
+            "underlying": 25255.05,
+            "volume": 94845.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 14291225.0,
+              "volume": 66315.0
+            },
+            "close": 25308.7,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-11-23",
+            "oi": 12059515.0,
+            "oi_change_reported": 604240.0,
+            "session": "2026-11-12",
+            "symbol": "NIFTY",
+            "underlying": 25299.35,
+            "volume": 54759.0
+          },
+          {
+            "all_expiries": {
+              "expiries": [
+                "2026-11-23",
+                "2026-12-29",
+                "2027-01-25"
+              ],
+              "oi": 14067365.0,
+              "volume": 51266.0
+            },
+            "close": 25171.0,
+            "contracts_live": 3,
+            "instrument": "IDF",
+            "lot_size": 65.0,
+            "near_expiry": "2026-11-23",
+            "oi": 11790350.0,
+            "oi_change_reported": -269165.0,
+            "session": "2026-11-13",
+            "symbol": "NIFTY",
+            "underlying": 25144.3,
+            "volume": 42051.0
+          }
+        ],
+        "options": {
+          "expiry": "2026-11-17",
+          "pcr_note": "measured ratio only. No bullish/bearish label is attached to an absolute PCR - see pcr_percentile.",
+          "pcr_oi": 0.8337,
+          "pcr_volume": 1.012,
+          "session": "2026-11-13",
+          "spot": 25144.3,
+          "strikes_ce": 142,
+          "strikes_pe": 142,
+          "symbol": "NIFTY",
+          "total_oi_ce": 198865875.0,
+          "total_oi_pe": 165794330.0,
+          "walls": {
+            "available": true,
+            "call_wall": 26000.0,
+            "call_wall_oi": 14737060.0,
+            "flags": [],
+            "note": "heaviest open interest within the window. Reported as context for the index view; these do NOT feed target_1, hard_stop or any equity gate (config/derivatives.yaml, constraints.oi_walls_feed_equity_levels: false).",
+            "put_wall": 24000.0,
+            "put_wall_oi": 11700260.0,
+            "strike_window": [
+              22629.87,
+              27658.73
+            ],
+            "window_pct": 10.0
+          }
+        },
+        "pcr_history": {
+          "available": true,
+          "latest_pcr_oi": 0.8337,
+          "max": 1.9262,
+          "median": 1.0441,
+          "min": 0.5911,
+          "observations": 30,
+          "percentile": 33.3,
+          "series": [
+            {
+              "pcr_oi": 0.6456,
+              "session": "2026-09-30"
+            },
+            {
+              "pcr_oi": 0.6852,
+              "session": "2026-10-01"
+            },
+            {
+              "pcr_oi": 0.8941,
+              "session": "2026-10-05"
+            },
+            {
+              "pcr_oi": 1.4527,
+              "session": "2026-10-06"
+            },
+            {
+              "pcr_oi": 0.8137,
+              "session": "2026-10-07"
+            },
+            {
+              "pcr_oi": 0.616,
+              "session": "2026-10-08"
+            },
+            {
+              "pcr_oi": 1.2775,
+              "session": "2026-10-09"
+            },
+            {
+              "pcr_oi": 0.5911,
+              "session": "2026-10-12"
+            },
+            {
+              "pcr_oi": 1.4015,
+              "session": "2026-10-13"
+            },
+            {
+              "pcr_oi": 0.8555,
+              "session": "2026-10-14"
+            },
+            {
+              "pcr_oi": 1.6623,
+              "session": "2026-10-15"
+            },
+            {
+              "pcr_oi": 1.3239,
+              "session": "2026-10-16"
+            },
+            {
+              "pcr_oi": 0.7961,
+              "session": "2026-10-19"
+            },
+            {
+              "pcr_oi": 0.6999,
+              "session": "2026-10-21"
+            },
+            {
+              "pcr_oi": 0.821,
+              "session": "2026-10-22"
+            },
+            {
+              "pcr_oi": 0.7374,
+              "session": "2026-10-23"
+            },
+            {
+              "pcr_oi": 1.1256,
+              "session": "2026-10-26"
+            },
+            {
+              "pcr_oi": 1.0288,
+              "session": "2026-10-27"
+            },
+            {
+              "pcr_oi": 1.0441,
+              "session": "2026-10-28"
+            },
+            {
+              "pcr_oi": 1.4411,
+              "session": "2026-10-29"
+            },
+            {
+              "pcr_oi": 1.6238,
+              "session": "2026-10-30"
+            },
+            {
+              "pcr_oi": 1.6684,
+              "session": "2026-11-02"
+            },
+            {
+              "pcr_oi": 1.9262,
+              "session": "2026-11-03"
+            },
+            {
+              "pcr_oi": 1.0737,
+              "session": "2026-11-04"
+            },
+            {
+              "pcr_oi": 1.3449,
+              "session": "2026-11-05"
+            },
+            {
+              "pcr_oi": 1.6528,
+              "session": "2026-11-06"
+            },
+            {
+              "pcr_oi": 1.0715,
+              "session": "2026-11-09"
+            },
+            {
+              "pcr_oi": 0.769,
+              "session": "2026-11-11"
+            },
+            {
+              "pcr_oi": 0.849,
+              "session": "2026-11-12"
+            },
+            {
+              "pcr_oi": 0.8337,
+              "session": "2026-11-13"
+            }
+          ]
+        },
+        "sessions_on_disk": 30,
+        "source": "F&O bhavcopy, end of day. There is no intraday open interest in this source.",
+        "symbol": "NIFTY"
+      },
+      "display": "NIFTY 50",
+      "expected_range": {
+        "atr14": 315.79,
+        "available": true,
+        "bands": {
+          "1.0x_atr": {
+            "close_inside_pct": 81.6,
+            "high": 25460.09,
+            "low": 24828.51,
+            "multiple": 1.0,
+            "observations": 250,
+            "range_inside_pct": 68.4
+          },
+          "1.5x_atr": {
+            "close_inside_pct": 93.6,
+            "high": 25617.98,
+            "low": 24670.62,
+            "multiple": 1.5,
+            "observations": 250,
+            "range_inside_pct": 90.0
+          }
+        },
+        "from_close": 25144.3,
+        "note": "A RANGE, not a direction. Hit rates are measured on this instrument's own history over the sessions shown. range_inside_pct is the figure that matters for a stop: it asks whether the whole next session stayed inside, not just its close."
+      },
+      "gap_matrix": {
+        "available": true,
+        "gap_down": {
+          "available": true,
+          "breakdown_confirm_below": 24761.91,
+          "reversal_trigger": "15m close back above 25014.54 with volume >= 1.2x its 10-bar average",
+          "reversal_watch_zone": [
+            24825.06,
+            25014.54
+          ],
+          "rule": "no catching the knife - the 15m reclaim candle is required"
+        },
+        "gap_up": {
+          "do_not_chase_above": 25617.98,
+          "invalidation": 24986.41,
+          "retest_entry_zone": [
+            24087.12,
+            25144.3
+          ],
+          "rule": "enter only on a retest holding prior close / 20 EMA; no entry if the open is already past do_not_chase_above"
+        }
+      },
+      "history_from": "2015-01-01",
+      "key": "NIFTY50",
+      "last_close": 25144.3,
+      "sessions": 2941,
+      "sessions_with_volume": 61,
+      "source_ohlc": "https://niftyindices.com/BackPage/getHistoricaldatatabletoString",
+      "timeframes": {
+        "1d": {
+          "atr14": 315.7879,
+          "bars": 2941,
+          "bb_bandwidth": 17.2225,
+          "bb_lower": 21697.2727,
+          "bb_mid": 23741.735,
+          "bb_upper": 25786.1973,
+          "close": 25144.3,
+          "ema20": 24087.115,
+          "ema200": 23981.4848,
+          "ema50": 23673.059,
+          "ema9": 24732.4564,
+          "high": 25246.35,
+          "low": 25054.4,
+          "macd": 599.555,
+          "macd_hist": 213.6831,
+          "macd_hist_prev": 250.1468,
+          "macd_signal": 385.8719,
+          "open": 25209.85,
+          "prev_close": 25299.35,
+          "resistance_levels": [
+            25153.65,
+            25333.65,
+            25669.35,
+            26009.4,
+            26236.4
+          ],
+          "rsi14": 75.217,
+          "squeeze": false,
+          "stoch_d": 94.8856,
+          "stoch_k": 93.5895,
+          "support_levels": [
+            24919.8,
+            24753.15,
+            24587.7,
+            24462.4,
+            24337.5
+          ],
+          "timeframe": "1d",
+          "volume": 239573267.0,
+          "volume_ratio": 0.6411,
+          "volume_spike": false
+        },
+        "1w": {
+          "atr14": 714.702,
+          "bars": 620,
+          "bb_bandwidth": 13.216,
+          "bb_lower": 22228.5297,
+          "bb_mid": 23801.32,
+          "bb_upper": 25374.1103,
+          "close": 25144.3,
+          "ema20": 23768.8954,
+          "ema200": 22459.2072,
+          "ema50": 24043.103,
+          "ema9": 23821.174,
+          "high": 25424.35,
+          "low": 24838.75,
+          "macd": -70.2185,
+          "macd_hist": 172.0961,
+          "macd_hist_prev": 68.3374,
+          "macd_signal": -242.3146,
+          "open": 25070.45,
+          "prev_close": 25030.35,
+          "resistance_levels": [
+            25669.35,
+            26277.35
+          ],
+          "rsi14": 61.7055,
+          "squeeze": false,
+          "stoch_d": 51.3298,
+          "stoch_k": 75.0085,
+          "support_levels": [
+            24337.5,
+            23893.7,
+            23606.3,
+            23263.15,
+            23070.15
+          ],
+          "timeframe": "1w",
+          "volume": 1521366595.0,
+          "volume_ratio": 0.9711,
+          "volume_spike": false
+        }
+      },
+      "unavailable_timeframes": {
+        "15m": "No intraday feed. A 5- or 15-minute candle cannot be resampled from a daily bar, and the two archive sources used here are end of day. Needs either Angel One (config/broker.yaml) or NSE's live chart endpoint, which returned Akamai HTTP 403 on 2026-11-14. The >=120% volume-spike rule on lower timeframes therefore cannot be evaluated yet.",
+        "1h": "No intraday feed. A 5- or 15-minute candle cannot be resampled from a daily bar, and the two archive sources used here are end of day. Needs either Angel One (config/broker.yaml) or NSE's live chart endpoint, which returned Akamai HTTP 403 on 2026-11-14. The >=120% volume-spike rule on lower timeframes therefore cannot be evaluated yet.",
+        "5m": "No intraday feed. A 5- or 15-minute candle cannot be resampled from a daily bar, and the two archive sources used here are end of day. Needs either Angel One (config/broker.yaml) or NSE's live chart endpoint, which returned Akamai HTTP 403 on 2026-11-14. The >=120% volume-spike rule on lower timeframes therefore cannot be evaluated yet."
+      },
+      "valuation": {
+        "div_yield": 1.4,
+        "pb": 3.08,
+        "pe": 20.49,
+        "turnover_cr": 25397.2,
+        "volume": 239573267.0
+      },
+      "verdicts": {
+        "1d": {
+          "label": "BULLISH",
+          "reasons": [
+            "close 25144.3 above 20 EMA 24087.115",
+            "20 EMA 24087.115 above 50 EMA 23673.059",
+            "close above 200 EMA 23981.4848",
+            "RSI 75.217 above 55",
+            "MACD histogram falling (250.1468 -> 213.6831)"
+          ],
+          "score": 3
+        },
+        "1w": {
+          "label": "BULLISH",
+          "reasons": [
+            "close 25144.3 above 20 EMA 23768.8954",
+            "20 EMA 23768.8954 below 50 EMA 24043.103",
+            "close above 200 EMA 22459.2072",
+            "RSI 61.7055 above 55",
+            "MACD histogram rising (68.3374 -> 172.0961)"
+          ],
+          "score": 3
+        }
+      },
+      "zones": {
+        "buy_zone": [
+          24087.12,
+          24732.46
+        ],
+        "hard_stop": 24522.07,
+        "invalid_reason": null,
+        "risk_per_share": 631.58,
+        "rr_is_measured": true,
+        "rr_to_t1": 0.285,
+        "selling_zone": [
+          25153.65,
+          25333.65
+        ],
+        "sizing_omitted": true,
+        "sizing_omitted_reason": "An index is not directly tradeable. Futures and options on it carry lot sizes, margin and premium decay that config/risk.yaml does not model, so any quantity here would be a plausible wrong number.",
+        "strong_buy_zone": [
+          24919.8,
+          24753.15
+        ],
+        "target_1": 25333.65,
+        "target_1_source": "swing resistance",
+        "target_2": 25669.35,
+        "target_2_source": "swing resistance",
+        "trigger_entry": 25153.65
+      }
+    }
+  },
+  "order": [
+    "NIFTY50",
+    "BANKNIFTY"
+  ],
+  "rule_1_note": "Every number here is computed by deterministic Python from stored OHLC and open-interest files. No language model produced or adjusted any of it, and no directional forecast is emitted."
+}
