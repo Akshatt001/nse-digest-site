@@ -1,0 +1,2201 @@
+{
+ "as_of": "2026-11-13",
+ "available": true,
+ "constraints": {
+  "note": "Open interest is positioning, not direction. Nothing here sets or adjusts a level, a stop, a target, a gate or a quantity. No buildup state is labelled bullish or bearish, and no absolute PCR carries a sentiment label - see pcr_history.percentile for where today sits in this symbol's own distribution.",
+  "oi_walls_feed_equity_levels": false
+ },
+ "coverage": {
+  "note": "a symbol in without_fo has no stock futures and options contract, which is a fact about the stock, not a collection gap. Roughly 220 NSE names are in the F&O segment; the rest cannot have open interest.",
+  "requested": 34,
+  "underlyings_on_disk": 218,
+  "with_fo": 11,
+  "without_fo": [
+   "HFCL",
+   "SANSERA",
+   "CPPLUS",
+   "SGMART",
+   "PAISALO",
+   "QPOWER",
+   "MSTCLTD",
+   "FIEMIND",
+   "ANURAS",
+   "APOLLO",
+   "AEGISVOPAK",
+   "JSLL",
+   "ACI",
+   "CENTUM",
+   "SBFC",
+   "LEMONTREE",
+   "PNGJL",
+   "USHAMART",
+   "RELIGARE",
+   "EPL",
+   "ITI",
+   "PICCADIL",
+   "SUNDRMFAST"
+  ]
+ },
+ "failures": [],
+ "generated_at": "2026-11-15T23:40:38.237054+05:30",
+ "order": [
+  "RADICO",
+  "ETERNAL",
+  "MOTHERSON",
+  "SYRMA",
+  "POWERINDIA",
+  "AMBER",
+  "PAYTM",
+  "FORCEMOT",
+  "IOC",
+  "APLAPOLLO",
+  "CUB"
+ ],
+ "sessions_on_disk": 30,
+ "source": "F&O bhavcopy (nsearchives.nseindia.com), end of day. There is no intraday open interest in this source, so every figure here is a close-of-session reading.",
+ "symbols": {
+  "AMBER": {
+   "as_of": "2026-11-13",
+   "available": true,
+   "basis": {
+    "note": "futures close minus spot. Positive is contango. No cause is inferred - dividend, borrow cost and selling pressure are not separable from this file.",
+    "pct": 0.524,
+    "value": 35.47
+   },
+   "buildup": {
+    "meaning": "shorts closing",
+    "oi_change": -171200,
+    "oi_change_pct": -15.8357,
+    "prev_session": "2026-11-12",
+    "price_change": 629.5,
+    "price_change_pct": 10.1902,
+    "reason": "price +10.19%, open interest -15.84% over one session",
+    "session": "2026-11-13",
+    "state": "short_covering"
+   },
+   "buildup_counts": {
+    "long_buildup": 3,
+    "long_unwinding": 8,
+    "no_state": 1,
+    "rollover": 1,
+    "short_buildup": 7,
+    "short_covering": 9
+   },
+   "futures": {
+    "all_expiries_oi": 1043600.0,
+    "close": 6807.0,
+    "contracts_live": 3,
+    "lot_size": 100.0,
+    "near_expiry": "2026-11-23",
+    "oi": 909900.0,
+    "oi_change_reported": -171200.0,
+    "underlying": 6771.53,
+    "volume": 18249.0
+   },
+   "options": {
+    "expiry": "2026-11-23",
+    "pcr_note": "measured ratio only. No bullish/bearish label is attached to an absolute PCR - see pcr_percentile.",
+    "pcr_oi": 1.0157,
+    "pcr_volume": 0.5011,
+    "session": "2026-11-13",
+    "spot": 6771.53,
+    "strikes_ce": 31,
+    "strikes_pe": 31,
+    "symbol": "AMBER",
+    "total_oi_ce": 1307100.0,
+    "total_oi_pe": 1327600.0,
+    "walls": {
+     "available": true,
+     "call_wall": 7000.0,
+     "call_wall_concentration": 3.286,
+     "call_wall_is_wall": true,
+     "call_wall_oi": 221600.0,
+     "call_wall_reason": null,
+     "call_wall_strikes_in_window": 14,
+     "flags": [],
+     "min_concentration": 2.0,
+     "min_strikes_in_window": 5,
+     "note": "heaviest open interest within the window. Reported as context for the index view; these do NOT feed target_1, hard_stop or any equity gate (config/derivatives.yaml, constraints.oi_walls_feed_equity_levels: false).",
+     "put_wall": 6500.0,
+     "put_wall_concentration": 2.886,
+     "put_wall_is_wall": true,
+     "put_wall_oi": 179300.0,
+     "put_wall_reason": null,
+     "put_wall_strikes_in_window": 14,
+     "strike_window": [
+      6094.38,
+      7448.68
+     ],
+     "window_pct": 10.0
+    }
+   },
+   "pcr_history": {
+    "available": true,
+    "latest_pcr_oi": 1.0157,
+    "max": 1.0157,
+    "median": 0.7433,
+    "min": 0.5765,
+    "observations": 30,
+    "percentile": 96.7,
+    "series": [
+     {
+      "pcr_oi": 0.6913,
+      "session": "2026-09-30"
+     },
+     {
+      "pcr_oi": 0.5765,
+      "session": "2026-10-01"
+     },
+     {
+      "pcr_oi": 0.5938,
+      "session": "2026-10-05"
+     },
+     {
+      "pcr_oi": 0.7631,
+      "session": "2026-10-06"
+     },
+     {
+      "pcr_oi": 0.8041,
+      "session": "2026-10-07"
+     },
+     {
+      "pcr_oi": 0.6706,
+      "session": "2026-10-08"
+     },
+     {
+      "pcr_oi": 0.5871,
+      "session": "2026-10-09"
+     },
+     {
+      "pcr_oi": 0.657,
+      "session": "2026-10-12"
+     },
+     {
+      "pcr_oi": 0.7383,
+      "session": "2026-10-13"
+     },
+     {
+      "pcr_oi": 0.7806,
+      "session": "2026-10-14"
+     },
+     {
+      "pcr_oi": 0.7647,
+      "session": "2026-10-15"
+     },
+     {
+      "pcr_oi": 0.7619,
+      "session": "2026-10-16"
+     },
+     {
+      "pcr_oi": 0.7433,
+      "session": "2026-10-19"
+     },
+     {
+      "pcr_oi": 0.6672,
+      "session": "2026-10-21"
+     },
+     {
+      "pcr_oi": 0.6366,
+      "session": "2026-10-22"
+     },
+     {
+      "pcr_oi": 0.6533,
+      "session": "2026-10-23"
+     },
+     {
+      "pcr_oi": 0.7064,
+      "session": "2026-10-26"
+     },
+     {
+      "pcr_oi": 0.8979,
+      "session": "2026-10-27"
+     },
+     {
+      "pcr_oi": 0.7959,
+      "session": "2026-10-28"
+     },
+     {
+      "pcr_oi": 0.8062,
+      "session": "2026-10-29"
+     },
+     {
+      "pcr_oi": 0.6735,
+      "session": "2026-10-30"
+     },
+     {
+      "pcr_oi": 0.757,
+      "session": "2026-11-02"
+     },
+     {
+      "pcr_oi": 0.7274,
+      "session": "2026-11-03"
+     },
+     {
+      "pcr_oi": 0.8551,
+      "session": "2026-11-04"
+     },
+     {
+      "pcr_oi": 0.8615,
+      "session": "2026-11-05"
+     },
+     {
+      "pcr_oi": 0.838,
+      "session": "2026-11-06"
+     },
+     {
+      "pcr_oi": 0.8114,
+      "session": "2026-11-09"
+     },
+     {
+      "pcr_oi": 0.6492,
+      "session": "2026-11-11"
+     },
+     {
+      "pcr_oi": 0.6598,
+      "session": "2026-11-12"
+     },
+     {
+      "pcr_oi": 1.0157,
+      "session": "2026-11-13"
+     }
+    ]
+   },
+   "sessions_on_disk": 30,
+   "symbol": "AMBER"
+  },
+  "APLAPOLLO": {
+   "as_of": "2026-11-13",
+   "available": true,
+   "basis": {
+    "note": "futures close minus spot. Positive is contango. No cause is inferred - dividend, borrow cost and selling pressure are not separable from this file.",
+    "pct": -0.071,
+    "value": -1.59
+   },
+   "buildup": {
+    "meaning": "shorts closing",
+    "oi_change": -322000,
+    "oi_change_pct": -2.6243,
+    "prev_session": "2026-11-12",
+    "price_change": 24.7,
+    "price_change_pct": 1.11,
+    "reason": "price +1.11%, open interest -2.62% over one session",
+    "session": "2026-11-13",
+    "state": "short_covering"
+   },
+   "buildup_counts": {
+    "long_buildup": 1,
+    "long_unwinding": 10,
+    "no_state": 4,
+    "rollover": 1,
+    "short_buildup": 4,
+    "short_covering": 9
+   },
+   "futures": {
+    "all_expiries_oi": 12258750.0,
+    "close": 2250.0,
+    "contracts_live": 3,
+    "lot_size": 350.0,
+    "near_expiry": "2026-11-23",
+    "oi": 11947950.0,
+    "oi_change_reported": -322000.0,
+    "underlying": 2251.59,
+    "volume": 6087.0
+   },
+   "options": {
+    "expiry": "2026-11-23",
+    "pcr_note": "measured ratio only. No bullish/bearish label is attached to an absolute PCR - see pcr_percentile.",
+    "pcr_oi": 0.6519,
+    "pcr_volume": 0.3627,
+    "session": "2026-11-13",
+    "spot": 2251.59,
+    "strikes_ce": 37,
+    "strikes_pe": 36,
+    "symbol": "APLAPOLLO",
+    "total_oi_ce": 3983000.0,
+    "total_oi_pe": 2596650.0,
+    "walls": {
+     "available": true,
+     "call_wall": 2300.0,
+     "call_wall_concentration": 6.303,
+     "call_wall_is_wall": true,
+     "call_wall_oi": 1114400.0,
+     "call_wall_reason": null,
+     "call_wall_strikes_in_window": 22,
+     "flags": [],
+     "min_concentration": 2.0,
+     "min_strikes_in_window": 5,
+     "note": "heaviest open interest within the window. Reported as context for the index view; these do NOT feed target_1, hard_stop or any equity gate (config/derivatives.yaml, constraints.oi_walls_feed_equity_levels: false).",
+     "put_wall": 2200.0,
+     "put_wall_concentration": 7.379,
+     "put_wall_is_wall": true,
+     "put_wall_oi": 892850.0,
+     "put_wall_reason": null,
+     "put_wall_strikes_in_window": 20,
+     "strike_window": [
+      2026.43,
+      2476.75
+     ],
+     "window_pct": 10.0
+    }
+   },
+   "pcr_history": {
+    "available": true,
+    "latest_pcr_oi": 0.6519,
+    "max": 1.2859,
+    "median": 0.605,
+    "min": 0.4502,
+    "observations": 30,
+    "percentile": 70.0,
+    "series": [
+     {
+      "pcr_oi": 0.7972,
+      "session": "2026-09-30"
+     },
+     {
+      "pcr_oi": 0.605,
+      "session": "2026-10-01"
+     },
+     {
+      "pcr_oi": 0.5797,
+      "session": "2026-10-05"
+     },
+     {
+      "pcr_oi": 0.5952,
+      "session": "2026-10-06"
+     },
+     {
+      "pcr_oi": 0.6011,
+      "session": "2026-10-07"
+     },
+     {
+      "pcr_oi": 0.4967,
+      "session": "2026-10-08"
+     },
+     {
+      "pcr_oi": 0.4984,
+      "session": "2026-10-09"
+     },
+     {
+      "pcr_oi": 0.5743,
+      "session": "2026-10-12"
+     },
+     {
+      "pcr_oi": 0.6176,
+      "session": "2026-10-13"
+     },
+     {
+      "pcr_oi": 0.5918,
+      "session": "2026-10-14"
+     },
+     {
+      "pcr_oi": 0.5545,
+      "session": "2026-10-15"
+     },
+     {
+      "pcr_oi": 0.5549,
+      "session": "2026-10-16"
+     },
+     {
+      "pcr_oi": 0.5624,
+      "session": "2026-10-19"
+     },
+     {
+      "pcr_oi": 0.6093,
+      "session": "2026-10-21"
+     },
+     {
+      "pcr_oi": 0.5817,
+      "session": "2026-10-22"
+     },
+     {
+      "pcr_oi": 0.5981,
+      "session": "2026-10-23"
+     },
+     {
+      "pcr_oi": 0.6833,
+      "session": "2026-10-26"
+     },
+     {
+      "pcr_oi": 1.2859,
+      "session": "2026-10-27"
+     },
+     {
+      "pcr_oi": 0.4502,
+      "session": "2026-10-28"
+     },
+     {
+      "pcr_oi": 0.5663,
+      "session": "2026-10-29"
+     },
+     {
+      "pcr_oi": 0.6891,
+      "session": "2026-10-30"
+     },
+     {
+      "pcr_oi": 0.646,
+      "session": "2026-11-02"
+     },
+     {
+      "pcr_oi": 0.6531,
+      "session": "2026-11-03"
+     },
+     {
+      "pcr_oi": 0.6292,
+      "session": "2026-11-04"
+     },
+     {
+      "pcr_oi": 0.6672,
+      "session": "2026-11-05"
+     },
+     {
+      "pcr_oi": 0.6923,
+      "session": "2026-11-06"
+     },
+     {
+      "pcr_oi": 0.7212,
+      "session": "2026-11-09"
+     },
+     {
+      "pcr_oi": 0.617,
+      "session": "2026-11-11"
+     },
+     {
+      "pcr_oi": 0.6013,
+      "session": "2026-11-12"
+     },
+     {
+      "pcr_oi": 0.6519,
+      "session": "2026-11-13"
+     }
+    ]
+   },
+   "sessions_on_disk": 30,
+   "symbol": "APLAPOLLO"
+  },
+  "CUB": {
+   "as_of": "2026-11-13",
+   "available": true,
+   "basis": {
+    "note": "futures close minus spot. Positive is contango. No cause is inferred - dividend, borrow cost and selling pressure are not separable from this file.",
+    "pct": 0.047,
+    "value": 0.11
+   },
+   "buildup": {
+    "meaning": "longs closing",
+    "oi_change": -116250,
+    "oi_change_pct": -1.7532,
+    "prev_session": "2026-11-12",
+    "price_change": -4.4,
+    "price_change_pct": -1.8572,
+    "reason": "price -1.86%, open interest -1.75% over one session",
+    "session": "2026-11-13",
+    "state": "long_unwinding"
+   },
+   "buildup_counts": {
+    "long_buildup": 5,
+    "long_unwinding": 1,
+    "short_buildup": 3,
+    "short_covering": 2
+   },
+   "futures": {
+    "all_expiries_oi": 6940125.0,
+    "close": 232.51,
+    "contracts_live": 3,
+    "lot_size": 2325.0,
+    "near_expiry": "2026-11-23",
+    "oi": 6514650.0,
+    "oi_change_reported": -116250.0,
+    "underlying": 232.4,
+    "volume": 830.0
+   },
+   "options": {
+    "expiry": "2026-11-23",
+    "pcr_note": "measured ratio only. No bullish/bearish label is attached to an absolute PCR - see pcr_percentile.",
+    "pcr_oi": 0.5642,
+    "pcr_volume": 0.3487,
+    "session": "2026-11-13",
+    "spot": 232.4,
+    "strikes_ce": 18,
+    "strikes_pe": 18,
+    "symbol": "CUB",
+    "total_oi_ce": 3606075.0,
+    "total_oi_pe": 2034375.0,
+    "walls": {
+     "available": true,
+     "call_wall": 240.0,
+     "call_wall_concentration": 2.509,
+     "call_wall_is_wall": true,
+     "call_wall_oi": 802125.0,
+     "call_wall_reason": null,
+     "call_wall_strikes_in_window": 10,
+     "flags": [],
+     "min_concentration": 2.0,
+     "min_strikes_in_window": 5,
+     "note": "heaviest open interest within the window. Reported as context for the index view; these do NOT feed target_1, hard_stop or any equity gate (config/derivatives.yaml, constraints.oi_walls_feed_equity_levels: false).",
+     "put_wall": 210.0,
+     "put_wall_concentration": 1.686,
+     "put_wall_is_wall": false,
+     "put_wall_oi": 311550.0,
+     "put_wall_reason": "heaviest strike carries 1.686x the average strike, below the 2.0x minimum - the distribution is close to flat, so naming one strike would overstate it",
+     "put_wall_strikes_in_window": 8,
+     "strike_window": [
+      209.16,
+      255.64
+     ],
+     "window_pct": 10.0
+    }
+   },
+   "pcr_history": {
+    "available": false,
+    "observations": 12,
+    "reason": "only 12 session(s) of F&O data on disk; a percentile needs at least 20 to mean anything. Run `python -m src.collect_fo --sessions 60`.",
+    "series": [
+     {
+      "pcr_oi": 0.2026,
+      "session": "2026-10-28"
+     },
+     {
+      "pcr_oi": 0.4156,
+      "session": "2026-10-29"
+     },
+     {
+      "pcr_oi": 0.3975,
+      "session": "2026-10-30"
+     },
+     {
+      "pcr_oi": 0.3587,
+      "session": "2026-11-02"
+     },
+     {
+      "pcr_oi": 0.3643,
+      "session": "2026-11-03"
+     },
+     {
+      "pcr_oi": 0.3801,
+      "session": "2026-11-04"
+     },
+     {
+      "pcr_oi": 0.5678,
+      "session": "2026-11-05"
+     },
+     {
+      "pcr_oi": 0.577,
+      "session": "2026-11-06"
+     },
+     {
+      "pcr_oi": 0.557,
+      "session": "2026-11-09"
+     },
+     {
+      "pcr_oi": 0.5459,
+      "session": "2026-11-11"
+     },
+     {
+      "pcr_oi": 0.5566,
+      "session": "2026-11-12"
+     },
+     {
+      "pcr_oi": 0.5642,
+      "session": "2026-11-13"
+     }
+    ]
+   },
+   "sessions_on_disk": 30,
+   "symbol": "CUB"
+  },
+  "ETERNAL": {
+   "as_of": "2026-11-13",
+   "available": true,
+   "basis": {
+    "note": "futures close minus spot. Positive is contango. No cause is inferred - dividend, borrow cost and selling pressure are not separable from this file.",
+    "pct": 0.399,
+    "value": 1.45
+   },
+   "buildup": {
+    "meaning": "longs closing",
+    "oi_change": -860875,
+    "oi_change_pct": -0.7436,
+    "prev_session": "2026-11-12",
+    "price_change": -0.5,
+    "price_change_pct": -0.1368,
+    "reason": "price -0.14%, open interest -0.74% over one session",
+    "session": "2026-11-13",
+    "state": "long_unwinding"
+   },
+   "buildup_counts": {
+    "long_buildup": 3,
+    "long_unwinding": 9,
+    "no_state": 2,
+    "rollover": 1,
+    "short_buildup": 2,
+    "short_covering": 12
+   },
+   "futures": {
+    "all_expiries_oi": 122751075.0,
+    "close": 365.1,
+    "contracts_live": 3,
+    "lot_size": 2425.0,
+    "near_expiry": "2026-11-23",
+    "oi": 114903775.0,
+    "oi_change_reported": -860875.0,
+    "underlying": 363.65,
+    "volume": 4008.0
+   },
+   "options": {
+    "expiry": "2026-11-23",
+    "pcr_note": "measured ratio only. No bullish/bearish label is attached to an absolute PCR - see pcr_percentile.",
+    "pcr_oi": 1.0035,
+    "pcr_volume": 0.7563,
+    "session": "2026-11-13",
+    "spot": 363.65,
+    "strikes_ce": 28,
+    "strikes_pe": 29,
+    "symbol": "ETERNAL",
+    "total_oi_ce": 61228825.0,
+    "total_oi_pe": 61444650.0,
+    "walls": {
+     "available": true,
+     "call_wall": 370.0,
+     "call_wall_concentration": 2.033,
+     "call_wall_is_wall": true,
+     "call_wall_oi": 6930650.0,
+     "call_wall_reason": null,
+     "call_wall_strikes_in_window": 15,
+     "flags": [],
+     "min_concentration": 2.0,
+     "min_strikes_in_window": 5,
+     "note": "heaviest open interest within the window. Reported as context for the index view; these do NOT feed target_1, hard_stop or any equity gate (config/derivatives.yaml, constraints.oi_walls_feed_equity_levels: false).",
+     "put_wall": 330.0,
+     "put_wall_concentration": 3.176,
+     "put_wall_is_wall": true,
+     "put_wall_oi": 8645125.0,
+     "put_wall_reason": null,
+     "put_wall_strikes_in_window": 14,
+     "strike_window": [
+      327.28,
+      400.01
+     ],
+     "window_pct": 10.0
+    }
+   },
+   "pcr_history": {
+    "available": true,
+    "latest_pcr_oi": 1.0035,
+    "max": 1.1549,
+    "median": 0.7324,
+    "min": 0.4667,
+    "observations": 30,
+    "percentile": 70.0,
+    "series": [
+     {
+      "pcr_oi": 0.7027,
+      "session": "2026-09-30"
+     },
+     {
+      "pcr_oi": 0.6881,
+      "session": "2026-10-01"
+     },
+     {
+      "pcr_oi": 0.7042,
+      "session": "2026-10-05"
+     },
+     {
+      "pcr_oi": 0.7324,
+      "session": "2026-10-06"
+     },
+     {
+      "pcr_oi": 0.7207,
+      "session": "2026-10-07"
+     },
+     {
+      "pcr_oi": 0.6795,
+      "session": "2026-10-08"
+     },
+     {
+      "pcr_oi": 0.6962,
+      "session": "2026-10-09"
+     },
+     {
+      "pcr_oi": 0.7165,
+      "session": "2026-10-12"
+     },
+     {
+      "pcr_oi": 0.6638,
+      "session": "2026-10-13"
+     },
+     {
+      "pcr_oi": 0.6574,
+      "session": "2026-10-14"
+     },
+     {
+      "pcr_oi": 0.7039,
+      "session": "2026-10-15"
+     },
+     {
+      "pcr_oi": 0.6769,
+      "session": "2026-10-16"
+     },
+     {
+      "pcr_oi": 0.5696,
+      "session": "2026-10-19"
+     },
+     {
+      "pcr_oi": 0.6079,
+      "session": "2026-10-21"
+     },
+     {
+      "pcr_oi": 0.4667,
+      "session": "2026-10-22"
+     },
+     {
+      "pcr_oi": 0.6845,
+      "session": "2026-10-23"
+     },
+     {
+      "pcr_oi": 0.7984,
+      "session": "2026-10-26"
+     },
+     {
+      "pcr_oi": 0.9669,
+      "session": "2026-10-27"
+     },
+     {
+      "pcr_oi": 0.8287,
+      "session": "2026-10-28"
+     },
+     {
+      "pcr_oi": 0.9132,
+      "session": "2026-10-29"
+     },
+     {
+      "pcr_oi": 1.0353,
+      "session": "2026-10-30"
+     },
+     {
+      "pcr_oi": 1.0143,
+      "session": "2026-11-02"
+     },
+     {
+      "pcr_oi": 1.1411,
+      "session": "2026-11-03"
+     },
+     {
+      "pcr_oi": 1.1036,
+      "session": "2026-11-04"
+     },
+     {
+      "pcr_oi": 1.1549,
+      "session": "2026-11-05"
+     },
+     {
+      "pcr_oi": 1.1429,
+      "session": "2026-11-06"
+     },
+     {
+      "pcr_oi": 1.0291,
+      "session": "2026-11-09"
+     },
+     {
+      "pcr_oi": 0.9861,
+      "session": "2026-11-11"
+     },
+     {
+      "pcr_oi": 1.0343,
+      "session": "2026-11-12"
+     },
+     {
+      "pcr_oi": 1.0035,
+      "session": "2026-11-13"
+     }
+    ]
+   },
+   "sessions_on_disk": 30,
+   "symbol": "ETERNAL"
+  },
+  "FORCEMOT": {
+   "as_of": "2026-11-13",
+   "available": true,
+   "basis": {
+    "note": "futures close minus spot. Positive is contango. No cause is inferred - dividend, borrow cost and selling pressure are not separable from this file.",
+    "pct": 0.002,
+    "value": 0.48
+   },
+   "buildup": {
+    "meaning": "longs closing",
+    "oi_change": -4825,
+    "oi_change_pct": -1.486,
+    "prev_session": "2026-11-12",
+    "price_change": -219.0,
+    "price_change_pct": -1.1051,
+    "reason": "price -1.11%, open interest -1.49% over one session",
+    "session": "2026-11-13",
+    "state": "long_unwinding"
+   },
+   "buildup_counts": {
+    "long_buildup": 6,
+    "long_unwinding": 5,
+    "rollover": 1,
+    "short_buildup": 7,
+    "short_covering": 10
+   },
+   "futures": {
+    "all_expiries_oi": 347225.0,
+    "close": 19599.0,
+    "contracts_live": 3,
+    "lot_size": 25.0,
+    "near_expiry": "2026-11-23",
+    "oi": 319875.0,
+    "oi_change_reported": -4825.0,
+    "underlying": 19598.52,
+    "volume": 1073.0
+   },
+   "options": {
+    "expiry": "2026-11-23",
+    "pcr_note": "measured ratio only. No bullish/bearish label is attached to an absolute PCR - see pcr_percentile.",
+    "pcr_oi": 0.7651,
+    "pcr_volume": 1.485,
+    "session": "2026-11-13",
+    "spot": 19598.52,
+    "strikes_ce": 32,
+    "strikes_pe": 34,
+    "symbol": "FORCEMOT",
+    "total_oi_ce": 142100.0,
+    "total_oi_pe": 108725.0,
+    "walls": {
+     "available": true,
+     "call_wall": 20000.0,
+     "call_wall_concentration": 6.215,
+     "call_wall_is_wall": true,
+     "call_wall_oi": 43700.0,
+     "call_wall_reason": null,
+     "call_wall_strikes_in_window": 16,
+     "flags": [],
+     "min_concentration": 2.0,
+     "min_strikes_in_window": 5,
+     "note": "heaviest open interest within the window. Reported as context for the index view; these do NOT feed target_1, hard_stop or any equity gate (config/derivatives.yaml, constraints.oi_walls_feed_equity_levels: false).",
+     "put_wall": 19000.0,
+     "put_wall_concentration": 3.152,
+     "put_wall_is_wall": true,
+     "put_wall_oi": 13975.0,
+     "put_wall_reason": null,
+     "put_wall_strikes_in_window": 14,
+     "strike_window": [
+      17638.67,
+      21558.37
+     ],
+     "window_pct": 10.0
+    }
+   },
+   "pcr_history": {
+    "available": true,
+    "latest_pcr_oi": 0.7651,
+    "max": 1.2073,
+    "median": 0.9079,
+    "min": 0.5013,
+    "observations": 30,
+    "percentile": 30.0,
+    "series": [
+     {
+      "pcr_oi": 0.8346,
+      "session": "2026-09-30"
+     },
+     {
+      "pcr_oi": 0.5013,
+      "session": "2026-10-01"
+     },
+     {
+      "pcr_oi": 0.6513,
+      "session": "2026-10-05"
+     },
+     {
+      "pcr_oi": 0.9079,
+      "session": "2026-10-06"
+     },
+     {
+      "pcr_oi": 1.2073,
+      "session": "2026-10-07"
+     },
+     {
+      "pcr_oi": 1.1992,
+      "session": "2026-10-08"
+     },
+     {
+      "pcr_oi": 1.1338,
+      "session": "2026-10-09"
+     },
+     {
+      "pcr_oi": 1.1045,
+      "session": "2026-10-12"
+     },
+     {
+      "pcr_oi": 1.0831,
+      "session": "2026-10-13"
+     },
+     {
+      "pcr_oi": 1.1351,
+      "session": "2026-10-14"
+     },
+     {
+      "pcr_oi": 1.0679,
+      "session": "2026-10-15"
+     },
+     {
+      "pcr_oi": 0.7082,
+      "session": "2026-10-16"
+     },
+     {
+      "pcr_oi": 0.6383,
+      "session": "2026-10-19"
+     },
+     {
+      "pcr_oi": 0.6118,
+      "session": "2026-10-21"
+     },
+     {
+      "pcr_oi": 0.58,
+      "session": "2026-10-22"
+     },
+     {
+      "pcr_oi": 0.5368,
+      "session": "2026-10-23"
+     },
+     {
+      "pcr_oi": 0.6457,
+      "session": "2026-10-26"
+     },
+     {
+      "pcr_oi": 0.8387,
+      "session": "2026-10-27"
+     },
+     {
+      "pcr_oi": 0.8307,
+      "session": "2026-10-28"
+     },
+     {
+      "pcr_oi": 0.7484,
+      "session": "2026-10-29"
+     },
+     {
+      "pcr_oi": 0.9544,
+      "session": "2026-10-30"
+     },
+     {
+      "pcr_oi": 0.9278,
+      "session": "2026-11-02"
+     },
+     {
+      "pcr_oi": 0.9252,
+      "session": "2026-11-03"
+     },
+     {
+      "pcr_oi": 0.9779,
+      "session": "2026-11-04"
+     },
+     {
+      "pcr_oi": 0.9273,
+      "session": "2026-11-05"
+     },
+     {
+      "pcr_oi": 0.898,
+      "session": "2026-11-06"
+     },
+     {
+      "pcr_oi": 0.9341,
+      "session": "2026-11-09"
+     },
+     {
+      "pcr_oi": 0.9699,
+      "session": "2026-11-11"
+     },
+     {
+      "pcr_oi": 0.8974,
+      "session": "2026-11-12"
+     },
+     {
+      "pcr_oi": 0.7651,
+      "session": "2026-11-13"
+     }
+    ]
+   },
+   "sessions_on_disk": 30,
+   "symbol": "FORCEMOT"
+  },
+  "IOC": {
+   "as_of": "2026-11-13",
+   "available": true,
+   "basis": {
+    "note": "futures close minus spot. Positive is contango. No cause is inferred - dividend, borrow cost and selling pressure are not separable from this file.",
+    "pct": -0.354,
+    "value": -0.51
+   },
+   "buildup": {
+    "meaning": "longs closing",
+    "oi_change": -316875,
+    "oi_change_pct": -0.2756,
+    "prev_session": "2026-11-12",
+    "price_change": -2.27,
+    "price_change_pct": -1.5569,
+    "reason": "price -1.56%, open interest -0.28% over one session",
+    "session": "2026-11-13",
+    "state": "long_unwinding"
+   },
+   "buildup_counts": {
+    "long_buildup": 5,
+    "long_unwinding": 6,
+    "no_state": 3,
+    "rollover": 1,
+    "short_buildup": 4,
+    "short_covering": 10
+   },
+   "futures": {
+    "all_expiries_oi": 120670875.0,
+    "close": 143.53,
+    "contracts_live": 3,
+    "lot_size": 4875.0,
+    "near_expiry": "2026-11-23",
+    "oi": 114674625.0,
+    "oi_change_reported": -316875.0,
+    "underlying": 144.04,
+    "volume": 1601.0
+   },
+   "options": {
+    "expiry": "2026-11-23",
+    "pcr_note": "measured ratio only. No bullish/bearish label is attached to an absolute PCR - see pcr_percentile.",
+    "pcr_oi": 0.9507,
+    "pcr_volume": 0.8691,
+    "session": "2026-11-13",
+    "spot": 144.04,
+    "strikes_ce": 53,
+    "strikes_pe": 56,
+    "symbol": "IOC",
+    "total_oi_ce": 53293500.0,
+    "total_oi_pe": 50665875.0,
+    "walls": {
+     "available": true,
+     "call_wall": 150.0,
+     "call_wall_concentration": 6.368,
+     "call_wall_is_wall": true,
+     "call_wall_oi": 10442250.0,
+     "call_wall_reason": null,
+     "call_wall_strikes_in_window": 29,
+     "flags": [],
+     "min_concentration": 2.0,
+     "min_strikes_in_window": 5,
+     "note": "heaviest open interest within the window. Reported as context for the index view; these do NOT feed target_1, hard_stop or any equity gate (config/derivatives.yaml, constraints.oi_walls_feed_equity_levels: false).",
+     "put_wall": 130.0,
+     "put_wall_concentration": 3.439,
+     "put_wall_is_wall": true,
+     "put_wall_oi": 5123625.0,
+     "put_wall_reason": null,
+     "put_wall_strikes_in_window": 26,
+     "strike_window": [
+      129.64,
+      158.44
+     ],
+     "window_pct": 10.0
+    }
+   },
+   "pcr_history": {
+    "available": true,
+    "latest_pcr_oi": 0.9507,
+    "max": 1.2511,
+    "median": 0.8162,
+    "min": 0.6722,
+    "observations": 30,
+    "percentile": 66.7,
+    "series": [
+     {
+      "pcr_oi": 0.6722,
+      "session": "2026-09-30"
+     },
+     {
+      "pcr_oi": 0.7272,
+      "session": "2026-10-01"
+     },
+     {
+      "pcr_oi": 0.743,
+      "session": "2026-10-05"
+     },
+     {
+      "pcr_oi": 0.7025,
+      "session": "2026-10-06"
+     },
+     {
+      "pcr_oi": 0.7287,
+      "session": "2026-10-07"
+     },
+     {
+      "pcr_oi": 0.6739,
+      "session": "2026-10-08"
+     },
+     {
+      "pcr_oi": 0.702,
+      "session": "2026-10-09"
+     },
+     {
+      "pcr_oi": 0.7062,
+      "session": "2026-10-12"
+     },
+     {
+      "pcr_oi": 0.6777,
+      "session": "2026-10-13"
+     },
+     {
+      "pcr_oi": 0.7608,
+      "session": "2026-10-14"
+     },
+     {
+      "pcr_oi": 0.7912,
+      "session": "2026-10-15"
+     },
+     {
+      "pcr_oi": 0.8162,
+      "session": "2026-10-16"
+     },
+     {
+      "pcr_oi": 0.8037,
+      "session": "2026-10-19"
+     },
+     {
+      "pcr_oi": 0.8179,
+      "session": "2026-10-21"
+     },
+     {
+      "pcr_oi": 0.9388,
+      "session": "2026-10-22"
+     },
+     {
+      "pcr_oi": 0.7828,
+      "session": "2026-10-23"
+     },
+     {
+      "pcr_oi": 0.7437,
+      "session": "2026-10-26"
+     },
+     {
+      "pcr_oi": 0.7469,
+      "session": "2026-10-27"
+     },
+     {
+      "pcr_oi": 1.036,
+      "session": "2026-10-28"
+     },
+     {
+      "pcr_oi": 0.9997,
+      "session": "2026-10-29"
+     },
+     {
+      "pcr_oi": 1.0872,
+      "session": "2026-10-30"
+     },
+     {
+      "pcr_oi": 1.176,
+      "session": "2026-11-02"
+     },
+     {
+      "pcr_oi": 1.2429,
+      "session": "2026-11-03"
+     },
+     {
+      "pcr_oi": 1.2511,
+      "session": "2026-11-04"
+     },
+     {
+      "pcr_oi": 0.8797,
+      "session": "2026-11-05"
+     },
+     {
+      "pcr_oi": 1.006,
+      "session": "2026-11-06"
+     },
+     {
+      "pcr_oi": 0.9979,
+      "session": "2026-11-09"
+     },
+     {
+      "pcr_oi": 0.9598,
+      "session": "2026-11-11"
+     },
+     {
+      "pcr_oi": 0.9403,
+      "session": "2026-11-12"
+     },
+     {
+      "pcr_oi": 0.9507,
+      "session": "2026-11-13"
+     }
+    ]
+   },
+   "sessions_on_disk": 30,
+   "symbol": "IOC"
+  },
+  "MOTHERSON": {
+   "as_of": "2026-11-13",
+   "available": true,
+   "basis": {
+    "note": "futures close minus spot. Positive is contango. No cause is inferred - dividend, borrow cost and selling pressure are not separable from this file.",
+    "pct": 0.237,
+    "value": 0.39
+   },
+   "buildup": {
+    "meaning": "longs closing",
+    "oi_change": -209100,
+    "oi_change_pct": -0.1448,
+    "prev_session": "2026-11-12",
+    "price_change": -0.96,
+    "price_change_pct": -0.5778,
+    "reason": "price -0.58%, open interest -0.14% over one session",
+    "session": "2026-11-13",
+    "state": "long_unwinding"
+   },
+   "buildup_counts": {
+    "long_buildup": 6,
+    "long_unwinding": 6,
+    "no_state": 1,
+    "rollover": 1,
+    "short_buildup": 9,
+    "short_covering": 6
+   },
+   "futures": {
+    "all_expiries_oi": 160361250.0,
+    "close": 165.19,
+    "contracts_live": 3,
+    "lot_size": 6150.0,
+    "near_expiry": "2026-11-23",
+    "oi": 144156000.0,
+    "oi_change_reported": -209100.0,
+    "underlying": 164.8,
+    "volume": 1087.0
+   },
+   "options": {
+    "expiry": "2026-11-23",
+    "pcr_note": "measured ratio only. No bullish/bearish label is attached to an absolute PCR - see pcr_percentile.",
+    "pcr_oi": 0.5574,
+    "pcr_volume": 0.7427,
+    "session": "2026-11-13",
+    "spot": 164.8,
+    "strikes_ce": 25,
+    "strikes_pe": 26,
+    "symbol": "MOTHERSON",
+    "total_oi_ce": 53240550.0,
+    "total_oi_pe": 29673750.0,
+    "walls": {
+     "available": true,
+     "call_wall": 170.0,
+     "call_wall_concentration": 3.523,
+     "call_wall_is_wall": true,
+     "call_wall_oi": 12945750.0,
+     "call_wall_reason": null,
+     "call_wall_strikes_in_window": 13,
+     "flags": [],
+     "min_concentration": 2.0,
+     "min_strikes_in_window": 5,
+     "note": "heaviest open interest within the window. Reported as context for the index view; these do NOT feed target_1, hard_stop or any equity gate (config/derivatives.yaml, constraints.oi_walls_feed_equity_levels: false).",
+     "put_wall": 150.0,
+     "put_wall_concentration": 3.942,
+     "put_wall_is_wall": true,
+     "put_wall_oi": 7410750.0,
+     "put_wall_reason": null,
+     "put_wall_strikes_in_window": 13,
+     "strike_window": [
+      148.32,
+      181.28
+     ],
+     "window_pct": 10.0
+    }
+   },
+   "pcr_history": {
+    "available": true,
+    "latest_pcr_oi": 0.5574,
+    "max": 0.832,
+    "median": 0.6351,
+    "min": 0.4603,
+    "observations": 30,
+    "percentile": 20.0,
+    "series": [
+     {
+      "pcr_oi": 0.6338,
+      "session": "2026-09-30"
+     },
+     {
+      "pcr_oi": 0.546,
+      "session": "2026-10-01"
+     },
+     {
+      "pcr_oi": 0.6042,
+      "session": "2026-10-05"
+     },
+     {
+      "pcr_oi": 0.6856,
+      "session": "2026-10-06"
+     },
+     {
+      "pcr_oi": 0.6447,
+      "session": "2026-10-07"
+     },
+     {
+      "pcr_oi": 0.557,
+      "session": "2026-10-08"
+     },
+     {
+      "pcr_oi": 0.5502,
+      "session": "2026-10-09"
+     },
+     {
+      "pcr_oi": 0.5924,
+      "session": "2026-10-12"
+     },
+     {
+      "pcr_oi": 0.801,
+      "session": "2026-10-13"
+     },
+     {
+      "pcr_oi": 0.8,
+      "session": "2026-10-14"
+     },
+     {
+      "pcr_oi": 0.832,
+      "session": "2026-10-15"
+     },
+     {
+      "pcr_oi": 0.7791,
+      "session": "2026-10-16"
+     },
+     {
+      "pcr_oi": 0.7477,
+      "session": "2026-10-19"
+     },
+     {
+      "pcr_oi": 0.7362,
+      "session": "2026-10-21"
+     },
+     {
+      "pcr_oi": 0.7131,
+      "session": "2026-10-22"
+     },
+     {
+      "pcr_oi": 0.5892,
+      "session": "2026-10-23"
+     },
+     {
+      "pcr_oi": 0.5784,
+      "session": "2026-10-26"
+     },
+     {
+      "pcr_oi": 0.604,
+      "session": "2026-10-27"
+     },
+     {
+      "pcr_oi": 0.7083,
+      "session": "2026-10-28"
+     },
+     {
+      "pcr_oi": 0.6837,
+      "session": "2026-10-29"
+     },
+     {
+      "pcr_oi": 0.6351,
+      "session": "2026-10-30"
+     },
+     {
+      "pcr_oi": 0.641,
+      "session": "2026-11-02"
+     },
+     {
+      "pcr_oi": 0.5667,
+      "session": "2026-11-03"
+     },
+     {
+      "pcr_oi": 0.594,
+      "session": "2026-11-04"
+     },
+     {
+      "pcr_oi": 0.6432,
+      "session": "2026-11-05"
+     },
+     {
+      "pcr_oi": 0.4603,
+      "session": "2026-11-06"
+     },
+     {
+      "pcr_oi": 0.526,
+      "session": "2026-11-09"
+     },
+     {
+      "pcr_oi": 0.6628,
+      "session": "2026-11-11"
+     },
+     {
+      "pcr_oi": 0.5126,
+      "session": "2026-11-12"
+     },
+     {
+      "pcr_oi": 0.5574,
+      "session": "2026-11-13"
+     }
+    ]
+   },
+   "sessions_on_disk": 30,
+   "symbol": "MOTHERSON"
+  },
+  "PAYTM": {
+   "as_of": "2026-11-13",
+   "available": true,
+   "basis": {
+    "note": "futures close minus spot. Positive is contango. No cause is inferred - dividend, borrow cost and selling pressure are not separable from this file.",
+    "pct": -0.218,
+    "value": -4.22
+   },
+   "buildup": {
+    "meaning": "shorts closing",
+    "oi_change": -110200,
+    "oi_change_pct": -0.8107,
+    "prev_session": "2026-11-12",
+    "price_change": 10.2,
+    "price_change_pct": 0.5297,
+    "reason": "price +0.53%, open interest -0.81% over one session",
+    "session": "2026-11-13",
+    "state": "short_covering"
+   },
+   "buildup_counts": {
+    "long_buildup": 8,
+    "long_unwinding": 9,
+    "no_state": 2,
+    "rollover": 1,
+    "short_buildup": 3,
+    "short_covering": 6
+   },
+   "futures": {
+    "all_expiries_oi": 14865425.0,
+    "close": 1935.7,
+    "contracts_live": 3,
+    "lot_size": 725.0,
+    "near_expiry": "2026-11-23",
+    "oi": 13482825.0,
+    "oi_change_reported": -110200.0,
+    "underlying": 1939.92,
+    "volume": 8247.0
+   },
+   "options": {
+    "expiry": "2026-11-23",
+    "pcr_note": "measured ratio only. No bullish/bearish label is attached to an absolute PCR - see pcr_percentile.",
+    "pcr_oi": 0.8243,
+    "pcr_volume": 0.5607,
+    "session": "2026-11-13",
+    "spot": 1939.92,
+    "strikes_ce": 41,
+    "strikes_pe": 43,
+    "symbol": "PAYTM",
+    "total_oi_ce": 12711425.0,
+    "total_oi_pe": 10478425.0,
+    "walls": {
+     "available": true,
+     "call_wall": 2000.0,
+     "call_wall_concentration": 3.628,
+     "call_wall_is_wall": true,
+     "call_wall_oi": 1814675.0,
+     "call_wall_reason": null,
+     "call_wall_strikes_in_window": 19,
+     "flags": [],
+     "min_concentration": 2.0,
+     "min_strikes_in_window": 5,
+     "note": "heaviest open interest within the window. Reported as context for the index view; these do NOT feed target_1, hard_stop or any equity gate (config/derivatives.yaml, constraints.oi_walls_feed_equity_levels: false).",
+     "put_wall": 1900.0,
+     "put_wall_concentration": 3.795,
+     "put_wall_is_wall": true,
+     "put_wall_oi": 1548600.0,
+     "put_wall_reason": null,
+     "put_wall_strikes_in_window": 15,
+     "strike_window": [
+      1745.93,
+      2133.91
+     ],
+     "window_pct": 10.0
+    }
+   },
+   "pcr_history": {
+    "available": true,
+    "latest_pcr_oi": 0.8243,
+    "max": 1.0139,
+    "median": 0.6956,
+    "min": 0.4481,
+    "observations": 30,
+    "percentile": 63.3,
+    "series": [
+     {
+      "pcr_oi": 0.6143,
+      "session": "2026-09-30"
+     },
+     {
+      "pcr_oi": 0.625,
+      "session": "2026-10-01"
+     },
+     {
+      "pcr_oi": 0.5747,
+      "session": "2026-10-05"
+     },
+     {
+      "pcr_oi": 0.5563,
+      "session": "2026-10-06"
+     },
+     {
+      "pcr_oi": 0.6686,
+      "session": "2026-10-07"
+     },
+     {
+      "pcr_oi": 0.8065,
+      "session": "2026-10-08"
+     },
+     {
+      "pcr_oi": 0.848,
+      "session": "2026-10-09"
+     },
+     {
+      "pcr_oi": 0.8521,
+      "session": "2026-10-12"
+     },
+     {
+      "pcr_oi": 0.997,
+      "session": "2026-10-13"
+     },
+     {
+      "pcr_oi": 0.9424,
+      "session": "2026-10-14"
+     },
+     {
+      "pcr_oi": 0.9391,
+      "session": "2026-10-15"
+     },
+     {
+      "pcr_oi": 0.867,
+      "session": "2026-10-16"
+     },
+     {
+      "pcr_oi": 0.8199,
+      "session": "2026-10-19"
+     },
+     {
+      "pcr_oi": 0.8032,
+      "session": "2026-10-21"
+     },
+     {
+      "pcr_oi": 0.9811,
+      "session": "2026-10-22"
+     },
+     {
+      "pcr_oi": 0.9656,
+      "session": "2026-10-23"
+     },
+     {
+      "pcr_oi": 0.9585,
+      "session": "2026-10-26"
+     },
+     {
+      "pcr_oi": 1.0139,
+      "session": "2026-10-27"
+     },
+     {
+      "pcr_oi": 0.4893,
+      "session": "2026-10-28"
+     },
+     {
+      "pcr_oi": 0.5349,
+      "session": "2026-10-29"
+     },
+     {
+      "pcr_oi": 0.4981,
+      "session": "2026-10-30"
+     },
+     {
+      "pcr_oi": 0.4481,
+      "session": "2026-11-02"
+     },
+     {
+      "pcr_oi": 0.5139,
+      "session": "2026-11-03"
+     },
+     {
+      "pcr_oi": 0.6223,
+      "session": "2026-11-04"
+     },
+     {
+      "pcr_oi": 0.6724,
+      "session": "2026-11-05"
+     },
+     {
+      "pcr_oi": 0.6573,
+      "session": "2026-11-06"
+     },
+     {
+      "pcr_oi": 0.5473,
+      "session": "2026-11-09"
+     },
+     {
+      "pcr_oi": 0.597,
+      "session": "2026-11-11"
+     },
+     {
+      "pcr_oi": 0.6956,
+      "session": "2026-11-12"
+     },
+     {
+      "pcr_oi": 0.8243,
+      "session": "2026-11-13"
+     }
+    ]
+   },
+   "sessions_on_disk": 30,
+   "symbol": "PAYTM"
+  },
+  "POWERINDIA": {
+   "as_of": "2026-11-13",
+   "available": true,
+   "basis": {
+    "note": "futures close minus spot. Positive is contango. No cause is inferred - dividend, borrow cost and selling pressure are not separable from this file.",
+    "pct": 0.632,
+    "value": 199.61
+   },
+   "buildup": {
+    "meaning": "shorts closing",
+    "oi_change": -39550,
+    "oi_change_pct": -8.6453,
+    "prev_session": "2026-11-12",
+    "price_change": 3385.0,
+    "price_change_pct": 11.9148,
+    "reason": "price +11.91%, open interest -8.65% over one session",
+    "session": "2026-11-13",
+    "state": "short_covering"
+   },
+   "buildup_counts": {
+    "long_buildup": 2,
+    "long_unwinding": 6,
+    "no_state": 1,
+    "rollover": 1,
+    "short_buildup": 8,
+    "short_covering": 11
+   },
+   "futures": {
+    "all_expiries_oi": 453750.0,
+    "close": 31795.0,
+    "contracts_live": 3,
+    "lot_size": 25.0,
+    "near_expiry": "2026-11-23",
+    "oi": 417925.0,
+    "oi_change_reported": -39550.0,
+    "underlying": 31595.39,
+    "volume": 20841.0
+   },
+   "options": {
+    "expiry": "2026-11-23",
+    "pcr_note": "measured ratio only. No bullish/bearish label is attached to an absolute PCR - see pcr_percentile.",
+    "pcr_oi": 0.9531,
+    "pcr_volume": 0.4553,
+    "session": "2026-11-13",
+    "spot": 31595.39,
+    "strikes_ce": 30,
+    "strikes_pe": 30,
+    "symbol": "POWERINDIA",
+    "total_oi_ce": 660000.0,
+    "total_oi_pe": 629025.0,
+    "walls": {
+     "available": true,
+     "call_wall": 32000.0,
+     "call_wall_concentration": 2.484,
+     "call_wall_is_wall": true,
+     "call_wall_oi": 77950.0,
+     "call_wall_reason": null,
+     "call_wall_strikes_in_window": 13,
+     "flags": [],
+     "min_concentration": 2.0,
+     "min_strikes_in_window": 5,
+     "note": "heaviest open interest within the window. Reported as context for the index view; these do NOT feed target_1, hard_stop or any equity gate (config/derivatives.yaml, constraints.oi_walls_feed_equity_levels: false).",
+     "put_wall": 30000.0,
+     "put_wall_concentration": 2.279,
+     "put_wall_is_wall": true,
+     "put_wall_oi": 65050.0,
+     "put_wall_reason": null,
+     "put_wall_strikes_in_window": 12,
+     "strike_window": [
+      28435.85,
+      34754.93
+     ],
+     "window_pct": 10.0
+    }
+   },
+   "pcr_history": {
+    "available": true,
+    "latest_pcr_oi": 0.9531,
+    "max": 1.1886,
+    "median": 0.8727,
+    "min": 0.4624,
+    "observations": 30,
+    "percentile": 66.7,
+    "series": [
+     {
+      "pcr_oi": 0.9164,
+      "session": "2026-09-30"
+     },
+     {
+      "pcr_oi": 1.0134,
+      "session": "2026-10-01"
+     },
+     {
+      "pcr_oi": 0.9997,
+      "session": "2026-10-05"
+     },
+     {
+      "pcr_oi": 1.1063,
+      "session": "2026-10-06"
+     },
+     {
+      "pcr_oi": 1.0209,
+      "session": "2026-10-07"
+     },
+     {
+      "pcr_oi": 0.9231,
+      "session": "2026-10-08"
+     },
+     {
+      "pcr_oi": 0.8819,
+      "session": "2026-10-09"
+     },
+     {
+      "pcr_oi": 0.8727,
+      "session": "2026-10-12"
+     },
+     {
+      "pcr_oi": 0.6702,
+      "session": "2026-10-13"
+     },
+     {
+      "pcr_oi": 0.6304,
+      "session": "2026-10-14"
+     },
+     {
+      "pcr_oi": 0.5065,
+      "session": "2026-10-15"
+     },
+     {
+      "pcr_oi": 0.5166,
+      "session": "2026-10-16"
+     },
+     {
+      "pcr_oi": 0.5154,
+      "session": "2026-10-19"
+     },
+     {
+      "pcr_oi": 0.4797,
+      "session": "2026-10-21"
+     },
+     {
+      "pcr_oi": 0.4624,
+      "session": "2026-10-22"
+     },
+     {
+      "pcr_oi": 0.5304,
+      "session": "2026-10-23"
+     },
+     {
+      "pcr_oi": 0.6276,
+      "session": "2026-10-26"
+     },
+     {
+      "pcr_oi": 0.6374,
+      "session": "2026-10-27"
+     },
+     {
+      "pcr_oi": 1.0551,
+      "session": "2026-10-28"
+     },
+     {
+      "pcr_oi": 1.1886,
+      "session": "2026-10-29"
+     },
+     {
+      "pcr_oi": 1.0269,
+      "session": "2026-10-30"
+     },
+     {
+      "pcr_oi": 1.0548,
+      "session": "2026-11-02"
+     },
+     {
+      "pcr_oi": 0.9217,
+      "session": "2026-11-03"
+     },
+     {
+      "pcr_oi": 1.0052,
+      "session": "2026-11-04"
+     },
+     {
+      "pcr_oi": 0.7618,
+      "session": "2026-11-05"
+     },
+     {
+      "pcr_oi": 0.8252,
+      "session": "2026-11-06"
+     },
+     {
+      "pcr_oi": 0.8205,
+      "session": "2026-11-09"
+     },
+     {
+      "pcr_oi": 0.6801,
+      "session": "2026-11-11"
+     },
+     {
+      "pcr_oi": 0.5547,
+      "session": "2026-11-12"
+     },
+     {
+      "pcr_oi": 0.9531,
+      "session": "2026-11-13"
+     }
+    ]
+   },
+   "sessions_on_disk": 30,
+   "symbol": "POWERINDIA"
+  },
+  "RADICO": {
+   "as_of": "2026-11-13",
+   "available": true,
+   "basis": {
+    "note": "futures close minus spot. Positive is contango. No cause is inferred - dividend, borrow cost and selling pressure are not separable from this file.",
+    "pct": -0.017,
+    "value": -0.8
+   },
+   "buildup": {
+    "meaning": "new shorts opening",
+    "oi_change": 19950,
+    "oi_change_pct": 1.6295,
+    "prev_session": "2026-11-12",
+    "price_change": -50.2,
+    "price_change_pct": -1.0785,
+    "reason": "price -1.08%, open interest +1.63% over one session",
+    "session": "2026-11-13",
+    "state": "short_buildup"
+   },
+   "buildup_counts": {
+    "long_buildup": 7,
+    "long_unwinding": 7,
+    "no_state": 2,
+    "rollover": 1,
+    "short_buildup": 4,
+    "short_covering": 8
+   },
+   "futures": {
+    "all_expiries_oi": 1279650.0,
+    "close": 4604.2,
+    "contracts_live": 3,
+    "lot_size": 150.0,
+    "near_expiry": "2026-11-23",
+    "oi": 1244250.0,
+    "oi_change_reported": 19950.0,
+    "underlying": 4605.0,
+    "volume": 1740.0
+   },
+   "options": {
+    "expiry": "2026-11-23",
+    "pcr_note": "measured ratio only. No bullish/bearish label is attached to an absolute PCR - see pcr_percentile.",
+    "pcr_oi": 0.4757,
+    "pcr_volume": 0.2013,
+    "session": "2026-11-13",
+    "spot": 4605.0,
+    "strikes_ce": 35,
+    "strikes_pe": 35,
+    "symbol": "RADICO",
+    "total_oi_ce": 964950.0,
+    "total_oi_pe": 459000.0,
+    "walls": {
+     "available": true,
+     "call_wall": 4600.0,
+     "call_wall_concentration": 4.072,
+     "call_wall_is_wall": true,
+     "call_wall_oi": 192450.0,
+     "call_wall_reason": null,
+     "call_wall_strikes_in_window": 19,
+     "flags": [
+      "call wall 4600.0 is BELOW spot 4605.00 - price has traded through it; not overhead resistance"
+     ],
+     "min_concentration": 2.0,
+     "min_strikes_in_window": 5,
+     "note": "heaviest open interest within the window. Reported as context for the index view; these do NOT feed target_1, hard_stop or any equity gate (config/derivatives.yaml, constraints.oi_walls_feed_equity_levels: false).",
+     "put_wall": 4600.0,
+     "put_wall_concentration": 3.351,
+     "put_wall_is_wall": true,
+     "put_wall_oi": 69300.0,
+     "put_wall_reason": null,
+     "put_wall_strikes_in_window": 17,
+     "strike_window": [
+      4144.5,
+      5065.5
+     ],
+     "window_pct": 10.0
+    }
+   },
+   "pcr_history": {
+    "available": true,
+    "latest_pcr_oi": 0.4757,
+    "max": 0.7814,
+    "median": 0.5582,
+    "min": 0.3031,
+    "observations": 30,
+    "percentile": 20.0,
+    "series": [
+     {
+      "pcr_oi": 0.3612,
+      "session": "2026-09-30"
+     },
+     {
+      "pcr_oi": 0.321,
+      "session": "2026-10-01"
+     },
+     {
+      "pcr_oi": 0.3031,
+      "session": "2026-10-05"
+     },
+     {
+      "pcr_oi": 0.3263,
+      "session": "2026-10-06"
+     },
+     {
+      "pcr_oi": 0.3582,
+      "session": "2026-10-07"
+     },
+     {
+      "pcr_oi": 0.6059,
+      "session": "2026-10-08"
+     },
+     {
+      "pcr_oi": 0.6722,
+      "session": "2026-10-09"
+     },
+     {
+      "pcr_oi": 0.652,
+      "session": "2026-10-12"
+     },
+     {
+      "pcr_oi": 0.599,
+      "session": "2026-10-13"
+     },
+     {
+      "pcr_oi": 0.6158,
+      "session": "2026-10-14"
+     },
+     {
+      "pcr_oi": 0.5582,
+      "session": "2026-10-15"
+     },
+     {
+      "pcr_oi": 0.5438,
+      "session": "2026-10-16"
+     },
+     {
+      "pcr_oi": 0.5325,
+      "session": "2026-10-19"
+     },
+     {
+      "pcr_oi": 0.542,
+      "session": "2026-10-21"
+     },
+     {
+      "pcr_oi": 0.5803,
+      "session": "2026-10-22"
+     },
+     {
+      "pcr_oi": 0.5629,
+      "session": "2026-10-23"
+     },
+     {
+      "pcr_oi": 0.4785,
+      "session": "2026-10-26"
+     },
+     {
+      "pcr_oi": 0.4413,
+      "session": "2026-10-27"
+     },
+     {
+      "pcr_oi": 0.5422,
+      "session": "2026-10-28"
+     },
+     {
+      "pcr_oi": 0.6395,
+      "session": "2026-10-29"
+     },
+     {
+      "pcr_oi": 0.5582,
+      "session": "2026-10-30"
+     },
+     {
+      "pcr_oi": 0.5394,
+      "session": "2026-11-02"
+     },
+     {
+      "pcr_oi": 0.6448,
+      "session": "2026-11-03"
+     },
+     {
+      "pcr_oi": 0.6969,
+      "session": "2026-11-04"
+     },
+     {
+      "pcr_oi": 0.7427,
+      "session": "2026-11-05"
+     },
+     {
+      "pcr_oi": 0.772,
+      "session": "2026-11-06"
+     },
+     {
+      "pcr_oi": 0.7814,
+      "session": "2026-11-09"
+     },
+     {
+      "pcr_oi": 0.5315,
+      "session": "2026-11-11"
+     },
+     {
+      "pcr_oi": 0.5212,
+      "session": "2026-11-12"
+     },
+     {
+      "pcr_oi": 0.4757,
+      "session": "2026-11-13"
+     }
+    ]
+   },
+   "sessions_on_disk": 30,
+   "symbol": "RADICO"
+  },
+  "SYRMA": {
+   "as_of": "2026-11-13",
+   "available": true,
+   "basis": {
+    "note": "futures close minus spot. Positive is contango. No cause is inferred - dividend, borrow cost and selling pressure are not separable from this file.",
+    "pct": -0.866,
+    "value": -13.03
+   },
+   "buildup": {
+    "meaning": "new shorts opening",
+    "oi_change": 78000,
+    "oi_change_pct": 3.6298,
+    "prev_session": "2026-11-12",
+    "price_change": -8.2,
+    "price_change_pct": -0.5469,
+    "reason": "price -0.55%, open interest +3.63% over one session",
+    "session": "2026-11-13",
+    "state": "short_buildup"
+   },
+   "buildup_counts": {
+    "long_buildup": 4,
+    "short_buildup": 6,
+    "short_covering": 1
+   },
+   "futures": {
+    "all_expiries_oi": 2891200.0,
+    "close": 1491.1,
+    "contracts_live": 3,
+    "lot_size": 325.0,
+    "near_expiry": "2026-11-23",
+    "oi": 2226900.0,
+    "oi_change_reported": 78000.0,
+    "underlying": 1504.13,
+    "volume": 1504.0
+   },
+   "options": {
+    "expiry": "2026-11-23",
+    "pcr_note": "measured ratio only. No bullish/bearish label is attached to an absolute PCR - see pcr_percentile.",
+    "pcr_oi": 0.3709,
+    "pcr_volume": 0.2482,
+    "session": "2026-11-13",
+    "spot": 1504.13,
+    "strikes_ce": 36,
+    "strikes_pe": 36,
+    "symbol": "SYRMA",
+    "total_oi_ce": 2002975.0,
+    "total_oi_pe": 742950.0,
+    "walls": {
+     "available": true,
+     "call_wall": 1600.0,
+     "call_wall_concentration": 3.712,
+     "call_wall_is_wall": true,
+     "call_wall_oi": 305500.0,
+     "call_wall_reason": null,
+     "call_wall_strikes_in_window": 15,
+     "flags": [],
+     "min_concentration": 2.0,
+     "min_strikes_in_window": 5,
+     "note": "heaviest open interest within the window. Reported as context for the index view; these do NOT feed target_1, hard_stop or any equity gate (config/derivatives.yaml, constraints.oi_walls_feed_equity_levels: false).",
+     "put_wall": 1500.0,
+     "put_wall_concentration": 3.214,
+     "put_wall_is_wall": true,
+     "put_wall_oi": 119275.0,
+     "put_wall_reason": null,
+     "put_wall_strikes_in_window": 15,
+     "strike_window": [
+      1353.72,
+      1654.54
+     ],
+     "window_pct": 10.0
+    }
+   },
+   "pcr_history": {
+    "available": false,
+    "observations": 12,
+    "reason": "only 12 session(s) of F&O data on disk; a percentile needs at least 20 to mean anything. Run `python -m src.collect_fo --sessions 60`.",
+    "series": [
+     {
+      "pcr_oi": 0.1129,
+      "session": "2026-10-28"
+     },
+     {
+      "pcr_oi": 0.4928,
+      "session": "2026-10-29"
+     },
+     {
+      "pcr_oi": 0.4838,
+      "session": "2026-10-30"
+     },
+     {
+      "pcr_oi": 0.3602,
+      "session": "2026-11-02"
+     },
+     {
+      "pcr_oi": 0.3619,
+      "session": "2026-11-03"
+     },
+     {
+      "pcr_oi": 0.3882,
+      "session": "2026-11-04"
+     },
+     {
+      "pcr_oi": 0.4175,
+      "session": "2026-11-05"
+     },
+     {
+      "pcr_oi": 0.4046,
+      "session": "2026-11-06"
+     },
+     {
+      "pcr_oi": 0.3983,
+      "session": "2026-11-09"
+     },
+     {
+      "pcr_oi": 0.4241,
+      "session": "2026-11-11"
+     },
+     {
+      "pcr_oi": 0.4035,
+      "session": "2026-11-12"
+     },
+     {
+      "pcr_oi": 0.3709,
+      "session": "2026-11-13"
+     }
+    ]
+   },
+   "sessions_on_disk": 30,
+   "symbol": "SYRMA"
+  }
+ }
+}

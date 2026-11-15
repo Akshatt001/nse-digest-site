@@ -268,7 +268,7 @@ footer{border-top:1px solid var(--line); margin-top:10px}
 /* Everything displayed comes from ./data.json and ./news.json, fetched at
    runtime with relative paths so the file works from a Pages subpath, a local
    server, or published alongside its data. */
-var DATA = null, NEWS = null, PRIV = null, IDX = null;
+var DATA = null, NEWS = null, PRIV = null, IDX = null, OI = null;
 var mode = null;
 var driver = "moving";
 
@@ -404,11 +404,16 @@ function boot(){
            run src.index_view rather than taking the whole page down with it.
            data.json remains the only payload the page cannot render without. */
         fetch(bust("./index_view.json"), { cache: "no-store" })
+          .then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }),
+        /* Per-stock open interest. Absent is survivable and says so inside
+           the card, the same way index_view.json does: only data.json is
+           load-bearing for the page as a whole. */
+        fetch(bust("./stock_oi.json"), { cache: "no-store" })
           .then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; })
       ]);
     })
     .then(function(res){
-      NEWS = res[0]; PRIV = res[1]; IDX = res[2];
+      NEWS = res[0]; PRIV = res[1]; IDX = res[2]; OI = res[3];
       mode = pickMode();
       render();
     })
@@ -812,6 +817,143 @@ function kvCard(title, pairs){
   return c;
 }
 
+/* ---------------- per-stock open interest ---------------- */
+/* Everything here arrives from ./stock_oi.json, computed by src/stock_oi.py
+   over the stored F&O bhavcopy. Presentation only.
+
+   Two things this card must never imply. It does NOT produce a level: a
+   strike where positions sit is not a price the stock traded to and rejected,
+   and report-spec section 4 defines target_1 as the latter
+   (config/derivatives.yaml, oi_walls_feed_equity_levels: false). And it does
+   NOT carry a direction: a buildup state describes what price and open
+   interest did together over one session, which is positioning, not a
+   forecast. No state is coloured or labelled bullish or bearish. */
+function oiFor(sym){
+  if (!OI || !OI.available) return null;
+  return (OI.symbols || {})[sym] || null;
+}
+
+function oiCard(sym){
+  var c = el("div", "dcard");
+  c.appendChild(el("h3", null, "Open interest"));
+
+  if (!OI){
+    c.appendChild(el("div", "note",
+      "Per-stock open interest is not published. Run "
+      + "`python -m src.stock_oi` to compute it."));
+    return c;
+  }
+  if (!OI.available){
+    c.appendChild(el("div", "note", OI.reason || "unavailable"));
+    return c;
+  }
+
+  var r = oiFor(sym);
+  if (!r){
+    /* Absent for two completely different reasons, and the reader should not
+       have to guess which: the stock has no F&O contract at all, or it has
+       one and the lookup failed. */
+    var without = (OI.coverage || {}).without_fo || [];
+    if (without.indexOf(sym) >= 0){
+      c.appendChild(el("div", "note",
+        sym + " has no stock futures or options contract, so it has no open "
+        + "interest. Around " + ((OI.coverage || {}).underlyings_on_disk || "220")
+        + " NSE names are in the F&O segment; the rest cannot."));
+    } else {
+      c.appendChild(el("div", "note",
+        "No open-interest row was computed for " + sym + "."));
+    }
+    return c;
+  }
+  if (r.available === false){
+    c.appendChild(el("div", "note bad", r.reason || "unavailable"));
+    return c;
+  }
+
+  var f = r.futures || {};
+  var b = r.basis || {};
+  var dl = el("dl", "kv");
+  function kv(k, v){
+    dl.appendChild(el("dt", null, k));
+    dl.appendChild(el("dd", null, v));
+  }
+  kv("near expiry", f.near_expiry || DASH);
+  kv("futures close", num(f.close));
+  kv("spot", num(f.underlying));
+  kv("basis", b.value === null || b.value === undefined
+      ? DASH : num(b.value) + " (" + num(b.pct, 3) + "%)");
+  kv("open interest", f.oi === null || f.oi === undefined
+      ? DASH : Number(f.oi).toLocaleString("en-IN"));
+  kv("lot size", f.lot_size === null || f.lot_size === undefined
+      ? DASH : Number(f.lot_size).toLocaleString("en-IN"));
+  c.appendChild(dl);
+
+  /* Buildup. The state is printed as the plain price/OI cross it is, with
+     both deltas beside it so the reader can see it follow. A refusal prints
+     its reason rather than being hidden, because a month-end rollover
+     legitimately produces no state and silence would read as "nothing
+     happened". */
+  var bu = r.buildup || {};
+  if (bu.state){
+    c.appendChild(el("div", "note",
+      "Buildup: " + String(bu.state).replace(/_/g, " ")
+      + " — price " + num(bu.price_change_pct, 2) + "%, open interest "
+      + num(bu.oi_change_pct, 2) + "% over one session."));
+  } else {
+    c.appendChild(el("div", "note",
+      "No buildup state: " + (bu.reason || bu.rollover_reason
+        || "price or open interest was flat, or the near-month expiry "
+           + "changed between sessions.")));
+  }
+
+  /* Options. PCR as a measured ratio with its own percentile; never a
+     sentiment label, because "PCR above 1 is bullish" has no stable
+     threshold across symbols or regimes. */
+  var o = r.options || {};
+  if (o.available === false){
+    c.appendChild(el("div", "note", o.reason || "no option chain"));
+  } else if (o.pcr_oi !== null && o.pcr_oi !== undefined){
+    var h = r.pcr_history || {};
+    var line = "PCR (OI) " + num(o.pcr_oi, 3);
+    if (h.percentile !== null && h.percentile !== undefined){
+      line += " — " + num(h.percentile, 1) + "th percentile of "
+        + (h.observations || DASH) + " sessions for this stock";
+    } else if (h.reason){
+      line += " — no percentile: " + h.reason;
+    }
+    c.appendChild(el("div", "note", line));
+  }
+
+  var w = o.walls || {};
+  if (w.available){
+    ["call", "put"].forEach(function(side){
+      var strike = w[side + "_wall"];
+      if (strike === null || strike === undefined) return;
+      var isWall = w[side + "_wall_is_wall"];
+      var conc = w[side + "_wall_concentration"];
+      if (isWall){
+        c.appendChild(el("div", "note",
+          "Heaviest " + side + " open interest at " + num(strike)
+          + " — " + num(conc, 2) + "x an average strike in the window."));
+      } else {
+        /* The strike stays visible and the word "wall" is withdrawn. */
+        c.appendChild(el("div", "note",
+          "Heaviest " + side + " strike is " + num(strike)
+          + ", but it is not a wall: " + (w[side + "_wall_reason"] || "")));
+      }
+    });
+    (w.flags || []).forEach(function(x){
+      c.appendChild(el("div", "note bad", x));
+    });
+  }
+
+  c.appendChild(el("div", "note",
+    "End-of-day open interest. Positioning, not direction — none of this "
+    + "sets or adjusts the entry, stop or target above, and no state here is "
+    + "bullish or bearish."));
+  return c;
+}
+
 function newsCard(sym){
   var items = newsFor(sym);
   var c = el("div", "dcard");
@@ -884,6 +1026,7 @@ function detailRow(sym, c, span){
   if (ex.invalid_reason) vc.appendChild(el("div", "note bad", ex.invalid_reason));
   grid.appendChild(vc);
 
+  grid.appendChild(oiCard(sym));
   grid.appendChild(newsCard(sym));
 
   td.appendChild(grid);
@@ -935,6 +1078,7 @@ function shortDetailRow(r, span){
   fg.forEach(function(x){ gc.appendChild(el("div", "note bad", x)); });
   grid.appendChild(gc);
 
+  grid.appendChild(oiCard(r.symbol));
   grid.appendChild(newsCard(r.symbol));
 
   td.appendChild(grid);
@@ -1362,17 +1506,49 @@ function renderIndex(){
         ["CE strikes", num(opt.strikes_ce, 0)],
         ["PE strikes", num(opt.strikes_pe, 0)]
       ]));
+      /* The card is titled "heaviest open interest", not "walls", and each
+         side states its concentration - the strike's OI as a multiple of the
+         average strike in the window. "The strike with the most OI" always
+         exists, so publishing it AS a wall was a claim that could not fail
+         (bug 19). The strike is still shown when the claim is withdrawn; only
+         the word goes. */
       var w = opt.walls || {};
-      g3.appendChild(w.available
-        ? kvCard("Heaviest open interest", [
-            ["call wall", num(w.call_wall, 0)],
-            ["its OI", num(w.call_wall_oi, 0)],
-            ["put wall", num(w.put_wall, 0)],
-            ["its OI", num(w.put_wall_oi, 0)],
-            ["window", w.strike_window
-              ? num(w.strike_window[0]) + " - " + num(w.strike_window[1]) : DASH]
-          ])
-        : kvCard("Heaviest open interest", [["unavailable", w.reason || DASH]]));
+      if (!w.available){
+        g3.appendChild(kvCard("Heaviest open interest",
+                              [["unavailable", w.reason || DASH]]));
+      } else {
+        var rows = [];
+        ["call", "put"].forEach(function(side){
+          var conc = w[side + "_wall_concentration"];
+          var isWall = w[side + "_wall_is_wall"];
+          rows.push([side + " strike", num(w[side + "_wall"], 0)]);
+          rows.push(["its OI", num(w[side + "_wall_oi"], 0)]);
+          if (conc === null || conc === undefined){
+            rows.push(["concentration", "not measured"]);
+          } else {
+            rows.push(["concentration", num(conc, 2) + "x average strike"
+              + (isWall ? "" : " — not a wall")]);
+          }
+        });
+        rows.push(["window", w.strike_window
+          ? num(w.strike_window[0]) + " - " + num(w.strike_window[1]) : DASH]);
+        var wc = kvCard("Heaviest open interest", rows);
+        ["call", "put"].forEach(function(side){
+          if (w[side + "_wall"] !== null && w[side + "_wall"] !== undefined
+              && w[side + "_wall_is_wall"] === false
+              && w[side + "_wall_reason"]){
+            wc.appendChild(el("div", "note",
+              side + " side: " + w[side + "_wall_reason"]));
+          }
+        });
+        if (w.call_wall_concentration === undefined){
+          wc.appendChild(el("div", "note bad",
+            "This payload predates the concentration measure, so neither "
+            + "strike has been tested for whether it is actually a wall. "
+            + "Re-run: python -m src.index_view"));
+        }
+        g3.appendChild(wc);
+      }
     }
     if (ph.available){
       g3.appendChild(kvCard("PCR in its own distribution", [

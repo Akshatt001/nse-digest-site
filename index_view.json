@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T22:48:08.717748+05:30",
+  "generated_at": "2026-11-15T23:41:58.485000+05:30",
   "instruments": {
     "BANKNIFTY": {
       "as_of": "2026-11-13",
@@ -1043,13 +1043,23 @@
           "walls": {
             "available": true,
             "call_wall": 61000.0,
+            "call_wall_concentration": 6.652,
+            "call_wall_is_wall": true,
             "call_wall_oi": 867990.0,
+            "call_wall_reason": null,
+            "call_wall_strikes_in_window": 114,
             "flags": [
               "call wall 61000.0 is BELOW spot 61034.10 - price has traded through it; not overhead resistance"
             ],
+            "min_concentration": 2.0,
+            "min_strikes_in_window": 5,
             "note": "heaviest open interest within the window. Reported as context for the index view; these do NOT feed target_1, hard_stop or any equity gate (config/derivatives.yaml, constraints.oi_walls_feed_equity_levels: false).",
             "put_wall": 60500.0,
+            "put_wall_concentration": 7.276,
+            "put_wall_is_wall": true,
             "put_wall_oi": 1237140.0,
+            "put_wall_reason": null,
+            "put_wall_strikes_in_window": 88,
             "strike_window": [
               54930.69,
               67137.51
@@ -2428,11 +2438,21 @@
           "walls": {
             "available": true,
             "call_wall": 26000.0,
+            "call_wall_concentration": 7.649,
+            "call_wall_is_wall": true,
             "call_wall_oi": 14737060.0,
+            "call_wall_reason": null,
+            "call_wall_strikes_in_window": 101,
             "flags": [],
+            "min_concentration": 2.0,
+            "min_strikes_in_window": 5,
             "note": "heaviest open interest within the window. Reported as context for the index view; these do NOT feed target_1, hard_stop or any equity gate (config/derivatives.yaml, constraints.oi_walls_feed_equity_levels: false).",
             "put_wall": 24000.0,
+            "put_wall_concentration": 6.557,
+            "put_wall_is_wall": true,
             "put_wall_oi": 11700260.0,
+            "put_wall_reason": null,
+            "put_wall_strikes_in_window": 82,
             "strike_window": [
               22629.87,
               27658.73
