@@ -331,6 +331,59 @@ function minsSince(iso){
 }
 function bust(u){ return u + "?t=" + Date.now(); }
 
+/* Today's date in IST as YYYY-MM-DD. The viewer's machine may be in any
+   timezone, so this is derived from the epoch plus the fixed +05:30 offset
+   (India has no DST, so the offset is exactly right year-round) rather than
+   from local date getters, which would roll over at the wrong moment for a
+   reader outside India. */
+function todayIST(){
+  var d = new Date(Date.now() + 330 * 60000);
+  function p(n){ return (n < 10 ? "0" : "") + n; }
+  return d.getUTCFullYear() + "-" + p(d.getUTCMonth() + 1) + "-" + p(d.getUTCDate());
+}
+
+/* How many trading sessions the published prices are behind, RE-DERIVED NOW.
+
+   data_session.sessions_behind and .stale are computed when the page is built
+   and frozen into data.json. They are correct at that instant and decay into a
+   false reassurance the moment the market trades again without a rebuild: the
+   page goes on saying "prices from <date>" with sessions_behind 0 and no
+   banner. That is rule 4's invisible failure applied to the very field whose
+   job is to prevent it.
+
+   So the count comes from data_session.sessions_after_latest, the forward
+   trading calendar the build emitted from NSE's published holiday list. A
+   session counts as missed only once its date is strictly before today in IST
+   -- the same convention session_freshness uses at build time, so viewing on
+   the build date reproduces the build's own number, and no session is ever
+   reported missing before its bhavcopy could have been published.
+
+   The payload's value is a FLOOR, never a ceiling: if the build knew it was
+   two sessions behind, this cannot talk that down to zero. Without the forward
+   calendar (an older payload) the frozen number is all there is, and
+   `verified` says so rather than implying it was checked. */
+function sessionLag(){
+  var ds = DATA.data_session || {};
+  var frozen = (typeof ds.sessions_behind === "number") ? ds.sessions_behind : null;
+  var fwd = ds.sessions_after_latest;
+  if (!fwd || !fwd.length){
+    return { behind: frozen, floor_only: false, verified: false };
+  }
+  var today = todayIST();
+  var n = 0;
+  /* ISO dates compare lexicographically in date order, so a string compare is
+     exact here and needs no parsing. */
+  for (var i = 0; i < fwd.length; i++){ if (fwd[i] < today) n += 1; }
+  var behind = (frozen === null) ? n : Math.max(frozen, n);
+  return {
+    behind: behind,
+    /* The calendar is finite. Once every date in it has passed, the true count
+       may be higher and the number can only be reported as a lower bound. */
+    floor_only: n >= fwd.length,
+    verified: true
+  };
+}
+
 /* ---------------- load ---------------- */
 function boot(){
   fetch(bust("./data.json"), { cache: "no-store" })
@@ -403,8 +456,15 @@ function renderStamps(){
      written against. */
   var ds = DATA.data_session || {};
   if (ds.latest){
-    add("prices from", ds.latest + " close", ds.stale ? "bad" : "");
-    if (ds.stale) add("DATA BEHIND", String(ds.sessions_behind) + " session(s)", "bad");
+    /* Recomputed at view time, not read from the payload: see sessionLag. */
+    var lag = sessionLag();
+    var behindNow = lag.behind !== null && lag.behind > 0;
+    add("prices from", ds.latest + " close", behindNow ? "bad" : "");
+    if (behindNow){
+      add("DATA BEHIND",
+          (lag.floor_only ? "at least " : "") + String(lag.behind) + " session(s)",
+          "bad");
+    }
   } else {
     add("prices from", "not recorded", "warn");
   }
@@ -703,6 +763,30 @@ function renderShortlist(){
 
 function shortGate(reason){
   var s = String(reason);
+
+  /* "the feed is down so this could not be checked" is NOT "this failed the
+     check", and collapsing the two publishes a fact the page does not know.
+     scan.py words it carefully -- "circuit-lock feed unavailable - gate cannot
+     be verified, so the candidate is held back" -- and the keyword matches
+     below then reduced that to "circuit locked", flatly asserting that a stock
+     had hit its price band when nothing had established it. A stock down 6.9%
+     was labelled circuit locked on a published page that way.
+
+     Every held-back reason scan.py writes carries "cannot be verified", and no
+     missing-indicator reason does, so that is the discriminator. It has to be
+     tested BEFORE the topic keywords, because the held-back strings contain
+     the same words ("circuit", "results") as the real rejections. */
+  if (s.indexOf("cannot be verified") >= 0){
+    if (s.indexOf("circuit") >= 0) return "circuit feed down";
+    if (s.indexOf("ASM") >= 0 || s.indexOf("surveillance") >= 0) return "surveillance feed down";
+    if (s.indexOf("results") >= 0 || s.indexOf("calendar") >= 0) return "results feed down";
+    if (s.indexOf("ban") >= 0) return "ban-list feed down";
+    return "gate feed down";
+  }
+  /* An indicator that could not be computed is also not a gate the symbol
+     failed: "20 EMA unavailable" was being labelled "trend filter" below. */
+  if (s.indexOf("unavailable") >= 0) return "indicator missing";
+
   if (s.indexOf("R:R") >= 0 || s.indexOf("reward") >= 0) return "reward to risk";
   if (s.indexOf("turnover") >= 0) return "liquidity";
   if (s.indexOf("results") >= 0) return "results blackout";
@@ -915,10 +999,48 @@ function renderDisclaimer(){
    stamps. */
 function renderBanner(){
   var b = $("banner"); b.innerHTML = "";
-  var ds = DATA.data_session || {};
-  if (ds.stale && ds.reason){
-    b.appendChild(el("div", "note bad", "STALE DATA — " + ds.reason));
+
+  /* A gate that could not be EVALUATED changes what the whole page means, so
+     it belongs here rather than only inside the collapsed "why so few passed"
+     disclosure, where it was the one place this was stated. With three feeds
+     down the trade-ready section reads "Nothing cleared every gate for this
+     horizon. 892 symbols were rejected", which a reader takes as "the market
+     offered nothing today" when the truth is that three of the gates were
+     never checked at all. Same distinction shortGate() has to make per row,
+     made once for the page. */
+  var gf = DATA.gate_feeds_unavailable || {};
+  var feeds = Object.keys(gf);
+  if (feeds.length){
+    b.appendChild(el("div", "note bad",
+      "GATES NOT FULLY APPLIED — " + feeds.length + " gate-critical feed(s) "
+      + "could not be collected (" + feeds.join(", ") + "). Candidates needing "
+      + "them were held back rather than passed, so a short trade-ready list "
+      + "here reflects a data outage, not an absence of opportunities. "
+      + "Nothing below has been checked against those gates."));
   }
+
+  var ds = DATA.data_session || {};
+  if (!ds.latest) return;
+
+  var lag = sessionLag();
+  if (!(lag.behind > 0)) return;
+
+  /* The message is written from the RE-DERIVED count, not from ds.reason.
+     ds.reason is a sentence composed at build time and it understates as soon
+     as more sessions pass, so quoting it here would reintroduce the frozen
+     number the banner exists to catch. The build's own count is still worth
+     stating, because the two causes call for different action: a build that
+     was ALREADY behind means collection failed, while a build that was fine
+     means only that nothing has been rebuilt since. */
+  var frozen = (typeof ds.sessions_behind === "number") ? ds.sessions_behind : 0;
+  var msg = "STALE DATA — the newest price data is from " + ds.latest + ", "
+    + (lag.floor_only ? "at least " : "")
+    + lag.behind + " completed trading session(s) ago. Every close, indicator "
+    + "and level on this page is that session's, not today's.";
+  msg += frozen > 0
+    ? " The build itself was already behind, so collection may have failed."
+    : " The page has not been rebuilt since the market last traded.";
+  b.appendChild(el("div", "note bad", msg));
 }
 
 /* ---------------- index & derivatives ---------------- */
