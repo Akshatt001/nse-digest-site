@@ -115,6 +115,12 @@ thead th{
 tbody tr{border-top:1px solid var(--line); cursor:pointer}
 tbody tr:hover{background:var(--surface)}
 tbody tr.open{background:var(--accent-soft)}
+/* A table whose rows expand nothing. The shared shell sets a pointer cursor
+   and a hover highlight, both of which promise a click that does nothing. */
+.tablewrap.static{margin-top:4px}
+.tablewrap.static tbody tr{cursor:default}
+.tablewrap.static tbody tr:hover{background:none}
+.butitle{margin:18px 0 0; font-size:13px; font-weight:600; color:var(--ink-2)}
 .sym{font-weight:600}
 .up{color:var(--up)} .down{color:var(--down)} .flat{color:var(--ink-3)}
 tr.detail{cursor:default}
@@ -1463,7 +1469,7 @@ function renderIndex(){
   /* derivatives */
   var det3 = el("details");
   det3.appendChild(el("summary", null,
-    "Open interest, long/short buildup and the option chain"));
+    "Open interest and the option chain"));
   var d3 = el("div", "dbody");
   if (!dv.available){
     d3.appendChild(el("p", "note", dv.reason || "No F&O data on disk."));
@@ -1480,22 +1486,6 @@ function renderIndex(){
       ["lot size", num(f.lot_size, 0)],
       ["all expiries OI", num((f.all_expiries || {}).oi, 0)]
     ]));
-    g3.appendChild(kvCard("Buildup, latest session", bl ? [
-      ["state", bl.state ? bl.state.replace(/_/g, " ") : "none"],
-      ["means", bl.meaning || DASH],
-      ["price change", pct(bl.price_change_pct)],
-      ["OI change", pct(bl.oi_change_pct)],
-      ["why", bl.reason || DASH]
-    ] : [["state", "no reading"]]));
-
-    var counts = dv.buildup_counts || {};
-    var ck = Object.keys(counts);
-    if (ck.length){
-      g3.appendChild(kvCard("Buildup over " + num(dv.sessions_on_disk, 0)
-        + " sessions", ck.map(function(k){
-          return [k.replace(/_/g, " "), num(counts[k], 0)];
-        })));
-    }
 
     if (opt.expiry){
       g3.appendChild(kvCard("Option chain, " + opt.expiry, [
@@ -1573,6 +1563,90 @@ function renderIndex(){
   }
   det3.appendChild(d3);
   body.appendChild(det3);
+
+  /* ---------------- buildup ----------------
+     Its own section, because the price/OI cross is a different question from
+     "how much open interest is there" and was previously a single card
+     buried behind a summary that named three topics at once.
+
+     Two tables, one per BUILDUP state. The other two states in the series
+     are unwinding and covering - positions CLOSING - which is a different
+     event from positions opening, and tabling all four under a heading that
+     says "buildup" would quietly redefine the word. They stay in the counts
+     card, so nothing the page used to state has been dropped.
+
+     No state is coloured or labelled bullish or bearish, here or anywhere:
+     a buildup state describes what price and open interest did together over
+     one session. That is positioning, not a forecast. */
+  var det3b = el("details");
+  det3b.appendChild(el("summary", null, "Buildup"));
+  var d3b = el("div", "dbody");
+  if (!dv.available){
+    d3b.appendChild(el("p", "note", dv.reason || "No F&O data on disk."));
+  } else {
+    var g3b = el("div", "dgrid");
+    g3b.appendChild(kvCard("Latest session", bl ? [
+      ["state", bl.state ? bl.state.replace(/_/g, " ") : "none"],
+      ["means", bl.meaning || DASH],
+      ["price change", pct(bl.price_change_pct)],
+      ["OI change", pct(bl.oi_change_pct)],
+      ["why", bl.reason || DASH]
+    ] : [["state", "no reading"]]));
+
+    var counts = dv.buildup_counts || {};
+    var ck = Object.keys(counts);
+    if (ck.length){
+      g3b.appendChild(kvCard("All states over "
+        + num(dv.sessions_on_disk, 0) + " sessions", ck.map(function(k){
+          return [k.replace(/_/g, " "), num(counts[k], 0)];
+        })));
+    }
+    d3b.appendChild(g3b);
+
+    /* The two tables. Built from buildup_series, which the provenance gate
+       re-derives row by row and reconciles against buildup_counts - the
+       counts card and these tables must not be able to contradict each
+       other on the page. */
+    var series = dv.buildup_series || [];
+    [["long_buildup", "Long buildup", "new longs opening"],
+     ["short_buildup", "Short buildup", "new shorts opening"]
+    ].forEach(function(spec){
+      var state = spec[0], title = spec[1], means = spec[2];
+      var rows = series.filter(function(r){ return r.state === state; });
+
+      d3b.appendChild(el("h3", "butitle", title + " — " + means));
+
+      if (!rows.length){
+        /* Stated, not hidden. An absent table reads as "not computed"; this
+           reads as "computed, and it did not happen", which is the fact. */
+        d3b.appendChild(el("p", "note",
+          "No " + title.toLowerCase() + " session in the last "
+          + series.length + " classified sessions."));
+        return;
+      }
+
+      var sh = tableShell(["SESSION", "PRICE", "PRICE %", "OPEN INTEREST",
+                           "OI %"]);
+      sh.wrap.classList.add("static");
+      rows.slice().reverse().forEach(function(r){
+        var tr = el("tr");
+        tr.appendChild(el("td", "sym", r.session || DASH));
+        tr.appendChild(el("td", null, num(r.price_change)));
+        tr.appendChild(el("td", null, pct(r.price_change_pct)));
+        tr.appendChild(el("td", null, num(r.oi_change, 0)));
+        tr.appendChild(el("td", null, pct(r.oi_change_pct)));
+        sh.body.appendChild(tr);
+      });
+      d3b.appendChild(sh.wrap);
+      d3b.appendChild(el("p", "note",
+        rows.length + " of " + series.length + " classified sessions, newest "
+        + "first. Each row is one session against the one before it."));
+    });
+
+    if (dv.source) d3b.appendChild(el("p", "note", dv.source));
+  }
+  det3b.appendChild(d3b);
+  body.appendChild(det3b);
 
   /* what is NOT available, and why - stated, never approximated */
   var un = inst.unavailable_timeframes || {};
